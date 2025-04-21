@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wumps", "wumps\wumps.csproj", "{9827664C-44C5-4699-AE5D-29E0813A6790}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCUIWumpus", "GCUIWumpus\GCUIWumpus.csproj", "{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console App Test - Highscore", "Console App Test - Highscore\Console App Test - Highscore.csproj", "{6E395432-AB56-41A8-B783-7FE34E431DCF}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{6E395432-AB56-41A8-B783-7FE34E431DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E395432-AB56-41A8-B783-7FE34E431DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E395432-AB56-41A8-B783-7FE34E431DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
