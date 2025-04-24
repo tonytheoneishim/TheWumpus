@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Highscore - Testing + Dev\Highscore - Testing + Dev.csproj" />
+    <ProjectReference Include="..\studentInfo\studentInfo.csproj" />
   </ItemGroup>
 
 </Project>
