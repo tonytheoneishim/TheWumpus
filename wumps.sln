@@ -5,6 +5,12 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wumps", "wumps\wumps.csproj", "{9827664C-44C5-4699-AE5D-29E0813A6790}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCUIWumpus", "GCUIWumpus\GCUIWumpus.csproj", "{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console App Test - Highscore", "Console App Test - Highscore\Console App Test - Highscore.csproj", "{6E395432-AB56-41A8-B783-7FE34E431DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveTest", "CaveTest\CaveTest.csproj", "{A3CB0520-E78F-4F89-B82C-9DE2722E4ED3}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testPlayerForm", "testPlayerForm\testPlayerForm.csproj", "{CF25116F-777C-4CAC-BF08-FC9708641ED3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testLocationsForm", "testLocationsForm\testLocationsForm.csproj", "{8A73757A-B8E1-43B0-A2BA-CD38D0F1D858}"
@@ -23,6 +29,18 @@ Global
 		{9827664C-44C5-4699-AE5D-29E0813A6790}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9827664C-44C5-4699-AE5D-29E0813A6790}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9827664C-44C5-4699-AE5D-29E0813A6790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3CB0520-E78F-4F89-B82C-9DE2722E4ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3CB0520-E78F-4F89-B82C-9DE2722E4ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3CB0520-E78F-4F89-B82C-9DE2722E4ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3CB0520-E78F-4F89-B82C-9DE2722E4ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E395432-AB56-41A8-B783-7FE34E431DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E395432-AB56-41A8-B783-7FE34E431DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E395432-AB56-41A8-B783-7FE34E431DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E395432-AB56-41A8-B783-7FE34E431DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7700CF8-B1C5-4F96-A292-E29BE87D66BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF25116F-777C-4CAC-BF08-FC9708641ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF25116F-777C-4CAC-BF08-FC9708641ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF25116F-777C-4CAC-BF08-FC9708641ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
