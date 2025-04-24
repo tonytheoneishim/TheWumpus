@@ -10,6 +10,7 @@ namespace GCUIWumpus
         public void InitializeGame()
         {
             //need to code
+            //
         }
 
         public void GetCave()
@@ -25,6 +26,16 @@ namespace GCUIWumpus
         public void MovePlayer()
         {
 
+        }
+
+        public void GetTrivia()
+        {
+                
+        }
+
+        public void DoTrivia()
+        {
+                
         }
 
 

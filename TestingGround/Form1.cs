@@ -6,5 +6,13 @@ namespace TestingGround
         {
             InitializeComponent();
         }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            Game game = new Game();
+            game.ShowDialog();
+
+            Close();
+        }
     }
 }
