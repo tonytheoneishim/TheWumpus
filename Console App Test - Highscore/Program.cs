@@ -4,10 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine("this is a test push, for malkasian...");
-
-
+            //console app test only for malkasian's assignment! NOT OFFICIAL! CONSOLE APP!
         }
     }
 }
