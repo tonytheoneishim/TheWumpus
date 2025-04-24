@@ -6,5 +6,27 @@ namespace GCUIWumpus
         {
             InitializeComponent();
         }
+
+        public void InitializeGame()
+        {
+            //need to code
+        }
+
+        public void GetCave()
+        {
+
+        }
+
+        public void StartGame()
+        {
+
+        }
+
+        public void MovePlayer()
+        {
+
+        }
+
+
     }
 }
