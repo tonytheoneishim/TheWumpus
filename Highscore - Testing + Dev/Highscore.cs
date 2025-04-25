@@ -1,11 +1,11 @@
 ﻿namespace Highscore___Testing___Dev;
-namespace 
+
 
 public class Highscore
 {
+    List<Highscore> PlayerList = new List<Highscore>();
     public Highscore()
     {
-        List<Highscore> PlayerList = new List<Highscore>();
         PlayerName = string.Empty;
         PlayerScore = 0;
     }
@@ -13,6 +13,7 @@ public class Highscore
     {
         PlayerName = n;
         PlayerScore = s;
+
     }
     public string PlayerName {get; set;}
     public int PlayerScore {get; set;}
@@ -20,12 +21,13 @@ public class Highscore
 
     public void MainMenu_ShowHighscoreList()
     {
-
+        
     }
 
     public void HighscoreMenu_RemoveHighscore()
     {
         //int i = listboxHighscore.SelectedIndex;
+        //PlayerList[]
         
     }
 
