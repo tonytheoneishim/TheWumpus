@@ -50,6 +50,7 @@
             buttonHighscores.TabIndex = 1;
             buttonHighscores.Text = "High Scores";
             buttonHighscores.UseVisualStyleBackColor = true;
+            buttonHighscores.Click += buttonHighscores_Click;
             // 
             // Form1
             // 
