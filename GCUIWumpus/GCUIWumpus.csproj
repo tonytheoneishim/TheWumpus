@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\gameUI\gameUI\gameUI.csproj" />
     <ProjectReference Include="..\Highscore - Testing + Dev\Highscore - Testing + Dev.csproj" />
   </ItemGroup>
 

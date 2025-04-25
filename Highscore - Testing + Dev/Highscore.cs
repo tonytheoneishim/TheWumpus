@@ -1,5 +1,5 @@
 ﻿namespace Highscore___Testing___Dev;
-
+namespace 
 
 public class Highscore
 {
