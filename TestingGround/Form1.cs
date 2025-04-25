@@ -15,5 +15,10 @@ namespace TestingGround
 
             Close();
         }
+
+        private void buttonHighscores_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
