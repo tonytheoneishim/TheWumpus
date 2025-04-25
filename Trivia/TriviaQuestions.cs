@@ -8,6 +8,8 @@ namespace Trivia
 {
     public class TriviaQuestions
     {
+
+        public String Question  { get; set; }
         //bool RightOrWrong = false;
         //string[,] Questions = { { "What year did the Berlin Wall fall?","1986" },
         //{ "Who, in 1903, was the first woman to win a Nobel Prize?", "Marie Skłodowska-Curie" } };
@@ -18,7 +20,7 @@ namespace Trivia
 
         //    string input = Console.ReadLine();
 
-        
+
 
         //string answer = Questions[index, 1];
         //    if (input == answer)
