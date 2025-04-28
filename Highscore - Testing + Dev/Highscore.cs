@@ -17,6 +17,8 @@ public class Highscore
     }
     public string PlayerName {get; set;}
     public int PlayerScore {get; set;}
+    public Calculations Calculations {get; set;}
+
 
 
     public void MainMenu_ShowHighscoreList()
