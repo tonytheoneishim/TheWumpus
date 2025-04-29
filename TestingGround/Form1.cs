@@ -13,15 +13,22 @@ namespace TestingGround
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             Game game = new Game();
             game.ShowDialog();
 
-            Close();
+            this.Close();
         }
 
         private void buttonHighscores_Click(object sender, EventArgs e)
         {
-            //i think we need to talk :| :| :| :| :| lol ok.
+            this.Hide();
+
+            HighScoreForm highScoreForm = new HighScoreForm();
+            highScoreForm.ShowDialog();
+
+            this.Show();
         }
     }
 }

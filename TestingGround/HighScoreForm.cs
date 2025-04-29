@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace TestingGround
 {
-    public partial class Game : Form
+    public partial class HighScoreForm : Form
     {
-        public Game()
+        public HighScoreForm()
         {
             InitializeComponent();
+        }
 
-            
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
