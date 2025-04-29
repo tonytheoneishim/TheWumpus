@@ -20,7 +20,9 @@ namespace Trivia
 
         //    string input = Console.ReadLine();
 
-
+        public TriviaQuestions() {
+            Question = "What color is the sky?";
+        }
 
         //string answer = Questions[index, 1];
         //    if (input == answer)
