@@ -34,16 +34,16 @@
             buttonRoomSW = new Button();
             buttonRoomSE = new Button();
             buttonRoomS = new Button();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBoxRoom = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             SuspendLayout();
             // 
             // buttonRoomN
             // 
             buttonRoomN.BackColor = SystemColors.ControlDark;
-            buttonRoomN.Location = new Point(251, 63);
+            buttonRoomN.Location = new Point(250, 25);
             buttonRoomN.Name = "buttonRoomN";
-            buttonRoomN.Size = new Size(29, 28);
+            buttonRoomN.Size = new Size(30, 30);
             buttonRoomN.TabIndex = 0;
             buttonRoomN.Text = "-";
             buttonRoomN.UseVisualStyleBackColor = false;
@@ -51,9 +51,9 @@
             // buttonNE
             // 
             buttonNE.BackColor = SystemColors.ControlDark;
-            buttonNE.Location = new Point(300, 91);
+            buttonNE.Location = new Point(371, 76);
             buttonNE.Name = "buttonNE";
-            buttonNE.Size = new Size(29, 28);
+            buttonNE.Size = new Size(30, 30);
             buttonNE.TabIndex = 1;
             buttonNE.Text = "-";
             buttonNE.UseVisualStyleBackColor = false;
@@ -61,9 +61,9 @@
             // buttonRoomNW
             // 
             buttonRoomNW.BackColor = SystemColors.ControlDark;
-            buttonRoomNW.Location = new Point(201, 91);
+            buttonRoomNW.Location = new Point(129, 76);
             buttonRoomNW.Name = "buttonRoomNW";
-            buttonRoomNW.Size = new Size(29, 28);
+            buttonRoomNW.Size = new Size(30, 30);
             buttonRoomNW.TabIndex = 2;
             buttonRoomNW.Text = "-";
             buttonRoomNW.UseVisualStyleBackColor = false;
@@ -71,9 +71,9 @@
             // buttonRoomSW
             // 
             buttonRoomSW.BackColor = SystemColors.ControlDark;
-            buttonRoomSW.Location = new Point(201, 139);
+            buttonRoomSW.Location = new Point(129, 222);
             buttonRoomSW.Name = "buttonRoomSW";
-            buttonRoomSW.Size = new Size(29, 28);
+            buttonRoomSW.Size = new Size(30, 30);
             buttonRoomSW.TabIndex = 3;
             buttonRoomSW.Text = "-";
             buttonRoomSW.UseVisualStyleBackColor = false;
@@ -81,9 +81,9 @@
             // buttonRoomSE
             // 
             buttonRoomSE.BackColor = SystemColors.ControlDark;
-            buttonRoomSE.Location = new Point(300, 139);
+            buttonRoomSE.Location = new Point(371, 222);
             buttonRoomSE.Name = "buttonRoomSE";
-            buttonRoomSE.Size = new Size(29, 28);
+            buttonRoomSE.Size = new Size(30, 30);
             buttonRoomSE.TabIndex = 4;
             buttonRoomSE.Text = "-";
             buttonRoomSE.UseVisualStyleBackColor = false;
@@ -91,30 +91,30 @@
             // buttonRoomS
             // 
             buttonRoomS.BackColor = SystemColors.ControlDark;
-            buttonRoomS.Location = new Point(251, 169);
+            buttonRoomS.Location = new Point(250, 275);
             buttonRoomS.Name = "buttonRoomS";
-            buttonRoomS.Size = new Size(29, 28);
+            buttonRoomS.Size = new Size(30, 30);
             buttonRoomS.TabIndex = 5;
             buttonRoomS.Text = "-";
             buttonRoomS.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // pictureBoxRoom
             // 
-            pictureBox1.Image = Properties.Resources.hex_ver_1_removebg_preview;
-            pictureBox1.Location = new Point(236, 97);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(58, 66);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            pictureBoxRoom.Image = Properties.Resources.hex_ver_1_removebg_preview;
+            pictureBoxRoom.Location = new Point(165, 65);
+            pictureBoxRoom.Name = "pictureBoxRoom";
+            pictureBoxRoom.Size = new Size(200, 200);
+            pictureBoxRoom.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxRoom.TabIndex = 6;
+            pictureBoxRoom.TabStop = false;
             // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(530, 270);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(534, 511);
+            Controls.Add(pictureBoxRoom);
             Controls.Add(buttonRoomS);
             Controls.Add(buttonRoomSE);
             Controls.Add(buttonRoomSW);
@@ -123,8 +123,8 @@
             Controls.Add(buttonRoomN);
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Game";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Text = "Hunt the Wumpus!";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).EndInit();
             ResumeLayout(false);
         }
 
@@ -136,6 +136,6 @@
         private Button buttonRoomSW;
         private Button buttonRoomSE;
         private Button buttonRoomS;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxRoom;
     }
 }
