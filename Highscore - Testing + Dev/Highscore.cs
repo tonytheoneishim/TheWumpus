@@ -1,50 +1,68 @@
-﻿namespace Highscore___Testing___Dev;
+﻿using System.Collections.Generic;
+
+namespace Highscore___Testing___Dev;
 
 
 public class Highscore
 {
-    List<Highscore> PlayerList = new List<Highscore>();
+   
+    const string DATAFILE = "highscores.csv";
+
+
+
+
     public Highscore()
     {
         PlayerName = string.Empty;
-        PlayerScore = 0;
+        PlayerFinalScore = 
     }
     public Highscore(string n, int s)
     {
         PlayerName = n;
-        PlayerScore = s;
+        PlayerFinalScore = s;
 
     }
     public string PlayerName {get; set;}
-    public int PlayerScore {get; set;}
-    public Calculations Calculations {get; set;}
+    public int PlayerFinalScore {get; set;}
+    public List<Highscore> PlayerList = new List<Highscore>();
 
-
-
-    public void MainMenu_ShowHighscoreList()
+    public string ConvertTheFinalScoreToAString()
     {
-        
+        string outp = PlayerFinalScore.ToString();
+        return outp;
     }
-
-    public void HighscoreMenu_RemoveHighscore()
+    public static void SavetoFile(List<Highscore> players)
     {
-        //int i = listboxHighscore.SelectedIndex;
-        //PlayerList[]
-        
+        StreamWriter sw = new StreamWriter(DATAFILE);
+        foreach (Highscore player in players)
+        {
+            string output = player.PlayerName + "," + player.PlayerFinalScore;
+            sw.WriteLine(output);
+        }
+        sw.Flush();
+        sw.Close();
     }
-
-    public void HighscoreMenu_ClearHighscores()
-    {
-
-    }
-
-    public void GameEnd_GetHighscore()
+    private static List<Highscore> OpenFromFile(string filename)
     {
 
+        List<Highscore> list = new List<Highscore>();
+        StreamReader sr = new StreamReader(filename);
+        string line = sr.ReadLine();
+        string pfs = 
+
+        while (line != null)
+        {
+            string[] record = line.Split(',');
+            Highscore contact = new Highscore(record[0], record[1]);
+            
+            list.Add(contact);
+
+            line = sr.ReadLine();
+
+        }
+        sr.Close();
+        //OpenFromFile(line);
+        return list;
     }
 
-    public void GameEnd_ShowHighscoreList()
-    {
-
-    }
 }
