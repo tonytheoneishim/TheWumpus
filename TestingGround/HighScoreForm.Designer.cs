@@ -65,6 +65,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gray;
             ClientSize = new Size(381, 276);
             Controls.Add(buttonClose);
             Controls.Add(listBoxHighScores);
