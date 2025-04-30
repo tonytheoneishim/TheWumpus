@@ -48,7 +48,6 @@ public class Highscore
         List<Highscore> list = new List<Highscore>();
         StreamReader sr = new StreamReader(filename);
         string line = sr.ReadLine();
-        string pfs = 
 
         while (line != null)
         {
