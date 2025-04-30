@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wumps", "wumps\wumps.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveTest", "CaveTest\CaveTest.csproj", "{A3CB0520-E78F-4F89-B82C-9DE2722E4ED3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingGround", "TestingGround\TestingGround.csproj", "{F622B621-F2E9-47D5-BB38-CDBB7FF7C2F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCUITest", "TestingGround\GCUITest.csproj", "{F622B621-F2E9-47D5-BB38-CDBB7FF7C2F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia", "Trivia\Trivia.csproj", "{E7A29BD7-9CF7-492F-8355-C52A546055CF}"
 EndProject

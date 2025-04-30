@@ -16,7 +16,7 @@ namespace TestingGround
         {
             InitializeComponent();
 
-            
+            pictureBoxRoom.SendToBack();
         }
     }
 }
