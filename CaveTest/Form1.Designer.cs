@@ -57,7 +57,7 @@
             buttonRoom2.TabIndex = 1;
             buttonRoom2.Text = "Room Num2";
             buttonRoom2.UseVisualStyleBackColor = true;
-            buttonRoom2.Click += buttonRoom2_Click;
+            buttonRoom2.Click += buttonRoom1_Click;
             // 
             // buttonRoom3
             // 
@@ -67,7 +67,7 @@
             buttonRoom3.TabIndex = 2;
             buttonRoom3.Text = "Room Num3";
             buttonRoom3.UseVisualStyleBackColor = true;
-            buttonRoom3.Click += buttonRoom3_Click;
+            buttonRoom3.Click += buttonRoom1_Click;
             // 
             // label1
             // 
@@ -104,7 +104,7 @@
             buttonRoom4.TabIndex = 3;
             buttonRoom4.Text = "Room Num4";
             buttonRoom4.UseVisualStyleBackColor = true;
-            buttonRoom4.Click += buttonRoom4_Click;
+            buttonRoom4.Click += buttonRoom1_Click;
             // 
             // buttonRoom5
             // 
@@ -114,7 +114,7 @@
             buttonRoom5.TabIndex = 4;
             buttonRoom5.Text = "Room Num5";
             buttonRoom5.UseVisualStyleBackColor = true;
-            buttonRoom5.Click += buttonRoom5_Click;
+            buttonRoom5.Click += buttonRoom1_Click;
             // 
             // buttonRoom6
             // 
@@ -124,7 +124,7 @@
             buttonRoom6.TabIndex = 5;
             buttonRoom6.Text = "Room Num6";
             buttonRoom6.UseVisualStyleBackColor = true;
-            buttonRoom6.Click += buttonRoom6_Click;
+            buttonRoom6.Click += buttonRoom1_Click;
             // 
             // Form1
             // 
