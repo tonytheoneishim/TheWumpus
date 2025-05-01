@@ -5,6 +5,7 @@ namespace MainTestForm
 {
     public partial class Form1 : Form
     {
+        int score = 0;
         TriviaQuestions trivia = new TriviaQuestions();
         string[,] Questions = {
     { "What year did the Berlin Wall fall?", "1986", "1990", "1989", "1991" },
@@ -47,6 +48,10 @@ namespace MainTestForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+
+
+
             labelQuestions.Text = trivia.Question;
             Random rnd = new Random();
             int index = rnd.Next(0, Questions.GetLength(0));
@@ -65,23 +70,16 @@ namespace MainTestForm
                 int WrongIndex = RightRadioButton;
                 if (radioButton == radios[RightRadioButton])
                 {
-                    
-                    break;
 
-                
+
+                }
+                else {
+                    radioButton.Text = Questions[index, NewIndex];
+                    NewIndex += 1;
                 }
 
-                radioButton.Text = Questions[index, NewIndex];
-                NewIndex += 1;
-
             }
-            NewIndex = 2;
-            
-        
-
-
-
-        }
+                  }
        
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -95,6 +93,7 @@ namespace MainTestForm
                 if (radios[RightRadioButton].Checked)
                 {
                     MessageBox.Show("You got it right");
+                    score += 1;
                 }
                 else { MessageBox.Show("Try again"); }
 
