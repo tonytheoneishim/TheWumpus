@@ -13,11 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia", "Trivia\Trivia.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Highscore - Testing + Dev", "Highscore - Testing + Dev\Highscore - Testing + Dev.csproj", "{73A8403A-2BF0-444C-9908-66D227E48566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testLocationsForm", "testLocationsForm\testLocationsForm.csproj", "{0517F574-AF85-4EE6-82B7-02EB537800AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WumpusLocations", "testLocationsForm\WumpusLocations.csproj", "{0517F574-AF85-4EE6-82B7-02EB537800AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wumpas Trivia Consle App", "Wumpas Trivia Consle App\Wumpas Trivia Consle App.csproj", "{918DAA13-A9A6-41D2-9C3A-8762F7E018A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testPlayerForm", "testPlayerForm\testPlayerForm.csproj", "{A5AAA876-CBEB-4C71-983F-BC7837FFE822}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WumpusPlayer", "testPlayerForm\WumpusPlayer.csproj", "{A5AAA876-CBEB-4C71-983F-BC7837FFE822}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
