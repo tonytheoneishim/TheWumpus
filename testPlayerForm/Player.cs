@@ -8,56 +8,65 @@ namespace testPlayerForm
 {
     public class Player
     {
-        public string Username { get; set; }
         public int Arrows { get; set; }
-        public int Coins { get; set; }
+        public int Gold { get; set; }
         public int Turns { get; set; }
         public bool WumpusDead { get; set; }
 
-        public Player(string name, int arrows, int coins, int turns, bool wumpusDead)
+        public Player(int arrows, int gold, int turns, bool wumpusDead)
         {
-            Username = name;
             Arrows = arrows;
-            Coins = coins;
+            Gold = gold;
             Turns = turns;
-            WumpusDead = wumpusDead; 
+            WumpusDead = wumpusDead;
         }
 
-        public int calculateScore(int turns, int coins, int arrows, bool wumpusDead)
+        public bool PlayerMove(int playerPos, int movePos)
         {
-            int result = 100;
-            result -= turns;
-            result += coins;
-            result += 5 * arrows;
-            if (wumpusDead == true)
+            // "playerPos" is the cave index that the player is in
+            // "movePos" is the cave index that the player is going to move to
+            // Returns true if the player can move to the cave with index "movePos"
+            // Returns false if otherwise
+            return true;
+        }
+
+        public int ArrowCount()
+        {
+            // Returns how many arrows the player has
+            return Arrows;
+        }
+
+        public int GoldCount()
+        {
+            // Returns how much gold the player has
+            return Gold;
+        }
+
+        public int TurnsCount()
+        {
+            // Returns how many turns has passed
+            return Turns;
+        }
+
+        public int CalculateScore(int turns, int gold, int arrows, bool wumpusDead)
+        {
+            // "turns" is the number of turns that has passed
+            // "gold" is the amount of gold the player has
+            // "arrows" is the number of arrows the player has
+            // "wumpusDead" is true if the Wumpus is dead and false otherwise
+            // Returns the score using this formula:
+            // 100 - turns + gold + (5 * arrows) + (50 if wumpusDead == true else 0)
+
+            int score = 100;
+            score -= turns;
+            score += gold;
+            score += arrows;
+            if (wumpusDead)
             {
-                result += 50;
+                score += 50;
             }
 
-            return result;
-        }
-
-        public void addArrow(bool triviaPassed)
-        {
-            if (triviaPassed)
-            {
-                Arrows += 2;
-            }
-        }
-
-        public void removeArrow()
-        {
-            Arrows--;
-        }
-
-        public void addCoins(int coinCount)
-        {
-            Coins += coinCount;
-        }
-
-        public void removeCoins(int coinCount)
-        {
-            Coins -= coinCount;
+            return score;
         }
     }
 }
