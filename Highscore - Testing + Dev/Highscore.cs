@@ -1,50 +1,69 @@
-﻿namespace Highscore___Testing___Dev;
+﻿using System.Collections.Generic;
+
+namespace Highscore___Testing___Dev;
 
 
 public class Highscore
 {
-    List<Highscore> PlayerList = new List<Highscore>();
+   
+    const string DATAFILE = "highscores.csv";
+    string converted = "";
+
+
+
     public Highscore()
     {
         PlayerName = string.Empty;
-        PlayerScore = 0;
+        PlayerFinalScore = 0;
+        CaveType = string.Empty ;
     }
-    public Highscore(string n, int s)
+    public Highscore(string n, int s, string c)
     {
         PlayerName = n;
-        PlayerScore = s;
+        PlayerFinalScore = s;
+        CaveType = c;
 
     }
     public string PlayerName {get; set;}
-    public int PlayerScore {get; set;}
-    public Calculations Calculations {get; set;}
+    public int PlayerFinalScore {get; set;}
+    public string CaveType {get; set;}  
+    public List<Highscore> PlayerList = new List<Highscore>();
 
-
-
-    public void MainMenu_ShowHighscoreList()
+    //public string ConvertTheFinalScoreToAString()
+    //{
+    //    converted = PlayerFinalScore.ToString();
+    //    return converted;
+    //}
+   
+    public static void SavetoFile(List<Highscore> players)
     {
+        StreamWriter sw = new StreamWriter(DATAFILE);
+        foreach (Highscore player in players)
+        {
+            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString();
+            sw.WriteLine(output);
+        }
+        sw.Flush();
+        sw.Close();
+    }
+    private static List<Highscore> OpenFromFile(string filename)
+    {
+        List<Highscore> list = new List<Highscore>();
+        StreamReader sr = new StreamReader(filename);
+        string line = sr.ReadLine();
         
+        while (line != null)
+        {
+            string[] record = line.Split(',');
+            Highscore thehigh = new Highscore(record[0], int.Parse(record[1]), record[2]);
+            
+            list.Add(thehigh);
+
+            line = sr.ReadLine();
+
+        }
+        sr.Close();
+        return list;
     }
 
-    public void HighscoreMenu_RemoveHighscore()
-    {
-        //int i = listboxHighscore.SelectedIndex;
-        //PlayerList[]
-        
-    }
-
-    public void HighscoreMenu_ClearHighscores()
-    {
-
-    }
-
-    public void GameEnd_GetHighscore()
-    {
-
-    }
-
-    public void GameEnd_ShowHighscoreList()
-    {
-
-    }
 }
