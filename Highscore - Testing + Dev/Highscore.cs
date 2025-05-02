@@ -29,18 +29,20 @@ public class Highscore
     public string CaveType {get; set;}  
     public List<Highscore> PlayerList = new List<Highscore>();
 
-    //public string ConvertTheFinalScoreToAString()
-    //{
-    //    converted = PlayerFinalScore.ToString();
-    //    return converted;
-    //}
+    public void TestAdding(List<Highscore> ac)
+    {
+        Highscore highscore;
+        highscore = new Highscore("Kellen1", 10, "Cave1");
+        highscore = new Highscore("Derek2", 20, "Cave2");
+        highscore = new Highscore("Maxim(3)", 30, "Cave3");
+    }
    
     public static void SavetoFile(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);
         foreach (Highscore player in players)
         {
-            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString();
+            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString() + "," + player.CaveType;
             sw.WriteLine(output);
         }
         sw.Flush();
