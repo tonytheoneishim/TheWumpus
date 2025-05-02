@@ -8,6 +8,14 @@ namespace testPlayerform
 {
     public class Locations
     {
-
+        public Locations()
+        {
+            
+        }
+        
+        public bool BatsNearby()
+        {
+            return true;
+        }
     }
 }
