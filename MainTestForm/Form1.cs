@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms.VisualStyles;
-using Trivia;
+﻿using Trivia;
 
 namespace MainTestForm
 {
@@ -30,14 +29,14 @@ namespace MainTestForm
 
         RadioButton[] radios = new RadioButton[4];
 
-        
+
 
         int RightRadioButton = 0;
         string Answer = string.Empty;
-            
+
         public Form1()
         {
-            
+
             InitializeComponent();
 
             radios[0] = radioButtonA;
@@ -48,39 +47,36 @@ namespace MainTestForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-
-
-
             labelQuestions.Text = trivia.Question;
             Random rnd = new Random();
             int index = rnd.Next(0, Questions.GetLength(0));
             labelQuestions.Text = Questions[index, 0];
 
-            
-                            
-            RightRadioButton = rnd.Next(0,radios.Length);
-            radios[RightRadioButton].Text = Questions[index,1].ToString();
+
+
+            RightRadioButton = rnd.Next(0, radios.Length);
+            radios[RightRadioButton].Text = Questions[index, 1].ToString();
 
 
             int NewIndex = 2;
             foreach (RadioButton radioButton in radios)
             {
-                
+
                 int WrongIndex = RightRadioButton;
                 if (radioButton == radios[RightRadioButton])
                 {
 
 
                 }
-                else {
+                else
+                {
                     radioButton.Text = Questions[index, NewIndex];
                     NewIndex += 1;
                 }
 
             }
-                  }
-       
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -88,7 +84,7 @@ namespace MainTestForm
 
         private void GiveAnswer_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 if (radios[RightRadioButton].Checked)
                 {
@@ -98,8 +94,8 @@ namespace MainTestForm
                 else { MessageBox.Show("Try again"); }
 
             }
-            
-            
+
+
             catch { }
         }
     }
