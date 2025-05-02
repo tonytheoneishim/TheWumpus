@@ -7,10 +7,6 @@ public class Highscore
 {
    
     const string DATAFILE = "highscores.csv";
-    string converted = "";
-
-
-
     public Highscore()
     {
         PlayerName = string.Empty;
