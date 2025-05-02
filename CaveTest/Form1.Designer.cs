@@ -37,6 +37,7 @@
             buttonRoom4 = new Button();
             buttonRoom5 = new Button();
             buttonRoom6 = new Button();
+            comboBoxMapSelection = new ComboBox();
             SuspendLayout();
             // 
             // buttonRoom1
@@ -126,11 +127,23 @@
             buttonRoom6.UseVisualStyleBackColor = true;
             buttonRoom6.Click += buttonRoom1_Click;
             // 
+            // comboBoxMapSelection
+            // 
+            comboBoxMapSelection.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMapSelection.FormattingEnabled = true;
+            comboBoxMapSelection.Items.AddRange(new object[] { "Cave 1 ", "Cave 2", "Cave 3", "Cave 4", "Cave 5" });
+            comboBoxMapSelection.Location = new Point(582, 61);
+            comboBoxMapSelection.Name = "comboBoxMapSelection";
+            comboBoxMapSelection.Size = new Size(121, 23);
+            comboBoxMapSelection.TabIndex = 13;
+            comboBoxMapSelection.SelectedIndexChanged += comboBoxMapSelection_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboBoxMapSelection);
             Controls.Add(buttonRoom6);
             Controls.Add(buttonRoom5);
             Controls.Add(buttonRoom4);
@@ -157,5 +170,6 @@
         private Button buttonRoom4;
         private Button buttonRoom5;
         private Button buttonRoom6;
+        private ComboBox comboBoxMapSelection;
     }
 }

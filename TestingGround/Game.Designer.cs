@@ -29,19 +29,26 @@
         private void InitializeComponent()
         {
             buttonRoomN = new Button();
-            buttonNE = new Button();
+            buttonRoomNE = new Button();
             buttonRoomNW = new Button();
             buttonRoomSW = new Button();
             buttonRoomSE = new Button();
             buttonRoomS = new Button();
             pictureBoxRoom = new PictureBox();
             groupBox1 = new GroupBox();
+            pictureBox2 = new PictureBox();
+            labelArrows = new Label();
+            label4 = new Label();
+            pictureBox1 = new PictureBox();
+            labelRoomMoved = new Label();
             labelPoints = new Label();
             labelCoins = new Label();
             label2 = new Label();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // buttonRoomN
@@ -51,26 +58,28 @@
             buttonRoomN.FlatStyle = FlatStyle.Popup;
             buttonRoomN.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             buttonRoomN.ForeColor = SystemColors.ControlText;
-            buttonRoomN.Location = new Point(250, 25);
+            buttonRoomN.Location = new Point(241, 17);
             buttonRoomN.Name = "buttonRoomN";
-            buttonRoomN.Size = new Size(30, 30);
+            buttonRoomN.Size = new Size(50, 50);
             buttonRoomN.TabIndex = 0;
-            buttonRoomN.Text = "-";
+            buttonRoomN.Text = "N";
             buttonRoomN.UseVisualStyleBackColor = false;
+            buttonRoomN.Click += buttonRoomN_Click;
             // 
-            // buttonNE
+            // buttonRoomNE
             // 
-            buttonNE.BackColor = SystemColors.ControlDark;
-            buttonNE.Cursor = Cursors.PanNE;
-            buttonNE.FlatStyle = FlatStyle.Popup;
-            buttonNE.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            buttonNE.ForeColor = SystemColors.ControlText;
-            buttonNE.Location = new Point(371, 76);
-            buttonNE.Name = "buttonNE";
-            buttonNE.Size = new Size(30, 30);
-            buttonNE.TabIndex = 1;
-            buttonNE.Text = "-";
-            buttonNE.UseVisualStyleBackColor = false;
+            buttonRoomNE.BackColor = SystemColors.ControlDark;
+            buttonRoomNE.Cursor = Cursors.PanNE;
+            buttonRoomNE.FlatStyle = FlatStyle.Popup;
+            buttonRoomNE.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomNE.ForeColor = SystemColors.ControlText;
+            buttonRoomNE.Location = new Point(362, 73);
+            buttonRoomNE.Name = "buttonRoomNE";
+            buttonRoomNE.Size = new Size(50, 50);
+            buttonRoomNE.TabIndex = 1;
+            buttonRoomNE.Text = "NE";
+            buttonRoomNE.UseVisualStyleBackColor = false;
+            buttonRoomNE.Click += buttonRoomNE_Click;
             // 
             // buttonRoomNW
             // 
@@ -79,12 +88,13 @@
             buttonRoomNW.FlatStyle = FlatStyle.Popup;
             buttonRoomNW.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             buttonRoomNW.ForeColor = SystemColors.ControlText;
-            buttonRoomNW.Location = new Point(129, 76);
+            buttonRoomNW.Location = new Point(120, 73);
             buttonRoomNW.Name = "buttonRoomNW";
-            buttonRoomNW.Size = new Size(30, 30);
+            buttonRoomNW.Size = new Size(50, 50);
             buttonRoomNW.TabIndex = 2;
-            buttonRoomNW.Text = "-";
+            buttonRoomNW.Text = "NW";
             buttonRoomNW.UseVisualStyleBackColor = false;
+            buttonRoomNW.Click += buttonRoomNW_Click;
             // 
             // buttonRoomSW
             // 
@@ -93,12 +103,13 @@
             buttonRoomSW.FlatStyle = FlatStyle.Popup;
             buttonRoomSW.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             buttonRoomSW.ForeColor = SystemColors.ControlText;
-            buttonRoomSW.Location = new Point(129, 222);
+            buttonRoomSW.Location = new Point(120, 219);
             buttonRoomSW.Name = "buttonRoomSW";
-            buttonRoomSW.Size = new Size(30, 30);
+            buttonRoomSW.Size = new Size(50, 50);
             buttonRoomSW.TabIndex = 3;
-            buttonRoomSW.Text = "-";
+            buttonRoomSW.Text = "SW";
             buttonRoomSW.UseVisualStyleBackColor = false;
+            buttonRoomSW.Click += buttonRoomSW_Click;
             // 
             // buttonRoomSE
             // 
@@ -107,12 +118,13 @@
             buttonRoomSE.FlatStyle = FlatStyle.Popup;
             buttonRoomSE.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             buttonRoomSE.ForeColor = SystemColors.ControlText;
-            buttonRoomSE.Location = new Point(371, 222);
+            buttonRoomSE.Location = new Point(362, 219);
             buttonRoomSE.Name = "buttonRoomSE";
-            buttonRoomSE.Size = new Size(30, 30);
+            buttonRoomSE.Size = new Size(50, 50);
             buttonRoomSE.TabIndex = 4;
-            buttonRoomSE.Text = "-";
+            buttonRoomSE.Text = "SE";
             buttonRoomSE.UseVisualStyleBackColor = false;
+            buttonRoomSE.Click += buttonRoomSE_Click;
             // 
             // buttonRoomS
             // 
@@ -121,18 +133,19 @@
             buttonRoomS.FlatStyle = FlatStyle.Popup;
             buttonRoomS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             buttonRoomS.ForeColor = SystemColors.ControlText;
-            buttonRoomS.Location = new Point(250, 275);
+            buttonRoomS.Location = new Point(241, 277);
             buttonRoomS.Name = "buttonRoomS";
-            buttonRoomS.Size = new Size(30, 30);
+            buttonRoomS.Size = new Size(50, 50);
             buttonRoomS.TabIndex = 5;
-            buttonRoomS.Text = "-";
+            buttonRoomS.Text = "S";
             buttonRoomS.UseVisualStyleBackColor = false;
+            buttonRoomS.Click += buttonRoomS_Click;
             // 
             // pictureBoxRoom
             // 
             pictureBoxRoom.BackColor = Color.Transparent;
             pictureBoxRoom.Image = GCUITest.Properties.Resources.hex_ver_1_removebg_preview;
-            pictureBoxRoom.Location = new Point(129, 37);
+            pictureBoxRoom.Location = new Point(130, 43);
             pictureBoxRoom.Name = "pictureBoxRoom";
             pictureBoxRoom.Size = new Size(272, 268);
             pictureBoxRoom.SizeMode = PictureBoxSizeMode.Zoom;
@@ -141,6 +154,11 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(pictureBox2);
+            groupBox1.Controls.Add(labelArrows);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Controls.Add(labelRoomMoved);
             groupBox1.Controls.Add(labelPoints);
             groupBox1.Controls.Add(labelCoins);
             groupBox1.Controls.Add(label2);
@@ -154,10 +172,59 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Hunt the Wumpus!";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = GCUITest.Properties.Resources.Arrow_removebg_preview;
+            pictureBox2.Location = new Point(12, 71);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(41, 38);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 12;
+            pictureBox2.TabStop = false;
+            // 
+            // labelArrows
+            // 
+            labelArrows.AutoSize = true;
+            labelArrows.Location = new Point(119, 80);
+            labelArrows.Name = "labelArrows";
+            labelArrows.Size = new Size(21, 20);
+            labelArrows.TabIndex = 11;
+            labelArrows.Text = "--";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(53, 80);
+            label4.Name = "label4";
+            label4.Size = new Size(60, 20);
+            label4.TabIndex = 10;
+            label4.Text = "Arrows";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = GCUITest.Properties.Resources.Coin_removebg_preview;
+            pictureBox1.Location = new Point(21, 31);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(29, 30);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // labelRoomMoved
+            // 
+            labelRoomMoved.AutoSize = true;
+            labelRoomMoved.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRoomMoved.ForeColor = SystemColors.ControlLight;
+            labelRoomMoved.Location = new Point(215, 36);
+            labelRoomMoved.Name = "labelRoomMoved";
+            labelRoomMoved.Size = new Size(86, 17);
+            labelRoomMoved.TabIndex = 8;
+            labelRoomMoved.Text = "RoomMoved";
+            // 
             // labelPoints
             // 
             labelPoints.AutoSize = true;
-            labelPoints.Location = new Point(119, 68);
+            labelPoints.Location = new Point(469, 23);
             labelPoints.Name = "labelPoints";
             labelPoints.Size = new Size(21, 20);
             labelPoints.TabIndex = 3;
@@ -175,7 +242,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 68);
+            label2.Location = new Point(398, 23);
             label2.Name = "label2";
             label2.Size = new Size(53, 20);
             label2.TabIndex = 1;
@@ -184,7 +251,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(24, 36);
+            label1.Location = new Point(53, 36);
             label1.Name = "label1";
             label1.Size = new Size(47, 20);
             label1.TabIndex = 0;
@@ -202,7 +269,7 @@
             Controls.Add(buttonRoomSE);
             Controls.Add(buttonRoomSW);
             Controls.Add(buttonRoomNW);
-            Controls.Add(buttonNE);
+            Controls.Add(buttonRoomNE);
             Controls.Add(buttonRoomN);
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
@@ -210,13 +277,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button buttonRoomN;
-        private Button buttonNE;
+        private Button buttonRoomNE;
         private Button buttonRoomNW;
         private Button buttonRoomSW;
         private Button buttonRoomSE;
@@ -227,5 +296,10 @@
         private Label labelCoins;
         private Label label2;
         private Label label1;
+        private Label labelRoomMoved;
+        private PictureBox pictureBox1;
+        private Label labelArrows;
+        private Label label4;
+        private PictureBox pictureBox2;
     }
 }
