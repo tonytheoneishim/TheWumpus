@@ -36,9 +36,7 @@ namespace MainTestForm
 
         public Form1()
         {
-
             InitializeComponent();
-
             radios[0] = radioButtonA;
             radios[1] = radioButtonB;
             radios[2] = radioButtonC;
@@ -64,19 +62,16 @@ namespace MainTestForm
 
                 int WrongIndex = RightRadioButton;
                 if (radioButton == radios[RightRadioButton])
-                {
-
-
+                { 
+                   
                 }
                 else
                 {
                     radioButton.Text = Questions[index, NewIndex];
                     NewIndex += 1;
                 }
-
             }
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 

@@ -30,7 +30,6 @@
         {
             buttonQuestion = new Button();
             labelQuestions = new Label();
-            textBoxReponse = new TextBox();
             ButtonAnswer = new Button();
             radioButtonA = new RadioButton();
             radioButtonB = new RadioButton();
@@ -42,7 +41,7 @@
             // 
             buttonQuestion.BackColor = Color.Cyan;
             buttonQuestion.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonQuestion.Location = new Point(40, 63);
+            buttonQuestion.Location = new Point(197, 134);
             buttonQuestion.Name = "buttonQuestion";
             buttonQuestion.Size = new Size(158, 39);
             buttonQuestion.TabIndex = 0;
@@ -53,26 +52,19 @@
             // labelQuestions
             // 
             labelQuestions.AutoSize = true;
-            labelQuestions.Location = new Point(263, 75);
+            labelQuestions.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelQuestions.Location = new Point(400, 61);
             labelQuestions.Name = "labelQuestions";
-            labelQuestions.Size = new Size(38, 15);
+            labelQuestions.Size = new Size(52, 21);
             labelQuestions.TabIndex = 1;
             labelQuestions.Text = "label1";
-            // 
-            // textBoxReponse
-            // 
-            textBoxReponse.BackColor = SystemColors.Menu;
-            textBoxReponse.Location = new Point(85, 199);
-            textBoxReponse.Name = "textBoxReponse";
-            textBoxReponse.Size = new Size(428, 23);
-            textBoxReponse.TabIndex = 2;
             // 
             // ButtonAnswer
             // 
             ButtonAnswer.BackColor = Color.Cyan;
             ButtonAnswer.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ButtonAnswer.ForeColor = SystemColors.Desktop;
-            ButtonAnswer.Location = new Point(556, 191);
+            ButtonAnswer.Location = new Point(197, 198);
             ButtonAnswer.Name = "ButtonAnswer";
             ButtonAnswer.Size = new Size(217, 37);
             ButtonAnswer.TabIndex = 3;
@@ -84,7 +76,7 @@
             // 
             radioButtonA.AutoSize = true;
             radioButtonA.BackColor = SystemColors.ActiveBorder;
-            radioButtonA.Location = new Point(55, 276);
+            radioButtonA.Location = new Point(489, 142);
             radioButtonA.Name = "radioButtonA";
             radioButtonA.Size = new Size(94, 19);
             radioButtonA.TabIndex = 4;
@@ -96,7 +88,7 @@
             // 
             radioButtonB.AutoSize = true;
             radioButtonB.BackColor = SystemColors.ActiveBorder;
-            radioButtonB.Location = new Point(55, 301);
+            radioButtonB.Location = new Point(489, 167);
             radioButtonB.Name = "radioButtonB";
             radioButtonB.Size = new Size(94, 19);
             radioButtonB.TabIndex = 5;
@@ -108,7 +100,7 @@
             // 
             radioButtonC.AutoSize = true;
             radioButtonC.BackColor = SystemColors.ActiveCaption;
-            radioButtonC.Location = new Point(55, 326);
+            radioButtonC.Location = new Point(489, 198);
             radioButtonC.Name = "radioButtonC";
             radioButtonC.Size = new Size(94, 19);
             radioButtonC.TabIndex = 6;
@@ -120,7 +112,7 @@
             // 
             radioButtonD.AutoSize = true;
             radioButtonD.BackColor = SystemColors.ActiveCaption;
-            radioButtonD.Location = new Point(55, 351);
+            radioButtonD.Location = new Point(489, 223);
             radioButtonD.Name = "radioButtonD";
             radioButtonD.Size = new Size(94, 19);
             radioButtonD.TabIndex = 7;
@@ -133,13 +125,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1098, 686);
             Controls.Add(radioButtonD);
             Controls.Add(radioButtonC);
             Controls.Add(radioButtonB);
             Controls.Add(radioButtonA);
             Controls.Add(ButtonAnswer);
-            Controls.Add(textBoxReponse);
             Controls.Add(labelQuestions);
             Controls.Add(buttonQuestion);
             Name = "Form1";
@@ -153,7 +144,6 @@
 
         private Button buttonQuestion;
         private Label labelQuestions;
-        private TextBox textBoxReponse;
         private Button ButtonAnswer;
         private RadioButton radioButtonA;
         private RadioButton radioButtonB;
