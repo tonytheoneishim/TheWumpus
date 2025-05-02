@@ -1,10 +1,10 @@
-﻿using System.Windows.Forms.VisualStyles;
-using Trivia;
+﻿using Trivia;
 
 namespace MainTestForm
 {
     public partial class Form1 : Form
     {
+        int score = 0;
         TriviaQuestions trivia = new TriviaQuestions();
         string[,] Questions = {
     { "What year did the Berlin Wall fall?", "1986", "1990", "1989", "1991" },
@@ -29,16 +29,14 @@ namespace MainTestForm
 
         RadioButton[] radios = new RadioButton[4];
 
-        
+
 
         int RightRadioButton = 0;
         string Answer = string.Empty;
-            
+
         public Form1()
         {
-            
             InitializeComponent();
-
             radios[0] = radioButtonA;
             radios[1] = radioButtonB;
             radios[2] = radioButtonC;
@@ -52,37 +50,28 @@ namespace MainTestForm
             int index = rnd.Next(0, Questions.GetLength(0));
             labelQuestions.Text = Questions[index, 0];
 
-            
-                            
-            RightRadioButton = rnd.Next(0,radios.Length);
-            radios[RightRadioButton].Text = Questions[index,1].ToString();
+
+
+            RightRadioButton = rnd.Next(0, radios.Length);
+            radios[RightRadioButton].Text = Questions[index, 1].ToString();
 
 
             int NewIndex = 2;
             foreach (RadioButton radioButton in radios)
             {
-                
+
                 int WrongIndex = RightRadioButton;
                 if (radioButton == radios[RightRadioButton])
-                {
-                    
-                    break;
-
-                
+                { 
+                   
                 }
-
-                radioButton.Text = Questions[index, NewIndex];
-                NewIndex += 1;
-
+                else
+                {
+                    radioButton.Text = Questions[index, NewIndex];
+                    NewIndex += 1;
+                }
             }
-            NewIndex = 2;
-            
-        
-
-
-
         }
-       
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -90,17 +79,18 @@ namespace MainTestForm
 
         private void GiveAnswer_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 if (radios[RightRadioButton].Checked)
                 {
                     MessageBox.Show("You got it right");
+                    score += 1;
                 }
                 else { MessageBox.Show("Try again"); }
 
             }
-            
-            
+
+
             catch { }
         }
     }
