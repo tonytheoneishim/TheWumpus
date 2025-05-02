@@ -14,6 +14,12 @@ namespace TestingGround
     {
         string directionClicked = string.Empty;
 
+        int coins = 0;
+        int arrows = 0;
+        int turns = 0;
+        double score = 0.0;
+        
+
         public Game()
         {
             InitializeComponent();
@@ -29,37 +35,80 @@ namespace TestingGround
         private void buttonRoomN_Click(object sender, EventArgs e)
         {
             directionClicked = "N";
-            labelRoomMoved.Text = "You moved North";
+            DoTurn();
         }
 
         private void buttonRoomNE_Click(object sender, EventArgs e)
         {
             directionClicked = "NE";
-            labelRoomMoved.Text = "You moved North-East";
+            DoTurn();
         }
 
         private void buttonRoomSE_Click(object sender, EventArgs e)
         {
             directionClicked = "SE";
-            labelRoomMoved.Text = "You moved South-East";
+            DoTurn();
         }
 
         private void buttonRoomS_Click(object sender, EventArgs e)
         {
             directionClicked = "S";
-            labelRoomMoved.Text = "You moved South";
+            DoTurn();
         }
 
         private void buttonRoomSW_Click(object sender, EventArgs e)
         {
             directionClicked = "SW";
-            labelRoomMoved.Text = "You moved South-West";
+            DoTurn();
         }
 
         private void buttonRoomNW_Click(object sender, EventArgs e)
         {
             directionClicked = "NW";
-            labelRoomMoved.Text = "You moved North-West";
+            DoTurn();
+        }
+
+        public void DoTurn()
+        {
+            if (directionClicked == "N")
+            {
+                // Move north
+                labelRoomMoved.Text = "You moved north.";
+            }
+            else if (directionClicked == "NE")
+            {
+                // Move northeast
+                labelRoomMoved.Text = "You moved northeast.";
+            }
+            else if (directionClicked == "SE")
+            {
+                // Move southeast
+                labelRoomMoved.Text = "You moved southeast.";
+            }
+            else if (directionClicked == "S")
+            {
+                // Move south
+                labelRoomMoved.Text = "You moved south.";
+            }
+            else if (directionClicked == "SW")
+            {
+                // Move southwest
+                labelRoomMoved.Text = "You moved southwest.";
+            }
+            else if (directionClicked == "NW")
+            {
+                // Move northwest
+                labelRoomMoved.Text = "You moved northwest.";
+            }
+
+            coins++;
+            arrows++;
+            turns++;
+            score = 100 - turns + coins + (arrows * 5);
+
+            labelCoins.Text = coins.ToString();
+            labelArrows.Text = arrows.ToString();
+            labelPoints.Text = score.ToString();
         }
     }
 }

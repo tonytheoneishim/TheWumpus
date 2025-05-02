@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wumpas Trivia Consle App", "Wumpas Trivia Consle App.csproj", "{CF2D076E-34D1-46D3-ABC4-BF0544A2BDA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wumpas Trivia  App", "Wumpas Trivia  App.csproj", "{CF2D076E-34D1-46D3-ABC4-BF0544A2BDA8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia", "..\Trivia\Trivia.csproj", "{E7A29BD7-9CF7-492F-8355-C52A546055CF}"
 EndProject

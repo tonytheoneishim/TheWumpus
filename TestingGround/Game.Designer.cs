@@ -196,9 +196,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(53, 80);
             label4.Name = "label4";
-            label4.Size = new Size(60, 20);
+            label4.Size = new Size(64, 20);
             label4.TabIndex = 10;
-            label4.Text = "Arrows";
+            label4.Text = "Arrows:";
             // 
             // pictureBox1
             // 
@@ -215,7 +215,7 @@
             labelRoomMoved.AutoSize = true;
             labelRoomMoved.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelRoomMoved.ForeColor = SystemColors.ControlLight;
-            labelRoomMoved.Location = new Point(215, 36);
+            labelRoomMoved.Location = new Point(231, 23);
             labelRoomMoved.Name = "labelRoomMoved";
             labelRoomMoved.Size = new Size(86, 17);
             labelRoomMoved.TabIndex = 8;
@@ -253,9 +253,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(53, 36);
             label1.Name = "label1";
-            label1.Size = new Size(47, 20);
+            label1.Size = new Size(51, 20);
             label1.TabIndex = 0;
-            label1.Text = "Coins";
+            label1.Text = "Coins:";
             // 
             // Game
             // 
