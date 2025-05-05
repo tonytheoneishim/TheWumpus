@@ -41,7 +41,7 @@
             // 
             buttonQuestion.BackColor = Color.Cyan;
             buttonQuestion.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonQuestion.Location = new Point(197, 134);
+            buttonQuestion.Location = new Point(176, 136);
             buttonQuestion.Name = "buttonQuestion";
             buttonQuestion.Size = new Size(158, 39);
             buttonQuestion.TabIndex = 0;
@@ -64,11 +64,11 @@
             ButtonAnswer.BackColor = Color.Cyan;
             ButtonAnswer.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ButtonAnswer.ForeColor = SystemColors.Desktop;
-            ButtonAnswer.Location = new Point(197, 198);
+            ButtonAnswer.Location = new Point(144, 198);
             ButtonAnswer.Name = "ButtonAnswer";
             ButtonAnswer.Size = new Size(217, 37);
             ButtonAnswer.TabIndex = 3;
-            ButtonAnswer.Text = "Give Answer";
+            ButtonAnswer.Text = "Submit Answer";
             ButtonAnswer.UseVisualStyleBackColor = false;
             ButtonAnswer.Click += GiveAnswer_Click;
             // 
@@ -76,7 +76,7 @@
             // 
             radioButtonA.AutoSize = true;
             radioButtonA.BackColor = SystemColors.ActiveBorder;
-            radioButtonA.Location = new Point(489, 142);
+            radioButtonA.Location = new Point(358, 92);
             radioButtonA.Name = "radioButtonA";
             radioButtonA.Size = new Size(94, 19);
             radioButtonA.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             radioButtonB.AutoSize = true;
             radioButtonB.BackColor = SystemColors.ActiveBorder;
-            radioButtonB.Location = new Point(489, 167);
+            radioButtonB.Location = new Point(358, 117);
             radioButtonB.Name = "radioButtonB";
             radioButtonB.Size = new Size(94, 19);
             radioButtonB.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             radioButtonC.AutoSize = true;
             radioButtonC.BackColor = SystemColors.ActiveCaption;
-            radioButtonC.Location = new Point(489, 198);
+            radioButtonC.Location = new Point(358, 148);
             radioButtonC.Name = "radioButtonC";
             radioButtonC.Size = new Size(94, 19);
             radioButtonC.TabIndex = 6;
@@ -112,7 +112,7 @@
             // 
             radioButtonD.AutoSize = true;
             radioButtonD.BackColor = SystemColors.ActiveCaption;
-            radioButtonD.Location = new Point(489, 223);
+            radioButtonD.Location = new Point(358, 173);
             radioButtonD.Name = "radioButtonD";
             radioButtonD.Size = new Size(94, 19);
             radioButtonD.TabIndex = 7;
