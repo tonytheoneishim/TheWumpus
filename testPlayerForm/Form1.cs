@@ -45,6 +45,9 @@ namespace testPlayerForm
             caveLayouts.Add(createRoom(-1, 24, 25, 1, -1, -1));
         }
 
-
+        private void LocationsConstructor_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

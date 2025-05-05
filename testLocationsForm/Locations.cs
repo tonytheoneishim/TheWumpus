@@ -6,17 +6,17 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace testPlayerform
+namespace testLocationsForm
 {
     public class Locations
     {
-        public int[][] RoomPaths { get; set; }
+        public List<int[]> RoomPaths { get; set; }
         public int[] Bats { get; set; }
         public int[] Pits { get; set; }
         public int Wumpus { get; set; }
         public int Player { get; set; }
 
-        public Locations(int[][] roomPaths, int[] bats, int[] pits, int wumpus, int player)
+        public Locations(List<int[]> roomPaths, int[] bats, int[] pits, int wumpus, int player)
         {
             RoomPaths = roomPaths;
             Bats = bats;

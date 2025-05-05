@@ -1,6 +1,6 @@
 ﻿namespace testLocationsForm
 {
-    partial class testLocationsForm
+    partial class caveLocationsForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // testLocationsForm
+            // caveLocationsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "testLocationsForm";
-            Text = "Locations Test";
+            Name = "caveLocationsForm";
+            Text = "Cave Locations Form";
             Load += testLocationsForm_Load;
             ResumeLayout(false);
         }
