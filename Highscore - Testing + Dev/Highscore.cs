@@ -29,12 +29,11 @@ public class Highscore
 
     public void TestAdding(List<Highscore> ac)
     {
-        Highscore highscore;
-        highscore = new Highscore("Kellen1", 10, "Cave1");
-        highscore = new Highscore("Derek2", 20, "Cave2");
-        highscore = new Highscore("Maxim(3)", 30, "Cave3");
+        PlayerList.Add(new Highscore("Kellen1", 10, "Cave1"));
+        PlayerList.Add(new Highscore("Derek2", 20, "Cave2"));
+        PlayerList.Add(new Highscore("Maxim(3)", 30, "Cave3"));
 
-        SavetoFile(highscore);
+        SavetoFile(PlayerList);
     }
    
     public static void SavetoFile(List<Highscore> players)

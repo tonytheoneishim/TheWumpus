@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Highscore___Testing___Dev;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TestingGround
 {
@@ -18,12 +20,9 @@ namespace TestingGround
         int arrows = 0;
         int turns = 0;
         double score = 0.0;
-        
-
         public Game()
         {
             InitializeComponent();
-
             pictureBoxRoom.SendToBack();
         }
 

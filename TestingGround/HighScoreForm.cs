@@ -34,16 +34,16 @@ namespace TestingGround
             Highscore highscore = new Highscore();
 
 
-            FileInfo fileInfo = new FileInfo("highscore.csv");
-            if (fileInfo.Exists)
-            {
-                highscore.PlayerList = Highscore.OpenFromFile("highscore.csv");
+            FileInfo fileInfo = new FileInfo("highscores.csv");
+            //if (fileInfo.Exists)
+            //{
+                highscore.PlayerList = Highscore.OpenFromFile("highscores.csv");
 
                 foreach (Highscore player in highscore.PlayerList)
                 {
                     listBoxHighScores.Items.Add(player.PlayerName);
                 }
-            }// how do we want to display the three types of information? (kellen) (trummer !! ) (hah) (what)
+            //}// how do we want to display the three types of information? (kellen) (trummer !! ) (hah) (what)
             // feel free to change :skull: idk how to do this 
 
             // Highscore.OpenFromFile("highscores.csv"); // datafile
