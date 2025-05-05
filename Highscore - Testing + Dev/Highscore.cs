@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Highscore___Testing___Dev;
 
@@ -32,6 +33,8 @@ public class Highscore
         highscore = new Highscore("Kellen1", 10, "Cave1");
         highscore = new Highscore("Derek2", 20, "Cave2");
         highscore = new Highscore("Maxim(3)", 30, "Cave3");
+
+        SavetoFile(highscore);
     }
    
     public static void SavetoFile(List<Highscore> players)
