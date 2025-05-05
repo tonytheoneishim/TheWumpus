@@ -24,6 +24,7 @@ namespace MainTestForm
     { "Which planet is known as the 'Blue Planet'?", "Earth", "Mars", "Venus", "Neptune" },
     { "Which geometric shape has four equal sides and four right angles?", "Square", "Rectangle", "Triangle", "Circle" },
     { "What is the main ingredient in the dish sushi?", "Rice", "Noodles", "Fish", "Seaweed" }
+
     };
 
 
@@ -90,8 +91,8 @@ namespace MainTestForm
 
             }
 
-
             catch { }
+            
         }
     }
 }
