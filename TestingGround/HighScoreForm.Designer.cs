@@ -50,6 +50,7 @@
             listBoxHighScores.Name = "listBoxHighScores";
             listBoxHighScores.Size = new Size(215, 199);
             listBoxHighScores.TabIndex = 1;
+            listBoxHighScores.SelectedIndexChanged += listBoxHighScores_SelectedIndexChanged;
             // 
             // buttonClose
             // 
@@ -74,6 +75,7 @@
             Name = "HighScoreForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HighScoreForm";
+            Load += HighScoreForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

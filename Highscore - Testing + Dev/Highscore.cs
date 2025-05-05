@@ -24,6 +24,7 @@ public class Highscore
     public int PlayerFinalScore {get; set;}
     public string CaveType {get; set;}  
     public List<Highscore> PlayerList = new List<Highscore>();
+    
 
     public void TestAdding(List<Highscore> ac)
     {
@@ -44,7 +45,7 @@ public class Highscore
         sw.Flush();
         sw.Close();
     }
-    private static List<Highscore> OpenFromFile(string filename)
+    public static List<Highscore> OpenFromFile(string filename)
     {
         List<Highscore> list = new List<Highscore>();
         StreamReader sr = new StreamReader(filename);
