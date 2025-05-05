@@ -37,6 +37,7 @@
             ClientSize = new Size(800, 450);
             Name = "testLocationsForm";
             Text = "Locations Test";
+            Load += testLocationsForm_Load;
             ResumeLayout(false);
         }
 

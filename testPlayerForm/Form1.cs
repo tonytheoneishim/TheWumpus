@@ -1,6 +1,6 @@
 namespace testPlayerForm
 {
-    public partial class testPlayerForm : Form
+    public partial class CaveLocationsForm : Form
     {
         public List<int[]> caveLayouts = new List<int[]>();
         public int[] createRoom(int a, int b, int c, int d, int e, int f)
@@ -10,7 +10,7 @@ namespace testPlayerForm
         }
 
         List<Player> players = new List<Player>();
-        public testPlayerForm()
+        public CaveLocationsForm()
         {
             InitializeComponent();
             caveLayouts.Add(createRoom(30, -1, 26, 2, 7, -1));
@@ -45,10 +45,6 @@ namespace testPlayerForm
             caveLayouts.Add(createRoom(-1, 24, 25, 1, -1, -1));
         }
 
-        public int[] GetConnections(int i)
-        {
-            return caveLayouts[i - 1];
-        }
+
     }
-}
 }
