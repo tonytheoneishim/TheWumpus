@@ -9,9 +9,11 @@ namespace TriviaLibrary
         private string[,] Questions;
         private int currentQuestionIndex;
         private int correctAnswerIndex;
+        private bool GotRight;
 
         public TriviaGame()
         {
+            GotRight = false;
             score = 0;
             rnd = new Random();
             Questions = new string[,]
@@ -58,7 +60,9 @@ namespace TriviaLibrary
         {
             if (answer == Questions[currentQuestionIndex, correctAnswerIndex])
             {
+                
                 score++;
+                
                 return true;
             }
             return false;
@@ -67,6 +71,8 @@ namespace TriviaLibrary
         public int GetScore()
         {
             return score;
+            
+            
         }
 
         private void ShuffleArray(string[] array)
@@ -77,6 +83,7 @@ namespace TriviaLibrary
                 string temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
+                
             }
         }
     }
