@@ -31,11 +31,46 @@ public class Highscore
     {
         PlayerList.Add(new Highscore("Kellen1", 10, "Cave1"));
         PlayerList.Add(new Highscore("Derek2", 20, "Cave2"));
-        PlayerList.Add(new Highscore("Maxim(3)", 30, "Cave3"));
+        PlayerList.Add(new Highscore("Maxim3", 30, "Cave3"));
 
         SavetoFile(PlayerList);
     }
-   
+
+    public static void SortHighs(List<Highscore> nunmbers)
+    {
+        string numbers = "";
+        foreach (Highscore player in nunmbers)
+        {
+            numbers += player.PlayerFinalScore + ", ";
+        }
+        int[] scores = { int.Parse(numbers) };
+        Array.Sort(scores);
+
+
+        string listboxhighscores = "";
+        for (int i = 0; i < scores.Length; i++)
+        {
+            //listboxhighscores.selectedindex[i] = 
+        }
+    }
+
+    // REFERENCE
+
+    //private void HighScoreForm_Load(object sender, EventArgs e)
+    //{
+    //    Highscore highscore = new Highscore();
+
+
+    //    FileInfo fileInfo = new FileInfo("highscores.csv");
+    //    highscore.PlayerList = Highscore.OpenFromFile("highscores.csv");
+
+    //    foreach (Highscore player in highscore.PlayerList)
+    //    {
+    //        listBoxHighScores.Items.Add(player.PlayerName);
+    //    }
+    //}
+
+
     public static void SavetoFile(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);

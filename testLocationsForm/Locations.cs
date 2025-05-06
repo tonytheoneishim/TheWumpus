@@ -44,7 +44,7 @@ namespace testLocationsForm
                 }
             }
 
-            Wumpus = paths[rng.Next(0, count + 1)];
+            Wumpus = paths[rng.Next(0, count)];
             return true;
         }
 
@@ -84,13 +84,13 @@ namespace testLocationsForm
             return false;
         }
 
-        public bool BatsNearby(int[] roomConnect)
+        public bool BatsNearby()
         {
             foreach (int bat in Bats)
             {
-                for (int i = 0; i < roomConnect.Length; i++)
+                for (int i = 0; i < RoomPaths[Player].Length; i++)
                 {
-                    if (roomConnect[i] == bat)
+                    if (RoomPaths[Player][i] == bat)
                     {
                         return true;
                     }
@@ -100,13 +100,13 @@ namespace testLocationsForm
             return false;
         }
 
-        public bool PitsNearby(int[] roomConnect)
+        public bool PitsNearby()
         {
             foreach (int pit in Pits)
             {
-                for (int i = 0; i < roomConnect.Length; i++)
+                for (int i = 0; i < RoomPaths[Player].Length; i++)
                 {
-                    if (roomConnect[i] == pit)
+                    if (RoomPaths[Player][i] == pit)
                     {
                         return true;
                     }
@@ -116,11 +116,11 @@ namespace testLocationsForm
             return false;
         }
 
-        public bool WumpusNearby(int[] roomConnect)
+        public bool WumpusNearby()
         {
-            for (int i = 0; i < roomConnect.Length; i++)
+            for (int i = 0; i < RoomPaths[Player].Length; i++)
             {
-                if (roomConnect[i] == Wumpus)
+                if (RoomPaths[Player][i] == Wumpus)
                 {
                     return true;
                 }
