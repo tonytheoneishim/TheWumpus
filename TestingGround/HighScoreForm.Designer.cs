@@ -36,19 +36,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(150, 9);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(141, 9);
             label1.Name = "label1";
-            label1.Size = new Size(70, 15);
+            label1.Size = new Size(100, 21);
             label1.TabIndex = 0;
             label1.Text = "High Scores";
             // 
             // listBoxHighScores
             // 
+            listBoxHighScores.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             listBoxHighScores.FormattingEnabled = true;
-            listBoxHighScores.ItemHeight = 15;
-            listBoxHighScores.Location = new Point(85, 27);
+            listBoxHighScores.ItemHeight = 20;
+            listBoxHighScores.Location = new Point(87, 33);
             listBoxHighScores.Name = "listBoxHighScores";
-            listBoxHighScores.Size = new Size(215, 199);
+            listBoxHighScores.Size = new Size(215, 184);
             listBoxHighScores.TabIndex = 1;
             listBoxHighScores.SelectedIndexChanged += listBoxHighScores_SelectedIndexChanged;
             // 

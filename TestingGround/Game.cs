@@ -1,4 +1,5 @@
-﻿using Highscore___Testing___Dev;
+﻿using GCUITest;
+using Highscore___Testing___Dev;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,15 +21,18 @@ namespace TestingGround
         int arrows = 0;
         int turns = 0;
         double score = 0.0;
+
+        public string PlayerName { get; set; }
         public Game()
         {
             InitializeComponent();
+
             pictureBoxRoom.SendToBack();
         }
 
-        private void MoveRooms(string direction)
+        private void Game_Load(object sender, EventArgs e)
         {
-
+            labelPlayerName.Text = "Player: " + PlayerName;
         }
 
         private void buttonRoomN_Click(object sender, EventArgs e)

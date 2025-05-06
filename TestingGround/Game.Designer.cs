@@ -45,6 +45,7 @@
             labelCoins = new Label();
             label2 = new Label();
             label1 = new Label();
+            labelPlayerName = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -257,12 +258,24 @@
             label1.TabIndex = 0;
             label1.Text = "Coins:";
             // 
+            // labelPlayerName
+            // 
+            labelPlayerName.AutoSize = true;
+            labelPlayerName.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayerName.ForeColor = SystemColors.ControlLightLight;
+            labelPlayerName.Location = new Point(6, 9);
+            labelPlayerName.Name = "labelPlayerName";
+            labelPlayerName.Size = new Size(20, 21);
+            labelPlayerName.TabIndex = 8;
+            labelPlayerName.Text = "--";
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(534, 511);
+            Controls.Add(labelPlayerName);
             Controls.Add(groupBox1);
             Controls.Add(pictureBoxRoom);
             Controls.Add(buttonRoomS);
@@ -274,12 +287,14 @@
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hunt the Wumpus!";
+            Load += Game_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -301,5 +316,6 @@
         private Label labelArrows;
         private Label label4;
         private PictureBox pictureBox2;
+        private Label labelPlayerName;
     }
 }
