@@ -40,12 +40,12 @@
             labelArrows = new Label();
             label4 = new Label();
             pictureBox1 = new PictureBox();
-            labelRoomMoved = new Label();
             labelPoints = new Label();
             labelCoins = new Label();
             label2 = new Label();
             label1 = new Label();
             labelPlayerName = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -57,7 +57,7 @@
             buttonRoomN.BackColor = SystemColors.ControlDark;
             buttonRoomN.Cursor = Cursors.PanNorth;
             buttonRoomN.FlatStyle = FlatStyle.Popup;
-            buttonRoomN.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomN.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomN.ForeColor = SystemColors.ControlText;
             buttonRoomN.Location = new Point(241, 17);
             buttonRoomN.Name = "buttonRoomN";
@@ -72,7 +72,7 @@
             buttonRoomNE.BackColor = SystemColors.ControlDark;
             buttonRoomNE.Cursor = Cursors.PanNE;
             buttonRoomNE.FlatStyle = FlatStyle.Popup;
-            buttonRoomNE.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomNE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomNE.ForeColor = SystemColors.ControlText;
             buttonRoomNE.Location = new Point(362, 73);
             buttonRoomNE.Name = "buttonRoomNE";
@@ -80,14 +80,14 @@
             buttonRoomNE.TabIndex = 1;
             buttonRoomNE.Text = "NE";
             buttonRoomNE.UseVisualStyleBackColor = false;
-            buttonRoomNE.Click += buttonRoomNE_Click;
+            buttonRoomNE.Click += buttonRoomN_Click;
             // 
             // buttonRoomNW
             // 
             buttonRoomNW.BackColor = SystemColors.ControlDark;
             buttonRoomNW.Cursor = Cursors.PanNW;
             buttonRoomNW.FlatStyle = FlatStyle.Popup;
-            buttonRoomNW.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomNW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomNW.ForeColor = SystemColors.ControlText;
             buttonRoomNW.Location = new Point(120, 73);
             buttonRoomNW.Name = "buttonRoomNW";
@@ -95,14 +95,14 @@
             buttonRoomNW.TabIndex = 2;
             buttonRoomNW.Text = "NW";
             buttonRoomNW.UseVisualStyleBackColor = false;
-            buttonRoomNW.Click += buttonRoomNW_Click;
+            buttonRoomNW.Click += buttonRoomN_Click;
             // 
             // buttonRoomSW
             // 
             buttonRoomSW.BackColor = SystemColors.ControlDark;
             buttonRoomSW.Cursor = Cursors.PanSW;
             buttonRoomSW.FlatStyle = FlatStyle.Popup;
-            buttonRoomSW.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomSW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomSW.ForeColor = SystemColors.ControlText;
             buttonRoomSW.Location = new Point(120, 219);
             buttonRoomSW.Name = "buttonRoomSW";
@@ -110,14 +110,14 @@
             buttonRoomSW.TabIndex = 3;
             buttonRoomSW.Text = "SW";
             buttonRoomSW.UseVisualStyleBackColor = false;
-            buttonRoomSW.Click += buttonRoomSW_Click;
+            buttonRoomSW.Click += buttonRoomN_Click;
             // 
             // buttonRoomSE
             // 
             buttonRoomSE.BackColor = SystemColors.ControlDark;
             buttonRoomSE.Cursor = Cursors.PanSE;
             buttonRoomSE.FlatStyle = FlatStyle.Popup;
-            buttonRoomSE.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomSE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomSE.ForeColor = SystemColors.ControlText;
             buttonRoomSE.Location = new Point(362, 219);
             buttonRoomSE.Name = "buttonRoomSE";
@@ -125,14 +125,14 @@
             buttonRoomSE.TabIndex = 4;
             buttonRoomSE.Text = "SE";
             buttonRoomSE.UseVisualStyleBackColor = false;
-            buttonRoomSE.Click += buttonRoomSE_Click;
+            buttonRoomSE.Click += buttonRoomN_Click;
             // 
             // buttonRoomS
             // 
             buttonRoomS.BackColor = SystemColors.ControlDark;
             buttonRoomS.Cursor = Cursors.PanSouth;
             buttonRoomS.FlatStyle = FlatStyle.Popup;
-            buttonRoomS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomS.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomS.ForeColor = SystemColors.ControlText;
             buttonRoomS.Location = new Point(241, 277);
             buttonRoomS.Name = "buttonRoomS";
@@ -140,7 +140,7 @@
             buttonRoomS.TabIndex = 5;
             buttonRoomS.Text = "S";
             buttonRoomS.UseVisualStyleBackColor = false;
-            buttonRoomS.Click += buttonRoomS_Click;
+            buttonRoomS.Click += buttonRoomN_Click;
             // 
             // pictureBoxRoom
             // 
@@ -159,12 +159,11 @@
             groupBox1.Controls.Add(labelArrows);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Controls.Add(labelRoomMoved);
             groupBox1.Controls.Add(labelPoints);
             groupBox1.Controls.Add(labelCoins);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Font = new Font("Book Antiqua", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.ControlLight;
             groupBox1.Location = new Point(10, 353);
             groupBox1.Name = "groupBox1";
@@ -188,7 +187,7 @@
             labelArrows.AutoSize = true;
             labelArrows.Location = new Point(119, 80);
             labelArrows.Name = "labelArrows";
-            labelArrows.Size = new Size(21, 20);
+            labelArrows.Size = new Size(19, 19);
             labelArrows.TabIndex = 11;
             labelArrows.Text = "--";
             // 
@@ -197,7 +196,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(53, 80);
             label4.Name = "label4";
-            label4.Size = new Size(64, 20);
+            label4.Size = new Size(65, 19);
             label4.TabIndex = 10;
             label4.Text = "Arrows:";
             // 
@@ -211,23 +210,12 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
-            // labelRoomMoved
-            // 
-            labelRoomMoved.AutoSize = true;
-            labelRoomMoved.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelRoomMoved.ForeColor = SystemColors.ControlLight;
-            labelRoomMoved.Location = new Point(231, 23);
-            labelRoomMoved.Name = "labelRoomMoved";
-            labelRoomMoved.Size = new Size(86, 17);
-            labelRoomMoved.TabIndex = 8;
-            labelRoomMoved.Text = "RoomMoved";
-            // 
             // labelPoints
             // 
             labelPoints.AutoSize = true;
             labelPoints.Location = new Point(469, 23);
             labelPoints.Name = "labelPoints";
-            labelPoints.Size = new Size(21, 20);
+            labelPoints.Size = new Size(19, 19);
             labelPoints.TabIndex = 3;
             labelPoints.Text = "--";
             // 
@@ -236,7 +224,7 @@
             labelCoins.AutoSize = true;
             labelCoins.Location = new Point(119, 36);
             labelCoins.Name = "labelCoins";
-            labelCoins.Size = new Size(21, 20);
+            labelCoins.Size = new Size(19, 19);
             labelCoins.TabIndex = 2;
             labelCoins.Text = "--";
             // 
@@ -245,7 +233,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(398, 23);
             label2.Name = "label2";
-            label2.Size = new Size(53, 20);
+            label2.Size = new Size(52, 19);
             label2.TabIndex = 1;
             label2.Text = "Points";
             // 
@@ -254,7 +242,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(53, 36);
             label1.Name = "label1";
-            label1.Size = new Size(51, 20);
+            label1.Size = new Size(53, 19);
             label1.TabIndex = 0;
             label1.Text = "Coins:";
             // 
@@ -265,9 +253,20 @@
             labelPlayerName.ForeColor = SystemColors.ControlLightLight;
             labelPlayerName.Location = new Point(6, 9);
             labelPlayerName.Name = "labelPlayerName";
-            labelPlayerName.Size = new Size(20, 21);
+            labelPlayerName.Size = new Size(60, 21);
             labelPlayerName.TabIndex = 8;
-            labelPlayerName.Text = "--";
+            labelPlayerName.Text = "Player:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ControlLightLight;
+            label3.Location = new Point(6, 31);
+            label3.Name = "label3";
+            label3.Size = new Size(55, 21);
+            label3.TabIndex = 9;
+            label3.Text = "Cave: ";
             // 
             // Game
             // 
@@ -275,6 +274,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(534, 511);
+            Controls.Add(label3);
             Controls.Add(labelPlayerName);
             Controls.Add(groupBox1);
             Controls.Add(pictureBoxRoom);
@@ -311,11 +311,11 @@
         private Label labelCoins;
         private Label label2;
         private Label label1;
-        private Label labelRoomMoved;
         private PictureBox pictureBox1;
         private Label labelArrows;
         private Label label4;
         private PictureBox pictureBox2;
         private Label labelPlayerName;
+        private Label label3;
     }
 }
