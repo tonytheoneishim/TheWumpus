@@ -7,7 +7,7 @@ namespace Highscore___Testing___Dev;
 
 public class Highscore
 {
-   
+
     const string DATAFILE = "highscores.csv";
     public Highscore()
     {
@@ -21,11 +21,11 @@ public class Highscore
         CaveType = c;
 
     }
-    public string PlayerName {get; set;}
-    public int PlayerFinalScore {get; set;}
-    public string CaveType {get; set;}  
+    public string PlayerName { get; set; }
+    public int PlayerFinalScore { get; set; }
+    public string CaveType { get; set; }
     public List<Highscore> PlayerList = new List<Highscore>();
-    
+
 
     public void TestAdding(List<Highscore> ac)
     {
@@ -52,23 +52,14 @@ public class Highscore
 
                 }
             }
-       }
-        //string numbers = "";
-        //foreach (Highscore player in s)
-        //{
-        //    numbers += player.PlayerFinalScore + ", ";
-        //}
-        //int[] scores = { int.Parse(numbers) };
-        //Array.Sort(scores);
-
-
-        //string listboxhighscores = "";
-        //for (int i = 0; i < scores.Length; i++)
-        //{
-        //    //listboxhighscores.selectedindex[i] = 
-        //}
-
+        }
     }
+
+    public void AddScore(/*string pn, int fs, string ct*/)
+    { 
+        PlayerList.Add(new Highscore(PlayerName, PlayerFinalScore, CaveType   /*pn, fs, ct*/));
+    }
+
     public static void SavetoFile(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);
