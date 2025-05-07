@@ -36,10 +36,10 @@ public class Highscore
         SavetoFile(PlayerList);
     }
 
-    public static void SortHighs(List<Highscore> nunmbers)
+    public static void SortHighs(List<Highscore> scores)
     {
         string numbers = "";
-        foreach (Highscore player in nunmbers)
+        foreach (Highscore player in scores)
         {
             numbers += player.PlayerFinalScore + ", ";
         }
@@ -52,6 +52,26 @@ public class Highscore
         {
             //listboxhighscores.selectedindex[i] = 
         }
+
+        for (int i = 0; i < Scores.Count; i++)
+      {
+
+           /*
+       for (int h = 0; h < Scores.Count - 1; h++)
+       {
+           Score scores1 = Scores[h];
+           Score scores2 = Scores[h + 1];
+      
+        
+           if (scores1.PlayerScore < scores2.PlayerScore)
+           {
+               Scores[h] = scores2;
+               Scores[h + 1] = scores1;
+              
+           }
+      
+       } */
+       
     }
 
     // REFERENCE
