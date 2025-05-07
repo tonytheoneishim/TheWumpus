@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Highscore___Testing___Dev;
 
@@ -11,8 +12,7 @@ public class Highscore
     public Highscore()
     {
         PlayerName = string.Empty;
-        PlayerFinalScore = 0;
-        CaveType = string.Empty ;
+        CaveType = string.Empty;
     }
     public Highscore(string n, int s, string c)
     {
@@ -32,65 +32,43 @@ public class Highscore
         PlayerList.Add(new Highscore("Kellen1", 10, "Cave1"));
         PlayerList.Add(new Highscore("Derek2", 20, "Cave2"));
         PlayerList.Add(new Highscore("Maxim3", 30, "Cave3"));
-
         SavetoFile(PlayerList);
     }
 
-    public static void SortHighs(List<Highscore> scores)
+    public void SortHighs()
     {
-        string numbers = "";
-        foreach (Highscore player in scores)
+        for (int i = 0; i < PlayerList.Count; i++)
         {
-            numbers += player.PlayerFinalScore + ", ";
-        }
-        int[] scores = { int.Parse(numbers) };
-        Array.Sort(scores);
+            for (int increasing = 0; increasing < PlayerList.Count - 1; increasing++)
+            {
+                Highscore based = PlayerList[increasing];
+                Highscore compared = PlayerList[increasing + 1];
 
 
-        string listboxhighscores = "";
-        for (int i = 0; i < scores.Length; i++)
-        {
-            //listboxhighscores.selectedindex[i] = 
-        }
+                if (based.PlayerFinalScore < compared.PlayerFinalScore)
+                {
+                    PlayerList[increasing] = compared;
+                    PlayerList[increasing + 1] = based;
 
-        for (int i = 0; i < Scores.Count; i++)
-      {
+                }
+            }
+       }
+        //string numbers = "";
+        //foreach (Highscore player in s)
+        //{
+        //    numbers += player.PlayerFinalScore + ", ";
+        //}
+        //int[] scores = { int.Parse(numbers) };
+        //Array.Sort(scores);
 
-           /*
-       for (int h = 0; h < Scores.Count - 1; h++)
-       {
-           Score scores1 = Scores[h];
-           Score scores2 = Scores[h + 1];
-      
-        
-           if (scores1.PlayerScore < scores2.PlayerScore)
-           {
-               Scores[h] = scores2;
-               Scores[h + 1] = scores1;
-              
-           }
-      
-       } */
-       
+
+        //string listboxhighscores = "";
+        //for (int i = 0; i < scores.Length; i++)
+        //{
+        //    //listboxhighscores.selectedindex[i] = 
+        //}
+
     }
-
-    // REFERENCE
-
-    //private void HighScoreForm_Load(object sender, EventArgs e)
-    //{
-    //    Highscore highscore = new Highscore();
-
-
-    //    FileInfo fileInfo = new FileInfo("highscores.csv");
-    //    highscore.PlayerList = Highscore.OpenFromFile("highscores.csv");
-
-    //    foreach (Highscore player in highscore.PlayerList)
-    //    {
-    //        listBoxHighScores.Items.Add(player.PlayerName);
-    //    }
-    //}
-
-
     public static void SavetoFile(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);
