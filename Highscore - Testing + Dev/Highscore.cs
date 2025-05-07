@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Highscore___Testing___Dev;
 
@@ -7,15 +9,10 @@ public class Highscore
 {
    
     const string DATAFILE = "highscores.csv";
-    string converted = "";
-
-
-
     public Highscore()
     {
         PlayerName = string.Empty;
-        PlayerFinalScore = 0;
-        CaveType = string.Empty ;
+        CaveType = string.Empty;
     }
     public Highscore(string n, int s, string c)
     {
@@ -28,25 +25,62 @@ public class Highscore
     public int PlayerFinalScore {get; set;}
     public string CaveType {get; set;}  
     public List<Highscore> PlayerList = new List<Highscore>();
+    
 
-    //public string ConvertTheFinalScoreToAString()
-    //{
-    //    converted = PlayerFinalScore.ToString();
-    //    return converted;
-    //}
-   
+    public void TestAdding(List<Highscore> ac)
+    {
+        PlayerList.Add(new Highscore("Kellen1", 10, "Cave1"));
+        PlayerList.Add(new Highscore("Derek2", 20, "Cave2"));
+        PlayerList.Add(new Highscore("Maxim3", 30, "Cave3"));
+        SavetoFile(PlayerList);
+    }
+
+    public void SortHighs()
+    {
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+            for (int increasing = 0; increasing < PlayerList.Count - 1; increasing++)
+            {
+                Highscore based = PlayerList[increasing];
+                Highscore compared = PlayerList[increasing + 1];
+
+
+                if (based.PlayerFinalScore < compared.PlayerFinalScore)
+                {
+                    PlayerList[increasing] = compared;
+                    PlayerList[increasing + 1] = based;
+
+                }
+            }
+       }
+        //string numbers = "";
+        //foreach (Highscore player in s)
+        //{
+        //    numbers += player.PlayerFinalScore + ", ";
+        //}
+        //int[] scores = { int.Parse(numbers) };
+        //Array.Sort(scores);
+
+
+        //string listboxhighscores = "";
+        //for (int i = 0; i < scores.Length; i++)
+        //{
+        //    //listboxhighscores.selectedindex[i] = 
+        //}
+
+    }
     public static void SavetoFile(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);
         foreach (Highscore player in players)
         {
-            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString();
+            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString() + "," + player.CaveType;
             sw.WriteLine(output);
         }
         sw.Flush();
         sw.Close();
     }
-    private static List<Highscore> OpenFromFile(string filename)
+    public static List<Highscore> OpenFromFile(string filename)
     {
         List<Highscore> list = new List<Highscore>();
         StreamReader sr = new StreamReader(filename);

@@ -3,6 +3,24 @@ using System.Drawing.Text;
 
 namespace CaveTest
 {
+    // 
+    //
+    //
+    //
+    // Hey Eric, is there any way for you to make the paths 0-based?
+    // It's screwing up with my code in Locations, so I want to make sure there won't be a problem in the future
+    //
+    // Thanks,
+    // Changle (Locations & Player)
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
     public partial class Form1 : Form
     {
         public Cave cave = new Cave();

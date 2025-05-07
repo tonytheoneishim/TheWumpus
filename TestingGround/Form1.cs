@@ -1,12 +1,13 @@
 using Highscore___Testing___Dev;
 using CaveTest;
+using GCUITest;
 
 namespace TestingGround
 
 {
     public partial class Form1 : Form
     {
-
+        Highscore highscore = new Highscore();
         public Form1()
         {
             InitializeComponent();
@@ -16,8 +17,8 @@ namespace TestingGround
         {
             this.Hide();
 
-            Game game = new Game();
-            game.ShowDialog();
+            PlayernameScreen playernameScreen = new PlayernameScreen();
+            playernameScreen.ShowDialog();
 
             this.Close();
         }

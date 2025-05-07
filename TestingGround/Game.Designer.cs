@@ -45,6 +45,7 @@
             labelCoins = new Label();
             label2 = new Label();
             label1 = new Label();
+            labelPlayerName = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -196,9 +197,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(53, 80);
             label4.Name = "label4";
-            label4.Size = new Size(60, 20);
+            label4.Size = new Size(64, 20);
             label4.TabIndex = 10;
-            label4.Text = "Arrows";
+            label4.Text = "Arrows:";
             // 
             // pictureBox1
             // 
@@ -215,7 +216,7 @@
             labelRoomMoved.AutoSize = true;
             labelRoomMoved.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelRoomMoved.ForeColor = SystemColors.ControlLight;
-            labelRoomMoved.Location = new Point(215, 36);
+            labelRoomMoved.Location = new Point(231, 23);
             labelRoomMoved.Name = "labelRoomMoved";
             labelRoomMoved.Size = new Size(86, 17);
             labelRoomMoved.TabIndex = 8;
@@ -253,9 +254,20 @@
             label1.AutoSize = true;
             label1.Location = new Point(53, 36);
             label1.Name = "label1";
-            label1.Size = new Size(47, 20);
+            label1.Size = new Size(51, 20);
             label1.TabIndex = 0;
-            label1.Text = "Coins";
+            label1.Text = "Coins:";
+            // 
+            // labelPlayerName
+            // 
+            labelPlayerName.AutoSize = true;
+            labelPlayerName.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayerName.ForeColor = SystemColors.ControlLightLight;
+            labelPlayerName.Location = new Point(6, 9);
+            labelPlayerName.Name = "labelPlayerName";
+            labelPlayerName.Size = new Size(20, 21);
+            labelPlayerName.TabIndex = 8;
+            labelPlayerName.Text = "--";
             // 
             // Game
             // 
@@ -263,6 +275,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(534, 511);
+            Controls.Add(labelPlayerName);
             Controls.Add(groupBox1);
             Controls.Add(pictureBoxRoom);
             Controls.Add(buttonRoomS);
@@ -274,12 +287,14 @@
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hunt the Wumpus!";
+            Load += Game_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -301,5 +316,6 @@
         private Label labelArrows;
         private Label label4;
         private PictureBox pictureBox2;
+        private Label labelPlayerName;
     }
 }
