@@ -35,15 +35,17 @@ namespace TestingGround
 
 
             FileInfo fileInfo = new FileInfo("highscores.csv");
-            //if (fileInfo.Exists)
-            //{
+            if (fileInfo.Exists)
+            {
                 highscore.PlayerList = Highscore.OpenFromFile("highscores.csv");
 
                 foreach (Highscore player in highscore.PlayerList)
                 {
-                    listBoxHighScores.Items.Add(player.PlayerName);
+                    listBoxNameList.Items.Add(player.PlayerName);
+                    listBoxScoreList.Items.Add(player.PlayerFinalScore);
+                    listBoxCaveNumList.Items.Add(player.CaveType);
                 }
-            //}// how do we want to display the three types of information? (kellen) (trummer !! ) (hah) (what)
+            }// how do we want to display the three types of information? (kellen) (trummer !! ) (hah) (what)
             // feel free to change :skull: idk how to do this 
 
             // Highscore.OpenFromFile("highscores.csv"); // datafile

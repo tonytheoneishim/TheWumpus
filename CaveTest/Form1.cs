@@ -176,7 +176,8 @@ namespace CaveTest
             {
                 int index = comboBoxMapSelection.SelectedIndex;
                 cave.caveSelect(index);
-                updateButtons(1);
+                updateButtons(START_POSITION);
+                textBoxNum.Text = START_POSITION.ToString();
             }
             catch
             {

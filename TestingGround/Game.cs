@@ -1,4 +1,6 @@
-﻿using Highscore___Testing___Dev;
+﻿using CaveTest;
+using GCUITest;
+using Highscore___Testing___Dev;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,92 +16,76 @@ namespace TestingGround
 {
     public partial class Game : Form
     {
+        public Cave cave = new Cave();
+
         string directionClicked = string.Empty;
 
         int coins = 0;
         int arrows = 0;
         int turns = 0;
-        double score = 0.0;
+        double score = 100;
+        int currentRoom = 0; // current room the player is in
+
+        Button[] buttons = new Button[6];
+        int START_POSITION = 1; // starting position of the player, will randomize
+
+        public string PlayerName { get; set; }
         public Game()
         {
             InitializeComponent();
+
             pictureBoxRoom.SendToBack();
+
+            buttons[0] = buttonRoomNW;
+            buttons[1] = buttonRoomN;
+            buttons[2] = buttonRoomNE;
+            buttons[3] = buttonRoomSE;
+            buttons[4] = buttonRoomS;
+            buttons[5] = buttonRoomSW;
+
+            for (int i = 0; i < 6; i++)
+            {
+                buttons[i].Visible = false;
+            }
+
+            int currentRoom = START_POSITION;
+            int[] connectedRooms = cave.caveLayouts[--currentRoom];
+
+            for (int i = 0; i < 6; i++)
+            {
+                buttons[i].Text = connectedRooms[i].ToString();
+                if (connectedRooms[i] > -1) buttons[i].Visible = true;
+            }
         }
 
-        private void MoveRooms(string direction)
+        private void Game_Load(object sender, EventArgs e)
         {
+            labelPlayerName.Text = "Player: " + PlayerName;
+            labelCoins.Text = coins.ToString();
+            labelArrows.Text = arrows.ToString();
+            labelPoints.Text = score.ToString();
 
+            int index = 0;
+            cave.caveSelect(index);
+            updateButtons(START_POSITION);
+            //textBoxNum.Text = START_POSITION.ToString();
         }
 
         private void buttonRoomN_Click(object sender, EventArgs e)
         {
-            directionClicked = "N";
-            DoTurn();
-        }
+            Button button = (Button)sender;
+            int index = -1;
+            //MessageBox.Show(button.Text);
 
-        private void buttonRoomNE_Click(object sender, EventArgs e)
-        {
-            directionClicked = "NE";
-            DoTurn();
-        }
-
-        private void buttonRoomSE_Click(object sender, EventArgs e)
-        {
-            directionClicked = "SE";
-            DoTurn();
-        }
-
-        private void buttonRoomS_Click(object sender, EventArgs e)
-        {
-            directionClicked = "S";
-            DoTurn();
-        }
-
-        private void buttonRoomSW_Click(object sender, EventArgs e)
-        {
-            directionClicked = "SW";
-            DoTurn();
-        }
-
-        private void buttonRoomNW_Click(object sender, EventArgs e)
-        {
-            directionClicked = "NW";
-            DoTurn();
+            index = int.Parse(button.Text);
+            //textBoxNum.Text = button.Text;
+            currentRoom = index;
+            
+            updateButtons(index);
         }
 
         public void DoTurn()
         {
-            if (directionClicked == "N")
-            {
-                // Move north
-                labelRoomMoved.Text = "You moved north.";
-            }
-            else if (directionClicked == "NE")
-            {
-                // Move northeast
-                labelRoomMoved.Text = "You moved northeast.";
-            }
-            else if (directionClicked == "SE")
-            {
-                // Move southeast
-                labelRoomMoved.Text = "You moved southeast.";
-            }
-            else if (directionClicked == "S")
-            {
-                // Move south
-                labelRoomMoved.Text = "You moved south.";
-            }
-            else if (directionClicked == "SW")
-            {
-                // Move southwest
-                labelRoomMoved.Text = "You moved southwest.";
-            }
-            else if (directionClicked == "NW")
-            {
-                // Move northwest
-                labelRoomMoved.Text = "You moved northwest.";
-            }
-
             coins++;
             arrows++;
             turns++;
@@ -108,6 +94,23 @@ namespace TestingGround
             labelCoins.Text = coins.ToString();
             labelArrows.Text = arrows.ToString();
             labelPoints.Text = score.ToString();
+        }
+
+        private void updateButtons(int index)
+        {
+            int[] connectedRooms = cave.caveLayouts[--index];
+            // reflect the state of connected rooms (for each index in the array, update corresponding button)
+
+            for (int i = 0; i < 6; i++)
+            {
+                buttons[i].Visible = false;
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                buttons[i].Text = connectedRooms[i].ToString();
+                if (connectedRooms[i] > -1) buttons[i].Visible = true;
+            }
         }
     }
 }
