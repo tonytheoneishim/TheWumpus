@@ -1,3 +1,5 @@
+using CaveTest;
+
 namespace testLocationsForm
 {
     public partial class caveLocationsForm : Form
@@ -52,6 +54,7 @@ namespace testLocationsForm
             if (locations[0].MoveWumpus())
             {
                 wumpusMovedCheck.Checked = true;
+                wumpusLocationLabel.Text = locations[0].Wumpus.ToString();
             }
             else
             {

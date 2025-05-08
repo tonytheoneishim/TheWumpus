@@ -49,6 +49,10 @@
             ifWumpusBox = new GroupBox();
             ifWumpusCheck = new CheckBox();
             withWumpus = new Button();
+            shootArrowBox = new GroupBox();
+            hitWumpusCheck = new CheckBox();
+            shootArrow = new Button();
+            wumpusLocationLabel = new Label();
             moveWumpusBox.SuspendLayout();
             batNearbyBox.SuspendLayout();
             pitNearbyBox.SuspendLayout();
@@ -56,6 +60,7 @@
             ifBatBox.SuspendLayout();
             ifPitBox.SuspendLayout();
             ifWumpusBox.SuspendLayout();
+            shootArrowBox.SuspendLayout();
             SuspendLayout();
             // 
             // moveWumpus
@@ -282,11 +287,52 @@
             withWumpus.UseVisualStyleBackColor = true;
             withWumpus.Click += withWumpus_Click;
             // 
+            // shootArrowBox
+            // 
+            shootArrowBox.Controls.Add(hitWumpusCheck);
+            shootArrowBox.Controls.Add(shootArrow);
+            shootArrowBox.Location = new Point(154, 126);
+            shootArrowBox.Name = "shootArrowBox";
+            shootArrowBox.Size = new Size(136, 108);
+            shootArrowBox.TabIndex = 5;
+            shootArrowBox.TabStop = false;
+            shootArrowBox.Text = "Shoot Arrow";
+            // 
+            // hitWumpusCheck
+            // 
+            hitWumpusCheck.AutoSize = true;
+            hitWumpusCheck.Enabled = false;
+            hitWumpusCheck.Location = new Point(6, 22);
+            hitWumpusCheck.Name = "hitWumpusCheck";
+            hitWumpusCheck.Size = new Size(128, 19);
+            hitWumpusCheck.TabIndex = 3;
+            hitWumpusCheck.Text = "Arrow Hit Wumpus";
+            hitWumpusCheck.UseVisualStyleBackColor = true;
+            // 
+            // shootArrow
+            // 
+            shootArrow.Location = new Point(6, 47);
+            shootArrow.Name = "shootArrow";
+            shootArrow.Size = new Size(114, 46);
+            shootArrow.TabIndex = 0;
+            shootArrow.Text = "Shoot Arrow";
+            shootArrow.UseVisualStyleBackColor = true;
+            // 
+            // wumpusLocationLabel
+            // 
+            wumpusLocationLabel.AutoSize = true;
+            wumpusLocationLabel.Location = new Point(357, 175);
+            wumpusLocationLabel.Name = "wumpusLocationLabel";
+            wumpusLocationLabel.Size = new Size(0, 15);
+            wumpusLocationLabel.TabIndex = 9;
+            // 
             // caveLocationsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(462, 375);
+            Controls.Add(wumpusLocationLabel);
+            Controls.Add(shootArrowBox);
             Controls.Add(ifWumpusBox);
             Controls.Add(ifPitBox);
             Controls.Add(ifBatBox);
@@ -310,7 +356,10 @@
             ifPitBox.PerformLayout();
             ifWumpusBox.ResumeLayout(false);
             ifWumpusBox.PerformLayout();
+            shootArrowBox.ResumeLayout(false);
+            shootArrowBox.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -336,5 +385,9 @@
         private GroupBox ifWumpusBox;
         private CheckBox ifWumpusCheck;
         private Button withWumpus;
+        private GroupBox shootArrowBox;
+        private CheckBox hitWumpusCheck;
+        private Button shootArrow;
+        private Label wumpusLocationLabel;
     }
 }

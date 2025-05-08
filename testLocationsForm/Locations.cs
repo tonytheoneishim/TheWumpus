@@ -5,16 +5,17 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using GCUITest;
 
 namespace testLocationsForm
 {
     public class Locations
     {
-        public List<int[]> RoomPaths { get; set; }
-        public int[] Bats { get; set; }
-        public int[] Pits { get; set; }
-        public int Wumpus { get; set; }
-        public int Player { get; set; }
+        public List<int[]> RoomPaths { get; set; } // The cave system
+        public int[] Bats { get; set; } // The indexes of the bats, 0-based
+        public int[] Pits { get; set; } // The indexes of the pits, 0-based
+        public int Wumpus { get; set; } // The index of the Wumpus, 0-based
+        public int Player { get; set; } // The index of the player, 0-based
 
         public Locations(List<int[]> roomPaths, int[] bats, int[] pits, int wumpus, int player)
         {
@@ -26,7 +27,7 @@ namespace testLocationsForm
         }
 
         public bool MoveWumpus()
-        {
+        { // Randomly decide if the Wumpus is moving and where it's moving to   
             Random rng = new Random();
             if (rng.Next(0, 2) == 0)
             {
@@ -46,6 +47,16 @@ namespace testLocationsForm
 
             Wumpus = paths[rng.Next(0, count)];
             return true;
+        }
+
+        public bool ShootArrow(int cave)
+        {
+            if (cave == Wumpus)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public bool IfBat()
