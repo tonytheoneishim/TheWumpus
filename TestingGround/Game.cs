@@ -27,7 +27,8 @@ namespace TestingGround
         int currentRoom = 0; // current room the player is in
 
         Button[] buttons = new Button[6];
-        int START_POSITION = 1; // starting position of the player, will randomize
+        Random rand = new Random();
+        int START_POSITION = 1;
 
         public string PlayerName { get; set; }
         public Game()
@@ -60,15 +61,16 @@ namespace TestingGround
 
         private void Game_Load(object sender, EventArgs e)
         {
-            labelPlayerName.Text = "Player: " + PlayerName;
+            labelPlayerName.Text = PlayerName;
             labelCoins.Text = coins.ToString();
             labelArrows.Text = arrows.ToString();
             labelPoints.Text = score.ToString();
 
-            int index = 0;
+            int index = rand.Next(0, 3);
             cave.caveSelect(index);
             updateButtons(START_POSITION);
-            //textBoxNum.Text = START_POSITION.ToString();
+            labelRoomNum.Text = START_POSITION.ToString();
+            labelCaveNum.Text = "Cave " + (index + 1).ToString();
         }
 
         private void buttonRoomN_Click(object sender, EventArgs e)
@@ -78,10 +80,11 @@ namespace TestingGround
             //MessageBox.Show(button.Text);
 
             index = int.Parse(button.Text);
-            //textBoxNum.Text = button.Text;
+            labelRoomNum.Text = button.Text;
             currentRoom = index;
             
             updateButtons(index);
+            DoTurn();
         }
 
         public void DoTurn()

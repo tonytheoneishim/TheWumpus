@@ -38,14 +38,16 @@
             groupBox1 = new GroupBox();
             pictureBox2 = new PictureBox();
             labelArrows = new Label();
-            label4 = new Label();
+            labelArrowLabel = new Label();
             pictureBox1 = new PictureBox();
             labelPoints = new Label();
             labelCoins = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            labelPointLabel = new Label();
+            labelCoinLabel = new Label();
+            labelRoomNum = new Label();
             labelPlayerName = new Label();
-            label3 = new Label();
+            labelCaveNum = new Label();
+            labelPlayerLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -157,12 +159,12 @@
             // 
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(labelArrows);
-            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(labelArrowLabel);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(labelPoints);
             groupBox1.Controls.Add(labelCoins);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(labelPointLabel);
+            groupBox1.Controls.Add(labelCoinLabel);
             groupBox1.Font = new Font("Book Antiqua", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.ControlLight;
             groupBox1.Location = new Point(10, 353);
@@ -191,21 +193,21 @@
             labelArrows.TabIndex = 11;
             labelArrows.Text = "--";
             // 
-            // label4
+            // labelArrowLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(53, 80);
-            label4.Name = "label4";
-            label4.Size = new Size(65, 19);
-            label4.TabIndex = 10;
-            label4.Text = "Arrows:";
+            labelArrowLabel.AutoSize = true;
+            labelArrowLabel.Location = new Point(53, 80);
+            labelArrowLabel.Name = "labelArrowLabel";
+            labelArrowLabel.Size = new Size(65, 19);
+            labelArrowLabel.TabIndex = 10;
+            labelArrowLabel.Text = "Arrows:";
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = GCUITest.Properties.Resources.Coin_removebg_preview;
-            pictureBox1.Location = new Point(21, 31);
+            pictureBox1.Image = GCUITest.Properties.Resources.coin2_removebg_preview;
+            pictureBox1.Location = new Point(12, 25);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(29, 30);
+            pictureBox1.Size = new Size(38, 36);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
@@ -228,45 +230,67 @@
             labelCoins.TabIndex = 2;
             labelCoins.Text = "--";
             // 
-            // label2
+            // labelPointLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(398, 23);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 19);
-            label2.TabIndex = 1;
-            label2.Text = "Points";
+            labelPointLabel.AutoSize = true;
+            labelPointLabel.Location = new Point(398, 23);
+            labelPointLabel.Name = "labelPointLabel";
+            labelPointLabel.Size = new Size(52, 19);
+            labelPointLabel.TabIndex = 1;
+            labelPointLabel.Text = "Points";
             // 
-            // label1
+            // labelCoinLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(53, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 19);
-            label1.TabIndex = 0;
-            label1.Text = "Coins:";
+            labelCoinLabel.AutoSize = true;
+            labelCoinLabel.Location = new Point(53, 36);
+            labelCoinLabel.Name = "labelCoinLabel";
+            labelCoinLabel.Size = new Size(53, 19);
+            labelCoinLabel.TabIndex = 0;
+            labelCoinLabel.Text = "Coins:";
+            // 
+            // labelRoomNum
+            // 
+            labelRoomNum.AutoSize = true;
+            labelRoomNum.BackColor = SystemColors.ControlLightLight;
+            labelRoomNum.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRoomNum.Location = new Point(249, 154);
+            labelRoomNum.Name = "labelRoomNum";
+            labelRoomNum.Size = new Size(34, 32);
+            labelRoomNum.TabIndex = 13;
+            labelRoomNum.Text = "--";
             // 
             // labelPlayerName
             // 
             labelPlayerName.AutoSize = true;
-            labelPlayerName.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayerName.Font = new Font("Book Antiqua", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelPlayerName.ForeColor = SystemColors.ControlLightLight;
-            labelPlayerName.Location = new Point(6, 9);
+            labelPlayerName.Location = new Point(76, 9);
             labelPlayerName.Name = "labelPlayerName";
-            labelPlayerName.Size = new Size(60, 21);
+            labelPlayerName.Size = new Size(19, 20);
             labelPlayerName.TabIndex = 8;
-            labelPlayerName.Text = "Player:";
+            labelPlayerName.Text = "--";
             // 
-            // label3
+            // labelCaveNum
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(6, 31);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 21);
-            label3.TabIndex = 9;
-            label3.Text = "Cave: ";
+            labelCaveNum.AutoSize = true;
+            labelCaveNum.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelCaveNum.ForeColor = SystemColors.ControlLightLight;
+            labelCaveNum.Location = new Point(10, 30);
+            labelCaveNum.Name = "labelCaveNum";
+            labelCaveNum.Size = new Size(65, 21);
+            labelCaveNum.TabIndex = 9;
+            labelCaveNum.Text = "Cave: #";
+            // 
+            // labelPlayerLabel
+            // 
+            labelPlayerLabel.AutoSize = true;
+            labelPlayerLabel.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayerLabel.ForeColor = SystemColors.ControlLightLight;
+            labelPlayerLabel.Location = new Point(10, 9);
+            labelPlayerLabel.Name = "labelPlayerLabel";
+            labelPlayerLabel.Size = new Size(60, 21);
+            labelPlayerLabel.TabIndex = 14;
+            labelPlayerLabel.Text = "Player:";
             // 
             // Game
             // 
@@ -274,7 +298,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(534, 511);
-            Controls.Add(label3);
+            Controls.Add(labelPlayerLabel);
+            Controls.Add(labelRoomNum);
+            Controls.Add(labelCaveNum);
             Controls.Add(labelPlayerName);
             Controls.Add(groupBox1);
             Controls.Add(pictureBoxRoom);
@@ -309,13 +335,15 @@
         private GroupBox groupBox1;
         private Label labelPoints;
         private Label labelCoins;
-        private Label label2;
-        private Label label1;
+        private Label labelPointLabel;
+        private Label labelCoinLabel;
         private PictureBox pictureBox1;
         private Label labelArrows;
-        private Label label4;
+        private Label labelArrowLabel;
         private PictureBox pictureBox2;
         private Label labelPlayerName;
-        private Label label3;
+        private Label labelCaveNum;
+        private Label labelRoomNum;
+        private Label labelPlayerLabel;
     }
 }
