@@ -27,7 +27,7 @@ public class Highscore
     public List<Highscore> PlayerList = new List<Highscore>();
     public List<Highscore> TopTenList = new List<Highscore>();
 
-    public void TestAdding(List<Highscore> ac)
+    public void TestAdding()
     {
         PlayerList.Add(new Highscore("Kellen1", 10, "Cave1"));
         PlayerList.Add(new Highscore("Derek2", 20, "Cave2"));
