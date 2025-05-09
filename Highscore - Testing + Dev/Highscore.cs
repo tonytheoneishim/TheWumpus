@@ -55,18 +55,20 @@ public class Highscore
         }
         
     }
-    //public static List<Highscore> GetHighscores(List<Highscore> scores)
-    //{
-    //    FileInfo fileInfo = new FileInfo(DATAFILE);
-    //    if (fileInfo.Exists)
-    //    {
-    //        PlayerList = Highscore.OpenFromFile("highscores.csv");
+    public static List<Highscore> GetHighscores(List<Highscore> scores)
+    {
+        FileInfo fileInfo = new FileInfo(DATAFILE);
+        if (fileInfo.Exists)
+        {
+            scores = OpenFromFile("highscores.csv");
 
-    //        return scores;
-    //}
-
-
-
+            return scores;
+        }
+        else
+        {
+            return scores;
+        }
+    }
 
     /* public void CheckTopTen()
     {

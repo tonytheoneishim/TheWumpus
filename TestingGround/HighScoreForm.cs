@@ -26,26 +26,31 @@ namespace TestingGround
 
         private void listBoxHighScores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //would you rather be indian or a ..?
+
         }
 
         private void HighScoreForm_Load(object sender, EventArgs e)
         {
             Highscore highscore = new Highscore();
 
+            Highscore.GetHighscores(highscore.PlayerList);
 
-            FileInfo fileInfo = new FileInfo("highscores.csv");
-            if (fileInfo.Exists)
+            foreach (Highscore player in highscore.PlayerList)
             {
-                highscore.PlayerList = Highscore.OpenFromFile("highscores.csv");
+                listBoxNameList.Items.Add(player.PlayerName);
+                listBoxScoreList.Items.Add(player.PlayerFinalScore);
+                listBoxCaveNumList.Items.Add(player.CaveType);
+            }
 
-                foreach (Highscore player in highscore.PlayerList)
-                {
-                    listBoxNameList.Items.Add(player.PlayerName);
-                    listBoxScoreList.Items.Add(player.PlayerFinalScore);
-                    listBoxCaveNumList.Items.Add(player.CaveType);
-                }
-            }// how do we want to display the three types of information? (kellen) (trummer !! ) (hah) (what)
+            //FileInfo fileInfo = new FileInfo("highscores.csv");
+            //if (fileInfo.Exists)
+            //{
+            //    highscore.PlayerList = Highscore.OpenFromFile("highscores.csv");
+
+
+            //}
+
+            // how do we want to display the three types of information? (kellen) (trummer !! ) (hah) (what)
             // feel free to change :skull: idk how to do this 
 
             // Highscore.OpenFromFile("highscores.csv"); // datafile
