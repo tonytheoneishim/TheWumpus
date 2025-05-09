@@ -1,6 +1,6 @@
 using CaveTest;
 
-namespace testLocationsForm
+namespace WumpusLocations
 {
     public partial class caveLocationsForm : Form
     {

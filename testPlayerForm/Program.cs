@@ -1,4 +1,4 @@
-namespace testPlayerForm
+namespace WumpusPlayer
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace testPlayerForm
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new CaveLocationsForm());
+            Application.Run(new cavePlayerForm());
         }
     }
 }
