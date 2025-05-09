@@ -26,11 +26,12 @@ namespace testLocationsForm
         /// <param name="pits"> A list of indexes where the pits are </param>
         /// <param name="wumpus"> The index where the Wumpus is </param>
         /// <param name="player"> The index where the player is </param>
-        public Locations(List<int[]> cave, int[] bats, int[] pits, int wumpus, int player)
+        public Locations(List<int[]> cave, int[] bats, int[] pits, int[] shops, int wumpus, int player)
         {
             Cave = cave;
             Bats = bats;
             Pits = pits;
+            Shops = shops;
             Wumpus = wumpus;
             Player = player;
         }
@@ -73,7 +74,13 @@ namespace testLocationsForm
         {
             if (i == Wumpus)
             {
-                return true;
+                foreach (int path in Cave[Player])
+                {
+                    if (path == i)
+                    {
+                        return true;
+                    }
+                }
             }
 
             return false;
