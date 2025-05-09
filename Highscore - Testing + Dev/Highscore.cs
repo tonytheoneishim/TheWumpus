@@ -25,7 +25,7 @@ public class Highscore
     public int PlayerFinalScore { get; set; }
     public string CaveType { get; set; }
     public List<Highscore> PlayerList = new List<Highscore>();
-
+    public List<Highscore> TopTenList = new List<Highscore>();
 
     public void TestAdding(List<Highscore> ac)
     {
@@ -53,7 +53,47 @@ public class Highscore
                 }
             }
         }
+        
     }
+    public static List<Highscore> GetHighscores(List<Highscore> scores)
+    {
+        FileInfo fileInfo = new FileInfo(DATAFILE);
+        if (fileInfo.Exists)
+        {
+            scores = OpenFromFile("highscores.csv");
+
+            return scores;
+        }
+        else
+        {
+            return scores;
+        }
+    }
+
+    /* public void CheckTopTen()
+    {
+        if (PlayerFinalScore >= PlayerList[9].PlayerFinalScore 
+            && PlayerList[9].PlayerFinalScore < PlayerList[8].PlayerFinalScore)
+        {
+            PlayerList[9] = new Highscore(PlayerName, PlayerFinalScore, CaveType);
+        }
+        else
+        {
+
+        }
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+            if (PlayerFinalScore >= i) PlayerList[i] = new Highscore(PlayerName, PlayerFinalScore, CaveType);
+
+            if (PlayerFinalScore < i) PlayerList[i + 1] = new Highscore(PlayerName, PlayerFinalScore, CaveType);
+
+            if (PlayerFinalScore <= i) 
+
+            if (PlayerFinalScore >= PlayerList[9].PlayerFinalScore
+            && PlayerList[9].PlayerFinalScore < PlayerList[8].PlayerFinalScore)
+        }
+    }
+    */
 
     public void AddScore(/*string pn, int fs, string ct*/)
     { 
