@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using CaveTest;
 namespace testPlayerForm
 {
     public class Player
     {
-        public int Arrows { get; set; }
-        public int Gold { get; set; }
-        public int Turns { get; set; }
-        public bool WumpusDead { get; set; }
+        public int Arrows { get; set; } // The amount of arrows left
+        public int Gold { get; set; } // The amount of gold left
+        public int Turns { get; set; } // The amount of turns it has been
+        public bool WumpusDead { get; set; } // Whether the Wumpus is dead or not
 
         public Player(int arrows, int gold, int turns, bool wumpusDead)
         {
@@ -21,12 +22,13 @@ namespace testPlayerForm
             WumpusDead = wumpusDead;
         }
 
-        public bool PlayerMove(int playerPos, int movePos)
+        /// <summary>
+        /// Moves the player to the chosen location
+        /// </summary>
+        /// <param name="i"> The index of the cave to move to </param>
+        /// <returns> Returns true if the player can move and false otherwise </returns>
+        public bool PlayerMove(int i)
         {
-            // "playerPos" is the cave index that the player is in
-            // "movePos" is the cave index that the player is going to move to
-            // Returns true if the player can move to the cave with index "movePos"
-            // Returns false if otherwise
             return true;
         }
 
