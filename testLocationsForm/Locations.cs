@@ -7,25 +7,25 @@ using System.Text;
 using System.Threading.Tasks;
 using GCUITest;
 
-namespace testLocationsForm
+namespace WumpusLocations
 {
     public class Locations
     {
-        public List<int[]> Cave { get; set; } // The current cave system
-        public int[] Bats { get; set; } // The indexes of the bats, 0-based
-        public int[] Pits { get; set; } // The indexes of the pits, 0-based
-        public int[] Shops { get; set; } // The indexes of the shops, 0-based
-        public int Wumpus { get; set; } // The index of the Wumpus, 0-based
-        public int Player { get; set; } // The index of the player, 0-based
+        public List<int[]> Cave { get; set; }
+        public int[] Bats { get; set; }
+        public int[] Pits { get; set; }
+        public int[] Shops { get; set; }
+        public int Wumpus { get; set; }
+        public int Player { get; set; }
 
         /// <summary>
-        /// Constructs a Location that stores the current cave system, the locations of the hazards, and the player's location
+        /// Constructs a Location that stores the current cave system, the locations of the bats, Wumpus, pits, shops, and the player
         /// </summary>
-        /// <param name="Cave"> A list of caves and their connections </param>
-        /// <param name="bats"> A list of indexes where the bats are </param>
-        /// <param name="pits"> A list of indexes where the pits are </param>
-        /// <param name="wumpus"> The index where the Wumpus is </param>
-        /// <param name="player"> The index where the player is </param>
+        /// <param name="Cave"> A list of caves and their connections, 0-based </param>
+        /// <param name="bats"> A list of indexes where the bats are, 0-based </param>
+        /// <param name="pits"> A list of indexes where the pits are, 0-based </param>
+        /// <param name="wumpus"> The index where the Wumpus is, 0-based </param>
+        /// <param name="player"> The index where the player is, 0-based </param>
         public Locations(List<int[]> cave, int[] bats, int[] pits, int[] shops, int wumpus, int player)
         {
             Cave = cave;
@@ -34,6 +34,24 @@ namespace testLocationsForm
             Shops = shops;
             Wumpus = wumpus;
             Player = player;
+        }
+        
+        /// <summary>
+        /// Determines if there is a path in the given direction
+        /// </summary>
+        /// <param name="i"> The direction to move to </param>
+        /// <returns> Returns true if the direction is a path and false otherwise </returns>
+        public bool IsPath(int i)
+        {
+            foreach (int path in Cave[Player])
+            {
+                if (i == path)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -66,9 +84,9 @@ namespace testLocationsForm
         }
 
         /// <summary>
-        /// Shoots an arrow at the selected cave
+        /// Shoots an arrow at the given direction
         /// </summary>
-        /// <param name="cave"> The index of the cave to shoot at </param>
+        /// <param name="i"> The direction to shoot at </param>
         /// <returns> Returns true if you shot the Wumpus and false otherwise </returns>
         public bool ShootArrow(int i)
         {
@@ -87,7 +105,7 @@ namespace testLocationsForm
         }
 
         /// <summary>
-        /// Checks the current room for hazards or a shop
+        /// Checks the current room for special locations
         /// </summary>
         /// <returns> Returns W if there's a Wumpus, B if there's a bat, P if there's a pit, S if there's a shop, and N otherwise </returns>
         public char RoomType()
@@ -125,7 +143,7 @@ namespace testLocationsForm
         }
 
         /// <summary>
-        /// Checks the nearby caves for hazards or a shop
+        /// Checks the nearby caves for special locations
         /// </summary>
         /// <returns> Returns W if there's a Wumpus, B if there's a bat, P if there's a pit, S if there's a shop, and N otherwise </returns>
         public char HazardNearby()
