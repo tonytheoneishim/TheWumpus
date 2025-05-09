@@ -31,31 +31,21 @@
             moveWumpus = new Button();
             wumpusMovedCheck = new CheckBox();
             moveWumpusBox = new GroupBox();
-            batNearbyBox = new GroupBox();
-            batNearbyCheck = new CheckBox();
-            checkForBat = new Button();
-            pitNearbyBox = new GroupBox();
-            pitNearbyCheck = new CheckBox();
-            checkForPit = new Button();
-            wumpusNearbyBox = new GroupBox();
-            wumpusNearbyCheck = new CheckBox();
-            checkForWumpus = new Button();
-            ifBatBox = new GroupBox();
-            ifBatCheck = new CheckBox();
-            withBat = new Button();
-            ifPitBox = new GroupBox();
-            ifPitCheck = new CheckBox();
-            withPit = new Button();
-            ifWumpusBox = new GroupBox();
-            ifWumpusCheck = new CheckBox();
-            withWumpus = new Button();
+            hazardNearbyBox = new GroupBox();
+            hazardsNearbyText = new TextBox();
+            checkHazards = new Button();
+            caveTypeBox = new GroupBox();
+            caveTypeText = new TextBox();
+            checkRoomType = new Button();
+            shootArrowBox = new GroupBox();
+            hitWumpusCheck = new CheckBox();
+            shootArrow = new Button();
+            wumpusLocationLabel = new Label();
+            playerLocationLabel = new Label();
             moveWumpusBox.SuspendLayout();
-            batNearbyBox.SuspendLayout();
-            pitNearbyBox.SuspendLayout();
-            wumpusNearbyBox.SuspendLayout();
-            ifBatBox.SuspendLayout();
-            ifPitBox.SuspendLayout();
-            ifWumpusBox.SuspendLayout();
+            hazardNearbyBox.SuspendLayout();
+            caveTypeBox.SuspendLayout();
+            shootArrowBox.SuspendLayout();
             SuspendLayout();
             // 
             // moveWumpus
@@ -90,227 +80,134 @@
             moveWumpusBox.TabStop = false;
             moveWumpusBox.Text = "Move the Wumpus";
             // 
-            // batNearbyBox
+            // hazardNearbyBox
             // 
-            batNearbyBox.Controls.Add(batNearbyCheck);
-            batNearbyBox.Controls.Add(checkForBat);
-            batNearbyBox.Location = new Point(12, 12);
-            batNearbyBox.Name = "batNearbyBox";
-            batNearbyBox.Size = new Size(136, 108);
-            batNearbyBox.TabIndex = 5;
-            batNearbyBox.TabStop = false;
-            batNearbyBox.Text = "If Bat Nearby";
+            hazardNearbyBox.Controls.Add(hazardsNearbyText);
+            hazardNearbyBox.Controls.Add(checkHazards);
+            hazardNearbyBox.Location = new Point(12, 12);
+            hazardNearbyBox.Name = "hazardNearbyBox";
+            hazardNearbyBox.Size = new Size(136, 108);
+            hazardNearbyBox.TabIndex = 5;
+            hazardNearbyBox.TabStop = false;
+            hazardNearbyBox.Text = "Hazards Nearby";
             // 
-            // batNearbyCheck
+            // hazardsNearbyText
             // 
-            batNearbyCheck.AutoSize = true;
-            batNearbyCheck.Enabled = false;
-            batNearbyCheck.Location = new Point(6, 22);
-            batNearbyCheck.Name = "batNearbyCheck";
-            batNearbyCheck.Size = new Size(94, 19);
-            batNearbyCheck.TabIndex = 3;
-            batNearbyCheck.Text = "If Bat Nearby";
-            batNearbyCheck.UseVisualStyleBackColor = true;
+            hazardsNearbyText.Enabled = false;
+            hazardsNearbyText.Location = new Point(6, 22);
+            hazardsNearbyText.Name = "hazardsNearbyText";
+            hazardsNearbyText.Size = new Size(114, 23);
+            hazardsNearbyText.TabIndex = 2;
             // 
-            // checkForBat
+            // checkHazards
             // 
-            checkForBat.Location = new Point(6, 47);
-            checkForBat.Name = "checkForBat";
-            checkForBat.Size = new Size(114, 46);
-            checkForBat.TabIndex = 0;
-            checkForBat.Text = "Check for Bats";
-            checkForBat.UseVisualStyleBackColor = true;
-            checkForBat.Click += checkForBat_Click;
+            checkHazards.Location = new Point(6, 51);
+            checkHazards.Name = "checkHazards";
+            checkHazards.Size = new Size(114, 46);
+            checkHazards.TabIndex = 0;
+            checkHazards.Text = "Check Hazards";
+            checkHazards.UseVisualStyleBackColor = true;
+            checkHazards.Click += checkHazards_Click;
             // 
-            // pitNearbyBox
+            // caveTypeBox
             // 
-            pitNearbyBox.Controls.Add(pitNearbyCheck);
-            pitNearbyBox.Controls.Add(checkForPit);
-            pitNearbyBox.Location = new Point(154, 12);
-            pitNearbyBox.Name = "pitNearbyBox";
-            pitNearbyBox.Size = new Size(136, 108);
-            pitNearbyBox.TabIndex = 6;
-            pitNearbyBox.TabStop = false;
-            pitNearbyBox.Text = "If Pit Nearby";
+            caveTypeBox.Controls.Add(caveTypeText);
+            caveTypeBox.Controls.Add(checkRoomType);
+            caveTypeBox.Location = new Point(12, 240);
+            caveTypeBox.Name = "caveTypeBox";
+            caveTypeBox.Size = new Size(136, 108);
+            caveTypeBox.TabIndex = 5;
+            caveTypeBox.TabStop = false;
+            caveTypeBox.Text = "Cave Type";
             // 
-            // pitNearbyCheck
+            // caveTypeText
             // 
-            pitNearbyCheck.AutoSize = true;
-            pitNearbyCheck.Enabled = false;
-            pitNearbyCheck.Location = new Point(6, 22);
-            pitNearbyCheck.Name = "pitNearbyCheck";
-            pitNearbyCheck.Size = new Size(91, 19);
-            pitNearbyCheck.TabIndex = 3;
-            pitNearbyCheck.Text = "If Pit Nearby";
-            pitNearbyCheck.UseVisualStyleBackColor = true;
+            caveTypeText.Enabled = false;
+            caveTypeText.Location = new Point(6, 22);
+            caveTypeText.Name = "caveTypeText";
+            caveTypeText.Size = new Size(114, 23);
+            caveTypeText.TabIndex = 1;
             // 
-            // checkForPit
+            // checkRoomType
             // 
-            checkForPit.Location = new Point(6, 47);
-            checkForPit.Name = "checkForPit";
-            checkForPit.Size = new Size(114, 46);
-            checkForPit.TabIndex = 0;
-            checkForPit.Text = "Check for Pit";
-            checkForPit.UseVisualStyleBackColor = true;
-            checkForPit.Click += checkForPit_Click;
+            checkRoomType.Location = new Point(6, 51);
+            checkRoomType.Name = "checkRoomType";
+            checkRoomType.Size = new Size(114, 46);
+            checkRoomType.TabIndex = 0;
+            checkRoomType.Text = "Check Room Type";
+            checkRoomType.UseVisualStyleBackColor = true;
+            checkRoomType.Click += checkRoomType_Click;
             // 
-            // wumpusNearbyBox
+            // shootArrowBox
             // 
-            wumpusNearbyBox.Controls.Add(wumpusNearbyCheck);
-            wumpusNearbyBox.Controls.Add(checkForWumpus);
-            wumpusNearbyBox.Location = new Point(296, 12);
-            wumpusNearbyBox.Name = "wumpusNearbyBox";
-            wumpusNearbyBox.Size = new Size(136, 108);
-            wumpusNearbyBox.TabIndex = 7;
-            wumpusNearbyBox.TabStop = false;
-            wumpusNearbyBox.Text = "If Wumpus Nearby";
+            shootArrowBox.Controls.Add(hitWumpusCheck);
+            shootArrowBox.Controls.Add(shootArrow);
+            shootArrowBox.Location = new Point(154, 126);
+            shootArrowBox.Name = "shootArrowBox";
+            shootArrowBox.Size = new Size(136, 108);
+            shootArrowBox.TabIndex = 5;
+            shootArrowBox.TabStop = false;
+            shootArrowBox.Text = "Shoot Arrow";
             // 
-            // wumpusNearbyCheck
+            // hitWumpusCheck
             // 
-            wumpusNearbyCheck.AutoSize = true;
-            wumpusNearbyCheck.Enabled = false;
-            wumpusNearbyCheck.Location = new Point(6, 22);
-            wumpusNearbyCheck.Name = "wumpusNearbyCheck";
-            wumpusNearbyCheck.Size = new Size(125, 19);
-            wumpusNearbyCheck.TabIndex = 3;
-            wumpusNearbyCheck.Text = "If Wumpus Nearby";
-            wumpusNearbyCheck.UseVisualStyleBackColor = true;
+            hitWumpusCheck.AutoSize = true;
+            hitWumpusCheck.Enabled = false;
+            hitWumpusCheck.Location = new Point(6, 22);
+            hitWumpusCheck.Name = "hitWumpusCheck";
+            hitWumpusCheck.Size = new Size(128, 19);
+            hitWumpusCheck.TabIndex = 3;
+            hitWumpusCheck.Text = "Arrow Hit Wumpus";
+            hitWumpusCheck.UseVisualStyleBackColor = true;
             // 
-            // checkForWumpus
+            // shootArrow
             // 
-            checkForWumpus.Location = new Point(6, 47);
-            checkForWumpus.Name = "checkForWumpus";
-            checkForWumpus.Size = new Size(114, 46);
-            checkForWumpus.TabIndex = 0;
-            checkForWumpus.Text = "Check for Wumpus";
-            checkForWumpus.UseVisualStyleBackColor = true;
-            checkForWumpus.Click += checkForWumpus_Click;
+            shootArrow.Location = new Point(6, 47);
+            shootArrow.Name = "shootArrow";
+            shootArrow.Size = new Size(114, 46);
+            shootArrow.TabIndex = 0;
+            shootArrow.Text = "Shoot Arrow";
+            shootArrow.UseVisualStyleBackColor = true;
             // 
-            // ifBatBox
+            // wumpusLocationLabel
             // 
-            ifBatBox.Controls.Add(ifBatCheck);
-            ifBatBox.Controls.Add(withBat);
-            ifBatBox.Location = new Point(12, 240);
-            ifBatBox.Name = "ifBatBox";
-            ifBatBox.Size = new Size(136, 108);
-            ifBatBox.TabIndex = 5;
-            ifBatBox.TabStop = false;
-            ifBatBox.Text = "If Bat";
+            wumpusLocationLabel.AutoSize = true;
+            wumpusLocationLabel.Location = new Point(366, 204);
+            wumpusLocationLabel.Name = "wumpusLocationLabel";
+            wumpusLocationLabel.Size = new Size(0, 15);
+            wumpusLocationLabel.TabIndex = 9;
             // 
-            // ifBatCheck
+            // playerLocationLabel
             // 
-            ifBatCheck.AutoSize = true;
-            ifBatCheck.Enabled = false;
-            ifBatCheck.Location = new Point(6, 22);
-            ifBatCheck.Name = "ifBatCheck";
-            ifBatCheck.Size = new Size(53, 19);
-            ifBatCheck.TabIndex = 3;
-            ifBatCheck.Text = "If Bat";
-            ifBatCheck.UseVisualStyleBackColor = true;
-            // 
-            // withBat
-            // 
-            withBat.Location = new Point(6, 47);
-            withBat.Name = "withBat";
-            withBat.Size = new Size(114, 46);
-            withBat.TabIndex = 0;
-            withBat.Text = "Player with Bat";
-            withBat.UseVisualStyleBackColor = true;
-            withBat.Click += withBat_Click;
-            // 
-            // ifPitBox
-            // 
-            ifPitBox.Controls.Add(ifPitCheck);
-            ifPitBox.Controls.Add(withPit);
-            ifPitBox.Location = new Point(154, 240);
-            ifPitBox.Name = "ifPitBox";
-            ifPitBox.Size = new Size(136, 108);
-            ifPitBox.TabIndex = 6;
-            ifPitBox.TabStop = false;
-            ifPitBox.Text = "If Pit";
-            // 
-            // ifPitCheck
-            // 
-            ifPitCheck.AutoSize = true;
-            ifPitCheck.Enabled = false;
-            ifPitCheck.Location = new Point(6, 22);
-            ifPitCheck.Name = "ifPitCheck";
-            ifPitCheck.Size = new Size(50, 19);
-            ifPitCheck.TabIndex = 3;
-            ifPitCheck.Text = "If Pit";
-            ifPitCheck.UseVisualStyleBackColor = true;
-            // 
-            // withPit
-            // 
-            withPit.Location = new Point(6, 47);
-            withPit.Name = "withPit";
-            withPit.Size = new Size(114, 46);
-            withPit.TabIndex = 0;
-            withPit.Text = "Player with Pit";
-            withPit.UseVisualStyleBackColor = true;
-            withPit.Click += withPit_Click;
-            // 
-            // ifWumpusBox
-            // 
-            ifWumpusBox.Controls.Add(ifWumpusCheck);
-            ifWumpusBox.Controls.Add(withWumpus);
-            ifWumpusBox.Location = new Point(296, 240);
-            ifWumpusBox.Name = "ifWumpusBox";
-            ifWumpusBox.Size = new Size(136, 108);
-            ifWumpusBox.TabIndex = 8;
-            ifWumpusBox.TabStop = false;
-            ifWumpusBox.Text = "If Wumpus";
-            // 
-            // ifWumpusCheck
-            // 
-            ifWumpusCheck.AutoSize = true;
-            ifWumpusCheck.Enabled = false;
-            ifWumpusCheck.Location = new Point(6, 22);
-            ifWumpusCheck.Name = "ifWumpusCheck";
-            ifWumpusCheck.Size = new Size(84, 19);
-            ifWumpusCheck.TabIndex = 3;
-            ifWumpusCheck.Text = "If Wumpus";
-            ifWumpusCheck.UseVisualStyleBackColor = true;
-            // 
-            // withWumpus
-            // 
-            withWumpus.Location = new Point(6, 47);
-            withWumpus.Name = "withWumpus";
-            withWumpus.Size = new Size(114, 46);
-            withWumpus.TabIndex = 0;
-            withWumpus.Text = "Player with Wumpus";
-            withWumpus.UseVisualStyleBackColor = true;
-            withWumpus.Click += withWumpus_Click;
+            playerLocationLabel.AutoSize = true;
+            playerLocationLabel.Location = new Point(366, 152);
+            playerLocationLabel.Name = "playerLocationLabel";
+            playerLocationLabel.Size = new Size(0, 15);
+            playerLocationLabel.TabIndex = 10;
             // 
             // caveLocationsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(ifWumpusBox);
-            Controls.Add(ifPitBox);
-            Controls.Add(ifBatBox);
-            Controls.Add(wumpusNearbyBox);
-            Controls.Add(pitNearbyBox);
-            Controls.Add(batNearbyBox);
+            ClientSize = new Size(462, 375);
+            Controls.Add(playerLocationLabel);
+            Controls.Add(wumpusLocationLabel);
+            Controls.Add(shootArrowBox);
+            Controls.Add(caveTypeBox);
+            Controls.Add(hazardNearbyBox);
             Controls.Add(moveWumpusBox);
             Name = "caveLocationsForm";
             Text = "Cave Locations Form";
             moveWumpusBox.ResumeLayout(false);
             moveWumpusBox.PerformLayout();
-            batNearbyBox.ResumeLayout(false);
-            batNearbyBox.PerformLayout();
-            pitNearbyBox.ResumeLayout(false);
-            pitNearbyBox.PerformLayout();
-            wumpusNearbyBox.ResumeLayout(false);
-            wumpusNearbyBox.PerformLayout();
-            ifBatBox.ResumeLayout(false);
-            ifBatBox.PerformLayout();
-            ifPitBox.ResumeLayout(false);
-            ifPitBox.PerformLayout();
-            ifWumpusBox.ResumeLayout(false);
-            ifWumpusBox.PerformLayout();
+            hazardNearbyBox.ResumeLayout(false);
+            hazardNearbyBox.PerformLayout();
+            caveTypeBox.ResumeLayout(false);
+            caveTypeBox.PerformLayout();
+            shootArrowBox.ResumeLayout(false);
+            shootArrowBox.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -318,23 +215,17 @@
         private Button moveWumpus;
         private CheckBox wumpusMovedCheck;
         private GroupBox moveWumpusBox;
-        private GroupBox batNearbyBox;
-        private CheckBox batNearbyCheck;
-        private Button checkForBat;
-        private GroupBox pitNearbyBox;
-        private CheckBox pitNearbyCheck;
-        private Button checkForPit;
-        private GroupBox wumpusNearbyBox;
-        private CheckBox wumpusNearbyCheck;
-        private Button checkForWumpus;
-        private GroupBox ifBatBox;
+        private GroupBox hazardNearbyBox;
+        private Button checkHazards;
+        private GroupBox caveTypeBox;
         private CheckBox ifBatCheck;
-        private Button withBat;
-        private GroupBox ifPitBox;
-        private CheckBox ifPitCheck;
-        private Button withPit;
-        private GroupBox ifWumpusBox;
-        private CheckBox ifWumpusCheck;
-        private Button withWumpus;
+        private Button checkRoomType;
+        private GroupBox shootArrowBox;
+        private CheckBox hitWumpusCheck;
+        private Button shootArrow;
+        private Label wumpusLocationLabel;
+        private Label playerLocationLabel;
+        private TextBox caveTypeText;
+        private TextBox hazardsNearbyText;
     }
 }

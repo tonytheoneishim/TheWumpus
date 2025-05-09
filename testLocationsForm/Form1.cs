@@ -1,3 +1,5 @@
+using CaveTest;
+
 namespace testLocationsForm
 {
     public partial class caveLocationsForm : Form
@@ -45,6 +47,9 @@ namespace testLocationsForm
             caveLayouts.Add(createRoom(-1, 23, 24, 0, -1, -1));
             Locations cave = new Locations(caveLayouts, new int[] { 0, 1 }, new int[] { 2, 3 }, 4, 5);
             locations.Add(cave);
+
+            wumpusLocationLabel.Text = "Wumpus: " + cave.Wumpus.ToString();
+            playerLocationLabel.Text = "Player: " + cave.Player.ToString();
         }
 
         private void moveWumpus_Click(object sender, EventArgs e)
@@ -52,6 +57,7 @@ namespace testLocationsForm
             if (locations[0].MoveWumpus())
             {
                 wumpusMovedCheck.Checked = true;
+                wumpusLocationLabel.Text = "Wumpus: " + locations[0].Wumpus.ToString();
             }
             else
             {
@@ -59,75 +65,14 @@ namespace testLocationsForm
             }
         }
 
-        private void checkForBat_Click(object sender, EventArgs e)
+        private void checkRoomType_Click(object sender, EventArgs e)
         {
-            if (locations[0].BatsNearby())
-            {
-                batNearbyCheck.Checked = true;
-            }
-            else
-            {
-                batNearbyCheck.Checked = false;
-            }
+            caveTypeText.Text = locations[0].RoomType().ToString();
         }
 
-        private void checkForPit_Click(object sender, EventArgs e)
+        private void checkHazards_Click(object sender, EventArgs e)
         {
-            if (locations[0].PitsNearby())
-            {
-                pitNearbyCheck.Checked = true;
-            }
-            else
-            {
-                pitNearbyCheck.Checked = false;
-            }
-        }
-
-        private void checkForWumpus_Click(object sender, EventArgs e)
-        {
-            if (locations[0].WumpusNearby())
-            {
-                wumpusNearbyCheck.Checked = true;
-            }
-            else
-            {
-                wumpusNearbyCheck.Checked = false;
-            }
-        }
-
-        private void withBat_Click(object sender, EventArgs e)
-        {
-            if (locations[0].IfBat())
-            {
-                ifBatCheck.Checked = true;
-            }
-            else
-            {
-                ifBatCheck.Checked = false;
-            }
-        }
-
-        private void withPit_Click(object sender, EventArgs e)
-        {
-            if (locations[0].IfPit())
-            {
-                ifPitCheck.Checked = true;
-            }
-            else
-            {
-                ifPitCheck.Checked = false;
-            }
-        }
-
-        private void withWumpus_Click(object sender, EventArgs e)
-        {
-            if (locations[0].IfWumpus())
-            {
-                ifWumpusCheck.Checked = true;
-            } else
-            {
-                ifWumpusCheck.Checked = false;
-            }
+            hazardsNearbyText.Text = locations[0].HazardNearby().ToString();
         }
     }
 }
