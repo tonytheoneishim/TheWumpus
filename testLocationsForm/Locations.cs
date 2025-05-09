@@ -52,6 +52,16 @@ namespace testLocationsForm
             return true;
         } // Returns true if the Wumpus moved and false if it didn't
 
+        public bool ShootArrow(int cave)
+        { // Shoots an arrow at "cave"
+            if (cave == Wumpus)
+            {
+                return true;
+            }
+
+            return false;
+        } // Returns true if the arrow hit the Wumpus and false if it didn't
+
         public char RoomType()
         { // Checks the type of room at index "i"
             if (Player == Wumpus)
@@ -85,15 +95,6 @@ namespace testLocationsForm
 
             return 'N';
         } // Returns W if it's the Wumpus, B if it's a bat, P if it's a pit, S if it's a shop, and N if it's a normal room
-        public bool ShootArrow(int cave)
-        { // Shoots an arrow at "cave"
-            if (cave == Wumpus)
-            {
-                return true;
-            }
-
-            return false;
-        } // Returns true if the arrow hit the Wumpus and false if it didn't
 
         public char HazardNearby()
         { // Checks for hazards in the caves around the player
