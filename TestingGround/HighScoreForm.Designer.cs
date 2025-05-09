@@ -36,6 +36,8 @@
             labelName = new Label();
             labelScore = new Label();
             labelCaveNum = new Label();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -124,13 +126,37 @@
             labelCaveNum.TabIndex = 7;
             labelCaveNum.Text = "Cave #";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(408, 51);
+            label2.Name = "label2";
+            label2.Size = new Size(61, 21);
+            label2.TabIndex = 8;
+            label2.Text = "Cave #";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ControlLightLight;
+            label3.Location = new Point(439, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(110, 21);
+            label3.TabIndex = 9;
+            label3.Text = "Run Statistics";
+            // 
             // HighScoreForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             CancelButton = buttonClose;
-            ClientSize = new Size(381, 276);
+            ClientSize = new Size(605, 276);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(labelCaveNum);
             Controls.Add(labelScore);
             Controls.Add(labelName);
@@ -158,5 +184,7 @@
         private Label labelName;
         private Label labelScore;
         private Label labelCaveNum;
+        private Label label2;
+        private Label label3;
     }
 }
