@@ -296,7 +296,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.DimGray;
+            BackgroundImage = GCUITest.Properties.Resources.New_Piskel;
             ClientSize = new Size(534, 511);
             Controls.Add(labelPlayerLabel);
             Controls.Add(labelRoomNum);
@@ -310,6 +311,7 @@
             Controls.Add(buttonRoomNW);
             Controls.Add(buttonRoomNE);
             Controls.Add(buttonRoomN);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hunt the Wumpus!";

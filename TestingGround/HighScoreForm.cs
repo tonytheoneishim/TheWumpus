@@ -32,7 +32,7 @@ namespace TestingGround
         private void HighScoreForm_Load(object sender, EventArgs e)
         {
             Highscore highscore = new Highscore();
-
+            highscore.TestAdding();
             Highscore.GetHighscores(highscore.PlayerList);
 
             foreach (Highscore player in highscore.PlayerList)
