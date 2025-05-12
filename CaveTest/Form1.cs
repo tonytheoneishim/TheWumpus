@@ -15,10 +15,10 @@ namespace CaveTest
     //
     //
     //
+    // Hi Chandler, this would require me to change 900 individual values, is this easier to do on your end by decrementing by 1?
     //
-    //
-    //
-    //
+    // Thanks,
+    // Eric (Cave)
     //
     //
     public partial class Form1 : Form
