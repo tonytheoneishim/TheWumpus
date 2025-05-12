@@ -1,19 +1,19 @@
-﻿using Trivia;
+﻿//using Trivia;
 
 namespace Wumpas_Trivia_Consle_App
 {
     internal class Program
     {
         
-        TriviaQuestions  trivia = new TriviaQuestions();
+        //TriviaQuestions  trivia = new TriviaQuestions();
 
         static void Main(string[] args)
         {
 
             Program app = new Program();
 
-            Console.WriteLine(
-            app.trivia.Question);
+            //Console.WriteLine(
+            //app.trivia.Question);
             static bool Question()
             {
                 bool RightOrWrong = false;
