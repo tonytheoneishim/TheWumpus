@@ -56,7 +56,7 @@
             // 
             // buttonRoomN
             // 
-            buttonRoomN.BackColor = SystemColors.ControlDark;
+            buttonRoomN.BackColor = SystemColors.ControlDarkDark;
             buttonRoomN.Cursor = Cursors.PanNorth;
             buttonRoomN.FlatStyle = FlatStyle.Popup;
             buttonRoomN.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
@@ -71,7 +71,7 @@
             // 
             // buttonRoomNE
             // 
-            buttonRoomNE.BackColor = SystemColors.ControlDark;
+            buttonRoomNE.BackColor = SystemColors.ControlDarkDark;
             buttonRoomNE.Cursor = Cursors.PanNE;
             buttonRoomNE.FlatStyle = FlatStyle.Popup;
             buttonRoomNE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
@@ -86,7 +86,7 @@
             // 
             // buttonRoomNW
             // 
-            buttonRoomNW.BackColor = SystemColors.ControlDark;
+            buttonRoomNW.BackColor = SystemColors.ControlDarkDark;
             buttonRoomNW.Cursor = Cursors.PanNW;
             buttonRoomNW.FlatStyle = FlatStyle.Popup;
             buttonRoomNW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
@@ -101,7 +101,7 @@
             // 
             // buttonRoomSW
             // 
-            buttonRoomSW.BackColor = SystemColors.ControlDark;
+            buttonRoomSW.BackColor = SystemColors.ControlDarkDark;
             buttonRoomSW.Cursor = Cursors.PanSW;
             buttonRoomSW.FlatStyle = FlatStyle.Popup;
             buttonRoomSW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
@@ -116,7 +116,7 @@
             // 
             // buttonRoomSE
             // 
-            buttonRoomSE.BackColor = SystemColors.ControlDark;
+            buttonRoomSE.BackColor = SystemColors.ControlDarkDark;
             buttonRoomSE.Cursor = Cursors.PanSE;
             buttonRoomSE.FlatStyle = FlatStyle.Popup;
             buttonRoomSE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
@@ -131,7 +131,7 @@
             // 
             // buttonRoomS
             // 
-            buttonRoomS.BackColor = SystemColors.ControlDark;
+            buttonRoomS.BackColor = SystemColors.ControlDarkDark;
             buttonRoomS.Cursor = Cursors.PanSouth;
             buttonRoomS.FlatStyle = FlatStyle.Popup;
             buttonRoomS.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
@@ -157,6 +157,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.Transparent;
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(labelArrows);
             groupBox1.Controls.Add(labelArrowLabel);
@@ -262,6 +263,7 @@
             // labelPlayerName
             // 
             labelPlayerName.AutoSize = true;
+            labelPlayerName.BackColor = Color.Transparent;
             labelPlayerName.Font = new Font("Book Antiqua", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelPlayerName.ForeColor = SystemColors.ControlLightLight;
             labelPlayerName.Location = new Point(76, 9);
@@ -273,6 +275,7 @@
             // labelCaveNum
             // 
             labelCaveNum.AutoSize = true;
+            labelCaveNum.BackColor = Color.Transparent;
             labelCaveNum.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelCaveNum.ForeColor = SystemColors.ControlLightLight;
             labelCaveNum.Location = new Point(10, 30);
@@ -284,6 +287,7 @@
             // labelPlayerLabel
             // 
             labelPlayerLabel.AutoSize = true;
+            labelPlayerLabel.BackColor = Color.Transparent;
             labelPlayerLabel.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayerLabel.ForeColor = SystemColors.ControlLightLight;
             labelPlayerLabel.Location = new Point(10, 9);
@@ -297,7 +301,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
-            BackgroundImage = GCUITest.Properties.Resources.New_Piskel;
+            BackgroundImage = GCUITest.Properties.Resources.Piskel_Bats_Main;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(534, 511);
             Controls.Add(labelPlayerLabel);
             Controls.Add(labelRoomNum);
@@ -311,6 +316,7 @@
             Controls.Add(buttonRoomNW);
             Controls.Add(buttonRoomNE);
             Controls.Add(buttonRoomN);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
