@@ -21,11 +21,11 @@ namespace WumpusLocations
         /// <summary>
         /// Constructs a Location that stores the current cave system, the locations of the bats, Wumpus, pits, shops, and the player
         /// </summary>
-        /// <param name="cavePaths"> A list of caves and their connections, 0-based </param>
-        /// <param name="bats"> A list of indexes where the bats are, 0-based </param>
-        /// <param name="pits"> A list of indexes where the pits are, 0-based </param>
-        /// <param name="wumpus"> The index where the Wumpus is, 0-based </param>
-        /// <param name="player"> The index where the player is, 0-based </param>
+        /// <param name="cavePaths"> A list of caves and their connections, 1-based </param>
+        /// <param name="bats"> A list of indexes where the bats are, 1-based </param>
+        /// <param name="pits"> A list of indexes where the pits are, 1-based </param>
+        /// <param name="wumpus"> The index where the Wumpus is, 1-based </param>
+        /// <param name="player"> The index where the player is, 1-based </param>
         public Locations(List<int[]> cavePaths, int[] bats, int[] pits, int[] shops, int wumpus, int player)
         {
             CavePaths = cavePaths;
@@ -34,24 +34,6 @@ namespace WumpusLocations
             Shops = shops;
             Wumpus = wumpus;
             Player = player;
-        }
-        
-        /// <summary>
-        /// Determines if there is a path in the given direction
-        /// </summary>
-        /// <param name="i"> The direction to move to </param>
-        /// <returns> Returns true if the direction is a path and false otherwise </returns>
-        public bool IsPath(int i)
-        {
-            foreach (int path in CavePaths[Player])
-            {
-                if (i == path)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         /// <summary>
@@ -86,7 +68,7 @@ namespace WumpusLocations
         /// <summary>
         /// Shoots an arrow at the given direction
         /// </summary>
-        /// <param name="i"> The direction to shoot at </param>
+        /// <param name="i"> The direction to shoot at, 1-based </param>
         /// <returns> Returns true if you shot the Wumpus and false otherwise </returns>
         public bool ShootArrow(int i)
         {
