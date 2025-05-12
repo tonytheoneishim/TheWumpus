@@ -56,11 +56,13 @@
             // 
             // buttonRoomN
             // 
-            buttonRoomN.BackColor = SystemColors.ControlDarkDark;
+            buttonRoomN.BackColor = Color.Transparent;
+            buttonRoomN.BackgroundImage = GCUITest.Properties.Resources.Arrow_3__1_;
+            buttonRoomN.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomN.Cursor = Cursors.PanNorth;
-            buttonRoomN.FlatStyle = FlatStyle.Popup;
+            buttonRoomN.FlatStyle = FlatStyle.Flat;
             buttonRoomN.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
-            buttonRoomN.ForeColor = SystemColors.ControlText;
+            buttonRoomN.ForeColor = Color.Transparent;
             buttonRoomN.Location = new Point(241, 17);
             buttonRoomN.Name = "buttonRoomN";
             buttonRoomN.Size = new Size(50, 50);
@@ -71,11 +73,13 @@
             // 
             // buttonRoomNE
             // 
-            buttonRoomNE.BackColor = SystemColors.ControlDarkDark;
+            buttonRoomNE.BackColor = Color.Transparent;
+            buttonRoomNE.BackgroundImage = GCUITest.Properties.Resources.image__1___4_;
+            buttonRoomNE.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomNE.Cursor = Cursors.PanNE;
-            buttonRoomNE.FlatStyle = FlatStyle.Popup;
+            buttonRoomNE.FlatStyle = FlatStyle.Flat;
             buttonRoomNE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
-            buttonRoomNE.ForeColor = SystemColors.ControlText;
+            buttonRoomNE.ForeColor = SystemColors.ControlLightLight;
             buttonRoomNE.Location = new Point(362, 73);
             buttonRoomNE.Name = "buttonRoomNE";
             buttonRoomNE.Size = new Size(50, 50);
@@ -86,11 +90,13 @@
             // 
             // buttonRoomNW
             // 
-            buttonRoomNW.BackColor = SystemColors.ControlDarkDark;
+            buttonRoomNW.BackColor = Color.Transparent;
+            buttonRoomNW.BackgroundImage = GCUITest.Properties.Resources.image__1___1_;
+            buttonRoomNW.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomNW.Cursor = Cursors.PanNW;
-            buttonRoomNW.FlatStyle = FlatStyle.Popup;
+            buttonRoomNW.FlatStyle = FlatStyle.Flat;
             buttonRoomNW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
-            buttonRoomNW.ForeColor = SystemColors.ControlText;
+            buttonRoomNW.ForeColor = SystemColors.ControlLightLight;
             buttonRoomNW.Location = new Point(120, 73);
             buttonRoomNW.Name = "buttonRoomNW";
             buttonRoomNW.Size = new Size(50, 50);
@@ -101,11 +107,13 @@
             // 
             // buttonRoomSW
             // 
-            buttonRoomSW.BackColor = SystemColors.ControlDarkDark;
+            buttonRoomSW.BackColor = Color.Transparent;
+            buttonRoomSW.BackgroundImage = GCUITest.Properties.Resources.image__1___2_;
+            buttonRoomSW.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomSW.Cursor = Cursors.PanSW;
-            buttonRoomSW.FlatStyle = FlatStyle.Popup;
+            buttonRoomSW.FlatStyle = FlatStyle.Flat;
             buttonRoomSW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
-            buttonRoomSW.ForeColor = SystemColors.ControlText;
+            buttonRoomSW.ForeColor = SystemColors.ControlLightLight;
             buttonRoomSW.Location = new Point(120, 219);
             buttonRoomSW.Name = "buttonRoomSW";
             buttonRoomSW.Size = new Size(50, 50);
@@ -116,11 +124,13 @@
             // 
             // buttonRoomSE
             // 
-            buttonRoomSE.BackColor = SystemColors.ControlDarkDark;
+            buttonRoomSE.BackColor = Color.Transparent;
+            buttonRoomSE.BackgroundImage = GCUITest.Properties.Resources.image__1___3_;
+            buttonRoomSE.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomSE.Cursor = Cursors.PanSE;
-            buttonRoomSE.FlatStyle = FlatStyle.Popup;
+            buttonRoomSE.FlatStyle = FlatStyle.Flat;
             buttonRoomSE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
-            buttonRoomSE.ForeColor = SystemColors.ControlText;
+            buttonRoomSE.ForeColor = SystemColors.ControlLightLight;
             buttonRoomSE.Location = new Point(362, 219);
             buttonRoomSE.Name = "buttonRoomSE";
             buttonRoomSE.Size = new Size(50, 50);
@@ -131,11 +141,13 @@
             // 
             // buttonRoomS
             // 
-            buttonRoomS.BackColor = SystemColors.ControlDarkDark;
+            buttonRoomS.BackColor = Color.Transparent;
+            buttonRoomS.BackgroundImage = GCUITest.Properties.Resources.Arrow_3__1___2_;
+            buttonRoomS.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomS.Cursor = Cursors.PanSouth;
-            buttonRoomS.FlatStyle = FlatStyle.Popup;
+            buttonRoomS.FlatStyle = FlatStyle.Flat;
             buttonRoomS.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
-            buttonRoomS.ForeColor = SystemColors.ControlText;
+            buttonRoomS.ForeColor = Color.Transparent;
             buttonRoomS.Location = new Point(241, 277);
             buttonRoomS.Name = "buttonRoomS";
             buttonRoomS.Size = new Size(50, 50);
@@ -147,10 +159,10 @@
             // pictureBoxRoom
             // 
             pictureBoxRoom.BackColor = Color.Transparent;
-            pictureBoxRoom.Image = GCUITest.Properties.Resources.hex_ver_1_removebg_preview;
-            pictureBoxRoom.Location = new Point(130, 43);
+            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room;
+            pictureBoxRoom.Location = new Point(131, 43);
             pictureBoxRoom.Name = "pictureBoxRoom";
-            pictureBoxRoom.Size = new Size(272, 268);
+            pictureBoxRoom.Size = new Size(270, 270);
             pictureBoxRoom.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxRoom.TabIndex = 6;
             pictureBoxRoom.TabStop = false;

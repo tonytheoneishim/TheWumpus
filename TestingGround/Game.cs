@@ -66,6 +66,13 @@ namespace TestingGround
             labelArrows.Text = arrows.ToString();
             labelPoints.Text = score.ToString();
 
+            buttonRoomN.FlatAppearance.BorderSize = 0;
+            buttonRoomNE.FlatAppearance.BorderSize = 0;
+            buttonRoomNW.FlatAppearance.BorderSize = 0;
+            buttonRoomS.FlatAppearance.BorderSize = 0;
+            buttonRoomSW.FlatAppearance.BorderSize = 0;
+            buttonRoomSE.FlatAppearance.BorderSize = 0;
+
             int index = rand.Next(0, 3);
             cave.caveSelect(index);
             updateButtons(START_POSITION);
