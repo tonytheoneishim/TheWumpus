@@ -26,31 +26,29 @@ namespace WumpusPLayer
         /// </summary>
         /// <param name="i"> The index of the cave to move to </param>
         /// <param name="paths"> The array of paths for the current cave </param>
-        /// <returns> Returns true if the player can move and false otherwise </returns>
+        /// <returns> Returns true if the player can move to that cave and false otherwise </returns>
         public bool PlayerMove(int i, int[] paths)
         {
-            
-            return true;
-        }
+            foreach (int path in paths)
+            {
+                if (path == i)
+                {
+                    return true;
+                }
+            }
 
-        public int ArrowCount()
-        {
-            // Returns how many arrows the player has
-            return Arrows;
+            return false;
         }
-
-        public int GoldCount()
-        {
-            // Returns how much gold the player has
-            return Gold;
-        }
-
-        public int TurnsCount()
-        {
-            // Returns how many turns has passed
-            return Turns;
-        }
-
+        
+        /// <summary>
+        /// Calculates the score at the end of the game
+        /// Score = 100 - turns + gold + (5 * arrows) + (50 if wumpusDead == true else 0)
+        /// </summary>
+        /// <param name="turns"> The number of turns elapsed </param>
+        /// <param name="gold"> The amount of gold you have </param>
+        /// <param name="arrows"> The number of arrows left </param>
+        /// <param name="wumpusDead"> If the Wumpus is dead or not </param>
+        /// <returns> Returns the score </returns>
         public int CalculateScore(int turns, int gold, int arrows, bool wumpusDead)
         {
             // "turns" is the number of turns that has passed
@@ -60,16 +58,12 @@ namespace WumpusPLayer
             // Returns the score using this formula:
             // 100 - turns + gold + (5 * arrows) + (50 if wumpusDead == true else 0)
 
-            int score = 100;
-            score -= turns;
-            score += gold;
-            score += arrows;
             if (wumpusDead)
             {
-                score += 50;
+                return 100 - turns + gold + (5 * arrows) + 50;
             }
 
-            return score;
+            return 100 - turns + gold + (5 * arrows);
         }
     }
 }
