@@ -11,7 +11,7 @@ namespace WumpusLocations
 {
     public class Locations
     {
-        public List<int[]> Cave { get; set; }
+        public List<int[]> CavePaths { get; set; }
         public int[] Bats { get; set; }
         public int[] Pits { get; set; }
         public int[] Shops { get; set; }
@@ -21,14 +21,14 @@ namespace WumpusLocations
         /// <summary>
         /// Constructs a Location that stores the current cave system, the locations of the bats, Wumpus, pits, shops, and the player
         /// </summary>
-        /// <param name="Cave"> A list of caves and their connections, 0-based </param>
+        /// <param name="cavePaths"> A list of caves and their connections, 0-based </param>
         /// <param name="bats"> A list of indexes where the bats are, 0-based </param>
         /// <param name="pits"> A list of indexes where the pits are, 0-based </param>
         /// <param name="wumpus"> The index where the Wumpus is, 0-based </param>
         /// <param name="player"> The index where the player is, 0-based </param>
-        public Locations(List<int[]> cave, int[] bats, int[] pits, int[] shops, int wumpus, int player)
+        public Locations(List<int[]> cavePaths, int[] bats, int[] pits, int[] shops, int wumpus, int player)
         {
-            Cave = cave;
+            CavePaths = cavePaths;
             Bats = bats;
             Pits = pits;
             Shops = shops;
@@ -43,7 +43,7 @@ namespace WumpusLocations
         /// <returns> Returns true if the direction is a path and false otherwise </returns>
         public bool IsPath(int i)
         {
-            foreach (int path in Cave[Player])
+            foreach (int path in CavePaths[Player])
             {
                 if (i == path)
                 {
@@ -70,7 +70,7 @@ namespace WumpusLocations
             // Randomly decide which direction the Wumpus will move towards
             int count = 0;
             List<int> paths = new List<int>();
-            foreach (int path in Cave[Wumpus])
+            foreach (int path in CavePaths[Wumpus])
             {
                 if (path != -1)
                 {
@@ -92,7 +92,7 @@ namespace WumpusLocations
         {
             if (i == Wumpus)
             {
-                foreach (int path in Cave[Player])
+                foreach (int path in CavePaths[Player])
                 {
                     if (path == i)
                     {
@@ -143,17 +143,17 @@ namespace WumpusLocations
         }
 
         /// <summary>
-        /// Checks the nearby caves for special locations
+        /// Checks the nearby CavePathss for special locations
         /// </summary>
         /// <returns> Returns W if there's a Wumpus, B if there's a bat, P if there's a pit, S if there's a shop, and N otherwise </returns>
         public char HazardNearby()
         {
             // Check each room connection one by one
-            for (int i = 0; i < Cave[Player].Length; i++)
+            for (int i = 0; i < CavePaths[Player].Length; i++)
             {
                 foreach (int bat in Bats)
                 {
-                    if (Cave[Player][i] == bat)
+                    if (CavePaths[Player][i] == bat)
                     {
                         return 'B';
 
@@ -162,7 +162,7 @@ namespace WumpusLocations
 
                 foreach (int pit in Pits)
                 {
-                    if (Cave[Player][i] == pit)
+                    if (CavePaths[Player][i] == pit)
                     {
                         return 'P';
                     }
@@ -170,13 +170,13 @@ namespace WumpusLocations
 
                 foreach (int shop in Shops)
                 {
-                    if (Cave[Player][i] == shop)
+                    if (CavePaths[Player][i] == shop)
                     {
                         return 'S';
                     }
                 }
 
-                if (Cave[Player][i] == Wumpus)
+                if (CavePaths[Player][i] == Wumpus)
                 {
                     return 'W';
                 }

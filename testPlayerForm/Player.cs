@@ -9,9 +9,9 @@ namespace WumpusPLayer
 {
     public class Player
     {
-        public int Arrows { get; set; } // The amount of arrows left
+        public int Arrows { get; set; } // The number of arrows left
         public int Gold { get; set; } // The amount of gold left
-        public int Turns { get; set; } // The amount of turns it has been
+        public int Turns { get; set; } // The number of turns elapsed
         public bool WumpusDead { get; set; } // Whether the Wumpus is dead or not
         public Player(int arrows, int gold, int turns, bool wumpusDead)
         {
