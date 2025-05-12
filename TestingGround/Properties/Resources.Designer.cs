@@ -83,6 +83,16 @@ namespace GCUITest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coin2_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("coin2-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hex_ver_1 {
             get {
                 object obj = ResourceManager.GetObject("hex_ver_1", resourceCulture);
@@ -96,6 +106,46 @@ namespace GCUITest.Properties {
         internal static System.Drawing.Bitmap hex_ver_1_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("hex_ver_1-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap New_Piskel {
+            get {
+                object obj = ResourceManager.GetObject("New Piskel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Piskel_Bats_Main {
+            get {
+                object obj = ResourceManager.GetObject("Piskel Bats Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Piskel_Wumpus_Main {
+            get {
+                object obj = ResourceManager.GetObject("Piskel Wumpus Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Playername_Form_ {
+            get {
+                object obj = ResourceManager.GetObject("Playername Form ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -38,14 +38,16 @@
             groupBox1 = new GroupBox();
             pictureBox2 = new PictureBox();
             labelArrows = new Label();
-            label4 = new Label();
+            labelArrowLabel = new Label();
             pictureBox1 = new PictureBox();
-            labelRoomMoved = new Label();
             labelPoints = new Label();
             labelCoins = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            labelPointLabel = new Label();
+            labelCoinLabel = new Label();
+            labelRoomNum = new Label();
             labelPlayerName = new Label();
+            labelCaveNum = new Label();
+            labelPlayerLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -54,10 +56,10 @@
             // 
             // buttonRoomN
             // 
-            buttonRoomN.BackColor = SystemColors.ControlDark;
+            buttonRoomN.BackColor = SystemColors.ControlDarkDark;
             buttonRoomN.Cursor = Cursors.PanNorth;
             buttonRoomN.FlatStyle = FlatStyle.Popup;
-            buttonRoomN.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomN.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomN.ForeColor = SystemColors.ControlText;
             buttonRoomN.Location = new Point(241, 17);
             buttonRoomN.Name = "buttonRoomN";
@@ -69,10 +71,10 @@
             // 
             // buttonRoomNE
             // 
-            buttonRoomNE.BackColor = SystemColors.ControlDark;
+            buttonRoomNE.BackColor = SystemColors.ControlDarkDark;
             buttonRoomNE.Cursor = Cursors.PanNE;
             buttonRoomNE.FlatStyle = FlatStyle.Popup;
-            buttonRoomNE.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomNE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomNE.ForeColor = SystemColors.ControlText;
             buttonRoomNE.Location = new Point(362, 73);
             buttonRoomNE.Name = "buttonRoomNE";
@@ -80,14 +82,14 @@
             buttonRoomNE.TabIndex = 1;
             buttonRoomNE.Text = "NE";
             buttonRoomNE.UseVisualStyleBackColor = false;
-            buttonRoomNE.Click += buttonRoomNE_Click;
+            buttonRoomNE.Click += buttonRoomN_Click;
             // 
             // buttonRoomNW
             // 
-            buttonRoomNW.BackColor = SystemColors.ControlDark;
+            buttonRoomNW.BackColor = SystemColors.ControlDarkDark;
             buttonRoomNW.Cursor = Cursors.PanNW;
             buttonRoomNW.FlatStyle = FlatStyle.Popup;
-            buttonRoomNW.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomNW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomNW.ForeColor = SystemColors.ControlText;
             buttonRoomNW.Location = new Point(120, 73);
             buttonRoomNW.Name = "buttonRoomNW";
@@ -95,14 +97,14 @@
             buttonRoomNW.TabIndex = 2;
             buttonRoomNW.Text = "NW";
             buttonRoomNW.UseVisualStyleBackColor = false;
-            buttonRoomNW.Click += buttonRoomNW_Click;
+            buttonRoomNW.Click += buttonRoomN_Click;
             // 
             // buttonRoomSW
             // 
-            buttonRoomSW.BackColor = SystemColors.ControlDark;
+            buttonRoomSW.BackColor = SystemColors.ControlDarkDark;
             buttonRoomSW.Cursor = Cursors.PanSW;
             buttonRoomSW.FlatStyle = FlatStyle.Popup;
-            buttonRoomSW.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomSW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomSW.ForeColor = SystemColors.ControlText;
             buttonRoomSW.Location = new Point(120, 219);
             buttonRoomSW.Name = "buttonRoomSW";
@@ -110,14 +112,14 @@
             buttonRoomSW.TabIndex = 3;
             buttonRoomSW.Text = "SW";
             buttonRoomSW.UseVisualStyleBackColor = false;
-            buttonRoomSW.Click += buttonRoomSW_Click;
+            buttonRoomSW.Click += buttonRoomN_Click;
             // 
             // buttonRoomSE
             // 
-            buttonRoomSE.BackColor = SystemColors.ControlDark;
+            buttonRoomSE.BackColor = SystemColors.ControlDarkDark;
             buttonRoomSE.Cursor = Cursors.PanSE;
             buttonRoomSE.FlatStyle = FlatStyle.Popup;
-            buttonRoomSE.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomSE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomSE.ForeColor = SystemColors.ControlText;
             buttonRoomSE.Location = new Point(362, 219);
             buttonRoomSE.Name = "buttonRoomSE";
@@ -125,14 +127,14 @@
             buttonRoomSE.TabIndex = 4;
             buttonRoomSE.Text = "SE";
             buttonRoomSE.UseVisualStyleBackColor = false;
-            buttonRoomSE.Click += buttonRoomSE_Click;
+            buttonRoomSE.Click += buttonRoomN_Click;
             // 
             // buttonRoomS
             // 
-            buttonRoomS.BackColor = SystemColors.ControlDark;
+            buttonRoomS.BackColor = SystemColors.ControlDarkDark;
             buttonRoomS.Cursor = Cursors.PanSouth;
             buttonRoomS.FlatStyle = FlatStyle.Popup;
-            buttonRoomS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonRoomS.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomS.ForeColor = SystemColors.ControlText;
             buttonRoomS.Location = new Point(241, 277);
             buttonRoomS.Name = "buttonRoomS";
@@ -140,7 +142,7 @@
             buttonRoomS.TabIndex = 5;
             buttonRoomS.Text = "S";
             buttonRoomS.UseVisualStyleBackColor = false;
-            buttonRoomS.Click += buttonRoomS_Click;
+            buttonRoomS.Click += buttonRoomN_Click;
             // 
             // pictureBoxRoom
             // 
@@ -155,16 +157,16 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.Transparent;
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(labelArrows);
-            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(labelArrowLabel);
             groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Controls.Add(labelRoomMoved);
             groupBox1.Controls.Add(labelPoints);
             groupBox1.Controls.Add(labelCoins);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Controls.Add(labelPointLabel);
+            groupBox1.Controls.Add(labelCoinLabel);
+            groupBox1.Font = new Font("Book Antiqua", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.ControlLight;
             groupBox1.Location = new Point(10, 353);
             groupBox1.Name = "groupBox1";
@@ -188,46 +190,35 @@
             labelArrows.AutoSize = true;
             labelArrows.Location = new Point(119, 80);
             labelArrows.Name = "labelArrows";
-            labelArrows.Size = new Size(21, 20);
+            labelArrows.Size = new Size(19, 19);
             labelArrows.TabIndex = 11;
             labelArrows.Text = "--";
             // 
-            // label4
+            // labelArrowLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(53, 80);
-            label4.Name = "label4";
-            label4.Size = new Size(64, 20);
-            label4.TabIndex = 10;
-            label4.Text = "Arrows:";
+            labelArrowLabel.AutoSize = true;
+            labelArrowLabel.Location = new Point(53, 80);
+            labelArrowLabel.Name = "labelArrowLabel";
+            labelArrowLabel.Size = new Size(65, 19);
+            labelArrowLabel.TabIndex = 10;
+            labelArrowLabel.Text = "Arrows:";
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = GCUITest.Properties.Resources.Coin_removebg_preview;
-            pictureBox1.Location = new Point(21, 31);
+            pictureBox1.Image = GCUITest.Properties.Resources.coin2_removebg_preview;
+            pictureBox1.Location = new Point(12, 25);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(29, 30);
+            pictureBox1.Size = new Size(38, 36);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
-            // 
-            // labelRoomMoved
-            // 
-            labelRoomMoved.AutoSize = true;
-            labelRoomMoved.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelRoomMoved.ForeColor = SystemColors.ControlLight;
-            labelRoomMoved.Location = new Point(231, 23);
-            labelRoomMoved.Name = "labelRoomMoved";
-            labelRoomMoved.Size = new Size(86, 17);
-            labelRoomMoved.TabIndex = 8;
-            labelRoomMoved.Text = "RoomMoved";
             // 
             // labelPoints
             // 
             labelPoints.AutoSize = true;
             labelPoints.Location = new Point(469, 23);
             labelPoints.Name = "labelPoints";
-            labelPoints.Size = new Size(21, 20);
+            labelPoints.Size = new Size(19, 19);
             labelPoints.TabIndex = 3;
             labelPoints.Text = "--";
             // 
@@ -236,45 +227,86 @@
             labelCoins.AutoSize = true;
             labelCoins.Location = new Point(119, 36);
             labelCoins.Name = "labelCoins";
-            labelCoins.Size = new Size(21, 20);
+            labelCoins.Size = new Size(19, 19);
             labelCoins.TabIndex = 2;
             labelCoins.Text = "--";
             // 
-            // label2
+            // labelPointLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(398, 23);
-            label2.Name = "label2";
-            label2.Size = new Size(53, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Points";
+            labelPointLabel.AutoSize = true;
+            labelPointLabel.Location = new Point(398, 23);
+            labelPointLabel.Name = "labelPointLabel";
+            labelPointLabel.Size = new Size(52, 19);
+            labelPointLabel.TabIndex = 1;
+            labelPointLabel.Text = "Points";
             // 
-            // label1
+            // labelCoinLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(53, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Coins:";
+            labelCoinLabel.AutoSize = true;
+            labelCoinLabel.Location = new Point(53, 36);
+            labelCoinLabel.Name = "labelCoinLabel";
+            labelCoinLabel.Size = new Size(53, 19);
+            labelCoinLabel.TabIndex = 0;
+            labelCoinLabel.Text = "Coins:";
+            // 
+            // labelRoomNum
+            // 
+            labelRoomNum.AutoSize = true;
+            labelRoomNum.BackColor = SystemColors.ControlLightLight;
+            labelRoomNum.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRoomNum.Location = new Point(249, 154);
+            labelRoomNum.Name = "labelRoomNum";
+            labelRoomNum.Size = new Size(34, 32);
+            labelRoomNum.TabIndex = 13;
+            labelRoomNum.Text = "--";
             // 
             // labelPlayerName
             // 
             labelPlayerName.AutoSize = true;
-            labelPlayerName.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayerName.BackColor = Color.Transparent;
+            labelPlayerName.Font = new Font("Book Antiqua", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelPlayerName.ForeColor = SystemColors.ControlLightLight;
-            labelPlayerName.Location = new Point(6, 9);
+            labelPlayerName.Location = new Point(76, 9);
             labelPlayerName.Name = "labelPlayerName";
-            labelPlayerName.Size = new Size(20, 21);
+            labelPlayerName.Size = new Size(19, 20);
             labelPlayerName.TabIndex = 8;
             labelPlayerName.Text = "--";
+            // 
+            // labelCaveNum
+            // 
+            labelCaveNum.AutoSize = true;
+            labelCaveNum.BackColor = Color.Transparent;
+            labelCaveNum.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelCaveNum.ForeColor = SystemColors.ControlLightLight;
+            labelCaveNum.Location = new Point(10, 30);
+            labelCaveNum.Name = "labelCaveNum";
+            labelCaveNum.Size = new Size(65, 21);
+            labelCaveNum.TabIndex = 9;
+            labelCaveNum.Text = "Cave: #";
+            // 
+            // labelPlayerLabel
+            // 
+            labelPlayerLabel.AutoSize = true;
+            labelPlayerLabel.BackColor = Color.Transparent;
+            labelPlayerLabel.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPlayerLabel.ForeColor = SystemColors.ControlLightLight;
+            labelPlayerLabel.Location = new Point(10, 9);
+            labelPlayerLabel.Name = "labelPlayerLabel";
+            labelPlayerLabel.Size = new Size(60, 21);
+            labelPlayerLabel.TabIndex = 14;
+            labelPlayerLabel.Text = "Player:";
             // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.DimGray;
+            BackgroundImage = GCUITest.Properties.Resources.Piskel_Bats_Main;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(534, 511);
+            Controls.Add(labelPlayerLabel);
+            Controls.Add(labelRoomNum);
+            Controls.Add(labelCaveNum);
             Controls.Add(labelPlayerName);
             Controls.Add(groupBox1);
             Controls.Add(pictureBoxRoom);
@@ -284,6 +316,8 @@
             Controls.Add(buttonRoomNW);
             Controls.Add(buttonRoomNE);
             Controls.Add(buttonRoomN);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hunt the Wumpus!";
@@ -309,13 +343,15 @@
         private GroupBox groupBox1;
         private Label labelPoints;
         private Label labelCoins;
-        private Label label2;
-        private Label label1;
-        private Label labelRoomMoved;
+        private Label labelPointLabel;
+        private Label labelCoinLabel;
         private PictureBox pictureBox1;
         private Label labelArrows;
-        private Label label4;
+        private Label labelArrowLabel;
         private PictureBox pictureBox2;
         private Label labelPlayerName;
+        private Label labelCaveNum;
+        private Label labelRoomNum;
+        private Label labelPlayerLabel;
     }
 }

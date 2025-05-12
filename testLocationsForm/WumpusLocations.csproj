@@ -8,4 +8,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CaveTest\CaveTest.csproj" />
+    <ProjectReference Include="..\TestingGround\GCUITest.csproj" />
+  </ItemGroup>
+
 </Project>

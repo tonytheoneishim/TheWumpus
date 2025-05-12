@@ -1,4 +1,6 @@
-namespace testLocationsForm
+using CaveTest;
+
+namespace WumpusLocations
 {
     public partial class caveLocationsForm : Form
     {
@@ -43,8 +45,11 @@ namespace testLocationsForm
             caveLayouts.Add(createRoom(-1, -1, 28, 4, -1, 2));
             caveLayouts.Add(createRoom(21, -1, -1, -1, 4, 27));
             caveLayouts.Add(createRoom(-1, 23, 24, 0, -1, -1));
-            Locations cave = new Locations(caveLayouts, new int[] { 0, 1 }, new int[] { 2, 3 }, 4, 5);
+            Locations cave = new Locations(caveLayouts, new int[] { 0, 1 }, new int[] { 2, 3 }, new int[] { 4, 5 }, 5, 6);
             locations.Add(cave);
+
+            wumpusLocationLabel.Text = "Wumpus: " + cave.Wumpus.ToString();
+            playerLocationLabel.Text = "Player: " + cave.Player.ToString();
         }
 
         private void moveWumpus_Click(object sender, EventArgs e)
@@ -52,6 +57,7 @@ namespace testLocationsForm
             if (locations[0].MoveWumpus())
             {
                 wumpusMovedCheck.Checked = true;
+                wumpusLocationLabel.Text = "Wumpus: " + locations[0].Wumpus.ToString();
             }
             else
             {
@@ -59,74 +65,37 @@ namespace testLocationsForm
             }
         }
 
-        private void checkForBat_Click(object sender, EventArgs e)
+        private void checkRoomType_Click(object sender, EventArgs e)
         {
-            if (locations[0].BatsNearby())
-            {
-                batNearbyCheck.Checked = true;
-            }
-            else
-            {
-                batNearbyCheck.Checked = false;
-            }
+            caveTypeText.Text = locations[0].RoomType().ToString();
         }
 
-        private void checkForPit_Click(object sender, EventArgs e)
+        private void checkHazards_Click(object sender, EventArgs e)
         {
-            if (locations[0].PitsNearby())
-            {
-                pitNearbyCheck.Checked = true;
-            }
-            else
-            {
-                pitNearbyCheck.Checked = false;
-            }
+            hazardsNearbyText.Text = locations[0].HazardNearby().ToString();
         }
 
-        private void checkForWumpus_Click(object sender, EventArgs e)
+        private void shootArrow_Click(object sender, EventArgs e)
         {
-            if (locations[0].WumpusNearby())
+            try
             {
-                wumpusNearbyCheck.Checked = true;
-            }
-            else
+                int i = int.Parse(arrowDirectionText.Text);
+                if (locations[0].ShootArrow(i))
+                {
+                    hitWumpusCheck.Checked = true;
+                } else
+                {
+                    hitWumpusCheck.Checked = false;
+                }
+            } catch (FormatException)
             {
-                wumpusNearbyCheck.Checked = false;
-            }
-        }
-
-        private void withBat_Click(object sender, EventArgs e)
-        {
-            if (locations[0].IfBat())
-            {
-                ifBatCheck.Checked = true;
-            }
-            else
-            {
-                ifBatCheck.Checked = false;
-            }
-        }
-
-        private void withPit_Click(object sender, EventArgs e)
-        {
-            if (locations[0].IfPit())
-            {
-                ifPitCheck.Checked = true;
-            }
-            else
-            {
-                ifPitCheck.Checked = false;
-            }
-        }
-
-        private void withWumpus_Click(object sender, EventArgs e)
-        {
-            if (locations[0].IfWumpus())
-            {
-                ifWumpusCheck.Checked = true;
-            } else
-            {
-                ifWumpusCheck.Checked = false;
+                if (arrowDirectionText.Text.Length == 0)
+                {
+                    MessageBox.Show("Textbox is empty");
+                } else
+                {
+                    MessageBox.Show("Invalid input");
+                }
             }
         }
     }

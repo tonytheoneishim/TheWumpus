@@ -7,7 +7,7 @@ namespace Highscore___Testing___Dev;
 
 public class Highscore
 {
-   
+
     const string DATAFILE = "highscores.csv";
     public Highscore()
     {
@@ -21,13 +21,13 @@ public class Highscore
         CaveType = c;
 
     }
-    public string PlayerName {get; set;}
-    public int PlayerFinalScore {get; set;}
-    public string CaveType {get; set;}  
+    public string PlayerName { get; set; }
+    public int PlayerFinalScore { get; set; }
+    public string CaveType { get; set; }
     public List<Highscore> PlayerList = new List<Highscore>();
-    
+    public List<Highscore> TopTenList = new List<Highscore>();
 
-    public void TestAdding(List<Highscore> ac)
+    public void TestAdding()
     {
         PlayerList.Add(new Highscore("Kellen1", 10, "Cave1"));
         PlayerList.Add(new Highscore("Derek2", 20, "Cave2"));
@@ -52,23 +52,54 @@ public class Highscore
 
                 }
             }
-       }
-        //string numbers = "";
-        //foreach (Highscore player in s)
-        //{
-        //    numbers += player.PlayerFinalScore + ", ";
-        //}
-        //int[] scores = { int.Parse(numbers) };
-        //Array.Sort(scores);
-
-
-        //string listboxhighscores = "";
-        //for (int i = 0; i < scores.Length; i++)
-        //{
-        //    //listboxhighscores.selectedindex[i] = 
-        //}
-
+        }
+        
     }
+    public static List<Highscore> GetHighscores(List<Highscore> scores)
+    {
+        FileInfo fileInfo = new FileInfo(DATAFILE);
+        if (fileInfo.Exists)
+        {
+            scores = OpenFromFile("highscores.csv");
+
+            return scores;
+        }
+        else
+        {
+            return scores;
+        }
+    }
+
+    /* public void CheckTopTen()
+    {
+        if (PlayerFinalScore >= PlayerList[9].PlayerFinalScore 
+            && PlayerList[9].PlayerFinalScore < PlayerList[8].PlayerFinalScore)
+        {
+            PlayerList[9] = new Highscore(PlayerName, PlayerFinalScore, CaveType);
+        }
+        else
+        {
+
+        }
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+            if (PlayerFinalScore >= i) PlayerList[i] = new Highscore(PlayerName, PlayerFinalScore, CaveType);
+
+            if (PlayerFinalScore < i) PlayerList[i + 1] = new Highscore(PlayerName, PlayerFinalScore, CaveType);
+
+            if (PlayerFinalScore <= i) 
+
+            if (PlayerFinalScore >= PlayerList[9].PlayerFinalScore
+            && PlayerList[9].PlayerFinalScore < PlayerList[8].PlayerFinalScore)
+        }
+    }
+    */
+
+    public void AddScore(/*string pn, int fs, string ct*/)
+    { 
+        PlayerList.Add(new Highscore(PlayerName, PlayerFinalScore, CaveType   /*pn, fs, ct*/));
+    }
+
     public static void SavetoFile(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);

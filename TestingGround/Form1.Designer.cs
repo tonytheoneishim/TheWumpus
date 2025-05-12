@@ -35,6 +35,8 @@
             // buttonStart
             // 
             buttonStart.BackColor = Color.Gray;
+            buttonStart.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonStart.ForeColor = Color.WhiteSmoke;
             buttonStart.Location = new Point(176, 106);
             buttonStart.Name = "buttonStart";
             buttonStart.Size = new Size(147, 43);
@@ -46,6 +48,8 @@
             // buttonHighscores
             // 
             buttonHighscores.BackColor = Color.Gray;
+            buttonHighscores.Font = new Font("Book Antiqua", 11.25F, FontStyle.Bold);
+            buttonHighscores.ForeColor = Color.WhiteSmoke;
             buttonHighscores.Location = new Point(344, 12);
             buttonHighscores.Name = "buttonHighscores";
             buttonHighscores.Size = new Size(128, 30);
@@ -56,13 +60,14 @@
             // 
             // Form1
             // 
+            AcceptButton = buttonStart;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(484, 261);
             Controls.Add(buttonHighscores);
             Controls.Add(buttonStart);
-            ForeColor = Color.FromArgb(64, 0, 0);
+            ForeColor = Color.WhiteSmoke;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GCUI Test";
