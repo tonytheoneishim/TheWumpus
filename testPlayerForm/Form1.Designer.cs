@@ -1,6 +1,6 @@
-﻿namespace testPlayerForm
+﻿namespace WumpusPlayer
 {
-    partial class CaveLocationsForm
+    partial class cavePlayerForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // CaveLocationsForm
+            // cavePlayerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(612, 458);
-            Name = "CaveLocationsForm";
-            Text = "Cave Locations Form";
+            Name = "cavePlayerForm";
+            Text = "Cave Player Form";
             ResumeLayout(false);
         }
 

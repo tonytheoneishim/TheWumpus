@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CaveTest\CaveTest.csproj" />
     <ProjectReference Include="..\Highscore - Testing + Dev\Highscore - Testing + Dev.csproj" />
+    <ProjectReference Include="..\testLocationsForm\WumpusLocations.csproj" />
   </ItemGroup>
 
 </Project>

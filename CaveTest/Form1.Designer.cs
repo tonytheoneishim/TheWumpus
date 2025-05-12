@@ -171,5 +171,6 @@
         private Button buttonRoom5;
         private Button buttonRoom6;
         private ComboBox comboBoxMapSelection;
+        private Label label2;
     }
 }

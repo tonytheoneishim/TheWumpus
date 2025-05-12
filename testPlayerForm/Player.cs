@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace testPlayerForm
+using WumpusLocations;
+namespace WumpusPLayer
 {
     public class Player
     {
-        public int Arrows { get; set; }
-        public int Gold { get; set; }
-        public int Turns { get; set; }
-        public bool WumpusDead { get; set; }
-
+        public int Arrows { get; set; } // The number of arrows left
+        public int Gold { get; set; } // The amount of gold left
+        public int Turns { get; set; } // The number of turns elapsed
+        public bool WumpusDead { get; set; } // Whether the Wumpus is dead or not
         public Player(int arrows, int gold, int turns, bool wumpusDead)
         {
             Arrows = arrows;
@@ -21,33 +21,34 @@ namespace testPlayerForm
             WumpusDead = wumpusDead;
         }
 
-        public bool PlayerMove(int playerPos, int movePos)
+        /// <summary>
+        /// Moves the player to the chosen location
+        /// </summary>
+        /// <param name="i"> The index of the cave to move to </param>
+        /// <param name="paths"> The array of paths for the current cave </param>
+        /// <returns> Returns true if the player can move to that cave and false otherwise </returns>
+        public bool PlayerMove(int i, int[] paths)
         {
-            // "playerPos" is the cave index that the player is in
-            // "movePos" is the cave index that the player is going to move to
-            // Returns true if the player can move to the cave with index "movePos"
-            // Returns false if otherwise
-            return true;
-        }
+            foreach (int path in paths)
+            {
+                if (path == i)
+                {
+                    return true;
+                }
+            }
 
-        public int ArrowCount()
-        {
-            // Returns how many arrows the player has
-            return Arrows;
+            return false;
         }
-
-        public int GoldCount()
-        {
-            // Returns how much gold the player has
-            return Gold;
-        }
-
-        public int TurnsCount()
-        {
-            // Returns how many turns has passed
-            return Turns;
-        }
-
+        
+        /// <summary>
+        /// Calculates the score at the end of the game
+        /// Score = 100 - turns + gold + (5 * arrows) + (50 if wumpusDead == true else 0)
+        /// </summary>
+        /// <param name="turns"> The number of turns elapsed </param>
+        /// <param name="gold"> The amount of gold you have </param>
+        /// <param name="arrows"> The number of arrows left </param>
+        /// <param name="wumpusDead"> If the Wumpus is dead or not </param>
+        /// <returns> Returns the score </returns>
         public int CalculateScore(int turns, int gold, int arrows, bool wumpusDead)
         {
             // "turns" is the number of turns that has passed
@@ -57,16 +58,12 @@ namespace testPlayerForm
             // Returns the score using this formula:
             // 100 - turns + gold + (5 * arrows) + (50 if wumpusDead == true else 0)
 
-            int score = 100;
-            score -= turns;
-            score += gold;
-            score += arrows;
             if (wumpusDead)
             {
-                score += 50;
+                return 100 - turns + gold + (5 * arrows) + 50;
             }
 
-            return score;
+            return 100 - turns + gold + (5 * arrows);
         }
     }
 }

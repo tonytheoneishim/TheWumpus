@@ -1,4 +1,4 @@
-namespace testLocationsForm
+namespace WumpusLocations
 {
     internal static class Program
     {

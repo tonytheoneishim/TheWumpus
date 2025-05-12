@@ -1,5 +1,6 @@
 using Highscore___Testing___Dev;
 using CaveTest;
+using GCUITest;
 
 namespace TestingGround
 
@@ -10,20 +11,14 @@ namespace TestingGround
         public Form1()
         {
             InitializeComponent();
-
-            highscore.PlayerList.Add(new Highscore("Kellen1", 10, "Cave1"));
-            highscore.PlayerList.Add(new Highscore("Derek2", 20, "Cave2"));
-            highscore.PlayerList.Add(new Highscore("Maxim(3)", 30, "Cave3"));
-
-            Highscore.SavetoFile(highscore.PlayerList);
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
             this.Hide();
 
-            Game game = new Game();
-            game.ShowDialog();
+            PlayernameScreen playernameScreen = new PlayernameScreen();
+            playernameScreen.ShowDialog();
 
             this.Close();
         }
