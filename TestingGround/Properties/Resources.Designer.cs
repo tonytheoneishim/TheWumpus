@@ -223,9 +223,49 @@ namespace GCUITest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Wumpus_Arrow {
+            get {
+                object obj = ResourceManager.GetObject("Wumpus Arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wumpus_Coin {
+            get {
+                object obj = ResourceManager.GetObject("Wumpus Coin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wumpus_Coin__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Wumpus Coin (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Wumpus_Room {
             get {
                 object obj = ResourceManager.GetObject("Wumpus Room", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wumpus_Room__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Wumpus Room (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

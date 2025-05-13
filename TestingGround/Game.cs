@@ -73,7 +73,7 @@ namespace TestingGround
             buttonRoomSW.FlatAppearance.BorderSize = 0;
             buttonRoomSE.FlatAppearance.BorderSize = 0;
 
-            int index = rand.Next(0, 3);
+            int index = rand.Next(0, 4);
             cave.caveSelect(index);
             updateButtons(START_POSITION);
             labelRoomNum.Text = START_POSITION.ToString();
@@ -89,7 +89,7 @@ namespace TestingGround
             index = int.Parse(button.Text);
             labelRoomNum.Text = button.Text;
             currentRoom = index;
-            
+
             updateButtons(index);
             DoTurn();
         }
@@ -104,6 +104,7 @@ namespace TestingGround
             labelCoins.Text = coins.ToString();
             labelArrows.Text = arrows.ToString();
             labelPoints.Text = score.ToString();
+            checkBoxShootArrow.Checked = false;
         }
 
         private void updateButtons(int index)
@@ -121,6 +122,11 @@ namespace TestingGround
                 buttons[i].Text = connectedRooms[i].ToString();
                 if (connectedRooms[i] > -1) buttons[i].Visible = true;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

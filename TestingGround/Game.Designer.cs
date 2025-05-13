@@ -36,6 +36,7 @@
             buttonRoomS = new Button();
             pictureBoxRoom = new PictureBox();
             groupBox1 = new GroupBox();
+            checkBoxShootArrow = new CheckBox();
             pictureBox2 = new PictureBox();
             labelArrows = new Label();
             labelArrowLabel = new Label();
@@ -159,10 +160,10 @@
             // pictureBoxRoom
             // 
             pictureBoxRoom.BackColor = Color.Transparent;
-            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room;
-            pictureBoxRoom.Location = new Point(131, 43);
+            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room__1_;
+            pictureBoxRoom.Location = new Point(155, 61);
             pictureBoxRoom.Name = "pictureBoxRoom";
-            pictureBoxRoom.Size = new Size(270, 270);
+            pictureBoxRoom.Size = new Size(220, 220);
             pictureBoxRoom.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxRoom.TabIndex = 6;
             pictureBoxRoom.TabStop = false;
@@ -170,6 +171,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(checkBoxShootArrow);
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(labelArrows);
             groupBox1.Controls.Add(labelArrowLabel);
@@ -187,20 +189,31 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Hunt the Wumpus!";
             // 
+            // checkBoxShootArrow
+            // 
+            checkBoxShootArrow.AutoSize = true;
+            checkBoxShootArrow.Location = new Point(199, 96);
+            checkBoxShootArrow.Name = "checkBoxShootArrow";
+            checkBoxShootArrow.Size = new Size(116, 23);
+            checkBoxShootArrow.TabIndex = 14;
+            checkBoxShootArrow.Text = "Shoot Arrow";
+            checkBoxShootArrow.UseVisualStyleBackColor = true;
+            // 
             // pictureBox2
             // 
-            pictureBox2.Image = GCUITest.Properties.Resources.Arrow_removebg_preview;
-            pictureBox2.Location = new Point(12, 71);
+            pictureBox2.Image = GCUITest.Properties.Resources.Wumpus_Arrow;
+            pictureBox2.Location = new Point(15, 87);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(41, 38);
+            pictureBox2.Size = new Size(55, 50);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // labelArrows
             // 
             labelArrows.AutoSize = true;
-            labelArrows.Location = new Point(119, 80);
+            labelArrows.Location = new Point(139, 97);
             labelArrows.Name = "labelArrows";
             labelArrows.Size = new Size(19, 19);
             labelArrows.TabIndex = 11;
@@ -209,7 +222,7 @@
             // labelArrowLabel
             // 
             labelArrowLabel.AutoSize = true;
-            labelArrowLabel.Location = new Point(53, 80);
+            labelArrowLabel.Location = new Point(73, 97);
             labelArrowLabel.Name = "labelArrowLabel";
             labelArrowLabel.Size = new Size(65, 19);
             labelArrowLabel.TabIndex = 10;
@@ -217,10 +230,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = GCUITest.Properties.Resources.coin2_removebg_preview;
-            pictureBox1.Location = new Point(12, 25);
+            pictureBox1.Image = GCUITest.Properties.Resources.Wumpus_Coin__1_;
+            pictureBox1.Location = new Point(21, 25);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(38, 36);
+            pictureBox1.Size = new Size(48, 56);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
@@ -237,7 +250,7 @@
             // labelCoins
             // 
             labelCoins.AutoSize = true;
-            labelCoins.Location = new Point(119, 36);
+            labelCoins.Location = new Point(141, 42);
             labelCoins.Name = "labelCoins";
             labelCoins.Size = new Size(19, 19);
             labelCoins.TabIndex = 2;
@@ -255,7 +268,7 @@
             // labelCoinLabel
             // 
             labelCoinLabel.AutoSize = true;
-            labelCoinLabel.Location = new Point(53, 36);
+            labelCoinLabel.Location = new Point(75, 42);
             labelCoinLabel.Name = "labelCoinLabel";
             labelCoinLabel.Size = new Size(53, 19);
             labelCoinLabel.TabIndex = 0;
@@ -264,8 +277,9 @@
             // labelRoomNum
             // 
             labelRoomNum.AutoSize = true;
-            labelRoomNum.BackColor = SystemColors.ControlLightLight;
+            labelRoomNum.BackColor = Color.FromArgb(16, 16, 16);
             labelRoomNum.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRoomNum.ForeColor = SystemColors.ControlLightLight;
             labelRoomNum.Location = new Point(249, 154);
             labelRoomNum.Name = "labelRoomNum";
             labelRoomNum.Size = new Size(34, 32);
@@ -365,5 +379,6 @@
         private Label labelCaveNum;
         private Label labelRoomNum;
         private Label labelPlayerLabel;
+        private CheckBox checkBoxShootArrow;
     }
 }
