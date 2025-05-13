@@ -99,7 +99,8 @@ public class Highscore
         StreamWriter sw = new StreamWriter(DATAFILE);
         foreach (Highscore player in players)
         {
-            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString() + "," + player.CaveType;
+            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString() + "," + player.CaveType
+                + "," + player.ArrowsLeft + "," + player.GoldCoinsLeft + "," + player.KilledWumpus;
             sw.WriteLine(output);
         }
         sw.Flush();
@@ -116,7 +117,7 @@ public class Highscore
             string[] record = line.Split(',');
             Highscore thehigh = new Highscore(record[0], int.Parse(record[1]), record[2],
                 int.Parse(record[3]), int.Parse(record[4]), bool.Parse(record[5]));
-            
+            //donnelly
             list.Add(thehigh);
 
             line = sr.ReadLine();

@@ -25,8 +25,29 @@ namespace TestingGround
         }
 
         private void listBoxHighScores_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        { 
+            Highscore highscore = new Highscore();
+            try
+            {
+                listBoxStatistics.Items.Clear();
+                int i = listBoxNameList.SelectedIndex;
 
+                for (int j = 0; j < i; j++)
+                {
+                    if (listBoxNameList.SelectedIndex == i)
+                    {
+                        listBoxStatistics.Items.Add(highscore.ArrowsLeft);
+                        listBoxStatistics.Items.Add(highscore.GoldCoinsLeft);
+                        listBoxStatistics.Items.Add(highscore.KilledWumpus);
+                        break;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Select a name to show run statistics!", "Info!");
+                return;
+            }
         }
 
         private void HighScoreForm_Load(object sender, EventArgs e)
@@ -41,20 +62,6 @@ namespace TestingGround
                 listBoxScoreList.Items.Add(player.PlayerFinalScore);
                 listBoxCaveNumList.Items.Add(player.CaveType);
             }
-
-            //FileInfo fileInfo = new FileInfo("highscores.csv");
-            //if (fileInfo.Exists)
-            //{
-            //    highscore.PlayerList = Highscore.OpenFromFile("highscores.csv");
-
-
-            //}
-
-            // how do we want to display the three types of information? (kellen) (trummer !! ) (hah) (what)
-            // feel free to change :skull: idk how to do this 
-
-            // Highscore.OpenFromFile("highscores.csv"); // datafile
-
         }
     }
 }
