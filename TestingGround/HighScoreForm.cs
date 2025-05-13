@@ -34,7 +34,7 @@ namespace TestingGround
             Highscore highscore = new Highscore();
             highscore.TestAdding();
             Highscore.GetHighscores(highscore.PlayerList);
-
+            highscore.SortHighs();
             foreach (Highscore player in highscore.PlayerList)
             {
                 listBoxNameList.Items.Add(player.PlayerName);
