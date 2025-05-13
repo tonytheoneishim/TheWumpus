@@ -116,7 +116,7 @@ public class Highscore
             string[] record = line.Split(',');
             Highscore thehigh = new Highscore(record[0], int.Parse(record[1]), record[2],
                 int.Parse(record[3]), int.Parse(record[4]), bool.Parse(record[5]));
-            
+            //donnelly
             list.Add(thehigh);
 
             line = sr.ReadLine();
