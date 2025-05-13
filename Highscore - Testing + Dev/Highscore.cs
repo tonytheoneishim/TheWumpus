@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace Highscore___Testing___Dev;
@@ -31,7 +32,6 @@ public class Highscore
     public bool KilledWumpus { get; set; }
 
     public List<Highscore> PlayerList = new List<Highscore>();
-    public List<Highscore> TopTenList = new List<Highscore>();
 
     public void TestAdding()
     {
@@ -50,13 +50,14 @@ public class Highscore
     }
     public void AddHighscore(string pn, int sc, string ct, int ar, int gc, bool kw)
     {
-       // PlayerList.Add(new Highscore(pn, ));
+        PlayerList.Add(new Highscore(pn, sc, ct, ar, gc, kw));
         SortHighs();
         if (PlayerList.Count > 10)
         {
             PlayerList.RemoveAt(10);
         }
-       // SavetoFile();
+        
+        SavetoFile(PlayerList);
     }
     public void SortHighs()
     {
@@ -93,32 +94,6 @@ public class Highscore
         }
     }
 
-    /* public void CheckTopTen()
-    {
-        if (PlayerFinalScore >= PlayerList[9].PlayerFinalScore 
-            && PlayerList[9].PlayerFinalScore < PlayerList[8].PlayerFinalScore)
-        {
-            PlayerList[9] = new Highscore(PlayerName, PlayerFinalScore, CaveType);
-        }
-        else
-        {
-
-        }
-        for (int i = 0; i < PlayerList.Count; i++)
-        {
-            if (PlayerFinalScore >= i) PlayerList[i] = new Highscore(PlayerName, PlayerFinalScore, CaveType);
-
-            if (PlayerFinalScore < i) PlayerList[i + 1] = new Highscore(PlayerName, PlayerFinalScore, CaveType);
-
-            if (PlayerFinalScore <= i) 
-
-            if (PlayerFinalScore >= PlayerList[9].PlayerFinalScore
-            && PlayerList[9].PlayerFinalScore < PlayerList[8].PlayerFinalScore)
-        }
-    }
-    */
-
-
     public static void SavetoFile(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);
@@ -139,9 +114,10 @@ public class Highscore
         while (line != null)
         {
             string[] record = line.Split(',');
-            //Highscore thehigh = new Highscore(record[0], int.Parse(record[1]), record[2], int.Parse(record[3]), int.Parse(record[4]), record[5].ToString());
+            Highscore thehigh = new Highscore(record[0], int.Parse(record[1]), record[2],
+                int.Parse(record[3]), int.Parse(record[4]), bool.Parse(record[5]));
             
-           // list.Add(thehigh);
+            list.Add(thehigh);
 
             line = sr.ReadLine();
 
