@@ -99,7 +99,8 @@ public class Highscore
         StreamWriter sw = new StreamWriter(DATAFILE);
         foreach (Highscore player in players)
         {
-            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString() + "," + player.CaveType;
+            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString() + "," + player.CaveType
+                + "," + player.ArrowsLeft + "," + player.GoldCoinsLeft + "," + player.KilledWumpus;
             sw.WriteLine(output);
         }
         sw.Flush();
