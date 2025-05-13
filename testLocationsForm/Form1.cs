@@ -45,7 +45,7 @@ namespace WumpusLocations
             caveLayouts.Add(createRoom(-1, -1, 28, 4, -1, 2));
             caveLayouts.Add(createRoom(21, -1, -1, -1, 4, 27));
             caveLayouts.Add(createRoom(-1, 23, 24, 0, -1, -1));
-            Locations cave = new Locations(caveLayouts, new int[] { 0, 1 }, new int[] { 2, 3 }, new int[] { 4, 5 }, 5, 6);
+            Locations cave = new Locations(caveLayouts);
             locations.Add(cave);
 
             wumpusLocationLabel.Text = "Wumpus: " + cave.Wumpus.ToString();
@@ -83,19 +83,32 @@ namespace WumpusLocations
                 if (locations[0].ShootArrow(i))
                 {
                     hitWumpusCheck.Checked = true;
-                } else
+                }
+                else
                 {
                     hitWumpusCheck.Checked = false;
                 }
-            } catch (FormatException)
+            }
+            catch (FormatException)
             {
                 if (arrowDirectionText.Text.Length == 0)
                 {
                     MessageBox.Show("Textbox is empty");
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Invalid input");
                 }
+            }
+        }
+
+        private void spawnEvents_Click(object sender, EventArgs e)
+        {
+            List<int[]> events = locations[0].SpawnEvents();
+            foreach (int[] evt in events)
+            {
+                eventsList.Items.Add(evt[0]);
+                eventsList.Items.Add(evt[1]);
             }
         }
     }

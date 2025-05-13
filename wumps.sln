@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WumpusLocations", "testLoca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WumpusPlayer", "testPlayerForm\WumpusPlayer.csproj", "{A5AAA876-CBEB-4C71-983F-BC7837FFE822}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WumpusUpgrades", "WumpusUpgrades\WumpusUpgrades.csproj", "{A6305280-2A17-4AEC-BA0C-DE6FEC47775E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{A5AAA876-CBEB-4C71-983F-BC7837FFE822}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5AAA876-CBEB-4C71-983F-BC7837FFE822}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5AAA876-CBEB-4C71-983F-BC7837FFE822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6305280-2A17-4AEC-BA0C-DE6FEC47775E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6305280-2A17-4AEC-BA0C-DE6FEC47775E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6305280-2A17-4AEC-BA0C-DE6FEC47775E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6305280-2A17-4AEC-BA0C-DE6FEC47775E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

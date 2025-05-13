@@ -38,11 +38,13 @@
             caveTypeText = new TextBox();
             checkRoomType = new Button();
             shootArrowBox = new GroupBox();
+            arrowDirectionText = new TextBox();
             hitWumpusCheck = new CheckBox();
             shootArrow = new Button();
             wumpusLocationLabel = new Label();
             playerLocationLabel = new Label();
-            arrowDirectionText = new TextBox();
+            spawnEvents = new Button();
+            eventsList = new ListBox();
             moveWumpusBox.SuspendLayout();
             hazardNearbyBox.SuspendLayout();
             caveTypeBox.SuspendLayout();
@@ -151,6 +153,13 @@
             shootArrowBox.TabStop = false;
             shootArrowBox.Text = "Shoot Arrow";
             // 
+            // arrowDirectionText
+            // 
+            arrowDirectionText.Location = new Point(6, 47);
+            arrowDirectionText.Name = "arrowDirectionText";
+            arrowDirectionText.Size = new Size(124, 23);
+            arrowDirectionText.TabIndex = 4;
+            // 
             // hitWumpusCheck
             // 
             hitWumpusCheck.AutoSize = true;
@@ -188,18 +197,32 @@
             playerLocationLabel.Size = new Size(0, 15);
             playerLocationLabel.TabIndex = 10;
             // 
-            // arrowDirectionText
+            // spawnEvents
             // 
-            arrowDirectionText.Location = new Point(6, 47);
-            arrowDirectionText.Name = "arrowDirectionText";
-            arrowDirectionText.Size = new Size(124, 23);
-            arrowDirectionText.TabIndex = 4;
+            spawnEvents.Location = new Point(274, 52);
+            spawnEvents.Name = "spawnEvents";
+            spawnEvents.Size = new Size(75, 23);
+            spawnEvents.TabIndex = 11;
+            spawnEvents.Text = "Spawn";
+            spawnEvents.UseVisualStyleBackColor = true;
+            spawnEvents.Click += spawnEvents_Click;
+            // 
+            // eventsList
+            // 
+            eventsList.FormattingEnabled = true;
+            eventsList.ItemHeight = 15;
+            eventsList.Location = new Point(330, 222);
+            eventsList.Name = "eventsList";
+            eventsList.Size = new Size(120, 94);
+            eventsList.TabIndex = 12;
             // 
             // caveLocationsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(462, 375);
+            Controls.Add(eventsList);
+            Controls.Add(spawnEvents);
             Controls.Add(playerLocationLabel);
             Controls.Add(wumpusLocationLabel);
             Controls.Add(shootArrowBox);
@@ -238,5 +261,7 @@
         private TextBox caveTypeText;
         private TextBox hazardsNearbyText;
         private TextBox arrowDirectionText;
+        private Button spawnEvents;
+        private ListBox eventsList;
     }
 }
