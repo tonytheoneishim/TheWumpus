@@ -36,6 +36,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Book Antiqua", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(174, 83);
@@ -54,7 +55,7 @@
             // 
             // buttonDone
             // 
-            buttonDone.BackColor = SystemColors.ButtonFace;
+            buttonDone.BackColor = SystemColors.ControlDarkDark;
             buttonDone.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonDone.Location = new Point(397, 221);
             buttonDone.Name = "buttonDone";
@@ -70,10 +71,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
+            BackgroundImage = Properties.Resources.Playername_Form_;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(484, 261);
             Controls.Add(buttonDone);
             Controls.Add(textBoxName);
             Controls.Add(label1);
+            DoubleBuffered = true;
             Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(3, 4, 3, 4);

@@ -1,6 +1,6 @@
 using CaveTest;
 
-namespace testLocationsForm
+namespace WumpusLocations
 {
     public partial class caveLocationsForm : Form
     {
@@ -45,7 +45,7 @@ namespace testLocationsForm
             caveLayouts.Add(createRoom(-1, -1, 28, 4, -1, 2));
             caveLayouts.Add(createRoom(21, -1, -1, -1, 4, 27));
             caveLayouts.Add(createRoom(-1, 23, 24, 0, -1, -1));
-            Locations cave = new Locations(caveLayouts, new int[] { 0, 1 }, new int[] { 2, 3 }, 4, 5);
+            Locations cave = new Locations(caveLayouts, new int[] { 0, 1 }, new int[] { 2, 3 }, new int[] { 4, 5 }, 5, 6);
             locations.Add(cave);
 
             wumpusLocationLabel.Text = "Wumpus: " + cave.Wumpus.ToString();
@@ -73,6 +73,30 @@ namespace testLocationsForm
         private void checkHazards_Click(object sender, EventArgs e)
         {
             hazardsNearbyText.Text = locations[0].HazardNearby().ToString();
+        }
+
+        private void shootArrow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = int.Parse(arrowDirectionText.Text);
+                if (locations[0].ShootArrow(i))
+                {
+                    hitWumpusCheck.Checked = true;
+                } else
+                {
+                    hitWumpusCheck.Checked = false;
+                }
+            } catch (FormatException)
+            {
+                if (arrowDirectionText.Text.Length == 0)
+                {
+                    MessageBox.Show("Textbox is empty");
+                } else
+                {
+                    MessageBox.Show("Invalid input");
+                }
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace testLocationsForm
+﻿namespace WumpusLocations
 {
     partial class caveLocationsForm
     {
@@ -42,6 +42,7 @@
             shootArrow = new Button();
             wumpusLocationLabel = new Label();
             playerLocationLabel = new Label();
+            arrowDirectionText = new TextBox();
             moveWumpusBox.SuspendLayout();
             hazardNearbyBox.SuspendLayout();
             caveTypeBox.SuspendLayout();
@@ -140,11 +141,12 @@
             // 
             // shootArrowBox
             // 
+            shootArrowBox.Controls.Add(arrowDirectionText);
             shootArrowBox.Controls.Add(hitWumpusCheck);
             shootArrowBox.Controls.Add(shootArrow);
             shootArrowBox.Location = new Point(154, 126);
             shootArrowBox.Name = "shootArrowBox";
-            shootArrowBox.Size = new Size(136, 108);
+            shootArrowBox.Size = new Size(136, 133);
             shootArrowBox.TabIndex = 5;
             shootArrowBox.TabStop = false;
             shootArrowBox.Text = "Shoot Arrow";
@@ -162,12 +164,13 @@
             // 
             // shootArrow
             // 
-            shootArrow.Location = new Point(6, 47);
+            shootArrow.Location = new Point(6, 76);
             shootArrow.Name = "shootArrow";
             shootArrow.Size = new Size(114, 46);
             shootArrow.TabIndex = 0;
             shootArrow.Text = "Shoot Arrow";
             shootArrow.UseVisualStyleBackColor = true;
+            shootArrow.Click += shootArrow_Click;
             // 
             // wumpusLocationLabel
             // 
@@ -184,6 +187,13 @@
             playerLocationLabel.Name = "playerLocationLabel";
             playerLocationLabel.Size = new Size(0, 15);
             playerLocationLabel.TabIndex = 10;
+            // 
+            // arrowDirectionText
+            // 
+            arrowDirectionText.Location = new Point(6, 47);
+            arrowDirectionText.Name = "arrowDirectionText";
+            arrowDirectionText.Size = new Size(124, 23);
+            arrowDirectionText.TabIndex = 4;
             // 
             // caveLocationsForm
             // 
@@ -227,5 +237,6 @@
         private Label playerLocationLabel;
         private TextBox caveTypeText;
         private TextBox hazardsNearbyText;
+        private TextBox arrowDirectionText;
     }
 }
