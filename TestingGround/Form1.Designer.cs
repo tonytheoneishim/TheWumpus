@@ -34,7 +34,11 @@
             // 
             // buttonStart
             // 
-            buttonStart.BackColor = Color.Gray;
+            buttonStart.BackColor = Color.FromArgb(27, 27, 27);
+            buttonStart.FlatAppearance.BorderSize = 0;
+            buttonStart.FlatAppearance.MouseDownBackColor = Color.Gray;
+            buttonStart.FlatAppearance.MouseOverBackColor = Color.DimGray;
+            buttonStart.FlatStyle = FlatStyle.Flat;
             buttonStart.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonStart.ForeColor = Color.WhiteSmoke;
             buttonStart.Location = new Point(176, 106);
@@ -47,7 +51,11 @@
             // 
             // buttonHighscores
             // 
-            buttonHighscores.BackColor = Color.Gray;
+            buttonHighscores.BackColor = Color.FromArgb(27, 27, 27);
+            buttonHighscores.FlatAppearance.BorderSize = 0;
+            buttonHighscores.FlatAppearance.MouseDownBackColor = Color.Gray;
+            buttonHighscores.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            buttonHighscores.FlatStyle = FlatStyle.Flat;
             buttonHighscores.Font = new Font("Book Antiqua", 11.25F, FontStyle.Bold);
             buttonHighscores.ForeColor = Color.WhiteSmoke;
             buttonHighscores.Location = new Point(344, 12);
@@ -64,9 +72,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
+            BackgroundImage = GCUITest.Properties.Resources.Playername_Form_;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(484, 261);
             Controls.Add(buttonHighscores);
             Controls.Add(buttonStart);
+            DoubleBuffered = true;
             ForeColor = Color.WhiteSmoke;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
