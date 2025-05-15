@@ -39,7 +39,7 @@ namespace MainTestForm
                 radios[i].Text = answerOptions[i];
             }
 
-            rightRadioButtonIndex = Array.IndexOf(answerOptions, trivia.GetCorrectAnswer());
+            //rightRadioButtonIndex = Array.IndexOf(answerOptions, trivia.GetCorrectAnswer());
             ClearRadioButtonSelections();
         }
 
