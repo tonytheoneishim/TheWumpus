@@ -95,25 +95,31 @@ namespace TriviaLibrary
             }
         }
 
-        public void readFromFile() 
+        private void readFromFile()
         {
-
             if (!File.Exists("Questions.txt")) { return; }
 
             StreamReader sr = new StreamReader("Questions.txt");
-            string line = sr.ReadLine();
-
-            while (line != null) 
+            string line;
+            while ((line = sr.ReadLine()) != null)
             {
-
                 string[] array = line.Split(',');
                 QuestionsList.Add(array);
-                line = sr.ReadLine();
-                
-            
             }
             sr.Close();
-        
+
+            // Initialize the Questions array based on the loaded QuestionsList
+            if (QuestionsList.Count > 0)
+            {
+                Questions = new string[QuestionsList.Count, 5]; // Assuming each question has 4 options + 1 question text
+                for (int i = 0; i < QuestionsList.Count; i++)
+                {
+                    for (int j = 0; j < QuestionsList[i].Length; j++)
+                    {
+                        Questions[i, j] = QuestionsList[i][j];
+                    }
+                }
+            }
         }
     }
 }
