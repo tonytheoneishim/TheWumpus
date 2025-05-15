@@ -31,8 +31,6 @@
             label1 = new Label();
             listBoxNameList = new ListBox();
             buttonClose = new Button();
-            listBoxScoreList = new ListBox();
-            listBoxCaveNumList = new ListBox();
             labelName = new Label();
             labelScore = new Label();
             labelCaveNum = new Label();
@@ -58,7 +56,7 @@
             listBoxNameList.ItemHeight = 19;
             listBoxNameList.Location = new Point(12, 61);
             listBoxNameList.Name = "listBoxNameList";
-            listBoxNameList.Size = new Size(140, 175);
+            listBoxNameList.Size = new Size(285, 175);
             listBoxNameList.TabIndex = 1;
             listBoxNameList.SelectedIndexChanged += listBoxHighScores_SelectedIndexChanged;
             // 
@@ -72,26 +70,6 @@
             buttonClose.Text = "Close";
             buttonClose.UseVisualStyleBackColor = true;
             buttonClose.Click += buttonClose_Click;
-            // 
-            // listBoxScoreList
-            // 
-            listBoxScoreList.Font = new Font("Book Antiqua", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            listBoxScoreList.FormattingEnabled = true;
-            listBoxScoreList.ItemHeight = 19;
-            listBoxScoreList.Location = new Point(158, 61);
-            listBoxScoreList.Name = "listBoxScoreList";
-            listBoxScoreList.Size = new Size(62, 175);
-            listBoxScoreList.TabIndex = 3;
-            // 
-            // listBoxCaveNumList
-            // 
-            listBoxCaveNumList.Font = new Font("Book Antiqua", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            listBoxCaveNumList.FormattingEnabled = true;
-            listBoxCaveNumList.ItemHeight = 19;
-            listBoxCaveNumList.Location = new Point(226, 61);
-            listBoxCaveNumList.Name = "listBoxCaveNumList";
-            listBoxCaveNumList.Size = new Size(61, 175);
-            listBoxCaveNumList.TabIndex = 4;
             // 
             // labelName
             // 
@@ -120,11 +98,11 @@
             labelCaveNum.AutoSize = true;
             labelCaveNum.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelCaveNum.ForeColor = SystemColors.ControlLightLight;
-            labelCaveNum.Location = new Point(226, 37);
+            labelCaveNum.Location = new Point(233, 37);
             labelCaveNum.Name = "labelCaveNum";
-            labelCaveNum.Size = new Size(61, 21);
+            labelCaveNum.Size = new Size(47, 21);
             labelCaveNum.TabIndex = 7;
-            labelCaveNum.Text = "Cave #";
+            labelCaveNum.Text = "Cave";
             // 
             // label3
             // 
@@ -159,8 +137,6 @@
             Controls.Add(labelCaveNum);
             Controls.Add(labelScore);
             Controls.Add(labelName);
-            Controls.Add(listBoxCaveNumList);
-            Controls.Add(listBoxScoreList);
             Controls.Add(buttonClose);
             Controls.Add(listBoxNameList);
             Controls.Add(label1);
@@ -178,8 +154,6 @@
         private Label label1;
         private ListBox listBoxNameList;
         private Button buttonClose;
-        private ListBox listBoxScoreList;
-        private ListBox listBoxCaveNumList;
         private Label labelName;
         private Label labelScore;
         private Label labelCaveNum;

@@ -36,9 +36,10 @@ namespace TestingGround
                 {
                     if (listBoxNameList.SelectedIndex == i)
                     {
-                        listBoxStatistics.Items.Add(highscore.ArrowsLeft);
-                        listBoxStatistics.Items.Add(highscore.GoldCoinsLeft);
-                        listBoxStatistics.Items.Add(highscore.KilledWumpus);
+                        listBoxStatistics.Items.Clear();
+                        listBoxStatistics.Items.Add(highscore.PlayerList[i].ArrowsLeft);
+                        listBoxStatistics.Items.Add(highscore.PlayerList[i].GoldCoinsLeft);
+                        listBoxStatistics.Items.Add(highscore.PlayerList[i].KilledWumpus);
                         break;
                     }
                 }
@@ -58,9 +59,7 @@ namespace TestingGround
             highscore.SortHighs();
             foreach (Highscore player in highscore.PlayerList)
             {
-                listBoxNameList.Items.Add(player.PlayerName);
-                listBoxScoreList.Items.Add(player.PlayerFinalScore);
-                listBoxCaveNumList.Items.Add(player.CaveType);
+                listBoxNameList.Items.Add(player.ToString());
             }
         }
     }

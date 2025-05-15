@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Transactions;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace Highscore___Testing___Dev;
@@ -92,6 +93,10 @@ public class Highscore
         {
             return scores;
         }
+    }
+    public override string ToString()
+    {
+        return PlayerName + "\t\t" + PlayerFinalScore + "\t" + CaveType;
     }
 
     public static void SavetoFile(List<Highscore> players)
