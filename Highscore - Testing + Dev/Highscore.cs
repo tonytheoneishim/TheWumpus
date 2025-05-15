@@ -126,7 +126,7 @@ public class Highscore
             list.Add(thehigh);
 
             line = sr.ReadLine();
-
+            
         }
         sr.Close();
         return list;

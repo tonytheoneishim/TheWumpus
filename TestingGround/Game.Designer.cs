@@ -61,6 +61,8 @@
             buttonRoomN.BackgroundImage = GCUITest.Properties.Resources.Arrow_3__1_;
             buttonRoomN.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomN.Cursor = Cursors.PanNorth;
+            buttonRoomN.FlatAppearance.BorderSize = 0;
+            buttonRoomN.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomN.FlatStyle = FlatStyle.Flat;
             buttonRoomN.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomN.ForeColor = Color.Transparent;
@@ -68,6 +70,7 @@
             buttonRoomN.Name = "buttonRoomN";
             buttonRoomN.Size = new Size(50, 50);
             buttonRoomN.TabIndex = 0;
+            buttonRoomN.TabStop = false;
             buttonRoomN.Text = "N";
             buttonRoomN.UseVisualStyleBackColor = false;
             buttonRoomN.Click += buttonRoomN_Click;
@@ -78,6 +81,8 @@
             buttonRoomNE.BackgroundImage = GCUITest.Properties.Resources.image__1___4_;
             buttonRoomNE.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomNE.Cursor = Cursors.PanNE;
+            buttonRoomNE.FlatAppearance.BorderSize = 0;
+            buttonRoomNE.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomNE.FlatStyle = FlatStyle.Flat;
             buttonRoomNE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomNE.ForeColor = SystemColors.ControlLightLight;
@@ -85,6 +90,7 @@
             buttonRoomNE.Name = "buttonRoomNE";
             buttonRoomNE.Size = new Size(50, 50);
             buttonRoomNE.TabIndex = 1;
+            buttonRoomNE.TabStop = false;
             buttonRoomNE.Text = "NE";
             buttonRoomNE.UseVisualStyleBackColor = false;
             buttonRoomNE.Click += buttonRoomN_Click;
@@ -95,6 +101,8 @@
             buttonRoomNW.BackgroundImage = GCUITest.Properties.Resources.image__1___1_;
             buttonRoomNW.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomNW.Cursor = Cursors.PanNW;
+            buttonRoomNW.FlatAppearance.BorderSize = 0;
+            buttonRoomNW.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomNW.FlatStyle = FlatStyle.Flat;
             buttonRoomNW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomNW.ForeColor = SystemColors.ControlLightLight;
@@ -102,6 +110,7 @@
             buttonRoomNW.Name = "buttonRoomNW";
             buttonRoomNW.Size = new Size(50, 50);
             buttonRoomNW.TabIndex = 2;
+            buttonRoomNW.TabStop = false;
             buttonRoomNW.Text = "NW";
             buttonRoomNW.UseVisualStyleBackColor = false;
             buttonRoomNW.Click += buttonRoomN_Click;
@@ -112,6 +121,8 @@
             buttonRoomSW.BackgroundImage = GCUITest.Properties.Resources.image__1___2_;
             buttonRoomSW.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomSW.Cursor = Cursors.PanSW;
+            buttonRoomSW.FlatAppearance.BorderSize = 0;
+            buttonRoomSW.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomSW.FlatStyle = FlatStyle.Flat;
             buttonRoomSW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomSW.ForeColor = SystemColors.ControlLightLight;
@@ -119,6 +130,7 @@
             buttonRoomSW.Name = "buttonRoomSW";
             buttonRoomSW.Size = new Size(50, 50);
             buttonRoomSW.TabIndex = 3;
+            buttonRoomSW.TabStop = false;
             buttonRoomSW.Text = "SW";
             buttonRoomSW.UseVisualStyleBackColor = false;
             buttonRoomSW.Click += buttonRoomN_Click;
@@ -129,6 +141,8 @@
             buttonRoomSE.BackgroundImage = GCUITest.Properties.Resources.image__1___3_;
             buttonRoomSE.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomSE.Cursor = Cursors.PanSE;
+            buttonRoomSE.FlatAppearance.BorderSize = 0;
+            buttonRoomSE.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomSE.FlatStyle = FlatStyle.Flat;
             buttonRoomSE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomSE.ForeColor = SystemColors.ControlLightLight;
@@ -136,6 +150,7 @@
             buttonRoomSE.Name = "buttonRoomSE";
             buttonRoomSE.Size = new Size(50, 50);
             buttonRoomSE.TabIndex = 4;
+            buttonRoomSE.TabStop = false;
             buttonRoomSE.Text = "SE";
             buttonRoomSE.UseVisualStyleBackColor = false;
             buttonRoomSE.Click += buttonRoomN_Click;
@@ -146,6 +161,8 @@
             buttonRoomS.BackgroundImage = GCUITest.Properties.Resources.Arrow_3__1___2_;
             buttonRoomS.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomS.Cursor = Cursors.PanSouth;
+            buttonRoomS.FlatAppearance.BorderSize = 0;
+            buttonRoomS.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomS.FlatStyle = FlatStyle.Flat;
             buttonRoomS.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomS.ForeColor = Color.Transparent;
@@ -153,6 +170,7 @@
             buttonRoomS.Name = "buttonRoomS";
             buttonRoomS.Size = new Size(50, 50);
             buttonRoomS.TabIndex = 5;
+            buttonRoomS.TabStop = false;
             buttonRoomS.Text = "S";
             buttonRoomS.UseVisualStyleBackColor = false;
             buttonRoomS.Click += buttonRoomN_Click;

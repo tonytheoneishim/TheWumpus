@@ -11,6 +11,8 @@
   <ItemGroup>
     <ProjectReference Include="..\CaveTest\CaveTest.csproj" />
     <ProjectReference Include="..\Highscore - Testing + Dev\Highscore - Testing + Dev.csproj" />
+    <ProjectReference Include="..\testLocationsForm\WumpusLocations.csproj" />
+    <ProjectReference Include="..\testPlayerForm\WumpusPlayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
