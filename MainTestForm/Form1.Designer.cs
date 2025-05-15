@@ -58,6 +58,7 @@
             labelQuestions.Size = new Size(52, 21);
             labelQuestions.TabIndex = 1;
             labelQuestions.Text = "label1";
+           
             // 
             // ButtonAnswer
             // 
@@ -83,6 +84,7 @@
             radioButtonA.TabStop = true;
             radioButtonA.Text = "radioButton1";
             radioButtonA.UseVisualStyleBackColor = false;
+           
             // 
             // radioButtonB
             // 
@@ -95,6 +97,7 @@
             radioButtonB.TabStop = true;
             radioButtonB.Text = "radioButton2";
             radioButtonB.UseVisualStyleBackColor = false;
+           
             // 
             // radioButtonC
             // 
@@ -107,6 +110,7 @@
             radioButtonC.TabStop = true;
             radioButtonC.Text = "radioButton3";
             radioButtonC.UseVisualStyleBackColor = false;
+           
             // 
             // radioButtonD
             // 
@@ -119,6 +123,7 @@
             radioButtonD.TabStop = true;
             radioButtonD.Text = "radioButton4";
             radioButtonD.UseVisualStyleBackColor = false;
+            radioButtonD.CheckedChanged += radioButtonD_CheckedChanged;
             // 
             // Form1
             // 

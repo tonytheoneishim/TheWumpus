@@ -7,7 +7,7 @@ namespace TriviaLibrary
 {
     public class TriviaGame
     {
-        
+
         private int score;
         private Random rnd;
         private string[,] Questions;
@@ -43,8 +43,9 @@ namespace TriviaLibrary
             //    { "Which geometric shape has four equal sides and four right angles?", "Square", "Rectangle", "Triangle", "Circle" },
             //    { "What is the main ingredient in the dish sushi?", "Rice", "Noodles", "Fish", "Seaweed" }
             //};
-            
+
         }
+
 
         public string GetQuestion()
         {
@@ -52,6 +53,7 @@ namespace TriviaLibrary
             correctAnswerIndex = 1;
             return Questions[currentQuestionIndex, 0];
         }
+
 
         public string[] GetAnswerOptions()
         {
@@ -68,9 +70,9 @@ namespace TriviaLibrary
         {
             if (answer == Questions[currentQuestionIndex, correctAnswerIndex])
             {
-                
+
                 score++;
-                
+
                 return true;
             }
             return false;
@@ -79,8 +81,8 @@ namespace TriviaLibrary
         public int GetScore()
         {
             return score;
-            
-            
+
+
         }
 
         private void ShuffleArray(string[] array)
@@ -91,7 +93,7 @@ namespace TriviaLibrary
                 string temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
-                
+
             }
         }
 
@@ -108,10 +110,10 @@ namespace TriviaLibrary
             }
             sr.Close();
 
-            // Initialize the Questions array based on the loaded QuestionsList
+
             if (QuestionsList.Count > 0)
             {
-                Questions = new string[QuestionsList.Count, 5]; // Assuming each question has 4 options + 1 question text
+                Questions = new string[QuestionsList.Count, 5];
                 for (int i = 0; i < QuestionsList.Count; i++)
                 {
                     for (int j = 0; j < QuestionsList[i].Length; j++)
