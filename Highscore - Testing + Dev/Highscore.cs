@@ -96,7 +96,7 @@ public class Highscore
     }
     public override string ToString()
     {
-        return PlayerName + "\t\t" + PlayerFinalScore + "\t" + CaveType;
+        return PlayerName + "\t\t" + PlayerFinalScore;
     }
 
     public static void SavetoFile(List<Highscore> players)

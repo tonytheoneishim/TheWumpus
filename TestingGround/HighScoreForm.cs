@@ -14,6 +14,7 @@ namespace TestingGround
 {
     public partial class HighScoreForm : Form
     {
+        Highscore highscore = new Highscore();
         public HighScoreForm()
         {
             InitializeComponent();
@@ -25,35 +26,28 @@ namespace TestingGround
         }
 
         private void listBoxHighScores_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-            Highscore highscore = new Highscore();
-            try
+        {
+            int i = listBoxNameList.SelectedIndex;
+            string killed = string.Empty;
+            if (highscore.PlayerList[i].KilledWumpus = true) killed = "DEAD";
+            else if (highscore.PlayerList[i].KilledWumpus = false) killed = "ALIVE";
+            if (listBoxNameList.SelectedIndex != -1)
             {
+                labelPlayerStat.Text = "";
                 listBoxStatistics.Items.Clear();
-                int i = listBoxNameList.SelectedIndex;
 
-                for (int j = 0; j < i; j++)
-                {
-                    if (listBoxNameList.SelectedIndex == i)
-                    {
-                        listBoxStatistics.Items.Clear();
-                        listBoxStatistics.Items.Add(highscore.PlayerList[i].ArrowsLeft);
-                        listBoxStatistics.Items.Add(highscore.PlayerList[i].GoldCoinsLeft);
-                        listBoxStatistics.Items.Add(highscore.PlayerList[i].KilledWumpus);
-                        break;
-                    }
-                }
+                labelPlayerStat.Text = highscore.PlayerList[i].PlayerName;
+                listBoxStatistics.Items.Add("Cave:\t" + highscore.PlayerList[i].CaveType);
+                listBoxStatistics.Items.Add("Arrows:\t" + highscore.PlayerList[i].ArrowsLeft.ToString());
+                listBoxStatistics.Items.Add("Coins:\t" + highscore.PlayerList[i].GoldCoinsLeft.ToString());
+                listBoxStatistics.Items.Add("Wumpus:\t" + killed);
             }
-            catch
-            {
-                MessageBox.Show("Select a name to show run statistics!", "Info!");
-                return;
-            }
+            else MessageBox.Show("elsed");
         }
 
         private void HighScoreForm_Load(object sender, EventArgs e)
         {
-            Highscore highscore = new Highscore();
+            //Highscore highscore = new Highscore();
             highscore.TestAdding();
             Highscore.GetHighscores(highscore.PlayerList);
             highscore.SortHighs();
@@ -61,6 +55,12 @@ namespace TestingGround
             {
                 listBoxNameList.Items.Add(player.ToString());
             }
+            labelPlayerStat.Text = "";
+        }
+
+        private void labelName_Click(object sender, EventArgs e)
+        {
+            //i misclicked sorry
         }
     }
 }
