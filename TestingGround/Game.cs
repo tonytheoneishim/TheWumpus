@@ -1,5 +1,7 @@
 ﻿using CaveTest;
 using GCUITest;
+using WumpusLocations;
+using WumpusPlayer;
 using Highscore___Testing___Dev;
 using System;
 using System.Collections.Generic;
@@ -11,17 +13,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TestingGround
 {
     public partial class Game : Form
     {
-        public Cave cave = new Cave();
+        public static Cave cave = new Cave();
 
         string directionClicked = string.Empty;
 
-        int coins = 0;
-        int arrows = 0;
+        int coins = 5;
+        int arrows = 3;
         int turns = 0;
         double score = 100;
         int currentRoom = 0; // current room the player is in
@@ -29,6 +32,10 @@ namespace TestingGround
         Button[] buttons = new Button[6];
         Random rand = new Random();
         int START_POSITION = 1;
+
+        Locations locations = new Locations(cave.caveLayouts);
+        List<int[]> locationList = new List<int[]>();
+        //locationList = locations.SpawnEvents();
 
         public string PlayerName { get; set; }
         public Game()
@@ -96,10 +103,10 @@ namespace TestingGround
 
         public void DoTurn()
         {
-            coins++;
-            arrows++;
             turns++;
             score = 100 - turns + coins + (arrows * 5);
+
+            //string hazard = Locations.HazardNearby
 
             labelCoins.Text = coins.ToString();
             labelArrows.Text = arrows.ToString();
@@ -122,11 +129,6 @@ namespace TestingGround
                 buttons[i].Text = connectedRooms[i].ToString();
                 if (connectedRooms[i] > -1) buttons[i].Visible = true;
             }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

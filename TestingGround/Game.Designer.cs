@@ -178,7 +178,7 @@
             // pictureBoxRoom
             // 
             pictureBoxRoom.BackColor = Color.Transparent;
-            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room__1_;
+            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room_Shop__1_;
             pictureBoxRoom.Location = new Point(155, 61);
             pictureBoxRoom.Name = "pictureBoxRoom";
             pictureBoxRoom.Size = new Size(220, 220);
@@ -226,7 +226,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // labelArrows
             // 
@@ -345,7 +344,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
-            BackgroundImage = GCUITest.Properties.Resources.Piskel_Bats_Main;
+            BackgroundImage = GCUITest.Properties.Resources.New_Piskel;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(534, 511);
             Controls.Add(labelPlayerLabel);
