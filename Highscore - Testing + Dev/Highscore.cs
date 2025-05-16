@@ -37,15 +37,16 @@ public class Highscore
     {
         PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 10, 10, true));
         PlayerList.Add(new Highscore("Derek2", 20, "Cave2", 10, 10, true));
-        PlayerList.Add(new Highscore("Maxim3", 30, "Cave4", 10, 10, true));
+        PlayerList.Add(new Highscore("Maxim3", 69, "Cave4", 10, 10, true));
         PlayerList.Add(new Highscore("5", 120, "Cave5", 10, 10, false));
-        PlayerList.Add(new Highscore("7", 30, "Cave3", 10, 10, false));
+        PlayerList.Add(new Highscore("7", 155, "Cave3", 10, 10, false));
         PlayerList.Add(new Highscore("samestats", 30, "Cave1", 10, 10, false));
         PlayerList.Add(new Highscore("samestats", 30, "Cave1", 10, 10, false));
         PlayerList.Add(new Highscore("8", 2, "Cave2", 10, 10, false));
         PlayerList.Add(new Highscore("9", 111, "Cave3", 10, 10, false));
         PlayerList.Add(new Highscore("ten", 150, "Cave1", 10, 10, true));
         PlayerList.Add(new Highscore("ELEVEN", 3, "Cave6", 10, 10, false));
+        PlayerList.Add(new Highscore("George", 696715, "Cave5", 1010, 20000, true));
         SavetoFile(PlayerList);
     }
     public void AddHighscore(string pn, int sc, string ct, int ar, int gc, bool kw)
@@ -61,7 +62,7 @@ public class Highscore
     }
     public void SortHighs()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 11; i++)
         {
             for (int increasing = 0; increasing < PlayerList.Count - 1; increasing++)
             {

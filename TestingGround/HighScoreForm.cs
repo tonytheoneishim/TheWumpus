@@ -56,7 +56,7 @@ namespace TestingGround
             }
             labelPlayerStat.Text = "";
         }
-
+         
         private void labelName_Click(object sender, EventArgs e)
         {
             //i misclicked sorry
