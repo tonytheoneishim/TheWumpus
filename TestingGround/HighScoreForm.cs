@@ -19,18 +19,16 @@ namespace TestingGround
         {
             InitializeComponent();
         }
-
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void listBoxHighScores_SelectedIndexChanged(object sender, EventArgs e)
         {
             int i = listBoxNameList.SelectedIndex;
             string killed = string.Empty;
-            if (highscore.PlayerList[i].KilledWumpus = true) killed = "DEAD";
-            else if (highscore.PlayerList[i].KilledWumpus = false) killed = "ALIVE";
+            if (highscore.PlayerList[i].KilledWumpus == true) killed = "DEAD";
+            if (highscore.PlayerList[i].KilledWumpus == false) killed = "ALIVE";
             if (listBoxNameList.SelectedIndex != -1)
             {
                 labelPlayerStat.Text = "";
@@ -44,16 +42,17 @@ namespace TestingGround
             }
             else MessageBox.Show("elsed");
         }
-
         private void HighScoreForm_Load(object sender, EventArgs e)
         {
-            //Highscore highscore = new Highscore();
             highscore.TestAdding();
             Highscore.GetHighscores(highscore.PlayerList);
             highscore.SortHighs();
+            int a = 0;
             foreach (Highscore player in highscore.PlayerList)
             {
                 listBoxNameList.Items.Add(player.ToString());
+                a++;
+                if (a == 10) break;
             }
             labelPlayerStat.Text = "";
         }
