@@ -36,6 +36,7 @@ namespace TestingGround
 
                 labelPlayerStat.Text = highscore.PlayerList[i].PlayerName;
                 listBoxStatistics.Items.Add("Cave:\t" + highscore.PlayerList[i].CaveType);
+                listBoxStatistics.Items.Add("Turns: \t" + highscore.PlayerList[i].Turns.ToString());
                 listBoxStatistics.Items.Add("Arrows:\t" + highscore.PlayerList[i].ArrowsLeft.ToString());
                 listBoxStatistics.Items.Add("Coins:\t" + highscore.PlayerList[i].GoldCoinsLeft.ToString());
                 listBoxStatistics.Items.Add("Wumpus:\t" + killed);

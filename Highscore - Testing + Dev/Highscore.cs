@@ -22,14 +22,16 @@ public class Highscore
     /// <param name="pn"></player name>
     /// <param name="sc"></player's final score>
     /// <param name="ct"></cave played>
+    /// <param name="tn"></times player turned>
     /// <param name="ar"></arrows left>
     /// <param name="gc"></coins left>
     /// <param name="kw"></wumpus killed boolean>
-    public Highscore(string pn, int sc, string ct, int ar, int gc, bool kw)
+    public Highscore(string pn, int sc, string ct, int tn, int ar, int gc, bool kw)
     {
         PlayerName = pn;
         PlayerFinalScore = sc;
         CaveType = ct;
+        Turns = tn;
         ArrowsLeft = ar;
         GoldCoinsLeft = gc;
         KilledWumpus = kw;
@@ -40,6 +42,7 @@ public class Highscore
     public string PlayerName { get; set; }
     public int PlayerFinalScore { get; set; }
     public string CaveType { get; set; }
+    public int Turns { get; set; }
     public int ArrowsLeft { get; set; }
     public int GoldCoinsLeft {  get; set; } 
     public bool KilledWumpus { get; set; }
@@ -53,18 +56,18 @@ public class Highscore
     /// </summary>
     public void TestAdding()
     {
-        PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 10, 10, true));
-        PlayerList.Add(new Highscore("Derek2", 20, "Cave2", 10, 10, true));
-        PlayerList.Add(new Highscore("Maxim3", 69, "Cave4", 10, 10, true));
-        PlayerList.Add(new Highscore("5", 120, "Cave5", 10, 10, false));
-        PlayerList.Add(new Highscore("7", 155, "Cave3", 10, 10, false));
-        PlayerList.Add(new Highscore("samestats", 30, "Cave1", 10, 10, false));
-        PlayerList.Add(new Highscore("samestats", 30, "Cave1", 10, 10, false));
-        PlayerList.Add(new Highscore("8", 2, "Cave2", 10, 10, false));
-        PlayerList.Add(new Highscore("9", 111, "Cave3", 10, 10, false));
-        PlayerList.Add(new Highscore("ten", 150, "Cave1", 10, 10, true));
-        PlayerList.Add(new Highscore("ELEVEN", 3, "Cave6", 10, 10, false));
-        PlayerList.Add(new Highscore("George", 696715, "Cave5", 1010, 20000, true));
+        PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 5, 10, 10, true));
+        PlayerList.Add(new Highscore("Derek2", 20, "Cave2", 5, 10, 10, true));
+        PlayerList.Add(new Highscore("Maxim3", 69, "Cave4", 5, 10, 10, true));
+        PlayerList.Add(new Highscore("5", 120, "Cave5", 5, 10, 10, false));
+        PlayerList.Add(new Highscore("7", 155, "Cave3", 5, 10, 10, false));
+        PlayerList.Add(new Highscore("samestats", 30, "Cave1", 5, 10, 10, false));
+        PlayerList.Add(new Highscore("samestats", 30, "Cave1", 5,  10, 10, false));
+        PlayerList.Add(new Highscore("8", 2, "Cave2", 5, 10, 10, false));
+        PlayerList.Add(new Highscore("9", 111, "Cave3", 5, 10, 10, false));
+        PlayerList.Add(new Highscore("ten", 150, "Cave1", 5, 10, 10, true));
+        PlayerList.Add(new Highscore("ELEVEN", 3, "Cave6", 5, 10, 10, false));
+        PlayerList.Add(new Highscore("George", 696715, "Cave5", 2, 1010, 20000, true));
         SavetoFile(PlayerList);
     }
     /// <summary>
@@ -73,12 +76,13 @@ public class Highscore
     /// <param name="pn"></player name>
     /// <param name="sc"></player's final score>
     /// <param name="ct"></cave played>
+    /// <param name="tn"></times player turned>
     /// <param name="ar"></arrows left>
     /// <param name="gc"></coins left>
     /// <param name="kw"></wumpus killed boolean>
-    public void AddHighscore(string pn, int sc, string ct, int ar, int gc, bool kw)
+    public void AddHighscore(string pn, int sc, string ct, int tn, int ar, int gc, bool kw)
     {
-        PlayerList.Add(new Highscore(pn, sc, ct, ar, gc, kw));
+        PlayerList.Add(new Highscore(pn, sc, ct, tn, ar, gc, kw));
         SortHighs();
         if (PlayerList.Count > 10)
         {
@@ -140,7 +144,7 @@ public class Highscore
         foreach (Highscore player in players)
         {
             string output = player.PlayerName + "," + player.PlayerFinalScore.ToString() + "," + player.CaveType
-                + "," + player.ArrowsLeft + "," + player.GoldCoinsLeft + "," + player.KilledWumpus;
+                + "," + player.Turns + "," + player.ArrowsLeft + "," + player.GoldCoinsLeft + "," + player.KilledWumpus;
             sw.WriteLine(output);
         }
         sw.Flush();
@@ -161,7 +165,7 @@ public class Highscore
         {
             string[] record = line.Split(',');
             Highscore thehigh = new Highscore(record[0], int.Parse(record[1]), record[2],
-                int.Parse(record[3]), int.Parse(record[4]), bool.Parse(record[5]));
+                int.Parse(record[3]), int.Parse(record[4]), int.Parse(record[5]), bool.Parse(record[6]));
             list.Add(thehigh);
 
             line = sr.ReadLine();
