@@ -173,4 +173,28 @@ public class Highscore
         sr.Close();
         return list;
     }
+
+
+
+
+
+
+
+
+    /*
+    BAT COVID
+    */
+
+    public void GetCOVID()
+    {
+
+    }
+    public void Tripping()
+    {
+
+    }
+    public void MissedAttack()
+    {
+
+    }
 }
