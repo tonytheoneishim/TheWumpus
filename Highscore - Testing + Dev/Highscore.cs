@@ -5,8 +5,9 @@ using System.Transactions;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace Highscore___Testing___Dev;
-
-
+/// <summary>
+/// class highscore
+/// </summary>
 public class Highscore
 {
     const string DATAFILE = "highscores.csv";
@@ -15,6 +16,15 @@ public class Highscore
         PlayerName = string.Empty;
         CaveType = string.Empty;
     }
+    /// <summary>
+    /// creates parameters for highscore function
+    /// </summary>
+    /// <param name="pn"></player name>
+    /// <param name="sc"></player's final score>
+    /// <param name="ct"></cave played>
+    /// <param name="ar"></arrows left>
+    /// <param name="gc"></coins left>
+    /// <param name="kw"></wumpus killed boolean>
     public Highscore(string pn, int sc, string ct, int ar, int gc, bool kw)
     {
         PlayerName = pn;
@@ -24,15 +34,23 @@ public class Highscore
         GoldCoinsLeft = gc;
         KilledWumpus = kw;
     }
+    /// <summary>
+    /// creates playerdata for highscore processing
+    /// </summary>
     public string PlayerName { get; set; }
     public int PlayerFinalScore { get; set; }
     public string CaveType { get; set; }
     public int ArrowsLeft { get; set; }
     public int GoldCoinsLeft {  get; set; } 
     public bool KilledWumpus { get; set; }
-
+    /// <summary>
+    /// list where player highscore data is stored to a .csv file
+    /// </summary>
     public List<Highscore> PlayerList = new List<Highscore>();
 
+    /// <summary>
+    /// test dummies for highscore listbox sorting
+    /// </summary>
     public void TestAdding()
     {
         PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 10, 10, true));
@@ -49,6 +67,15 @@ public class Highscore
         PlayerList.Add(new Highscore("George", 696715, "Cave5", 1010, 20000, true));
         SavetoFile(PlayerList);
     }
+    /// <summary>
+    /// Creates the highscore array in list PlayerList
+    /// </summary>
+    /// <param name="pn"></player name>
+    /// <param name="sc"></player's final score>
+    /// <param name="ct"></cave played>
+    /// <param name="ar"></arrows left>
+    /// <param name="gc"></coins left>
+    /// <param name="kw"></wumpus killed boolean>
     public void AddHighscore(string pn, int sc, string ct, int ar, int gc, bool kw)
     {
         PlayerList.Add(new Highscore(pn, sc, ct, ar, gc, kw));
@@ -60,6 +87,9 @@ public class Highscore
         
         SavetoFile(PlayerList);
     }
+    /// <summary>
+    /// Sorts highscores in list PlayerList from highest score to lowest
+    /// </summary>
     public void SortHighs()
     {
         for (int i = 0; i < 11; i++)
@@ -77,6 +107,11 @@ public class Highscore
             }
         }
     }
+    /// <summary>
+    /// Retrieves scores from .csv file to list PlayerList for GC to fetch
+    /// </summary>
+    /// <param name="scores"></highscores in list PlayerList>
+    /// <returns></highscores from list PlayerList>
     public static List<Highscore> GetHighscores(List<Highscore> scores)
     {
         FileInfo fileInfo = new FileInfo(DATAFILE);
@@ -85,15 +120,20 @@ public class Highscore
             scores = OpenFromFile("highscores.csv");
             return scores;
         }
-        else
-        {
-            return scores;
-        }
+        else return scores;
     }
+    /// <summary>
+    /// puts name and highscore into listbox-ready string
+    /// </summary>
+    /// <returns></string>
     public override string ToString()
     {
         return PlayerName + "\t\t" + PlayerFinalScore;
     }
+    /// <summary>
+    /// saves highscore to .csv file
+    /// </summary>
+    /// <param name="players"></player data in list PlayerList>
     public static void SavetoFile(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);
@@ -106,6 +146,11 @@ public class Highscore
         sw.Flush();
         sw.Close();
     }
+    /// <summary>
+    /// gets highscore data from .csv file
+    /// </summary>
+    /// <param name="filename"></.csv file>
+    /// <returns></highscores to list PlayerList>
     public static List<Highscore> OpenFromFile(string filename)
     {
         List<Highscore> list = new List<Highscore>();
@@ -124,5 +169,4 @@ public class Highscore
         sr.Close();
         return list;
     }
-
 }
