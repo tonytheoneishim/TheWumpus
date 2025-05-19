@@ -63,7 +63,7 @@
             // buttonClose
             // 
             buttonClose.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonClose.Location = new Point(177, 414);
+            buttonClose.Location = new Point(177, 439);
             buttonClose.Name = "buttonClose";
             buttonClose.Size = new Size(75, 23);
             buttonClose.TabIndex = 2;
@@ -112,7 +112,7 @@
             listBoxStatistics.ItemHeight = 19;
             listBoxStatistics.Location = new Point(25, 325);
             listBoxStatistics.Name = "listBoxStatistics";
-            listBoxStatistics.Size = new Size(227, 80);
+            listBoxStatistics.Size = new Size(227, 99);
             listBoxStatistics.TabIndex = 10;
             // 
             // labelPlayerStat
@@ -132,7 +132,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             CancelButton = buttonClose;
-            ClientSize = new Size(279, 452);
+            ClientSize = new Size(279, 474);
             Controls.Add(labelPlayerStat);
             Controls.Add(listBoxStatistics);
             Controls.Add(label3);
