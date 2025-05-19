@@ -13,6 +13,12 @@ namespace WumpusPLayer
         public int Gold { get; set; } // The amount of gold left
         public int Turns { get; set; } // The number of turns it has been
         public bool WumpusDead { get; set; } // Whether the Wumpus is dead or not
+        public List<bool> Upgrades = new List<bool>
+        {
+            false, // Shield
+            false
+        }; // The list of upgrades that the player has
+
         public Player(int arrows, int gold, int turns, bool wumpusDead)
         {
             Arrows = arrows;
@@ -53,6 +59,19 @@ namespace WumpusPLayer
             }
 
             return 100 - Turns + Gold + (5 * Arrows);
+        }
+
+        /// <summary>
+        /// Grants an upgrade to the player
+        /// </summary>
+        /// <param name="upgrade"> The string name of the upgrade </param>
+        /// <returns></returns>
+        public void GainUpgrade(string upgrade)
+        {
+            if (upgrade == "Shield".ToLower())
+            {
+                Upgrades[0] = true;
+            }
         }
     }
 }

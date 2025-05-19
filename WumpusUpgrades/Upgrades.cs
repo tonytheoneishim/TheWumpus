@@ -8,6 +8,12 @@ namespace WumpusUpgrades
 {
     public class Upgrades
     {
-        
+        List<Upgrades> upgrades = new List<Upgrades>();
+        public Upgrades()
+        {
+            
+        }
+
+
     }
 }
