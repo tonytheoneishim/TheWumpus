@@ -36,6 +36,7 @@
             buttonRoomS = new Button();
             pictureBoxRoom = new PictureBox();
             groupBox1 = new GroupBox();
+            checkBoxShootArrow = new CheckBox();
             pictureBox2 = new PictureBox();
             labelArrows = new Label();
             labelArrowLabel = new Label();
@@ -60,6 +61,8 @@
             buttonRoomN.BackgroundImage = GCUITest.Properties.Resources.Arrow_3__1_;
             buttonRoomN.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomN.Cursor = Cursors.PanNorth;
+            buttonRoomN.FlatAppearance.BorderSize = 0;
+            buttonRoomN.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomN.FlatStyle = FlatStyle.Flat;
             buttonRoomN.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomN.ForeColor = Color.Transparent;
@@ -67,6 +70,7 @@
             buttonRoomN.Name = "buttonRoomN";
             buttonRoomN.Size = new Size(50, 50);
             buttonRoomN.TabIndex = 0;
+            buttonRoomN.TabStop = false;
             buttonRoomN.Text = "N";
             buttonRoomN.UseVisualStyleBackColor = false;
             buttonRoomN.Click += buttonRoomN_Click;
@@ -77,6 +81,8 @@
             buttonRoomNE.BackgroundImage = GCUITest.Properties.Resources.image__1___4_;
             buttonRoomNE.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomNE.Cursor = Cursors.PanNE;
+            buttonRoomNE.FlatAppearance.BorderSize = 0;
+            buttonRoomNE.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomNE.FlatStyle = FlatStyle.Flat;
             buttonRoomNE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomNE.ForeColor = SystemColors.ControlLightLight;
@@ -84,6 +90,7 @@
             buttonRoomNE.Name = "buttonRoomNE";
             buttonRoomNE.Size = new Size(50, 50);
             buttonRoomNE.TabIndex = 1;
+            buttonRoomNE.TabStop = false;
             buttonRoomNE.Text = "NE";
             buttonRoomNE.UseVisualStyleBackColor = false;
             buttonRoomNE.Click += buttonRoomN_Click;
@@ -94,6 +101,8 @@
             buttonRoomNW.BackgroundImage = GCUITest.Properties.Resources.image__1___1_;
             buttonRoomNW.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomNW.Cursor = Cursors.PanNW;
+            buttonRoomNW.FlatAppearance.BorderSize = 0;
+            buttonRoomNW.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomNW.FlatStyle = FlatStyle.Flat;
             buttonRoomNW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomNW.ForeColor = SystemColors.ControlLightLight;
@@ -101,6 +110,7 @@
             buttonRoomNW.Name = "buttonRoomNW";
             buttonRoomNW.Size = new Size(50, 50);
             buttonRoomNW.TabIndex = 2;
+            buttonRoomNW.TabStop = false;
             buttonRoomNW.Text = "NW";
             buttonRoomNW.UseVisualStyleBackColor = false;
             buttonRoomNW.Click += buttonRoomN_Click;
@@ -111,6 +121,8 @@
             buttonRoomSW.BackgroundImage = GCUITest.Properties.Resources.image__1___2_;
             buttonRoomSW.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomSW.Cursor = Cursors.PanSW;
+            buttonRoomSW.FlatAppearance.BorderSize = 0;
+            buttonRoomSW.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomSW.FlatStyle = FlatStyle.Flat;
             buttonRoomSW.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomSW.ForeColor = SystemColors.ControlLightLight;
@@ -118,6 +130,7 @@
             buttonRoomSW.Name = "buttonRoomSW";
             buttonRoomSW.Size = new Size(50, 50);
             buttonRoomSW.TabIndex = 3;
+            buttonRoomSW.TabStop = false;
             buttonRoomSW.Text = "SW";
             buttonRoomSW.UseVisualStyleBackColor = false;
             buttonRoomSW.Click += buttonRoomN_Click;
@@ -128,6 +141,8 @@
             buttonRoomSE.BackgroundImage = GCUITest.Properties.Resources.image__1___3_;
             buttonRoomSE.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomSE.Cursor = Cursors.PanSE;
+            buttonRoomSE.FlatAppearance.BorderSize = 0;
+            buttonRoomSE.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomSE.FlatStyle = FlatStyle.Flat;
             buttonRoomSE.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomSE.ForeColor = SystemColors.ControlLightLight;
@@ -135,6 +150,7 @@
             buttonRoomSE.Name = "buttonRoomSE";
             buttonRoomSE.Size = new Size(50, 50);
             buttonRoomSE.TabIndex = 4;
+            buttonRoomSE.TabStop = false;
             buttonRoomSE.Text = "SE";
             buttonRoomSE.UseVisualStyleBackColor = false;
             buttonRoomSE.Click += buttonRoomN_Click;
@@ -145,6 +161,8 @@
             buttonRoomS.BackgroundImage = GCUITest.Properties.Resources.Arrow_3__1___2_;
             buttonRoomS.BackgroundImageLayout = ImageLayout.Zoom;
             buttonRoomS.Cursor = Cursors.PanSouth;
+            buttonRoomS.FlatAppearance.BorderSize = 0;
+            buttonRoomS.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             buttonRoomS.FlatStyle = FlatStyle.Flat;
             buttonRoomS.Font = new Font("Book Antiqua", 9.75F, FontStyle.Bold);
             buttonRoomS.ForeColor = Color.Transparent;
@@ -152,6 +170,7 @@
             buttonRoomS.Name = "buttonRoomS";
             buttonRoomS.Size = new Size(50, 50);
             buttonRoomS.TabIndex = 5;
+            buttonRoomS.TabStop = false;
             buttonRoomS.Text = "S";
             buttonRoomS.UseVisualStyleBackColor = false;
             buttonRoomS.Click += buttonRoomN_Click;
@@ -159,10 +178,10 @@
             // pictureBoxRoom
             // 
             pictureBoxRoom.BackColor = Color.Transparent;
-            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room;
-            pictureBoxRoom.Location = new Point(131, 43);
+            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room_Shop__1_;
+            pictureBoxRoom.Location = new Point(155, 61);
             pictureBoxRoom.Name = "pictureBoxRoom";
-            pictureBoxRoom.Size = new Size(270, 270);
+            pictureBoxRoom.Size = new Size(220, 220);
             pictureBoxRoom.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxRoom.TabIndex = 6;
             pictureBoxRoom.TabStop = false;
@@ -170,6 +189,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(checkBoxShootArrow);
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(labelArrows);
             groupBox1.Controls.Add(labelArrowLabel);
@@ -187,12 +207,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Hunt the Wumpus!";
             // 
+            // checkBoxShootArrow
+            // 
+            checkBoxShootArrow.AutoSize = true;
+            checkBoxShootArrow.Location = new Point(199, 96);
+            checkBoxShootArrow.Name = "checkBoxShootArrow";
+            checkBoxShootArrow.Size = new Size(116, 23);
+            checkBoxShootArrow.TabIndex = 14;
+            checkBoxShootArrow.Text = "Shoot Arrow";
+            checkBoxShootArrow.UseVisualStyleBackColor = true;
+            // 
             // pictureBox2
             // 
-            pictureBox2.Image = GCUITest.Properties.Resources.Arrow_removebg_preview;
-            pictureBox2.Location = new Point(12, 71);
+            pictureBox2.Image = GCUITest.Properties.Resources.Wumpus_Arrow;
+            pictureBox2.Location = new Point(15, 87);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(41, 38);
+            pictureBox2.Size = new Size(55, 50);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
@@ -200,7 +230,7 @@
             // labelArrows
             // 
             labelArrows.AutoSize = true;
-            labelArrows.Location = new Point(119, 80);
+            labelArrows.Location = new Point(139, 97);
             labelArrows.Name = "labelArrows";
             labelArrows.Size = new Size(19, 19);
             labelArrows.TabIndex = 11;
@@ -209,7 +239,7 @@
             // labelArrowLabel
             // 
             labelArrowLabel.AutoSize = true;
-            labelArrowLabel.Location = new Point(53, 80);
+            labelArrowLabel.Location = new Point(73, 97);
             labelArrowLabel.Name = "labelArrowLabel";
             labelArrowLabel.Size = new Size(65, 19);
             labelArrowLabel.TabIndex = 10;
@@ -217,10 +247,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = GCUITest.Properties.Resources.coin2_removebg_preview;
-            pictureBox1.Location = new Point(12, 25);
+            pictureBox1.Image = GCUITest.Properties.Resources.Wumpus_Coin__1_;
+            pictureBox1.Location = new Point(21, 25);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(38, 36);
+            pictureBox1.Size = new Size(48, 56);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
@@ -237,7 +267,7 @@
             // labelCoins
             // 
             labelCoins.AutoSize = true;
-            labelCoins.Location = new Point(119, 36);
+            labelCoins.Location = new Point(141, 42);
             labelCoins.Name = "labelCoins";
             labelCoins.Size = new Size(19, 19);
             labelCoins.TabIndex = 2;
@@ -255,7 +285,7 @@
             // labelCoinLabel
             // 
             labelCoinLabel.AutoSize = true;
-            labelCoinLabel.Location = new Point(53, 36);
+            labelCoinLabel.Location = new Point(75, 42);
             labelCoinLabel.Name = "labelCoinLabel";
             labelCoinLabel.Size = new Size(53, 19);
             labelCoinLabel.TabIndex = 0;
@@ -264,8 +294,9 @@
             // labelRoomNum
             // 
             labelRoomNum.AutoSize = true;
-            labelRoomNum.BackColor = SystemColors.ControlLightLight;
+            labelRoomNum.BackColor = Color.FromArgb(16, 16, 16);
             labelRoomNum.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRoomNum.ForeColor = SystemColors.ControlLightLight;
             labelRoomNum.Location = new Point(249, 154);
             labelRoomNum.Name = "labelRoomNum";
             labelRoomNum.Size = new Size(34, 32);
@@ -313,7 +344,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
-            BackgroundImage = GCUITest.Properties.Resources.Piskel_Bats_Main;
+            BackgroundImage = GCUITest.Properties.Resources.New_Piskel;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(534, 511);
             Controls.Add(labelPlayerLabel);
@@ -365,5 +396,6 @@
         private Label labelCaveNum;
         private Label labelRoomNum;
         private Label labelPlayerLabel;
+        private CheckBox checkBoxShootArrow;
     }
 }

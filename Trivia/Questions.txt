@@ -1,17 +1,70 @@
-What year did the Berlin Wall fall?,1989,1990,1986,1991
-Who in 1903 was the first woman to win a Nobel Prize?,Marie Skłodowska-Curie,Jane Addams,Rosalind Franklin,Bertha Felicie
-Which famous play features a character named Romeo?,Romeo and Juliet,Hamlet,Macbeth,Othello
-What is the largest mammal in the world?,Blue whale,African elephant,Giraffe,Great white shark
-What is the main ingredient in guacamole?,Avocado,Tomato,Onion,Pepper
-Who is known as the Father of the United States and the first President of the country?,George Washington,Thomas Jefferson,Abraham Lincoln,John Adams
-Who painted the Mona Lisa?,Leonardo da Vinci,Vincent van Gogh,Pablo Picasso,Michelangelo
-What popular ice cream flavor is typically made with crushed cookies?,Cookies and Cream,Chocolate,Vanilla,Mint
-What is the name of the largest ocean on Earth?,Pacific Ocean,Atlantic Ocean,Indian Ocean,Arctic Ocean
-What famous music group was John Lennon a part of before pursuing a solo career?,The Beatles,The Rolling Stones,Pink Floyd,Led Zeppelin
-In the story of Snow White how many dwarfs are there?,Seven,Five,Eight,Six
-Who is the king of the gods in Greek mythology?,Zeus,Poseidon,Hades,Apollo
-What do bees collect to make honey?,Nectar,Pollen,Water,Sugar
-In what galaxy is our solar system located?,Milky Way,Andromeda,Triangulum,Whirlpool
-Which planet is known as the 'Blue Planet'?,Earth,Mars,Venus,Neptune
-Which geometric shape has four equal sides and four right angles?,Square,Rectangle,Triangle,Circle
-What is the main ingredient in the dish sushi?,Rice,Noodles,Fish,Seaweed
+What is the capital of Japan?,Tokyo,Beijing,Seoul,Bangkok  
+Who wrote the play "Hamlet"?,William Shakespeare,Charles Dickens,Mark Twain,F. Scott Fitzgerald  
+What is the currency of the United States?,Dollar,Euro,Yen,Pound  
+Which planet is known as the "Red Planet"?,Mars,Jupiter,Saturn,Venus  
+What is the hardest natural substance on Earth?,Diamond,Gold,Iron,Sapphire  
+Who discovered penicillin?,Alexander Fleming,Marie Curie,Louis Pasteur,Robert Koch  
+What geometric shape has three sides?,Triangle,Square,Rectangle,Circle  
+What is the name of the largest desert in the world?,Sahara Desert,Gobi Desert,Kalahari Desert,Arabian Desert  
+Which element has the chemical symbol 'O'?,Oxygen,Gold,Iron,Carbon  
+What is the main language spoken in Brazil?,Portuguese,Spanish,French,English  
+How many continents are there?,Seven,Five,Six,Eight  
+What year did World War II end?,1945,1944,1943,1946  
+What is the capital city of Australia?,Canberra,Sydney,Melbourne,Brisbane  
+What is the smallest planet in our solar system?,Mercury,Mars,Venus,Earth  
+Which ocean is the largest?,Pacific Ocean,Atlantic Ocean,Indian Ocean,Arctic Ocean  
+What is the boiling point of water in degrees Celsius?,100°C,0°C,50°C,150°C  
+What is the name of the longest river in the world?,Nile River,Amazon River,Yangtze River,Ganges River  
+Who painted the 'Starry Night'?,Vincent van Gogh,Claude Monet,Pablo Picasso,Georgia O’Keeffe  
+What gas do plants absorb from the atmosphere?,Carbon Dioxide,Oxygen,Nitrogen,Helium  
+Who is the author of the Harry Potter series?,J.K. Rowling,Stephen King,J.R.R. Tolkien,George R.R. Martin  
+Which animal is known as the "King of the Jungle"?,Lion,Tiger,Elephant,Bear  
+What is the primary ingredient in hummus?,Chickpeas,Lentils,Peas,Beans  
+What is the largest country in the world?,Russia,Canada,China,United States  
+What is the name of the fairy in Peter Pan?,Tinker Bell,Cinderella,Snow White,Ariel  
+Who is the Greek goddess of wisdom?,Athena,Artemis,Hera,Aphrodite  
+What is the capital of Italy?,Rome,Venice,Florence,Milan  
+Which planet is known for its rings?,Saturn,Jupiter,Uranus,Neptune  
+What is the main ingredient used to make bread?,Flour,Sugar,Water,Salt  
+What year did the Titanic sink?,1912,1905,1914,1918  
+What chemical element is represented by the symbol 'Na'?,Sodium,Calcium,Potasium,Carbon  
+Which famous scientist developed the theory of general relativity?,Albert Einstein,Isaac Newton,Galileo Galilei,Nikola Tesla  
+What is the main ingredient in a Caprese salad?,Tomatoes,Cheese,Lettuce,Olives  
+Who was the first man to walk on the moon?,Neil Armstrong,Buzz Aldrin,Yuri Gagarin,John Glenn  
+What is the capital of Canada?,Ottawa,Toronto,Vancouver,Montreal  
+Which is the largest planet in our solar system?,Jupiter,Saturn,Earth,Mars  
+What is the chemical formula for water?,H2O,CO2,O2,N2  
+In which year did the first manned spaceflight take place?,1961,1957,1963,1971  
+What is the name of Sherlock Holmes' companion?,Dr. John Watson,Dr. James Moriarty,Inspector Lestrade,Professor Challenger  
+Which planet is the hottest in the solar system?,Venus,Earth,Mercury,Mars  
+What is the largest land animal?,African Elephant,White Rhino,Brown Bear,Giraffe  
+How many teeth does an adult human have?,32,28,30,26  
+Which ocean is the smallest?,Arctic Ocean,Indian Ocean,Atlantic Ocean,Pacific Ocean  
+What is the capital of Egypt?,Cairo,Alexandria,Luxor,Aswan  
+What element is needed for fire to burn?,Oxygen,Nitrogen,Hydrogen,Carbon  
+What is the primary ingredient in chocolate?,Cocoa Beans,Milk,Sugar,Butter  
+Who is the famous physicist who developed the laws of motion?,Isaac Newton,Galileo Galilei,Albert Einstein,Nikola Tesla  
+What is the capital of Germany?,Berlin,Frankfurt,Munich,Hamburg  
+What is the term for a word that is similar in meaning to another word?,Synonym,Antonym,Homonym,Hypernym  
+What is the primary language spoken in Russia?,Russian,English,Spanish,French  
+Who was the first President of the United States?,George Washington,Thomas Jefferson,Abraham Lincoln,Teddy Roosevelt  
+What is the most widely spoken language in the world?,Mandarin Chinese,English,Spanish,Hindi  
+What is the process by which plants make their own food?,Photosynthesis,Respiration,Transpiration,Digestion  
+In which organ of the human body would you find the cerebellum?,Brain,Heart,Liver,Eye  
+What is the capital city of Spain?,Madrid,Barcelona,Valencia,Seville  
+Which country is known as the Land of the Rising Sun?,Japan,China,Thailand,Korea  
+What is the primary ingredient in pesto sauce?,Basil,Tomato,Garlic,Cilantro  
+What year did the Berlin Wall fall?,1989,1990,1986,1991  
+Which vitamin is produced when a person is exposed to sunlight?,Vitamin D,Vitamin A,Vitamin C,Vitamin B12  
+What is the capital of Brazil?,Brasilia,Rio de Janeiro,Sao Paulo,Salvador  
+Who is considered the father of modern physics?,Albert Einstein,Isaac Newton,Nikola Tesla,Galileo Galilei  
+What is the main ingredient in a Greek salad?,Feta Cheese,Cucumber,Tomato,Olive Oil  
+Which is the second largest continent?,Africa,Asia,North America,South America  
+What is the primary ingredient in kimchi?,Cabbage,Carrot,Cucumber,Radish  
+Who wrote "Pride and Prejudice"?,Jane Austen,Emily Brontë,Charlotte Brontë,George Eliot  
+What is the primary color of the sun's surface?,White,Yellow,Red,Blue  
+What is the largest animal on Earth?,Blue Whale,Great White Shark,Elephant,Giraffe  
+Which gas is most abundant in the Earth’s atmosphere?,Nitrogen,Oxygen,Carbon Dioxide,Helium  
+What is the capital city of Greece?,Athens,Thessaloniki,Patras,Heraklion  
+What is the process by which animals adapt to their environment?,Natural Selection,Mutation,Adaptation,Transformation  
+Which fruit is known for having its seeds on the outside?,Strawberry,Raspberry,Blueberry,Blackberry  

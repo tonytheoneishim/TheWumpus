@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Transactions;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace Highscore___Testing___Dev;
@@ -8,7 +9,6 @@ namespace Highscore___Testing___Dev;
 
 public class Highscore
 {
-
     const string DATAFILE = "highscores.csv";
     public Highscore()
     {
@@ -35,17 +35,18 @@ public class Highscore
 
     public void TestAdding()
     {
-        PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 10, 10, false));
-        PlayerList.Add(new Highscore("Derek2", 20, "Cave2", 10, 10, false));
-        PlayerList.Add(new Highscore("Maxim3", 30, "Cave4", 10, 10, false));
+        PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 10, 10, true));
+        PlayerList.Add(new Highscore("Derek2", 20, "Cave2", 10, 10, true));
+        PlayerList.Add(new Highscore("Maxim3", 69, "Cave4", 10, 10, true));
         PlayerList.Add(new Highscore("5", 120, "Cave5", 10, 10, false));
-        PlayerList.Add(new Highscore("7", 30, "Cave3", 10, 10, false));
+        PlayerList.Add(new Highscore("7", 155, "Cave3", 10, 10, false));
         PlayerList.Add(new Highscore("samestats", 30, "Cave1", 10, 10, false));
         PlayerList.Add(new Highscore("samestats", 30, "Cave1", 10, 10, false));
         PlayerList.Add(new Highscore("8", 2, "Cave2", 10, 10, false));
         PlayerList.Add(new Highscore("9", 111, "Cave3", 10, 10, false));
-        PlayerList.Add(new Highscore("ten", 150, "Cave1", 10, 10, false));
-        PlayerList.Add(new Highscore("ELEVEN", 1, "Cave6", 10, 10, false));
+        PlayerList.Add(new Highscore("ten", 150, "Cave1", 10, 10, true));
+        PlayerList.Add(new Highscore("ELEVEN", 3, "Cave6", 10, 10, false));
+        PlayerList.Add(new Highscore("George", 696715, "Cave5", 1010, 20000, true));
         SavetoFile(PlayerList);
     }
     public void AddHighscore(string pn, int sc, string ct, int ar, int gc, bool kw)
@@ -61,23 +62,20 @@ public class Highscore
     }
     public void SortHighs()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 11; i++)
         {
             for (int increasing = 0; increasing < PlayerList.Count - 1; increasing++)
             {
                 Highscore based = PlayerList[increasing];
                 Highscore compared = PlayerList[increasing + 1];
 
-
                 if (based.PlayerFinalScore < compared.PlayerFinalScore)
                 {
                     PlayerList[increasing] = compared;
                     PlayerList[increasing + 1] = based;
-
                 }
             }
         }
-        
     }
     public static List<Highscore> GetHighscores(List<Highscore> scores)
     {
@@ -85,7 +83,6 @@ public class Highscore
         if (fileInfo.Exists)
         {
             scores = OpenFromFile("highscores.csv");
-
             return scores;
         }
         else
@@ -93,7 +90,10 @@ public class Highscore
             return scores;
         }
     }
-
+    public override string ToString()
+    {
+        return PlayerName + "\t\t" + PlayerFinalScore;
+    }
     public static void SavetoFile(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);
@@ -117,11 +117,9 @@ public class Highscore
             string[] record = line.Split(',');
             Highscore thehigh = new Highscore(record[0], int.Parse(record[1]), record[2],
                 int.Parse(record[3]), int.Parse(record[4]), bool.Parse(record[5]));
-            //donnelly
             list.Add(thehigh);
 
             line = sr.ReadLine();
-
         }
         sr.Close();
         return list;

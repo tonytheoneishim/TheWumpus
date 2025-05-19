@@ -55,8 +55,14 @@
             // 
             // buttonDone
             // 
-            buttonDone.BackColor = SystemColors.ControlDarkDark;
+            buttonDone.BackColor = Color.FromArgb(46, 46, 46);
+            buttonDone.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            buttonDone.FlatAppearance.BorderSize = 0;
+            buttonDone.FlatAppearance.MouseDownBackColor = Color.Gray;
+            buttonDone.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            buttonDone.FlatStyle = FlatStyle.Flat;
             buttonDone.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonDone.ForeColor = SystemColors.ControlLightLight;
             buttonDone.Location = new Point(397, 221);
             buttonDone.Name = "buttonDone";
             buttonDone.Size = new Size(75, 28);
