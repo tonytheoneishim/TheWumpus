@@ -47,7 +47,7 @@ namespace WumpusLocations
             }
 
             Random rng = new Random();
-            for (int i = 0; i <= 7; i++)
+            for (int i = 0; i <= 6; i++)
             {
                 int x = rng.Next(30 - i);
                 events.Add(indexes[x]);
@@ -61,7 +61,14 @@ namespace WumpusLocations
             pits[1] = events[3];
             shops[0] = events[4];
             shops[1] = events[5];
-            wumpus = events[6];
+            while (true)
+            {
+                wumpus = rng.Next(30);
+                if (wumpus != 1 && wumpus != shops[0] && wumpus != shops[1])
+                {
+                    break;
+                }
+            }
 
             List<int[]> locations = new List<int[]>();
             locations.Add(bats);
