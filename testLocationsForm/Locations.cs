@@ -38,7 +38,6 @@ namespace WumpusLocations
             int[] pits = new int[2];
             int[] shops = new int[2];
             int wumpus;
-            int player;
             List<int> indexes = new List<int>(30);
             List<int> events = new List<int>();
             for (int i = 1; i <= 30; i++)
@@ -47,7 +46,7 @@ namespace WumpusLocations
             }
 
             Random rng = new Random();
-            for (int i = 0; i <= 8; i++)
+            for (int i = 0; i <= 7; i++)
             {
                 int x = rng.Next(30 - i);
                 events.Add(indexes[x]);
@@ -62,13 +61,12 @@ namespace WumpusLocations
             shops[0] = events[4];
             shops[1] = events[5];
             wumpus = events[6];
-            player = events[7];
 
             List<int[]> locations = new List<int[]>();
             locations.Add(bats);
             locations.Add(pits);
             locations.Add(shops);
-            locations.Add(new int[] { wumpus, player });
+            locations.Add(new int[] { wumpus });
 
             return locations;
         }
@@ -127,18 +125,18 @@ namespace WumpusLocations
         /// Checks the current room for special locations
         /// </summary>
         /// <returns> Returns W if there's a Wumpus, B if there's a bat, P if there's a pit, S if there's a shop, and N otherwise </returns>
-        public char RoomType()
+        public string RoomType()
         {
             if (Player == Wumpus)
             {
-                return 'W';
+                return "W";
             }
 
             foreach (int bat in Bats)
             {
                 if (Player == bat)
                 {
-                    return 'B';
+                    return "B";
                 }
             }
 
@@ -146,7 +144,7 @@ namespace WumpusLocations
             {
                 if (Player == pit)
                 {
-                    return 'P';
+                    return "P";
                 }
             }
 
@@ -154,18 +152,18 @@ namespace WumpusLocations
             {
                 if (Player == shop)
                 {
-                    return 'S';
+                    return "S";
                 }
             }
 
-            return 'N';
+            return "N";
         }
 
         /// <summary>
         /// Checks the nearby CavePathss for special locations
         /// </summary>
         /// <returns> Returns W if there's a Wumpus, B if there's a bat, P if there's a pit, S if there's a shop, and N otherwise </returns>
-        public char HazardNearby()
+        public string HazardNearby()
         {
             // Check each room connection one by one
             for (int i = 0; i < CavePaths[Player].Length; i++)
@@ -174,7 +172,7 @@ namespace WumpusLocations
                 {
                     if (CavePaths[Player][i] == bat)
                     {
-                        return 'B';
+                        return "B";
 
                     }
                 }
@@ -183,7 +181,7 @@ namespace WumpusLocations
                 {
                     if (CavePaths[Player][i] == pit)
                     {
-                        return 'P';
+                        return "P";
                     }
                 }
 
@@ -191,17 +189,17 @@ namespace WumpusLocations
                 {
                     if (CavePaths[Player][i] == shop)
                     {
-                        return 'S';
+                        return "S";
                     }
                 }
 
                 if (CavePaths[Player][i] == Wumpus)
                 {
-                    return 'W';
+                    return "W";
                 }
             }
 
-            return 'N';
+            return "N";
         }
     }
 }

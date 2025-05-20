@@ -13,6 +13,7 @@ namespace WumpusPLayer
         public int Gold { get; set; } // The amount of gold left
         public int Turns { get; set; } // The number of turns it has been
         public bool WumpusDead { get; set; } // Whether the Wumpus is dead or not
+
         public List<bool> Upgrades = new List<bool>
         {
             false, // Shield
@@ -71,7 +72,7 @@ namespace WumpusPLayer
             if (upgrade == "Shield".ToLower())
             {
                 Upgrades[0] = true;
-            }
+            } else if (upgrade == "")
         }
     }
 }
