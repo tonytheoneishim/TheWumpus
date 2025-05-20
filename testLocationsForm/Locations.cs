@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.DirectoryServices;
 using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
@@ -163,8 +164,9 @@ namespace WumpusLocations
         /// Checks the nearby CavePathss for special locations
         /// </summary>
         /// <returns> Returns W if there's a Wumpus, B if there's a bat, P if there's a pit, S if there's a shop, and N otherwise </returns>
-        public string HazardNearby()
+        public List<string> HazardNearby()
         {
+            List<string> hazards = new List<string>();
             // Check each room connection one by one
             for (int i = 0; i < CavePaths[Player].Length; i++)
             {
@@ -172,8 +174,8 @@ namespace WumpusLocations
                 {
                     if (CavePaths[Player][i] == bat)
                     {
-                        return "B";
-
+                        hazards.Add("B");
+                        break;
                     }
                 }
 
@@ -181,7 +183,8 @@ namespace WumpusLocations
                 {
                     if (CavePaths[Player][i] == pit)
                     {
-                        return "P";
+                        hazards.Add("P");
+                        break;
                     }
                 }
 
@@ -189,17 +192,20 @@ namespace WumpusLocations
                 {
                     if (CavePaths[Player][i] == shop)
                     {
-                        return "S";
+                        hazards.Add("S");
+                        break;
                     }
                 }
-
                 if (CavePaths[Player][i] == Wumpus)
                 {
-                    return "W";
+                    hazards.Add("W");
+                    break;
                 }
+
+                hazards.Add("N");
             }
 
-            return "N";
+            return hazards;
         }
     }
 }
