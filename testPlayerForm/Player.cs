@@ -72,7 +72,8 @@ namespace WumpusPLayer
             if (upgrade == "Shield".ToLower())
             {
                 Upgrades[0] = true;
-            } else if (upgrade == "")
+            }
+            else if (upgrade == "") ;
         }
     }
 }

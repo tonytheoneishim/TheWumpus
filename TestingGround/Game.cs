@@ -33,14 +33,15 @@ namespace TestingGround
         Random rand = new Random();
         int START_POSITION = 1;
 
-        Locations locations = new Locations(cave.caveLayouts);
+        Locations location = new Locations(cave.caveLayouts);
         List<int[]> locationList = new List<int[]>();
-        //locationList = locations.SpawnEvents();
 
         public string PlayerName { get; set; }
         public Game()
         {
             InitializeComponent();
+
+            locationList = location.SpawnEvents();
 
             pictureBoxRoom.SendToBack();
 
@@ -106,11 +107,62 @@ namespace TestingGround
             turns++;
             score = 100 - turns + coins + (arrows * 5);
 
-            //string hazard = Locations.HazardNearby
+            bool wumpusDetected = false;
+            bool batsDetected = false;
+            bool pitDetected = false;
+            bool shopDetected = false;
+
+            string warnings = "";
+            List<string> hazards = location.HazardNearby();
+            foreach (string hazard in hazards)
+            {
+                if (hazard == "W")
+                {
+                    if (!wumpusDetected)
+                    {
+                        warnings += "You smell a Wumpus!\n";
+                        wumpusDetected = true;
+                        break;
+                    }
+                   
+                }
+                else if (hazard == "B")
+                {
+                    if (!batsDetected)
+                    {
+                        warnings += "You hear bats nearby!\n";
+                        batsDetected = true;
+                        break;
+                    }
+                }
+                else if (hazard == "P")
+                {
+                    if (!pitDetected)
+                    {
+                        warnings += "You feel a draft!\n";
+                        pitDetected = true;
+                        break;
+                    }
+                }
+                else if (hazard == "S")
+                {
+                    if (!shopDetected)
+                    {
+                        warnings += "You see the light of a shop nearby!\n";
+                        shopDetected = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    // do nothing
+                }
+            }
 
             labelCoins.Text = coins.ToString();
             labelArrows.Text = arrows.ToString();
             labelPoints.Text = score.ToString();
+            labelWarnings.Text = warnings;
             checkBoxShootArrow.Checked = false;
         }
 
