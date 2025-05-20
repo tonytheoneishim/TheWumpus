@@ -49,6 +49,7 @@
             labelPlayerName = new Label();
             labelCaveNum = new Label();
             labelPlayerLabel = new Label();
+            labelWarnings = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -189,6 +190,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(labelWarnings);
             groupBox1.Controls.Add(checkBoxShootArrow);
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(labelArrows);
@@ -339,6 +341,15 @@
             labelPlayerLabel.TabIndex = 14;
             labelPlayerLabel.Text = "Player:";
             // 
+            // labelWarnings
+            // 
+            labelWarnings.AutoSize = true;
+            labelWarnings.Location = new Point(199, 22);
+            labelWarnings.Name = "labelWarnings";
+            labelWarnings.Size = new Size(24, 19);
+            labelWarnings.TabIndex = 15;
+            labelWarnings.Text = "---";
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -397,5 +408,6 @@
         private Label labelRoomNum;
         private Label labelPlayerLabel;
         private CheckBox checkBoxShootArrow;
+        private Label labelWarnings;
     }
 }

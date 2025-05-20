@@ -185,16 +185,27 @@ public class Highscore
     BAT COVID
     */
 
-    public void GetCOVID()
+    public bool GetCOVID()
     {
+        bool ret = false;
 
+        return true;
     }
-    public void Tripping()
+    public bool COVIDDebuff()
     {
-
-    }
-    public void MissedAttack()
-    {
-
+        bool ret = false;
+        if (GetCOVID() == true)
+        {
+            int tripnum;
+            int trigger = 9;
+            Random randint = new Random();
+            tripnum = randint.Next(1, 10);
+            if (tripnum == trigger)
+            {
+                ret = true;
+            }
+        }
+        else ret = false;
+        return ret;
     }
 }
