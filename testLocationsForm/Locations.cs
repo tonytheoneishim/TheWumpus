@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.DirectoryServices;
 using System.DirectoryServices.ActiveDirectory;
+using System.Drawing;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
@@ -87,6 +88,35 @@ namespace WumpusLocations
         }
 
         /// <summary>
+        /// Spawns a random amount of coins between 5 - 15 across the map that doesn't overlap with Pits or Shops
+        /// </summary>
+        /// <returns> A list of indexes where the coins are </returns>
+        public List<int> SpawnCoins()
+        {
+            List<int> coins = new List<int>();
+            Random rng = new Random();
+            int x = rng.Next(5, 16);
+
+            for (int i = 0; i < x; i++)
+            {
+                int y = rng.Next(30);
+                if (y != Wumpus && y != Shops[0] && y != Shops[1] && y != Pits[0] && y != Pits[1])
+                {
+                    if (rng.Next(3) == 0)
+                    {
+                        coins.Add(y);
+                        coins.Add(y);
+                        i++;
+                    } else
+                    {
+                        coins.Add(y);
+                    }
+                }
+            }
+
+            return coins;
+        }
+        /// <summary>
         /// Randomly moves the Wumpus to the nearest room, if moving at all
         /// </summary>
         /// <returns> Returns true if the Wumpus has moved and false otherwise </returns>
@@ -140,18 +170,20 @@ namespace WumpusLocations
         /// Checks the current room for special locations
         /// </summary>
         /// <returns> Returns W if there's a Wumpus, B if there's a bat, P if there's a pit, S if there's a shop, and N otherwise </returns>
-        public string RoomType()
+        public List<string> RoomType()
         {
+            List<string> types = new List<string>();
             if (Player == Wumpus)
             {
-                return "W";
+                types.Add("W");
             }
 
             foreach (int bat in Bats)
             {
                 if (Player == bat)
                 {
-                    return "B";
+                    types.Add("B");
+                    break;
                 }
             }
 
@@ -159,7 +191,8 @@ namespace WumpusLocations
             {
                 if (Player == pit)
                 {
-                    return "P";
+                    types.Add("P");
+                    break;
                 }
             }
 
@@ -167,11 +200,17 @@ namespace WumpusLocations
             {
                 if (Player == shop)
                 {
-                    return "S";
+                    types.Add("S");
+                    break;
                 }
             }
 
-            return "N";
+            if (types.Count == 0)
+            {
+                types.Add("N");
+            }
+
+            return types;
         }
 
         /// <summary>
