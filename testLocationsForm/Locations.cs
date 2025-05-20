@@ -5,6 +5,7 @@ using System.DirectoryServices;
 using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,6 +70,12 @@ namespace WumpusLocations
                     break;
                 }
             }
+
+            Bats = bats;
+            Pits = pits;
+            Shops = shops;
+            Wumpus = wumpus;
+            Player = 1;
 
             List<int[]> locations = new List<int[]>();
             locations.Add(bats);
