@@ -73,6 +73,7 @@ namespace TestingGround
             labelCoins.Text = coins.ToString();
             labelArrows.Text = arrows.ToString();
             labelPoints.Text = score.ToString();
+            labelWarnings.Text = ""; 
 
             buttonRoomN.FlatAppearance.BorderSize = 0;
             buttonRoomNE.FlatAppearance.BorderSize = 0;
@@ -97,6 +98,7 @@ namespace TestingGround
             index = int.Parse(button.Text);
             labelRoomNum.Text = button.Text;
             currentRoom = index;
+            location.Player = index;
 
             updateButtons(index);
             DoTurn();
@@ -112,6 +114,7 @@ namespace TestingGround
             bool pitDetected = false;
             bool shopDetected = false;
 
+            labelWarnings.Text = "";
             string warnings = "";
             List<string> hazards = location.HazardNearby();
             foreach (string hazard in hazards)
@@ -122,7 +125,6 @@ namespace TestingGround
                     {
                         warnings += "You smell a Wumpus!\n";
                         wumpusDetected = true;
-                        break;
                     }
                    
                 }
@@ -132,7 +134,6 @@ namespace TestingGround
                     {
                         warnings += "You hear bats nearby!\n";
                         batsDetected = true;
-                        break;
                     }
                 }
                 else if (hazard == "P")
@@ -141,7 +142,6 @@ namespace TestingGround
                     {
                         warnings += "You feel a draft!\n";
                         pitDetected = true;
-                        break;
                     }
                 }
                 else if (hazard == "S")
@@ -150,13 +150,17 @@ namespace TestingGround
                     {
                         warnings += "You see the light of a shop nearby!\n";
                         shopDetected = true;
-                        break;
                     }
                 }
                 else
                 {
                     // do nothing
                 }
+            }
+
+            if(wumpusDetected)
+            {
+                //this.BackgroundImage = Resources.WumpusBackground;
             }
 
             labelCoins.Text = coins.ToString();
