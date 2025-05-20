@@ -191,7 +191,7 @@ public class Highscore
 
         return true;
     }
-    public bool COVIDDebuf()
+    public bool COVIDDebuff()
     {
         bool ret = false;
         if (GetCOVID() == true)
