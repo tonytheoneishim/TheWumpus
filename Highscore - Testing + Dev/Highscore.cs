@@ -184,12 +184,29 @@ public class Highscore
     /*
     BAT COVID
     */
+    public bool COVID { get; set; }
 
-    public bool GetCOVID()
+    public bool chanceCOVID()
     {
         bool ret = false;
-
-        return true;
+        int infectnum;
+        int trigger = 2;
+        Random randint = new random();
+        infectnum = randint.Next(1, 5);
+        if (infectnum == trigger)
+        {
+            ret = true;
+            GetCOVID();
+        }
+        else ret = false;
+        return ret
+    }
+    public void GetCOVID()
+    {
+        if (chanceCOVID() == true)
+        {
+            COVID = true;    
+        }
     }
     public bool COVIDDebuff()
     {
