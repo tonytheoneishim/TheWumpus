@@ -183,7 +183,7 @@ public class Highscore
 
     /*
     BAT COVID
-    */
+    
     public bool COVID { get; set; }
 
     public bool chanceCOVID()
@@ -219,4 +219,5 @@ public class Highscore
         else ret = false;
         return ret;
     }
+    */
 }
