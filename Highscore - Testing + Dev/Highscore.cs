@@ -191,7 +191,7 @@ public class Highscore
         bool ret = false;
         int infectnum;
         int trigger = 2;
-        Random randint = new random();
+        Random randint = new Random();
         infectnum = randint.Next(1, 5);
         if (infectnum == trigger)
         {
@@ -199,14 +199,11 @@ public class Highscore
             GetCOVID();
         }
         else ret = false;
-        return ret
+        return ret;
     }
-    public void GetCOVID()
+    public bool GetCOVID()
     {
-        if (chanceCOVID() == true)
-        {
-            COVID = true;    
-        }
+
     }
     public bool COVIDDebuff()
     {
