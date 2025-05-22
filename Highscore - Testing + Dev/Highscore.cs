@@ -201,10 +201,7 @@ public class Highscore
         else ret = false;
         return ret;
     }
-    public bool GetCOVID()
-    {
 
-    }
     public bool COVIDDebuff()
     {
         bool ret = false;
