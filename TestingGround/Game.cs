@@ -14,6 +14,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Security.Cryptography.X509Certificates;
+using GCUITest.Properties;
+using System.Xml;
+using System.ComponentModel.Design;
 
 namespace TestingGround
 {
@@ -81,6 +84,8 @@ namespace TestingGround
             buttonRoomS.FlatAppearance.BorderSize = 0;
             buttonRoomSW.FlatAppearance.BorderSize = 0;
             buttonRoomSE.FlatAppearance.BorderSize = 0;
+            this.BackgroundImage = Resources.New_Piskel;
+            pictureBoxRoom.Image = Resources.Wumpus_Room__1_;
 
             int index = rand.Next(0, 4);
             cave.caveSelect(index);
@@ -158,10 +163,61 @@ namespace TestingGround
                 }
             }
 
-            if(wumpusDetected)
+            if(!wumpusDetected && !batsDetected && !pitDetected && !shopDetected)
             {
-                //this.BackgroundImage = Resources.WumpusBackground;
+                this.BackgroundImage = Resources.New_Piskel;
+                checkBoxShootArrow.Visible = false;
+            } 
+            else if(wumpusDetected)
+            {
+                this.BackgroundImage = Resources.Piskel_Wumpus_Main;
+                checkBoxShootArrow.Visible = true;
             }
+            else if (batsDetected)
+            {
+                this.BackgroundImage = Resources.Piskel_Bats_Main;
+            }
+            else if (shopDetected)
+            {
+                this.BackgroundImage = Resources.Main_Piskel_Shop;
+            }
+            else if (pitDetected)
+            {
+                this.BackgroundImage = Resources.Main_Piskel_Draft;
+            }
+
+            // check if the player is in a room with a hazard
+            List<string> hazardsInRoom = location.RoomType();
+            string roomHazards = "";
+            foreach (string hazard in hazardsInRoom)
+            {
+                if (hazard == "W")
+                {
+                    pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
+                    roomHazards += "Wumpus\n";
+                }
+                else if (hazard == "B")
+                {
+                    pictureBoxRoom.Image = Resources.Wumpus_Room_Bats;
+                    roomHazards += "Bats\n";
+                }
+                else if (hazard == "P")
+                {
+                    pictureBoxRoom.Image = Resources.Wumpus_Room_Hole;
+                    roomHazards += "Pit\n";
+                }
+                else if (hazard == "S")
+                {
+                    pictureBoxRoom.Image = Resources.Wumpus_Room_Shop;
+                    roomHazards += "Shop\n";
+                }
+                else
+                {
+                    pictureBoxRoom.Image = Resources.Wumpus_Room__1_;
+                    roomHazards += "None\n";
+                }
+            }
+            labelCurrentRoomHazard.Text = roomHazards;
 
             labelCoins.Text = coins.ToString();
             labelArrows.Text = arrows.ToString();

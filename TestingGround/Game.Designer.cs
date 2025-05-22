@@ -36,11 +36,12 @@
             buttonRoomS = new Button();
             pictureBoxRoom = new PictureBox();
             groupBox1 = new GroupBox();
+            labelWarnings = new Label();
             checkBoxShootArrow = new CheckBox();
-            pictureBox2 = new PictureBox();
+            pictureBoxArrow = new PictureBox();
             labelArrows = new Label();
             labelArrowLabel = new Label();
-            pictureBox1 = new PictureBox();
+            pictureBoxCoin = new PictureBox();
             labelPoints = new Label();
             labelCoins = new Label();
             labelPointLabel = new Label();
@@ -49,11 +50,11 @@
             labelPlayerName = new Label();
             labelCaveNum = new Label();
             labelPlayerLabel = new Label();
-            labelWarnings = new Label();
+            labelCurrentRoomHazard = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrow).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).BeginInit();
             SuspendLayout();
             // 
             // buttonRoomN
@@ -179,7 +180,7 @@
             // pictureBoxRoom
             // 
             pictureBoxRoom.BackColor = Color.Transparent;
-            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room_Shop__1_;
+            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room_WumpusBad;
             pictureBoxRoom.Location = new Point(155, 61);
             pictureBoxRoom.Name = "pictureBoxRoom";
             pictureBoxRoom.Size = new Size(220, 220);
@@ -190,12 +191,13 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(labelCurrentRoomHazard);
             groupBox1.Controls.Add(labelWarnings);
             groupBox1.Controls.Add(checkBoxShootArrow);
-            groupBox1.Controls.Add(pictureBox2);
+            groupBox1.Controls.Add(pictureBoxArrow);
             groupBox1.Controls.Add(labelArrows);
             groupBox1.Controls.Add(labelArrowLabel);
-            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Controls.Add(pictureBoxCoin);
             groupBox1.Controls.Add(labelPoints);
             groupBox1.Controls.Add(labelCoins);
             groupBox1.Controls.Add(labelPointLabel);
@@ -209,6 +211,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Hunt the Wumpus!";
             // 
+            // labelWarnings
+            // 
+            labelWarnings.AutoSize = true;
+            labelWarnings.Location = new Point(199, 22);
+            labelWarnings.Name = "labelWarnings";
+            labelWarnings.Size = new Size(24, 19);
+            labelWarnings.TabIndex = 15;
+            labelWarnings.Text = "---";
+            // 
             // checkBoxShootArrow
             // 
             checkBoxShootArrow.AutoSize = true;
@@ -219,15 +230,15 @@
             checkBoxShootArrow.Text = "Shoot Arrow";
             checkBoxShootArrow.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
+            // pictureBoxArrow
             // 
-            pictureBox2.Image = GCUITest.Properties.Resources.Wumpus_Arrow;
-            pictureBox2.Location = new Point(15, 87);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(55, 50);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 12;
-            pictureBox2.TabStop = false;
+            pictureBoxArrow.Image = GCUITest.Properties.Resources.Wumpus_Arrow;
+            pictureBoxArrow.Location = new Point(15, 87);
+            pictureBoxArrow.Name = "pictureBoxArrow";
+            pictureBoxArrow.Size = new Size(55, 50);
+            pictureBoxArrow.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxArrow.TabIndex = 12;
+            pictureBoxArrow.TabStop = false;
             // 
             // labelArrows
             // 
@@ -247,15 +258,15 @@
             labelArrowLabel.TabIndex = 10;
             labelArrowLabel.Text = "Arrows:";
             // 
-            // pictureBox1
+            // pictureBoxCoin
             // 
-            pictureBox1.Image = GCUITest.Properties.Resources.Wumpus_Coin__1_;
-            pictureBox1.Location = new Point(21, 25);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 56);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            pictureBoxCoin.Image = GCUITest.Properties.Resources.Wumpus_Coin__1_;
+            pictureBoxCoin.Location = new Point(21, 25);
+            pictureBoxCoin.Name = "pictureBoxCoin";
+            pictureBoxCoin.Size = new Size(48, 56);
+            pictureBoxCoin.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxCoin.TabIndex = 9;
+            pictureBoxCoin.TabStop = false;
             // 
             // labelPoints
             // 
@@ -341,14 +352,14 @@
             labelPlayerLabel.TabIndex = 14;
             labelPlayerLabel.Text = "Player:";
             // 
-            // labelWarnings
+            // labelCurrentRoomHazard
             // 
-            labelWarnings.AutoSize = true;
-            labelWarnings.Location = new Point(199, 22);
-            labelWarnings.Name = "labelWarnings";
-            labelWarnings.Size = new Size(24, 19);
-            labelWarnings.TabIndex = 15;
-            labelWarnings.Text = "---";
+            labelCurrentRoomHazard.AutoSize = true;
+            labelCurrentRoomHazard.Location = new Point(352, 52);
+            labelCurrentRoomHazard.Name = "labelCurrentRoomHazard";
+            labelCurrentRoomHazard.Size = new Size(24, 19);
+            labelCurrentRoomHazard.TabIndex = 16;
+            labelCurrentRoomHazard.Text = "---";
             // 
             // Game
             // 
@@ -379,8 +390,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrow).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -399,15 +410,16 @@
         private Label labelCoins;
         private Label labelPointLabel;
         private Label labelCoinLabel;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxCoin;
         private Label labelArrows;
         private Label labelArrowLabel;
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxArrow;
         private Label labelPlayerName;
         private Label labelCaveNum;
         private Label labelRoomNum;
         private Label labelPlayerLabel;
         private CheckBox checkBoxShootArrow;
         private Label labelWarnings;
+        private Label labelCurrentRoomHazard;
     }
 }
