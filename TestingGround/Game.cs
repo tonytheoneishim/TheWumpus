@@ -69,7 +69,11 @@ namespace TestingGround
                 if (connectedRooms[i] > -1) buttons[i].Visible = true;
             }
         }
-
+        /// <summary>
+        /// Initializes the game and sets up the player name, coins, arrows, and score. It also sets up the buttons and background image.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Game_Load(object sender, EventArgs e)
         {
             labelPlayerName.Text = PlayerName;
@@ -78,6 +82,7 @@ namespace TestingGround
             labelPoints.Text = score.ToString();
             labelWarnings.Text = ""; 
 
+            checkBoxShootArrow.Visible = false;
             buttonRoomN.FlatAppearance.BorderSize = 0;
             buttonRoomNE.FlatAppearance.BorderSize = 0;
             buttonRoomNW.FlatAppearance.BorderSize = 0;
@@ -94,6 +99,11 @@ namespace TestingGround
             labelCaveNum.Text = "Cave " + (index + 1).ToString();
         }
 
+        /// <summary>
+        /// Check for button clicks and update the current room accordingly.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonRoomN_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -103,16 +113,21 @@ namespace TestingGround
             index = int.Parse(button.Text);
             labelRoomNum.Text = button.Text;
             currentRoom = index;
-            location.Player = index;
+            location.Player = index - 1;
 
             updateButtons(index);
             DoTurn();
         }
 
+        /// <summary>
+        /// Handles all events for every turn. Checks for hazards inside the current room and around, and updates the UI accordingly.
+        /// Also enables shooting an arrow when wumpus is nearby.
+        /// </summary>
         public void DoTurn()
         {
             turns++;
             score = 100 - turns + coins + (arrows * 5);
+            checkBoxShootArrow.Visible = false;
 
             bool wumpusDetected = false;
             bool batsDetected = false;
@@ -195,6 +210,7 @@ namespace TestingGround
                 {
                     pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
                     roomHazards += "Wumpus\n";
+                    DoTrivia();
                 }
                 else if (hazard == "B")
                 {
@@ -208,7 +224,7 @@ namespace TestingGround
                 }
                 else if (hazard == "S")
                 {
-                    pictureBoxRoom.Image = Resources.Wumpus_Room_Shop;
+                    pictureBoxRoom.Image = Resources.Wumpus_Room_Shop__1_;
                     roomHazards += "Shop\n";
                 }
                 else
@@ -241,6 +257,12 @@ namespace TestingGround
                 buttons[i].Text = connectedRooms[i].ToString();
                 if (connectedRooms[i] > -1) buttons[i].Visible = true;
             }
+        }
+
+        private void DoTrivia()
+        {
+            Trivia trivia = new Trivia();
+            trivia.ShowDialog();
         }
     }
 }

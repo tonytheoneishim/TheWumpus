@@ -36,6 +36,7 @@
             buttonRoomS = new Button();
             pictureBoxRoom = new PictureBox();
             groupBox1 = new GroupBox();
+            labelCurrentRoomHazard = new Label();
             labelWarnings = new Label();
             checkBoxShootArrow = new CheckBox();
             pictureBoxArrow = new PictureBox();
@@ -50,7 +51,6 @@
             labelPlayerName = new Label();
             labelCaveNum = new Label();
             labelPlayerLabel = new Label();
-            labelCurrentRoomHazard = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRoom).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxArrow).BeginInit();
@@ -180,7 +180,7 @@
             // pictureBoxRoom
             // 
             pictureBoxRoom.BackColor = Color.Transparent;
-            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room_WumpusBad;
+            pictureBoxRoom.Image = GCUITest.Properties.Resources.Wumpus_Room_Shop__1_;
             pictureBoxRoom.Location = new Point(155, 61);
             pictureBoxRoom.Name = "pictureBoxRoom";
             pictureBoxRoom.Size = new Size(220, 220);
@@ -210,6 +210,15 @@
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Hunt the Wumpus!";
+            // 
+            // labelCurrentRoomHazard
+            // 
+            labelCurrentRoomHazard.AutoSize = true;
+            labelCurrentRoomHazard.Location = new Point(398, 51);
+            labelCurrentRoomHazard.Name = "labelCurrentRoomHazard";
+            labelCurrentRoomHazard.Size = new Size(24, 19);
+            labelCurrentRoomHazard.TabIndex = 16;
+            labelCurrentRoomHazard.Text = "---";
             // 
             // labelWarnings
             // 
@@ -351,15 +360,6 @@
             labelPlayerLabel.Size = new Size(60, 21);
             labelPlayerLabel.TabIndex = 14;
             labelPlayerLabel.Text = "Player:";
-            // 
-            // labelCurrentRoomHazard
-            // 
-            labelCurrentRoomHazard.AutoSize = true;
-            labelCurrentRoomHazard.Location = new Point(352, 52);
-            labelCurrentRoomHazard.Name = "labelCurrentRoomHazard";
-            labelCurrentRoomHazard.Size = new Size(24, 19);
-            labelCurrentRoomHazard.TabIndex = 16;
-            labelCurrentRoomHazard.Text = "---";
             // 
             // Game
             // 
