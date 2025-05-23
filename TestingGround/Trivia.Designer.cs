@@ -30,6 +30,7 @@
         {
             labelTitle = new Label();
             buttonExit = new Button();
+            richTextBoxQuestion = new RichTextBox();
             SuspendLayout();
             // 
             // labelTitle
@@ -54,6 +55,15 @@
             buttonExit.UseVisualStyleBackColor = true;
             buttonExit.Click += buttonExit_Click;
             // 
+            // richTextBoxQuestion
+            // 
+            richTextBoxQuestion.BackColor = Color.FromArgb(27, 27, 27);
+            richTextBoxQuestion.Location = new Point(100, 153);
+            richTextBoxQuestion.Name = "richTextBoxQuestion";
+            richTextBoxQuestion.Size = new Size(336, 118);
+            richTextBoxQuestion.TabIndex = 2;
+            richTextBoxQuestion.Text = "";
+            // 
             // Trivia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -62,6 +72,7 @@
             BackgroundImage = Properties.Resources.New_Piskel;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(534, 511);
+            Controls.Add(richTextBoxQuestion);
             Controls.Add(buttonExit);
             Controls.Add(labelTitle);
             DoubleBuffered = true;
@@ -77,5 +88,6 @@
 
         private Label labelTitle;
         private Button buttonExit;
+        private RichTextBox richTextBoxQuestion;
     }
 }
