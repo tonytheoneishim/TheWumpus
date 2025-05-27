@@ -93,6 +93,7 @@ namespace TestingGround
             pictureBoxRoom.Image = Resources.Wumpus_Room__1_;
 
             int index = rand.Next(0, 4);
+            //int index = 2;
             cave.caveSelect(index);
             updateButtons(START_POSITION);
             labelRoomNum.Text = START_POSITION.ToString();
@@ -106,17 +107,31 @@ namespace TestingGround
         /// <param name="e"></param>
         private void buttonRoomN_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            int index = -1;
-            //MessageBox.Show(button.Text);
+            if (!checkBoxShootArrow.Checked)
+            {
+                Button button = (Button)sender;
+                int index = -1;
+                //MessageBox.Show(button.Text);
 
-            index = int.Parse(button.Text);
-            labelRoomNum.Text = button.Text;
-            currentRoom = index;
-            location.Player = index - 1;
+                index = int.Parse(button.Text);
+                labelRoomNum.Text = button.Text;
+                currentRoom = index;
+                location.Player = index - 1;
 
-            updateButtons(index);
-            DoTurn();
+                updateButtons(index);
+                DoTurn();
+            } else
+            {
+                if(location.ShootArrow(location.Player))
+                {
+                    MessageBox.Show("You shot the Wumpus! You win!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("You missed the Wumpus!");
+                }
+            }
         }
 
         /// <summary>
@@ -126,6 +141,7 @@ namespace TestingGround
         public void DoTurn()
         {
             turns++;
+            coins++;
             score = 100 - turns + coins + (arrows * 5);
             checkBoxShootArrow.Visible = false;
 
