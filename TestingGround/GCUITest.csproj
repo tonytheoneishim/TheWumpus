@@ -13,6 +13,7 @@
     <ProjectReference Include="..\Highscore - Testing + Dev\Highscore - Testing + Dev.csproj" />
     <ProjectReference Include="..\testLocationsForm\WumpusLocations.csproj" />
     <ProjectReference Include="..\testPlayerForm\WumpusPlayer.csproj" />
+    <ProjectReference Include="..\Trivia\Trivia.csproj" />
   </ItemGroup>
 
   <ItemGroup>

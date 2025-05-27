@@ -67,7 +67,7 @@
             richTextBoxQuestion.ForeColor = SystemColors.Window;
             richTextBoxQuestion.Location = new Point(100, 178);
             richTextBoxQuestion.Name = "richTextBoxQuestion";
-            richTextBoxQuestion.Size = new Size(336, 118);
+            richTextBoxQuestion.Size = new Size(327, 118);
             richTextBoxQuestion.TabIndex = 2;
             richTextBoxQuestion.Text = "Question Goes Here";
             // 
@@ -139,6 +139,7 @@
             Name = "Trivia";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Trivia";
+            Load += Trivia_Load;
             ResumeLayout(false);
             PerformLayout();
         }

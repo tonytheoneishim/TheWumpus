@@ -21,5 +21,10 @@ namespace GCUITest
         {
             this.Close();
         }
+
+        private void Trivia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
