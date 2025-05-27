@@ -72,7 +72,12 @@ namespace WumpusLocations
 
         private void checkHazards_Click(object sender, EventArgs e)
         {
-            hazardsNearbyText.Text = locations[0].HazardNearby().ToString();
+            hazardsNearbyList.Items.Clear();
+            List<string> hazards = locations[0].HazardNearby();
+            foreach (string hazard in hazards)
+            {
+                hazardsNearbyList.Items.Add(hazard);
+            }
         }
 
         private void shootArrow_Click(object sender, EventArgs e)
@@ -104,11 +109,14 @@ namespace WumpusLocations
 
         private void spawnEvents_Click(object sender, EventArgs e)
         {
+            eventsList.Items.Clear();
             List<int[]> events = locations[0].SpawnEvents();
             foreach (int[] evt in events)
             {
-                eventsList.Items.Add(evt[0]);
-                eventsList.Items.Add(evt[1]);
+                foreach (int i in evt)
+                {
+                    eventsList.Items.Add(i);
+                }
             }
         }
     }

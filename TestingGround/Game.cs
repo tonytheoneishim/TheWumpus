@@ -92,8 +92,8 @@ namespace TestingGround
             this.BackgroundImage = Resources.New_Piskel;
             pictureBoxRoom.Image = Resources.Wumpus_Room__1_;
 
-            int index = rand.Next(0, 4);
-            //int index = 2;
+            //int index = rand.Next(0, 4);
+            int index = 2;
             cave.caveSelect(index);
             updateButtons(START_POSITION);
             labelRoomNum.Text = START_POSITION.ToString();
@@ -107,13 +107,14 @@ namespace TestingGround
         /// <param name="e"></param>
         private void buttonRoomN_Click(object sender, EventArgs e)
         {
+            Button button = (Button)sender;
+            int index = -1;
+            //MessageBox.Show(button.Text);
+
+            index = int.Parse(button.Text);
+
             if (!checkBoxShootArrow.Checked)
             {
-                Button button = (Button)sender;
-                int index = -1;
-                //MessageBox.Show(button.Text);
-
-                index = int.Parse(button.Text);
                 labelRoomNum.Text = button.Text;
                 currentRoom = index;
                 location.Player = index - 1;
@@ -122,10 +123,10 @@ namespace TestingGround
                 DoTurn();
             } else
             {
-                if(location.ShootArrow(location.Player))
+                if(location.ShootArrow(int.Parse(button.Text)))
                 {
                     MessageBox.Show("You shot the Wumpus! You win!");
-                    this.Close();
+                    //this.Close();
                 }
                 else
                 {
@@ -224,9 +225,9 @@ namespace TestingGround
             {
                 if (hazard == "W")
                 {
+                    DoTrivia();
                     pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
                     roomHazards += "Wumpus\n";
-                    DoTrivia();
                 }
                 else if (hazard == "B")
                 {
@@ -277,8 +278,8 @@ namespace TestingGround
 
         private void DoTrivia()
         {
-            Trivia trivia = new Trivia();
-            trivia.ShowDialog();
+           TriviaForm trivia = new TriviaForm();
+           trivia.ShowDialog();
         }
     }
 }

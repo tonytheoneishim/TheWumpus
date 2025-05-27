@@ -1,6 +1,6 @@
 ﻿namespace GCUITest
 {
-    partial class Trivia
+    partial class TriviaForm
     {
         /// <summary>
         /// Required designer variable.

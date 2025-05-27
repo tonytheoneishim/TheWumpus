@@ -43,18 +43,17 @@ namespace WumpusLocations
             int wumpus;
             List<int> indexes = new List<int>(29);
             List<int> events = new List<int>();
-            for (int i = 0; i < 29; i++)
+            for (int i = 0; i < 30; i++)
             {
                 indexes.Add(i);
             }
 
             Random rng = new Random();
-            for (int i = 0; i <= 6; i++)
+            for (int i = 1; i <= 6; i++)
             {
                 int x = rng.Next(1, 30 - i);
                 events.Add(indexes[x]);
                 indexes.RemoveAt(x);
-                indexes.Add(events[i]);
             }
 
             bats[0] = events[0];
@@ -147,11 +146,11 @@ namespace WumpusLocations
         /// <returns> Returns true if you shot the Wumpus and false otherwise </returns>
         public bool ShootArrow(int i)
         {
-            if (i == Wumpus)
+            if (i + 1 == Wumpus)
             {
                 foreach (int path in CavePaths[Player])
                 {
-                    if (path == i)
+                    if (path + 1 == i)
                     {
                         return true;
                     }
@@ -249,8 +248,10 @@ namespace WumpusLocations
                     hazards.Add("W");
                     break;
                 }
-
-                hazards.Add("N");
+                if (!(CavePaths[Player][i] - 1 == -1))
+                {
+                    hazards.Add("N");
+                }
             }
 
             return hazards;
