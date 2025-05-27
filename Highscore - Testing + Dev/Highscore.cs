@@ -15,6 +15,7 @@ public class Highscore
     {
         PlayerName = string.Empty;
         CaveType = string.Empty;
+        HasCOVID = false;
     }
     /// <summary>
     /// creates parameters for highscore function
@@ -184,8 +185,9 @@ public class Highscore
     /*
     BAT COVID
     */
+    public bool HasCOVID { get; set; }
 
-    public bool chanceCOVID()
+    public bool ChanceCOVID()
     {
         bool ret = false;
         int infectnum;
@@ -195,19 +197,32 @@ public class Highscore
         if (infectnum == trigger)
         {
             ret = true;
-            GetCOVID();
+            HasCOVID = true;
         }
-        else ret = false;
+        else ret = false; HasCOVID = false;
         return ret;
     }
-    public bool GetCOVID()
+    public bool SneezeTimer()
     {
-        return true;
+        bool sneeze = false;
+        int expellnum;
+        Random randint = new Random();
+        expellnum = randint.Next(5, 100);
+        for (int i = 0; i < 101; i++)
+        {
+            if (i == expellnum)
+            {
+                sneeze = true;
+                break;
+            }
+            Thread.Sleep(100);
+        }
+        return sneeze;
     }
     public bool COVIDDebuff()
     {
         bool ret = false;
-        if (GetCOVID() == true)
+        if (HasCOVID == true)
         {
             int tripnum;
             int trigger = 9;
@@ -218,7 +233,49 @@ public class Highscore
                 ret = true;
             }
         }
-        else ret = false;
+        else ret = false; HasCOVID = false;
         return ret;
     }
 }
+
+
+    //Game.cs DEBUF FUNCTIONS
+
+    //    Highscore highscore = new Highscore();
+    //    public void TripDebuff()
+    //    {
+    //        highscore.COVIDDebuff();
+    //        if (highscore.COVIDDebuff() != true)
+    //        {
+    //            // Run: move room
+    //        }
+    //        else MessageBox.Show("You tripped on the ground.", "Ouch!"); 
+    //        return;
+    //    }
+    //    public void MissAttack()
+    //    {
+    //        highscore.COVIDDebuff();
+    //        if (highscore.COVIDDebuff() != true)
+    //        {
+    //            // Run: attack wumpus
+    //        }
+    //        else MessageBox.Show("Your arrow missed.", "Whif!");
+    //        return;
+    //    }
+    //    public void SneezeAttack()
+    //    {
+    //        highscore.SneezeTimer();
+    //        while (true)
+    //        {
+    //            if (highscore.SneezeTimer() == true)
+    //            {
+    //                break;
+    //            }
+    //        }
+    //        // Label show you sneezed
+    //      //if /* player smelling wumpus */
+    //        {
+    //            // "the wumpus heard you!"
+    //            // put player into wumpus fight
+    //        }
+    //    }

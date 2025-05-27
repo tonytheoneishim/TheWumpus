@@ -225,7 +225,7 @@ namespace WumpusLocations
             {
                 foreach (int bat in Bats)
                 {
-                    if (CavePaths[Player][i] == bat)
+                    if (CavePaths[Player][i] - 1 == bat)
                     {
                         hazards.Add("B");
                         break;
@@ -234,7 +234,7 @@ namespace WumpusLocations
 
                 foreach (int pit in Pits)
                 {
-                    if (CavePaths[Player][i] == pit)
+                    if (CavePaths[Player][i] - 1 == pit)
                     {
                         hazards.Add("P");
                         break;
@@ -243,13 +243,13 @@ namespace WumpusLocations
 
                 foreach (int shop in Shops)
                 {
-                    if (CavePaths[Player][i] == shop)
+                    if (CavePaths[Player][i] - 1 == shop)
                     {
                         hazards.Add("S");
                         break;
                     }
                 }
-                if (CavePaths[Player][i] == Wumpus)
+                if (CavePaths[Player][i] - 1 == Wumpus)
                 {
                     hazards.Add("W");
                     break;

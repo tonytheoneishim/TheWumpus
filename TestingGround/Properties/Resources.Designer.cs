@@ -93,56 +93,6 @@ namespace GCUITest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Arrow_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("Arrow-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Coin_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("Coin-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap coin2_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("coin2-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap hex_ver_1 {
-            get {
-                object obj = ResourceManager.GetObject("hex_ver_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap hex_ver_1_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("hex_ver_1-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap image__1___1_ {
             get {
                 object obj = ResourceManager.GetObject("image (1) (1)", resourceCulture);
@@ -176,6 +126,26 @@ namespace GCUITest.Properties {
         internal static System.Drawing.Bitmap image__1___4_ {
             get {
                 object obj = ResourceManager.GetObject("image (1) (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Main_Piskel_Draft {
+            get {
+                object obj = ResourceManager.GetObject("Main Piskel Draft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Main_Piskel_Shop {
+            get {
+                object obj = ResourceManager.GetObject("Main Piskel Shop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +276,16 @@ namespace GCUITest.Properties {
         internal static System.Drawing.Bitmap Wumpus_Room_Shop__1_ {
             get {
                 object obj = ResourceManager.GetObject("Wumpus Room Shop (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wumpus_Room_WumpusBad {
+            get {
+                object obj = ResourceManager.GetObject("Wumpus Room WumpusBad", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
