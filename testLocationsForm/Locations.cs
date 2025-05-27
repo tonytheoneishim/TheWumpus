@@ -25,7 +25,7 @@ namespace WumpusLocations
         /// <summary>
         /// Constructs a Location that stores the current cave system, the locations of the bats, Wumpus, pits, shops, and the player
         /// </summary>
-        /// <param name="cavePaths"> A list of caves and their connections, 1-based </param>
+        /// <param name="cavePaths"> A list of caves and their connections, 0-based </param>
         public Locations(List<int[]> cavePaths)
         {
             CavePaths = cavePaths;
@@ -41,9 +41,9 @@ namespace WumpusLocations
             int[] pits = new int[2];
             int[] shops = new int[2];
             int wumpus;
-            List<int> indexes = new List<int>(30);
+            List<int> indexes = new List<int>(29);
             List<int> events = new List<int>();
-            for (int i = 1; i <= 30; i++)
+            for (int i = 0; i < 29; i++)
             {
                 indexes.Add(i);
             }
@@ -51,7 +51,7 @@ namespace WumpusLocations
             Random rng = new Random();
             for (int i = 0; i <= 6; i++)
             {
-                int x = rng.Next(30 - i);
+                int x = rng.Next(1, 30 - i);
                 events.Add(indexes[x]);
                 indexes.RemoveAt(x);
                 indexes.Add(events[i]);
@@ -65,8 +65,8 @@ namespace WumpusLocations
             shops[1] = events[5];
             while (true)
             {
-                wumpus = rng.Next(30);
-                if (wumpus != 1 && wumpus != shops[0] && wumpus != shops[1])
+                wumpus = rng.Next(1, 30);
+                if (wumpus != shops[0] && wumpus != shops[1])
                 {
                     break;
                 }
@@ -100,17 +100,12 @@ namespace WumpusLocations
             for (int i = 0; i < x; i++)
             {
                 int y = rng.Next(30);
-                if (y != Wumpus && y != Shops[0] && y != Shops[1] && y != Pits[0] && y != Pits[1])
+                if (y != Wumpus && y != Shops[0] && y != Shops[1] && y != Pits[0] && y != Pits[1] && y != Bats[0] && y != Bats[1])
                 {
-                    if (rng.Next(3) == 0)
-                    {
-                        coins.Add(y);
-                        coins.Add(y);
-                        i++;
-                    } else
-                    {
-                        coins.Add(y);
-                    }
+                    coins.Add(y);
+                } else
+                {
+                    i--;
                 }
             }
 
@@ -148,7 +143,7 @@ namespace WumpusLocations
         /// <summary>
         /// Shoots an arrow at the given direction
         /// </summary>
-        /// <param name="i"> The direction to shoot at, 1-based </param>
+        /// <param name="i"> The direction to shoot at, 0-based </param>
         /// <returns> Returns true if you shot the Wumpus and false otherwise </returns>
         public bool ShootArrow(int i)
         {

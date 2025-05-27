@@ -25,6 +25,13 @@ namespace TestingGround
         }
         private void listBoxHighScores_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Size = new Size(277, 474);
+            buttonClose.Visible = true;
+            buttonClose2.Visible = false;
+            labelRunStatistics.Visible = true;
+            labelPlayerStat.Visible = true;
+            listBoxStatistics.Visible = true;
+
             int i = listBoxNameList.SelectedIndex;
             string killed = string.Empty;
             if (highscore.PlayerList[i].KilledWumpus == true) killed = "DEAD";
@@ -45,6 +52,7 @@ namespace TestingGround
         }
         private void HighScoreForm_Load(object sender, EventArgs e)
         {
+            Size = new Size(277, 316);
             highscore.TestAdding();
             Highscore.GetHighscores(highscore.PlayerList);
             highscore.SortHighs();
@@ -57,10 +65,15 @@ namespace TestingGround
             }
             labelPlayerStat.Text = "";
         }
-         
+
         private void labelName_Click(object sender, EventArgs e)
         {
             //i misclicked sorry
+        }
+
+        private void buttonClose2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
