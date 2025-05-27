@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GCUITest
 {
-    public partial class Trivia : Form
+    public partial class TriviaForm : Form
     {
-        public Trivia()
+        public TriviaForm()
         {
             InitializeComponent();
         }
