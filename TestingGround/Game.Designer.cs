@@ -224,8 +224,10 @@
             // 
             labelWarnings.AutoSize = true;
             labelWarnings.Location = new Point(199, 22);
+            labelWarnings.MaximumSize = new Size(200, 200);
+            labelWarnings.MinimumSize = new Size(10, 20);
             labelWarnings.Name = "labelWarnings";
-            labelWarnings.Size = new Size(24, 19);
+            labelWarnings.Size = new Size(24, 20);
             labelWarnings.TabIndex = 15;
             labelWarnings.Text = "---";
             // 
