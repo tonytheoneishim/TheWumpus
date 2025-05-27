@@ -23,7 +23,7 @@ namespace TriviaLibrary
         public string GetQuestion()
         {
             currentQuestionIndex = rnd.Next(0, Questions.GetLength(0));
-            correctAnswerIndex = 1; // Assuming the first answer is the correct one
+            correctAnswerIndex = 1; 
             return Questions[currentQuestionIndex, 0];
         }
 
@@ -41,7 +41,7 @@ namespace TriviaLibrary
 
         public bool CheckAnswer(string answer)
         {
-            // Check against the original correct answer before shuffling
+       
             string correctAnswer = Questions[currentQuestionIndex, correctAnswerIndex];
             if (answer == correctAnswer)
             {

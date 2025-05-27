@@ -68,3 +68,51 @@ Which gas is most abundant in the Earth’s atmosphere?,Nitrogen,Oxygen,Carbon D
 What is the capital city of Greece?,Athens,Thessaloniki,Patras,Heraklion  
 What is the process by which animals adapt to their environment?,Natural Selection,Mutation,Adaptation,Transformation  
 Which fruit is known for having its seeds on the outside?,Strawberry,Raspberry,Blueberry,Blackberry  
+What is the capital of France?,Paris,London,Berlin,Rome  
+Who painted the Mona Lisa?,Leonardo da Vinci,Michelangelo,Rembrandt,Van Gogh  
+What is the largest mammal in the world?,Blue Whale,Elephant,Giraffe,Great White Shark  
+What is the freezing point of water in degrees Celsius?,0°C,-100°C,100°C,32°C  
+Who wrote the novel "1984"?,George Orwell,Ray Bradbury,Mark Twain,Huxley  
+What is the primary ingredient in sushi?,Rice,Seaweed,Raw Fish,Noodles  
+Which gas do humans breathe in?,Oxygen,Nitrogen,Carbon Dioxide,Hydrogen  
+In which continent is the Amazon Rainforest located?,South America,Asia,North America,Africa  
+What is the capital of India?,New Delhi,Mumbai,Kolkata,Bangalore  
+Who is known as the "Father of History"?,Herodotus,Thucydides,Socrates,Plato  
+What is the smallest country in the world?,Vatican City,Monaco,Nauru,San Marino  
+What is the pH level of pure water?,7,0,14,10  
+Who discovered gravity?,Isaac Newton,Albert Einstein,Galileo Galilei,Nikola Tesla  
+What is the name of the largest ocean on Earth?,Pacific Ocean,Atlantic Ocean,Indian Ocean,Arctic Ocean  
+What is the main ingredient in mayonnaise?,Egg Yolks,Mustard,Vinegar,Oil  
+What is the capital of Russia?,Moscow,St. Petersburg,Kazan,Sochi  
+Who developed the theory of evolution?,Charles Darwin,Isaac Newton,Albert Einstein,Gregor Mendel  
+What is the chemical formula for table salt?,NaCl,H2O,CO2,NaO  
+Which Shakespeare play features the character Othello?,Othello,Romeo and Juliet,Macbeth,King Lear  
+What is the capital of Greece?,Athens,Thessaloniki,Heraklion,Patras  
+How many bones are in the adult human body?,206,208,250,200  
+What is the longest bone in the human body?,Femur,Tibia,Humerus,Spine  
+Which planet is known for its Great Red Spot?,Jupiter,Mars,Venus,Saturn  
+What is the capital city of Egypt?,Cairo,Alexandria,Luxor,Aswan  
+What is the main ingredient in guacamole?,Avocado,Tomato,Lettuce,Onion  
+What is the tallest mountain in the world?,Mount Everest,K2,Kangchenjunga,Lhotse  
+Which ocean is the deepest?,Pacific Ocean,Atlantic Ocean,Indian Ocean,Arctic Ocean  
+What is the currency of the United Kingdom?,Pound,Dollar,Euro,Yen  
+Who wrote "To Kill a Mockingbird"?,Harper Lee,Mark Twain,F. Scott Fitzgerald,John Steinbeck  
+What is the boiling point of water in degrees Fahrenheit?,212°F,100°F,32°F,0°F  
+Which is the largest continent?,Asia,Africa,North America,South America  
+What is the primary ingredient in bread?,Flour,Water,Sugar,Salt  
+What is the chemical symbol for gold?,Au,Ag,Fe,Hg  
+Who is known as the "Queen of Pop"?,Madonna,Whitney Houston,Beyoncé,Celine Dion  
+What is the largest island in the world?,Greenland,Australia,Borneo,New Guinea  
+What is the main gas found in the Earth's atmosphere?,Nitrogen,Oxygen,Carbon Dioxide,Argon  
+What is the capital of Mexico?,Mexico City,Guadalajara,Monterrey,Cancun  
+Who is credited with inventing the telephone?,Alexander Graham Bell,Thomas Edison,Nikola Tesla,Graham Bell  
+What is the primary ingredient in a traditional caprese salad?,Tomatoes,Mozzarella,Cilantro,Olive Oil  
+What is the scientific term for the fear of spiders?,Arachnophobia,Agoraphobia,Claustrophobia,Cynophobia  
+What is the largest organ of the human body?,Skin,Liver,Heart,Lungs  
+Who was the first woman to win a Nobel Prize?,Marie Curie,Jane Addams,Mother Teresa,Florence Nightingale  
+What is the capital of Sweden?,Stockholm,Copenhagen,Oslo,Helsinki  
+Which element is represented by the symbol 'He'?,Helium,Hydrogen,Gold,Oxygen  
+What is the primary color of a stop sign?,Red,Green,Blue,Yellow  
+What is the hardest natural material?,Diamond,Gold,Iron,Steel  
+What is the largest waterfall in the world?,Angel Falls,Niagara Falls,Iguazu Falls,Victoria Falls  
+What is the smallest bone in the human body?,Stapes,Malleus,Incus,Femur  
