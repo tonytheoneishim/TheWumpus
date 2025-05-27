@@ -33,9 +33,10 @@
             buttonClose = new Button();
             labelName = new Label();
             labelScore = new Label();
-            label3 = new Label();
+            labelRunStatistics = new Label();
             listBoxStatistics = new ListBox();
             labelPlayerStat = new Label();
+            buttonClose2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -63,12 +64,13 @@
             // buttonClose
             // 
             buttonClose.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonClose.Location = new Point(177, 439);
+            buttonClose.Location = new Point(177, 438);
             buttonClose.Name = "buttonClose";
             buttonClose.Size = new Size(75, 23);
             buttonClose.TabIndex = 2;
             buttonClose.Text = "Close";
             buttonClose.UseVisualStyleBackColor = true;
+            buttonClose.Visible = false;
             buttonClose.Click += buttonClose_Click;
             // 
             // labelName
@@ -94,37 +96,51 @@
             labelScore.TabIndex = 6;
             labelScore.Text = "Score";
             // 
-            // label3
+            // labelRunStatistics
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(87, 283);
-            label3.Name = "label3";
-            label3.Size = new Size(110, 21);
-            label3.TabIndex = 9;
-            label3.Text = "Run Statistics";
+            labelRunStatistics.AutoSize = true;
+            labelRunStatistics.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRunStatistics.ForeColor = SystemColors.ControlLightLight;
+            labelRunStatistics.Location = new Point(87, 280);
+            labelRunStatistics.Name = "labelRunStatistics";
+            labelRunStatistics.Size = new Size(110, 21);
+            labelRunStatistics.TabIndex = 9;
+            labelRunStatistics.Text = "Run Statistics";
+            labelRunStatistics.Visible = false;
             // 
             // listBoxStatistics
             // 
             listBoxStatistics.Font = new Font("Book Antiqua", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             listBoxStatistics.FormattingEnabled = true;
             listBoxStatistics.ItemHeight = 19;
-            listBoxStatistics.Location = new Point(25, 325);
+            listBoxStatistics.Location = new Point(25, 324);
             listBoxStatistics.Name = "listBoxStatistics";
             listBoxStatistics.Size = new Size(227, 99);
             listBoxStatistics.TabIndex = 10;
+            listBoxStatistics.Visible = false;
             // 
             // labelPlayerStat
             // 
             labelPlayerStat.AutoSize = true;
             labelPlayerStat.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayerStat.ForeColor = SystemColors.ControlLightLight;
-            labelPlayerStat.Location = new Point(26, 301);
+            labelPlayerStat.Location = new Point(26, 300);
             labelPlayerStat.Name = "labelPlayerStat";
             labelPlayerStat.Size = new Size(55, 21);
             labelPlayerStat.TabIndex = 11;
             labelPlayerStat.Text = "plsyer";
+            labelPlayerStat.Visible = false;
+            // 
+            // buttonClose2
+            // 
+            buttonClose2.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonClose2.Location = new Point(177, 281);
+            buttonClose2.Name = "buttonClose2";
+            buttonClose2.Size = new Size(75, 23);
+            buttonClose2.TabIndex = 12;
+            buttonClose2.Text = "Close";
+            buttonClose2.UseVisualStyleBackColor = true;
+            buttonClose2.Click += buttonClose2_Click;
             // 
             // HighScoreForm
             // 
@@ -132,10 +148,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             CancelButton = buttonClose;
-            ClientSize = new Size(279, 474);
+            ClientSize = new Size(277, 474);
+            Controls.Add(buttonClose2);
             Controls.Add(labelPlayerStat);
             Controls.Add(listBoxStatistics);
-            Controls.Add(label3);
+            Controls.Add(labelRunStatistics);
             Controls.Add(labelScore);
             Controls.Add(labelName);
             Controls.Add(buttonClose);
@@ -158,8 +175,9 @@
         private Label labelName;
         private Label labelScore;
         private Label label2;
-        private Label label3;
+        private Label labelRunStatistics;
         private ListBox listBoxStatistics;
         private Label labelPlayerStat;
+        private Button buttonClose2;
     }
 }

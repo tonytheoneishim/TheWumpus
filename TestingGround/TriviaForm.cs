@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GCUITest
 {
-    public partial class Trivia : Form
+    public partial class TriviaForm : Form
     {
-        public Trivia()
+        public TriviaForm()
         {
             InitializeComponent();
         }
@@ -20,6 +20,11 @@ namespace GCUITest
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Trivia_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
