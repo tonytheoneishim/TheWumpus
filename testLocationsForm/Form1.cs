@@ -72,6 +72,7 @@ namespace WumpusLocations
 
         private void checkHazards_Click(object sender, EventArgs e)
         {
+            hazardsNearbyList.Items.Clear();
             List<string> hazards = locations[0].HazardNearby();
             foreach (string hazard in hazards)
             {
