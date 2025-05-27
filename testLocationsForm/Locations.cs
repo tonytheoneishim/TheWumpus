@@ -248,7 +248,7 @@ namespace WumpusLocations
                     hazards.Add("W");
                     break;
                 }
-                if (!(CavePaths[Player][i] - 1 == -1))
+                if (!(CavePaths[Player][i] < 0))
                 {
                     hazards.Add("N");
                 }
