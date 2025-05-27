@@ -146,11 +146,11 @@ namespace WumpusLocations
         /// <returns> Returns true if you shot the Wumpus and false otherwise </returns>
         public bool ShootArrow(int i)
         {
-            if (i - 1 == Wumpus)
+            if (i + 1 == Wumpus)
             {
                 foreach (int path in CavePaths[Player])
                 {
-                    if (path - 1 == i)
+                    if (path + 1 == i)
                     {
                         return true;
                     }

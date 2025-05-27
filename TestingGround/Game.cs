@@ -126,7 +126,7 @@ namespace TestingGround
                 if(location.ShootArrow(int.Parse(button.Text)))
                 {
                     MessageBox.Show("You shot the Wumpus! You win!");
-                    this.Close();
+                    //this.Close();
                 }
                 else
                 {
