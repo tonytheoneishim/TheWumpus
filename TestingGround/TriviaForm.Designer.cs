@@ -1,6 +1,6 @@
 ﻿namespace GCUITest
 {
-    partial class Trivia
+    partial class TriviaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -70,6 +70,7 @@
             richTextBoxQuestion.Size = new Size(327, 118);
             richTextBoxQuestion.TabIndex = 2;
             richTextBoxQuestion.Text = "Question Goes Here";
+          
             // 
             // buttonAnswer1
             // 
@@ -82,6 +83,7 @@
             buttonAnswer1.TabIndex = 3;
             buttonAnswer1.Text = "1";
             buttonAnswer1.UseVisualStyleBackColor = false;
+            buttonAnswer1.Click += buttonAnswer1_Click;
             // 
             // buttonAnswer2
             // 
@@ -94,6 +96,7 @@
             buttonAnswer2.TabIndex = 4;
             buttonAnswer2.Text = "2";
             buttonAnswer2.UseVisualStyleBackColor = false;
+            buttonAnswer2.Click += buttonAnswer2_Click;
             // 
             // buttonAnswer3
             // 
@@ -106,6 +109,7 @@
             buttonAnswer3.TabIndex = 5;
             buttonAnswer3.Text = "3";
             buttonAnswer3.UseVisualStyleBackColor = false;
+            buttonAnswer3.Click += buttonAnswer3_Click;
             // 
             // buttonAnswer4
             // 
@@ -118,6 +122,7 @@
             buttonAnswer4.TabIndex = 6;
             buttonAnswer4.Text = "4";
             buttonAnswer4.UseVisualStyleBackColor = false;
+            buttonAnswer4.Click += buttonAnswer4_Click;
             // 
             // Trivia
             // 
