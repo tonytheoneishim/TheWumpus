@@ -1,33 +1,34 @@
-What is the capital of Japan?,Tokyo,Beijing,Seoul,Bangkok  
-Who wrote the play "Hamlet"?,William Shakespeare,Charles Dickens,Mark Twain,F. Scott Fitzgerald  
-What is the currency of the United States?,Dollar,Euro,Yen,Pound  
-Which planet is known as the "Red Planet"?,Mars,Jupiter,Saturn,Venus  
-What is the hardest natural substance on Earth?,Diamond,Gold,Iron,Sapphire  
+According to Trump, what is the most beautiful word in the dictionary?,Tariff,Tremendous,America,LeBron  
+Where did Elon Musk originate from?,South Africa,America,Antarctica,France  
+Does it say gullable on the ceiling ?,Gullable,Yes,No,Maybe  
+About how many minutes after you get bitten by a mosquito do you start to feel itchy?,Ten,Five,Thirty,Ninety  
+What is 9901 * 101 - 99 * 10101?,2,20,202,420  
 Who discovered penicillin?,Alexander Fleming,Marie Curie,Louis Pasteur,Robert Koch  
-What geometric shape has three sides?,Triangle,Square,Rectangle,Circle  
+Who created a frontier in cataract surgery with phacoemulsification?,Kelman,Aristotle,Musk,Pasteur  
 What is the name of the largest desert in the world?,Sahara Desert,Gobi Desert,Kalahari Desert,Arabian Desert  
-Which element has the chemical symbol 'O'?,Oxygen,Gold,Iron,Carbon  
+How many calories does a Clif crunchy peanut butter energy bar contain?,260,290,255,304  
 What is the main language spoken in Brazil?,Portuguese,Spanish,French,English  
-How many continents are there?,Seven,Five,Six,Eight  
-What year did World War II end?,1945,1944,1943,1946  
+When was Executive Order 14257 signed?,4-2-25,4-1-25,3-26-25,4-15-25  
+What year did World War II end?,1945,1944,1694,1812  
 What is the capital city of Australia?,Canberra,Sydney,Melbourne,Brisbane  
 What is the smallest planet in our solar system?,Mercury,Mars,Venus,Earth  
 Which ocean is the largest?,Pacific Ocean,Atlantic Ocean,Indian Ocean,Arctic Ocean  
-What is the boiling point of water in degrees Celsius?,100°C,0°C,50°C,150°C  
+How much does Spotify premium duo cost /month?,$16.99,$14.99,$17.99,$21.99  
 What is the name of the longest river in the world?,Nile River,Amazon River,Yangtze River,Ganges River  
 Who painted the 'Starry Night'?,Vincent van Gogh,Claude Monet,Pablo Picasso,Georgia O’Keeffe  
 What gas do plants absorb from the atmosphere?,Carbon Dioxide,Oxygen,Nitrogen,Helium  
-Who is the author of the Harry Potter series?,J.K. Rowling,Stephen King,J.R.R. Tolkien,George R.R. Martin  
-Which animal is known as the "King of the Jungle"?,Lion,Tiger,Elephant,Bear  
-What is the primary ingredient in hummus?,Chickpeas,Lentils,Peas,Beans  
-What is the largest country in the world?,Russia,Canada,China,United States  
-What is the name of the fairy in Peter Pan?,Tinker Bell,Cinderella,Snow White,Ariel  
-Who is the Greek goddess of wisdom?,Athena,Artemis,Hera,Aphrodite  
+What is the sum of the digits of the smallest prime that can be written as a sum of five distinct primes?,7,8,13,5  
+What is the meaning of life?,Death,42,Life,Unknown
+Who runs The Tonight Show Starring Jimmy Fallon?,Jimmy Fallon,Jimmy Kimmel,Jimmy Butler,Jimmy John    
+What colour are the outer roadlines most commonly found in South Africa?Yellow,White,Red,Blue  
+What is the binary number 11101 equivalent to?,29,5,33,14  
+What dimension is behind a glowstone portal?,Aether,Nether,Mirror,Oceania  
 What is the capital of Italy?,Rome,Venice,Florence,Milan  
-Which planet is known for its rings?,Saturn,Jupiter,Uranus,Neptune  
-What is the main ingredient used to make bread?,Flour,Sugar,Water,Salt  
-What year did the Titanic sink?,1912,1905,1914,1918  
-What chemical element is represented by the symbol 'Na'?,Sodium,Calcium,Potasium,Carbon  
+Which of the following is a new-gen curse word?,Job,Water,Plastic,LeBron 
+What is Kellen's student id number?,2003778,1117489,2001588,1014866  
+What was Nvidia's stock value on 6-9-2019?,3.616,12.001,91.381,36.773
+Do three out of four people make up seventy-five percent of the population?Boiled egg,No,Yes,Basketball
+Can your amputated arm reincarnate on another person's body kill you?Unlikely,Yes,No,If you're happy and you know it clap your hands
 Which famous scientist developed the theory of general relativity?,Albert Einstein,Isaac Newton,Galileo Galilei,Nikola Tesla  
 What is the main ingredient in a Caprese salad?,Tomatoes,Cheese,Lettuce,Olives  
 Who was the first man to walk on the moon?,Neil Armstrong,Buzz Aldrin,Yuri Gagarin,John Glenn  
