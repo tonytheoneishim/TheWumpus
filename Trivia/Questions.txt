@@ -1,11 +1,11 @@
-According to Trump, what is the most beautiful word in the dictionary?,Tariff,Tremendous,America,LeBron  
+According to Trump what is the most beautiful word in the dictionary?,Tariff,Tremendous,America,LeBron  
 Where did Elon Musk originate from?,South Africa,America,Antarctica,France  
-Does it say gullable on the ceiling ?,Gullable,Yes,No,Maybe  
+What is on the ceiling?,Gullable,Tiles,Drywall,Sky  
 About how many minutes after you get bitten by a mosquito do you start to feel itchy?,Ten,Five,Thirty,Ninety  
 What is 9901 * 101 - 99 * 10101?,2,20,202,420  
-Who discovered penicillin?,Alexander Fleming,Marie Curie,Louis Pasteur,Robert Koch  
+Who discovered penicillin?,Fleming,Curie,Pasteur,Bombardillo Crocadillo  
 Who created a frontier in cataract surgery with phacoemulsification?,Kelman,Aristotle,Musk,Pasteur  
-What is the name of the largest desert in the world?,Sahara Desert,Gobi Desert,Kalahari Desert,Arabian Desert  
+What is the name of the largest desert in the world?,Sahara,Gobi,Kalahari,Arabian  
 How many calories does a Clif crunchy peanut butter energy bar contain?,260,290,255,304  
 What is the main language spoken in Brazil?,Portuguese,Spanish,French,English  
 When was Executive Order 14257 signed?,4-2-25,4-1-25,3-26-25,4-15-25  
@@ -14,106 +14,42 @@ What is the capital city of Australia?,Canberra,Sydney,Melbourne,Brisbane
 What is the smallest planet in our solar system?,Mercury,Mars,Venus,Earth  
 Which ocean is the largest?,Pacific Ocean,Atlantic Ocean,Indian Ocean,Arctic Ocean  
 How much does Spotify premium duo cost /month?,$16.99,$14.99,$17.99,$21.99  
-What is the name of the longest river in the world?,Nile River,Amazon River,Yangtze River,Ganges River  
+What is the name of the longest river in the world?,Nile,Amazon,Yangtze,Ganges  
 Who painted the 'Starry Night'?,Vincent van Gogh,Claude Monet,Pablo Picasso,Georgia O’Keeffe  
 What gas do plants absorb from the atmosphere?,Carbon Dioxide,Oxygen,Nitrogen,Helium  
 What is the sum of the digits of the smallest prime that can be written as a sum of five distinct primes?,7,8,13,5  
 What is the meaning of life?,Death,42,Life,Unknown
-Who runs The Tonight Show Starring Jimmy Fallon?,Jimmy Fallon,Jimmy Kimmel,Jimmy Butler,Jimmy John    
-What colour are the outer roadlines most commonly found in South Africa?Yellow,White,Red,Blue  
+Who runs The Tonight Show Starring Jimmy Fallon?,Jimmy Fallon,Jimmy Kimmel,Jimmy Butler,Jimmy John  
+What colour are the outer roadlines most commonly found in South Africa?,Yellow,White,Red,Blue  
 What is the binary number 11101 equivalent to?,29,5,33,14  
 What dimension is behind a glowstone portal?,Aether,Nether,Mirror,Oceania  
 What is the capital of Italy?,Rome,Venice,Florence,Milan  
-Which of the following is a new-gen curse word?,Job,Water,Plastic,LeBron 
+Which of the following is a new-gen curse word?,Job,Water,Plastic,LeBron  
 What is Kellen's student id number?,2003778,1117489,2001588,1014866  
-What was Nvidia's stock value on 6-9-2019?,3.616,12.001,91.381,36.773
-Do three out of four people make up seventy-five percent of the population?Boiled egg,No,Yes,Basketball
-Can your amputated arm reincarnate on another person's body kill you?Unlikely,Yes,No,If you're happy and you know it clap your hands
-Which famous scientist developed the theory of general relativity?,Albert Einstein,Isaac Newton,Galileo Galilei,Nikola Tesla  
+What was Nvidia's stock value on 6-9-2019?,3.616,12.001,91.381,36.773  
+Do three out of four people make up seventy-five percent of the population?,Boiled egg,No,Yes,Basketball  
+Can your amputated arm reincarnate on another person's body kill you?,Unlikely,Yes,No,If you're happy and you know it clap your hands  
+What is "God's favourite band"?,Green Day,Metallica,BTS,Beatles   
+What can $500 a month in New York City get you?,Cardboard box,Tent,35 square foot apartment,Pope Francis  
+Where is Leo XIV from?,Chicago,The Hood,New York,Detroit  
+If you had infinite endurance how many days would it take to swim from Seattle to Hawai'i?,47,15,95,34  
+What was the correct Wordle answer on 5-28-25?,Polar,Suite,Sport,Vague  
+How many million miles is the Sun from Earth?,93,94,92,88  
+Who used a stick to find the radius of the Earth?,Eratosthenes,Aristotle,Galileo Galilei,Kepler  
+Who invented the lightbulb?,Edison,Tesla,Franklin,Tung Tung Tung Tung Tung Sahur  
+Who found Uranium?,Klaproth,Curie,Elhuyar,Tralalelo Tralala  
+Which famous scientist developed the theory of general relativity?,Einstein,Newton,Galilei,Tesla  
 What is the main ingredient in a Caprese salad?,Tomatoes,Cheese,Lettuce,Olives  
-Who was the first man to walk on the moon?,Neil Armstrong,Buzz Aldrin,Yuri Gagarin,John Glenn  
+What should you have in your pocket when you go hiking?,Blue,Red,Jack Black,Magenta  
+What is Discord user: Derek's profile picture represent?,Snow,Salt and Pepper,Potato,Cat  
+What is known as "the beautiful game"?,Soccer,Life,Lacrosse,Golf  
+In The Legend of Zelda, what is the name of the princess that the player needs to rescue?,Zelda,Link,Ganon,Agahnim  
+What did Eric buy for $250 in California?,Lightsaber,Air pods,Surf board,Geode  
 What is the capital of Canada?,Ottawa,Toronto,Vancouver,Montreal  
-Which is the largest planet in our solar system?,Jupiter,Saturn,Earth,Mars  
-What is the chemical formula for water?,H2O,CO2,O2,N2  
-In which year did the first manned spaceflight take place?,1961,1957,1963,1971  
-What is the name of Sherlock Holmes' companion?,Dr. John Watson,Dr. James Moriarty,Inspector Lestrade,Professor Challenger  
-Which planet is the hottest in the solar system?,Venus,Earth,Mercury,Mars  
-What is the largest land animal?,African Elephant,White Rhino,Brown Bear,Giraffe  
 How many teeth does an adult human have?,32,28,30,26  
-Which ocean is the smallest?,Arctic Ocean,Indian Ocean,Atlantic Ocean,Pacific Ocean  
-What is the capital of Egypt?,Cairo,Alexandria,Luxor,Aswan  
-What element is needed for fire to burn?,Oxygen,Nitrogen,Hydrogen,Carbon  
-What is the primary ingredient in chocolate?,Cocoa Beans,Milk,Sugar,Butter  
-Who is the famous physicist who developed the laws of motion?,Isaac Newton,Galileo Galilei,Albert Einstein,Nikola Tesla  
 What is the capital of Germany?,Berlin,Frankfurt,Munich,Hamburg  
-What is the term for a word that is similar in meaning to another word?,Synonym,Antonym,Homonym,Hypernym  
-What is the primary language spoken in Russia?,Russian,English,Spanish,French  
-Who was the first President of the United States?,George Washington,Thomas Jefferson,Abraham Lincoln,Teddy Roosevelt  
-What is the most widely spoken language in the world?,Mandarin Chinese,English,Spanish,Hindi  
-What is the process by which plants make their own food?,Photosynthesis,Respiration,Transpiration,Digestion  
 In which organ of the human body would you find the cerebellum?,Brain,Heart,Liver,Eye  
-What is the capital city of Spain?,Madrid,Barcelona,Valencia,Seville  
-Which country is known as the Land of the Rising Sun?,Japan,China,Thailand,Korea  
-What is the primary ingredient in pesto sauce?,Basil,Tomato,Garlic,Cilantro  
-What year did the Berlin Wall fall?,1989,1990,1986,1991  
-Which vitamin is produced when a person is exposed to sunlight?,Vitamin D,Vitamin A,Vitamin C,Vitamin B12  
-What is the capital of Brazil?,Brasilia,Rio de Janeiro,Sao Paulo,Salvador  
-Who is considered the father of modern physics?,Albert Einstein,Isaac Newton,Nikola Tesla,Galileo Galilei  
-What is the main ingredient in a Greek salad?,Feta Cheese,Cucumber,Tomato,Olive Oil  
-Which is the second largest continent?,Africa,Asia,North America,South America  
-What is the primary ingredient in kimchi?,Cabbage,Carrot,Cucumber,Radish  
-Who wrote "Pride and Prejudice"?,Jane Austen,Emily Brontë,Charlotte Brontë,George Eliot  
-What is the primary color of the sun's surface?,White,Yellow,Red,Blue  
-What is the largest animal on Earth?,Blue Whale,Great White Shark,Elephant,Giraffe  
-Which gas is most abundant in the Earth’s atmosphere?,Nitrogen,Oxygen,Carbon Dioxide,Helium  
-What is the capital city of Greece?,Athens,Thessaloniki,Patras,Heraklion  
-What is the process by which animals adapt to their environment?,Natural Selection,Mutation,Adaptation,Transformation  
-Which fruit is known for having its seeds on the outside?,Strawberry,Raspberry,Blueberry,Blackberry  
-What is the capital of France?,Paris,London,Berlin,Rome  
-Who painted the Mona Lisa?,Leonardo da Vinci,Michelangelo,Rembrandt,Van Gogh  
-What is the largest mammal in the world?,Blue Whale,Elephant,Giraffe,Great White Shark  
-What is the freezing point of water in degrees Celsius?,0°C,-100°C,100°C,32°C  
-Who wrote the novel "1984"?,George Orwell,Ray Bradbury,Mark Twain,Huxley  
-What is the primary ingredient in sushi?,Rice,Seaweed,Raw Fish,Noodles  
-Which gas do humans breathe in?,Oxygen,Nitrogen,Carbon Dioxide,Hydrogen  
-In which continent is the Amazon Rainforest located?,South America,Asia,North America,Africa  
-What is the capital of India?,New Delhi,Mumbai,Kolkata,Bangalore  
-Who is known as the "Father of History"?,Herodotus,Thucydides,Socrates,Plato  
-What is the smallest country in the world?,Vatican City,Monaco,Nauru,San Marino  
-What is the pH level of pure water?,7,0,14,10  
-Who discovered gravity?,Isaac Newton,Albert Einstein,Galileo Galilei,Nikola Tesla  
-What is the name of the largest ocean on Earth?,Pacific Ocean,Atlantic Ocean,Indian Ocean,Arctic Ocean  
-What is the main ingredient in mayonnaise?,Egg Yolks,Mustard,Vinegar,Oil  
-What is the capital of Russia?,Moscow,St. Petersburg,Kazan,Sochi  
-Who developed the theory of evolution?,Charles Darwin,Isaac Newton,Albert Einstein,Gregor Mendel  
-What is the chemical formula for table salt?,NaCl,H2O,CO2,NaO  
-Which Shakespeare play features the character Othello?,Othello,Romeo and Juliet,Macbeth,King Lear  
-What is the capital of Greece?,Athens,Thessaloniki,Heraklion,Patras  
+What is the capital of India?,New Delhi,Mumbai,Kolkata,Egypt  
 How many bones are in the adult human body?,206,208,250,200  
-What is the longest bone in the human body?,Femur,Tibia,Humerus,Spine  
-Which planet is known for its Great Red Spot?,Jupiter,Mars,Venus,Saturn  
-What is the capital city of Egypt?,Cairo,Alexandria,Luxor,Aswan  
-What is the main ingredient in guacamole?,Avocado,Tomato,Lettuce,Onion  
-What is the tallest mountain in the world?,Mount Everest,K2,Kangchenjunga,Lhotse  
-Which ocean is the deepest?,Pacific Ocean,Atlantic Ocean,Indian Ocean,Arctic Ocean  
-What is the currency of the United Kingdom?,Pound,Dollar,Euro,Yen  
-Who wrote "To Kill a Mockingbird"?,Harper Lee,Mark Twain,F. Scott Fitzgerald,John Steinbeck  
-What is the boiling point of water in degrees Fahrenheit?,212°F,100°F,32°F,0°F  
-Which is the largest continent?,Asia,Africa,North America,South America  
-What is the primary ingredient in bread?,Flour,Water,Sugar,Salt  
-What is the chemical symbol for gold?,Au,Ag,Fe,Hg  
-Who is known as the "Queen of Pop"?,Madonna,Whitney Houston,Beyoncé,Celine Dion  
-What is the largest island in the world?,Greenland,Australia,Borneo,New Guinea  
-What is the main gas found in the Earth's atmosphere?,Nitrogen,Oxygen,Carbon Dioxide,Argon  
-What is the capital of Mexico?,Mexico City,Guadalajara,Monterrey,Cancun  
-Who is credited with inventing the telephone?,Alexander Graham Bell,Thomas Edison,Nikola Tesla,Graham Bell  
-What is the primary ingredient in a traditional caprese salad?,Tomatoes,Mozzarella,Cilantro,Olive Oil  
-What is the scientific term for the fear of spiders?,Arachnophobia,Agoraphobia,Claustrophobia,Cynophobia  
-What is the largest organ of the human body?,Skin,Liver,Heart,Lungs  
-Who was the first woman to win a Nobel Prize?,Marie Curie,Jane Addams,Mother Teresa,Florence Nightingale  
-What is the capital of Sweden?,Stockholm,Copenhagen,Oslo,Helsinki  
-Which element is represented by the symbol 'He'?,Helium,Hydrogen,Gold,Oxygen  
-What is the primary color of a stop sign?,Red,Green,Blue,Yellow  
-What is the hardest natural material?,Diamond,Gold,Iron,Steel  
-What is the largest waterfall in the world?,Angel Falls,Niagara Falls,Iguazu Falls,Victoria Falls  
-What is the smallest bone in the human body?,Stapes,Malleus,Incus,Femur  
+What is the capital city of Egypt?,Cairo,Alexandria,Luxor,Dubai  
+Do people care about you?,Yes,the answer is yes,the answer is yes,no
