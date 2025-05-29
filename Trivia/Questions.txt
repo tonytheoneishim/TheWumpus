@@ -43,7 +43,7 @@ What is the main ingredient in a Caprese salad?,Tomatoes,Cheese,Lettuce,Olives
 What should you have in your pocket when you go hiking?,Blue,Red,Jack Black,Magenta  
 What is Discord user: Derek's profile picture represent?,Snow,Salt and Pepper,Potato,Cat  
 What is known as "the beautiful game"?,Soccer,Life,Lacrosse,Golf  
-In The Legend of Zelda, what is the name of the princess that the player needs to rescue?,Zelda,Link,Ganon,Agahnim  
+In The Legend of Zelda what is the name of the princess that the player needs to rescue?,Zelda,Link,Ganon,Agahnim  
 What did Eric buy for $250 in California?,Lightsaber,Air pods,Surf board,Geode  
 What is the capital of Canada?,Ottawa,Toronto,Vancouver,Montreal  
 How many teeth does an adult human have?,32,28,30,26  
