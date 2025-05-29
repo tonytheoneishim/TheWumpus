@@ -1,11 +1,23 @@
 ﻿using System;
+
 using System.Windows.Forms;
 using TriviaLibrary;
+
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 namespace GCUITest
 {
     public partial class TriviaForm : Form
     {
+
         TriviaGame trivia = new TriviaGame();
 
         public TriviaForm()
@@ -20,6 +32,7 @@ namespace GCUITest
 
         private void Trivia_Load(object sender, EventArgs e)
         {
+
             LoadNewQuestion();
         }
 
@@ -70,3 +83,6 @@ namespace GCUITest
         }
     }
 }
+
+
+   
