@@ -128,10 +128,10 @@ namespace WumpusLocations
             List<int> paths = new List<int>();
             foreach (int path in CavePaths[Wumpus])
             {
-                if (path != -1)
+                if (path - 1  != -1)
                 {
                     count++;
-                    paths.Add(path);
+                    paths.Add(path - 1);
                 }
             }
 
