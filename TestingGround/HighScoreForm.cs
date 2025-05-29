@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GCUITest;
 using Highscore___Testing___Dev;
 
 namespace TestingGround
@@ -18,6 +19,7 @@ namespace TestingGround
         public HighScoreForm()
         {
             InitializeComponent();
+            //clearselected = false;
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
@@ -28,6 +30,8 @@ namespace TestingGround
             Size = new Size(277, 474);
             buttonClose.Visible = true;
             buttonClose2.Visible = false;
+            buttonOptions1.Visible = false;
+            buttonOptions2.Visible = true;
             labelRunStatistics.Visible = true;
             labelPlayerStat.Visible = true;
             listBoxStatistics.Visible = true;
@@ -75,5 +79,36 @@ namespace TestingGround
         {
             this.Close();
         }
+
+        private void labelTitle_Click(object sender, EventArgs e)
+        {
+            //clear highscores, remove a highscore
+        }
+
+        //private void buttonOptions1_Click(object sender, EventArgs e)
+        //{
+        //    HighscoreOptions highscoreoptions = new HighscoreOptions();
+        //    highscoreoptions.ShowDialog();
+        //    if (clearselected == true)
+        //    {
+        //        int i = listBoxNameList.SelectedIndex;
+        //        listBoxNameList.Items.RemoveAt(i);
+        //        highscore.PlayerList.RemoveAt(i);
+        //        listBoxStatistics.SelectedIndex = -1;
+        //    }
+        //}
+        //public bool clearselected { get; set; }
+        //private void buttonOptions2_Click(object sender, EventArgs e)
+        //{
+        //    HighscoreOptions highscoreoptions = new HighscoreOptions();
+        //    highscoreoptions.ShowDialog();
+        //    if (clearselected == true)
+        //    {
+        //        int i = listBoxNameList.SelectedIndex;
+        //        listBoxNameList.Items.RemoveAt(i);
+        //        highscore.PlayerList.RemoveAt(i);
+        //        listBoxStatistics.SelectedIndex = -1;
+        //    }
+        //}
     }
 }
