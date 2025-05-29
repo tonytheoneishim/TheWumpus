@@ -32,10 +32,9 @@
             wumpusMovedCheck = new CheckBox();
             moveWumpusBox = new GroupBox();
             hazardNearbyBox = new GroupBox();
-            hazardsNearbyText = new TextBox();
+            hazardsNearbyList = new ListBox();
             checkHazards = new Button();
             caveTypeBox = new GroupBox();
-            caveTypeText = new TextBox();
             checkRoomType = new Button();
             shootArrowBox = new GroupBox();
             arrowDirectionText = new TextBox();
@@ -45,6 +44,7 @@
             playerLocationLabel = new Label();
             spawnEvents = new Button();
             eventsList = new ListBox();
+            hazardTypeList = new ListBox();
             moveWumpusBox.SuspendLayout();
             hazardNearbyBox.SuspendLayout();
             caveTypeBox.SuspendLayout();
@@ -76,7 +76,7 @@
             // 
             moveWumpusBox.Controls.Add(wumpusMovedCheck);
             moveWumpusBox.Controls.Add(moveWumpus);
-            moveWumpusBox.Location = new Point(12, 126);
+            moveWumpusBox.Location = new Point(263, 255);
             moveWumpusBox.Name = "moveWumpusBox";
             moveWumpusBox.Size = new Size(136, 108);
             moveWumpusBox.TabIndex = 4;
@@ -85,28 +85,29 @@
             // 
             // hazardNearbyBox
             // 
-            hazardNearbyBox.Controls.Add(hazardsNearbyText);
+            hazardNearbyBox.Controls.Add(hazardsNearbyList);
             hazardNearbyBox.Controls.Add(checkHazards);
-            hazardNearbyBox.Location = new Point(12, 12);
+            hazardNearbyBox.Location = new Point(188, 12);
             hazardNearbyBox.Name = "hazardNearbyBox";
-            hazardNearbyBox.Size = new Size(136, 108);
+            hazardNearbyBox.Size = new Size(136, 215);
             hazardNearbyBox.TabIndex = 5;
             hazardNearbyBox.TabStop = false;
             hazardNearbyBox.Text = "Hazards Nearby";
             // 
-            // hazardsNearbyText
+            // hazardsNearbyList
             // 
-            hazardsNearbyText.Enabled = false;
-            hazardsNearbyText.Location = new Point(6, 22);
-            hazardsNearbyText.Name = "hazardsNearbyText";
-            hazardsNearbyText.Size = new Size(114, 23);
-            hazardsNearbyText.TabIndex = 2;
+            hazardsNearbyList.FormattingEnabled = true;
+            hazardsNearbyList.ItemHeight = 15;
+            hazardsNearbyList.Location = new Point(6, 22);
+            hazardsNearbyList.Name = "hazardsNearbyList";
+            hazardsNearbyList.Size = new Size(124, 139);
+            hazardsNearbyList.TabIndex = 1;
             // 
             // checkHazards
             // 
-            checkHazards.Location = new Point(6, 51);
+            checkHazards.Location = new Point(6, 163);
             checkHazards.Name = "checkHazards";
-            checkHazards.Size = new Size(114, 46);
+            checkHazards.Size = new Size(124, 46);
             checkHazards.TabIndex = 0;
             checkHazards.Text = "Check Hazards";
             checkHazards.UseVisualStyleBackColor = true;
@@ -114,28 +115,20 @@
             // 
             // caveTypeBox
             // 
-            caveTypeBox.Controls.Add(caveTypeText);
+            caveTypeBox.Controls.Add(hazardTypeList);
             caveTypeBox.Controls.Add(checkRoomType);
-            caveTypeBox.Location = new Point(12, 240);
+            caveTypeBox.Location = new Point(46, 151);
             caveTypeBox.Name = "caveTypeBox";
-            caveTypeBox.Size = new Size(136, 108);
+            caveTypeBox.Size = new Size(136, 179);
             caveTypeBox.TabIndex = 5;
             caveTypeBox.TabStop = false;
             caveTypeBox.Text = "Cave Type";
             // 
-            // caveTypeText
-            // 
-            caveTypeText.Enabled = false;
-            caveTypeText.Location = new Point(6, 22);
-            caveTypeText.Name = "caveTypeText";
-            caveTypeText.Size = new Size(114, 23);
-            caveTypeText.TabIndex = 1;
-            // 
             // checkRoomType
             // 
-            checkRoomType.Location = new Point(6, 51);
+            checkRoomType.Location = new Point(6, 127);
             checkRoomType.Name = "checkRoomType";
-            checkRoomType.Size = new Size(114, 46);
+            checkRoomType.Size = new Size(124, 46);
             checkRoomType.TabIndex = 0;
             checkRoomType.Text = "Check Room Type";
             checkRoomType.UseVisualStyleBackColor = true;
@@ -146,7 +139,7 @@
             shootArrowBox.Controls.Add(arrowDirectionText);
             shootArrowBox.Controls.Add(hitWumpusCheck);
             shootArrowBox.Controls.Add(shootArrow);
-            shootArrowBox.Location = new Point(154, 126);
+            shootArrowBox.Location = new Point(46, 12);
             shootArrowBox.Name = "shootArrowBox";
             shootArrowBox.Size = new Size(136, 133);
             shootArrowBox.TabIndex = 5;
@@ -175,7 +168,7 @@
             // 
             shootArrow.Location = new Point(6, 76);
             shootArrow.Name = "shootArrow";
-            shootArrow.Size = new Size(114, 46);
+            shootArrow.Size = new Size(124, 51);
             shootArrow.TabIndex = 0;
             shootArrow.Text = "Shoot Arrow";
             shootArrow.UseVisualStyleBackColor = true;
@@ -199,9 +192,9 @@
             // 
             // spawnEvents
             // 
-            spawnEvents.Location = new Point(274, 52);
+            spawnEvents.Location = new Point(330, 12);
             spawnEvents.Name = "spawnEvents";
-            spawnEvents.Size = new Size(75, 23);
+            spawnEvents.Size = new Size(120, 70);
             spawnEvents.TabIndex = 11;
             spawnEvents.Text = "Spawn";
             spawnEvents.UseVisualStyleBackColor = true;
@@ -211,10 +204,19 @@
             // 
             eventsList.FormattingEnabled = true;
             eventsList.ItemHeight = 15;
-            eventsList.Location = new Point(330, 222);
+            eventsList.Location = new Point(330, 88);
             eventsList.Name = "eventsList";
-            eventsList.Size = new Size(120, 94);
+            eventsList.Size = new Size(120, 139);
             eventsList.TabIndex = 12;
+            // 
+            // hazardTypeList
+            // 
+            hazardTypeList.FormattingEnabled = true;
+            hazardTypeList.ItemHeight = 15;
+            hazardTypeList.Location = new Point(6, 22);
+            hazardTypeList.Name = "hazardTypeList";
+            hazardTypeList.Size = new Size(124, 94);
+            hazardTypeList.TabIndex = 1;
             // 
             // caveLocationsForm
             // 
@@ -234,9 +236,7 @@
             moveWumpusBox.ResumeLayout(false);
             moveWumpusBox.PerformLayout();
             hazardNearbyBox.ResumeLayout(false);
-            hazardNearbyBox.PerformLayout();
             caveTypeBox.ResumeLayout(false);
-            caveTypeBox.PerformLayout();
             shootArrowBox.ResumeLayout(false);
             shootArrowBox.PerformLayout();
             ResumeLayout(false);
@@ -258,10 +258,10 @@
         private Button shootArrow;
         private Label wumpusLocationLabel;
         private Label playerLocationLabel;
-        private TextBox caveTypeText;
-        private TextBox hazardsNearbyText;
         private TextBox arrowDirectionText;
         private Button spawnEvents;
         private ListBox eventsList;
+        private ListBox hazardsNearbyList;
+        private ListBox hazardTypeList;
     }
 }

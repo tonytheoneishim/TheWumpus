@@ -17,6 +17,7 @@ using System.Security.Cryptography.X509Certificates;
 using GCUITest.Properties;
 using System.Xml;
 using System.ComponentModel.Design;
+using System.Reflection;
 
 namespace TestingGround
 {
@@ -83,6 +84,7 @@ namespace TestingGround
             labelWarnings.Text = ""; 
 
             checkBoxShootArrow.Visible = false;
+            labelCaveNum.Visible = true; //for testing
             buttonRoomN.FlatAppearance.BorderSize = 0;
             buttonRoomNE.FlatAppearance.BorderSize = 0;
             buttonRoomNW.FlatAppearance.BorderSize = 0;
@@ -107,29 +109,41 @@ namespace TestingGround
         /// <param name="e"></param>
         private void buttonRoomN_Click(object sender, EventArgs e)
         {
+            Button button = (Button)sender;
+            int index = -1;
+            //MessageBox.Show(button.Text);
+
+            index = int.Parse(button.Text);
+
             if (!checkBoxShootArrow.Checked)
             {
-                Button button = (Button)sender;
-                int index = -1;
-                //MessageBox.Show(button.Text);
-
-                index = int.Parse(button.Text);
                 labelRoomNum.Text = button.Text;
                 currentRoom = index;
                 location.Player = index - 1;
 
+                coins++;
                 updateButtons(index);
                 DoTurn();
             } else
             {
-                if(location.ShootArrow(location.Player))
+                if (location.ShootArrow(int.Parse(button.Text)))
                 {
                     MessageBox.Show("You shot the Wumpus! You win!");
-                    this.Close();
+                    //this.Close();
                 }
                 else
                 {
                     MessageBox.Show("You missed the Wumpus!");
+                    arrows--;
+                    if (arrows < 1)
+                    {
+                        MessageBox.Show("You have no arrows left! You lose!");
+                        //this.Close();
+                    }
+                    else
+                    {
+                        DoTurn();
+                    }
                 }
             }
         }
@@ -141,10 +155,12 @@ namespace TestingGround
         public void DoTurn()
         {
             turns++;
-            coins++;
             score = 100 - turns + coins + (arrows * 5);
             checkBoxShootArrow.Visible = false;
 
+            //location.MoveWumpus();
+
+            bool movedRoom = false;
             bool wumpusDetected = false;
             bool batsDetected = false;
             bool pitDetected = false;
@@ -224,14 +240,15 @@ namespace TestingGround
             {
                 if (hazard == "W")
                 {
+                    DoTrivia();
                     pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
                     roomHazards += "Wumpus\n";
-                    DoTrivia();
                 }
                 else if (hazard == "B")
                 {
                     pictureBoxRoom.Image = Resources.Wumpus_Room_Bats;
                     roomHazards += "Bats\n";
+                    movedRoom = true;
                 }
                 else if (hazard == "P")
                 {
@@ -256,6 +273,22 @@ namespace TestingGround
             labelPoints.Text = score.ToString();
             labelWarnings.Text = warnings;
             checkBoxShootArrow.Checked = false;
+
+            if(movedRoom)
+            {
+                BatAttack batattack = new BatAttack();
+                batattack.ShowDialog();
+                Random rand = new Random();
+                int newRoom = rand.Next(1, 31);
+
+                int index = newRoom;
+                labelRoomNum.Text = index.ToString();
+                currentRoom = index;
+                location.Player = index - 1;
+
+                updateButtons(index);
+                DoTurn();
+            }
         }
 
         private void updateButtons(int index)
@@ -277,8 +310,8 @@ namespace TestingGround
 
         private void DoTrivia()
         {
-            Trivia trivia = new Trivia();
-            trivia.ShowDialog();
+           TriviaForm trivia = new TriviaForm();
+           trivia.ShowDialog();
         }
     }
 }

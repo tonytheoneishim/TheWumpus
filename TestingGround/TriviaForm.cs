@@ -67,7 +67,7 @@ namespace GCUITest
         private void buttonAnswer4_Click(object sender, EventArgs e)
         {
             CheckAnswer(buttonAnswer4.Text);
-        }
+    }
 
         private void CheckAnswer(string selectedAnswer)
         {
@@ -78,7 +78,7 @@ namespace GCUITest
             else
             {
                 MessageBox.Show("Incorrect. Try again!", "Answer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+}
             LoadNewQuestion();
         }
     }
