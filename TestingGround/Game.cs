@@ -55,7 +55,6 @@ namespace TestingGround
             buttons[3] = buttonRoomSE;
             buttons[4] = buttonRoomS;
             buttons[5] = buttonRoomSW;
-
             for (int i = 0; i < 6; i++)
             {
                 buttons[i].Visible = false;
@@ -235,7 +234,7 @@ namespace TestingGround
             score = 100 - turns + coins + (arrows * 5);
             checkBoxShootArrow.Visible = false;
 
-            //location.MoveWumpus();
+            location.MoveWumpus();
 
             bool movedRoom = false;
             bool wumpusDetected = false;

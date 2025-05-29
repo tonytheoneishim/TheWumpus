@@ -55,6 +55,7 @@
             buttonClose.TabIndex = 0;
             buttonClose.Text = "Exit";
             buttonClose.UseVisualStyleBackColor = true;
+            buttonClose.Click += buttonClose_Click;
             // 
             // labelArrowLabel
             // 

@@ -5,10 +5,10 @@ using GCUITest;
 namespace TestingGround
 
 {
-    public partial class Form1 : Form
+    public partial class Homepage : Form
     {
         Highscore highscore = new Highscore();
-        public Form1()
+        public Homepage()
         {
             InitializeComponent();
         }
