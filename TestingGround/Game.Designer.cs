@@ -234,7 +234,7 @@
             // checkBoxShootArrow
             // 
             checkBoxShootArrow.AutoSize = true;
-            checkBoxShootArrow.Location = new Point(199, 96);
+            checkBoxShootArrow.Location = new Point(76, 114);
             checkBoxShootArrow.Name = "checkBoxShootArrow";
             checkBoxShootArrow.Size = new Size(116, 23);
             checkBoxShootArrow.TabIndex = 14;
