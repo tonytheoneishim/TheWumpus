@@ -100,6 +100,83 @@ namespace TestingGround
             updateButtons(START_POSITION);
             labelRoomNum.Text = START_POSITION.ToString();
             labelCaveNum.Text = "Cave " + (index + 1).ToString();
+
+
+            //everything below is for hazards around room 1
+            bool wumpusDetected = false;
+            bool batsDetected = false;
+            bool pitDetected = false;
+            bool shopDetected = false;
+
+            labelWarnings.Text = "";
+            string warnings = "";
+            List<string> hazards = location.HazardNearby();
+            foreach (string hazard in hazards)
+            {
+                if (hazard == "W")
+                {
+                    if (!wumpusDetected)
+                    {
+                        warnings += "You smell a Wumpus!\n";
+                        wumpusDetected = true;
+                    }
+
+                }
+                else if (hazard == "B")
+                {
+                    if (!batsDetected)
+                    {
+                        warnings += "You hear bats nearby!\n";
+                        batsDetected = true;
+                    }
+                }
+                else if (hazard == "P")
+                {
+                    if (!pitDetected)
+                    {
+                        warnings += "You feel a draft!\n";
+                        pitDetected = true;
+                    }
+                }
+                else if (hazard == "S")
+                {
+                    if (!shopDetected)
+                    {
+                        warnings += "You see the light of a shop nearby!\n";
+                        shopDetected = true;
+                    }
+                }
+                else
+                {
+                    // do nothing
+                }
+            }
+
+            if (!wumpusDetected && !batsDetected && !pitDetected && !shopDetected)
+            {
+                this.BackgroundImage = Resources.New_Piskel;
+                checkBoxShootArrow.Visible = false;
+            }
+            else if (wumpusDetected)
+            {
+                this.BackgroundImage = Resources.Piskel_Wumpus_Main;
+                checkBoxShootArrow.Visible = true;
+            }
+            else if (batsDetected)
+            {
+                this.BackgroundImage = Resources.Piskel_Bats_Main;
+            }
+            else if (shopDetected)
+            {
+                this.BackgroundImage = Resources.Main_Piskel_Shop;
+            }
+            else if (pitDetected)
+            {
+                this.BackgroundImage = Resources.Main_Piskel_Draft;
+            }
+
+            labelWarnings.Text = warnings;
+            labelCurrentRoomHazard.Text = "None"; // Initialize the label for current room hazards
         }
 
         /// <summary>
