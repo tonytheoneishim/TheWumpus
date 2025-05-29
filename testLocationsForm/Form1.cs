@@ -67,7 +67,8 @@ namespace WumpusLocations
 
         private void checkRoomType_Click(object sender, EventArgs e)
         {
-            caveTypeText.Text = locations[0].RoomType().ToString();
+            hazardTypeList.Items.Clear();
+            //caveTypeText.Text = locations[0].RoomType().ToString();
         }
 
         private void checkHazards_Click(object sender, EventArgs e)

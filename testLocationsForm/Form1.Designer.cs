@@ -35,7 +35,6 @@
             hazardsNearbyList = new ListBox();
             checkHazards = new Button();
             caveTypeBox = new GroupBox();
-            caveTypeText = new TextBox();
             checkRoomType = new Button();
             shootArrowBox = new GroupBox();
             arrowDirectionText = new TextBox();
@@ -45,6 +44,7 @@
             playerLocationLabel = new Label();
             spawnEvents = new Button();
             eventsList = new ListBox();
+            hazardTypeList = new ListBox();
             moveWumpusBox.SuspendLayout();
             hazardNearbyBox.SuspendLayout();
             caveTypeBox.SuspendLayout();
@@ -115,28 +115,20 @@
             // 
             // caveTypeBox
             // 
-            caveTypeBox.Controls.Add(caveTypeText);
+            caveTypeBox.Controls.Add(hazardTypeList);
             caveTypeBox.Controls.Add(checkRoomType);
-            caveTypeBox.Location = new Point(12, 240);
+            caveTypeBox.Location = new Point(46, 151);
             caveTypeBox.Name = "caveTypeBox";
-            caveTypeBox.Size = new Size(136, 108);
+            caveTypeBox.Size = new Size(136, 179);
             caveTypeBox.TabIndex = 5;
             caveTypeBox.TabStop = false;
             caveTypeBox.Text = "Cave Type";
             // 
-            // caveTypeText
-            // 
-            caveTypeText.Enabled = false;
-            caveTypeText.Location = new Point(6, 22);
-            caveTypeText.Name = "caveTypeText";
-            caveTypeText.Size = new Size(114, 23);
-            caveTypeText.TabIndex = 1;
-            // 
             // checkRoomType
             // 
-            checkRoomType.Location = new Point(6, 51);
+            checkRoomType.Location = new Point(6, 127);
             checkRoomType.Name = "checkRoomType";
-            checkRoomType.Size = new Size(114, 46);
+            checkRoomType.Size = new Size(124, 46);
             checkRoomType.TabIndex = 0;
             checkRoomType.Text = "Check Room Type";
             checkRoomType.UseVisualStyleBackColor = true;
@@ -147,7 +139,7 @@
             shootArrowBox.Controls.Add(arrowDirectionText);
             shootArrowBox.Controls.Add(hitWumpusCheck);
             shootArrowBox.Controls.Add(shootArrow);
-            shootArrowBox.Location = new Point(12, 12);
+            shootArrowBox.Location = new Point(46, 12);
             shootArrowBox.Name = "shootArrowBox";
             shootArrowBox.Size = new Size(136, 133);
             shootArrowBox.TabIndex = 5;
@@ -176,7 +168,7 @@
             // 
             shootArrow.Location = new Point(6, 76);
             shootArrow.Name = "shootArrow";
-            shootArrow.Size = new Size(114, 46);
+            shootArrow.Size = new Size(124, 51);
             shootArrow.TabIndex = 0;
             shootArrow.Text = "Shoot Arrow";
             shootArrow.UseVisualStyleBackColor = true;
@@ -217,6 +209,15 @@
             eventsList.Size = new Size(120, 139);
             eventsList.TabIndex = 12;
             // 
+            // hazardTypeList
+            // 
+            hazardTypeList.FormattingEnabled = true;
+            hazardTypeList.ItemHeight = 15;
+            hazardTypeList.Location = new Point(6, 22);
+            hazardTypeList.Name = "hazardTypeList";
+            hazardTypeList.Size = new Size(124, 94);
+            hazardTypeList.TabIndex = 1;
+            // 
             // caveLocationsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -236,7 +237,6 @@
             moveWumpusBox.PerformLayout();
             hazardNearbyBox.ResumeLayout(false);
             caveTypeBox.ResumeLayout(false);
-            caveTypeBox.PerformLayout();
             shootArrowBox.ResumeLayout(false);
             shootArrowBox.PerformLayout();
             ResumeLayout(false);
@@ -258,10 +258,10 @@
         private Button shootArrow;
         private Label wumpusLocationLabel;
         private Label playerLocationLabel;
-        private TextBox caveTypeText;
         private TextBox arrowDirectionText;
         private Button spawnEvents;
         private ListBox eventsList;
         private ListBox hazardsNearbyList;
+        private ListBox hazardTypeList;
     }
 }
