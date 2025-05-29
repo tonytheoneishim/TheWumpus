@@ -31,9 +31,10 @@ namespace GCUITest
             {
                 player.Gold -= 3;
                 player.Arrows++;
-                labelReciept.Text = "+ 1 arrow!";
                 labelCoinCount.Text = player.Gold.ToString();
                 labelArrowCount.Text = player.Arrows.ToString();
+                labelReciept.Text = "+ 1 arrow!";
+
             }
             else
             {
@@ -42,13 +43,26 @@ namespace GCUITest
         }
         private void pictureBoxSecretBuy_Click(object sender, EventArgs e)
         {
+            if (player.Gold <= 5)
+            {
+                player.Gold -= 5;
+                labelReciept.Text = "+ 1 secret!";
+                labelCoinCount.Text = player.Gold.ToString();
 
+                //Message box for the secret
+                MessageBox.Show("Kellen could be freaky.", "Shhhhhh...");
+            }
         }
 
         private void Shop_Load(object sender, EventArgs e)
         {
             labelCoinCount.Text = player.Gold.ToString();
             labelArrowCount.Text = player.Arrows.ToString();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
