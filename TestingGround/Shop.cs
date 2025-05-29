@@ -34,7 +34,8 @@ namespace GCUITest
                 labelCoinCount.Text = player.Gold.ToString();
                 labelArrowCount.Text = player.Arrows.ToString();
                 labelReciept.Text = "+ 1 arrow!";
-
+                Thread.Sleep(500);
+                labelReciept.Text = "";
             }
             else
             {
@@ -46,8 +47,10 @@ namespace GCUITest
             if (player.Gold <= 5)
             {
                 player.Gold -= 5;
-                labelReciept.Text = "+ 1 secret!";
                 labelCoinCount.Text = player.Gold.ToString();
+                labelReciept.Text = "+ 1 secret!";
+                Thread.Sleep(500);
+                labelReciept.Text = "";
 
                 //Message box for the secret
                 MessageBox.Show("Kellen could be freaky.", "Shhhhhh...");
@@ -58,6 +61,7 @@ namespace GCUITest
         {
             labelCoinCount.Text = player.Gold.ToString();
             labelArrowCount.Text = player.Arrows.ToString();
+            labelReciept.Text = "";
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
