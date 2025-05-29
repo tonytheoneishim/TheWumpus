@@ -28,6 +28,7 @@ namespace WumpusLocations
         /// <param name="cavePaths"> A list of caves and their connections, 0-based </param>
         public Locations(List<int[]> cavePaths)
         {
+            Player = 1;
             CavePaths = cavePaths;
         }
 
@@ -75,7 +76,6 @@ namespace WumpusLocations
             Pits = pits;
             Shops = shops;
             Wumpus = wumpus;
-            Player = 1;
 
             List<int[]> locations = new List<int[]>();
             locations.Add(bats);
@@ -110,8 +110,7 @@ namespace WumpusLocations
 
             return coins;
         }
-        /// <summary>
-        /// Randomly moves the Wumpus to the nearest room, if moving at all
+        /// <summary>alroom, if moving at all
         /// </summary>
         /// <returns> Returns true if the Wumpus has moved and false otherwise </returns>
         public bool MoveWumpus()
@@ -136,6 +135,11 @@ namespace WumpusLocations
             }
 
             Wumpus = paths[rng.Next(0, count)];
+            while (Wumpus < 0)
+            {
+                Wumpus = paths[rng.Next(0, count)];
+            }
+
             return true;
         }
 
@@ -148,7 +152,7 @@ namespace WumpusLocations
         {
             if (i - 1 == Wumpus)
             {
-                foreach (int path in CavePaths[Player])
+                foreach (int path in CavePaths[Player - 1])
                 {
                     if (path == i)
                     {
@@ -167,14 +171,14 @@ namespace WumpusLocations
         public List<string> RoomType()
         {
             List<string> types = new List<string>();
-            if (Player == Wumpus)
+            if (Player - 1 == Wumpus)
             {
                 types.Add("W");
             }
 
             foreach (int bat in Bats)
             {
-                if (Player == bat)
+                if (Player - 1 == bat)
                 {
                     types.Add("B");
                     break;
@@ -183,7 +187,7 @@ namespace WumpusLocations
 
             foreach (int pit in Pits)
             {
-                if (Player == pit)
+                if (Player - 1 == pit)
                 {
                     types.Add("P");
                     break;
@@ -192,7 +196,7 @@ namespace WumpusLocations
 
             foreach (int shop in Shops)
             {
-                if (Player == shop)
+                if (Player - 1 == shop)
                 {
                     types.Add("S");
                     break;
@@ -215,11 +219,11 @@ namespace WumpusLocations
         {
             List<string> hazards = new List<string>();
             // Check each room connection one by one
-            for (int i = 0; i < CavePaths[Player].Length; i++)
+            for (int i = 0; i < CavePaths[Player - 1].Length; i++)
             {
                 foreach (int bat in Bats)
                 {
-                    if (CavePaths[Player][i] - 1 == bat)
+                    if (CavePaths[Player - 1][i] - 1 == bat)
                     {
                         hazards.Add("B");
                         break;
@@ -228,7 +232,7 @@ namespace WumpusLocations
 
                 foreach (int pit in Pits)
                 {
-                    if (CavePaths[Player][i] - 1 == pit)
+                    if (CavePaths[Player - 1][i] - 1 == pit)
                     {
                         hazards.Add("P");
                         break;
@@ -237,18 +241,18 @@ namespace WumpusLocations
 
                 foreach (int shop in Shops)
                 {
-                    if (CavePaths[Player][i] - 1 == shop)
+                    if (CavePaths[Player - 1][i] - 1 == shop)
                     {
                         hazards.Add("S");
                         break;
                     }
                 }
-                if (CavePaths[Player][i] - 1 == Wumpus)
+                if (CavePaths[Player - 1][i] - 1 == Wumpus)
                 {
                     hazards.Add("W");
                     break;
                 }
-                if (!(CavePaths[Player][i] < 0))
+                if (!(CavePaths[Player - 1][i] < 0))
                 {
                     hazards.Add("N");
                 }

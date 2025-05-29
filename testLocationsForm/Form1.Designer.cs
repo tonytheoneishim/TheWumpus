@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             moveWumpus = new Button();
-            wumpusMovedCheck = new CheckBox();
             moveWumpusBox = new GroupBox();
+            wumpusLocationText = new TextBox();
             hazardNearbyBox = new GroupBox();
             hazardsNearbyList = new ListBox();
             checkHazards = new Button();
             caveTypeBox = new GroupBox();
+            hazardTypeList = new ListBox();
             checkRoomType = new Button();
             shootArrowBox = new GroupBox();
             arrowDirectionText = new TextBox();
@@ -44,7 +45,7 @@
             playerLocationLabel = new Label();
             spawnEvents = new Button();
             eventsList = new ListBox();
-            hazardTypeList = new ListBox();
+            playerText = new TextBox();
             moveWumpusBox.SuspendLayout();
             hazardNearbyBox.SuspendLayout();
             caveTypeBox.SuspendLayout();
@@ -53,35 +54,31 @@
             // 
             // moveWumpus
             // 
-            moveWumpus.Location = new Point(6, 47);
+            moveWumpus.Location = new Point(6, 51);
             moveWumpus.Name = "moveWumpus";
-            moveWumpus.Size = new Size(114, 46);
+            moveWumpus.Size = new Size(117, 46);
             moveWumpus.TabIndex = 0;
             moveWumpus.Text = "Move the Wumpus";
             moveWumpus.UseVisualStyleBackColor = true;
             moveWumpus.Click += moveWumpus_Click;
             // 
-            // wumpusMovedCheck
-            // 
-            wumpusMovedCheck.AutoSize = true;
-            wumpusMovedCheck.Enabled = false;
-            wumpusMovedCheck.Location = new Point(6, 22);
-            wumpusMovedCheck.Name = "wumpusMovedCheck";
-            wumpusMovedCheck.Size = new Size(114, 19);
-            wumpusMovedCheck.TabIndex = 3;
-            wumpusMovedCheck.Text = "Wumpus Moved";
-            wumpusMovedCheck.UseVisualStyleBackColor = true;
-            // 
             // moveWumpusBox
             // 
-            moveWumpusBox.Controls.Add(wumpusMovedCheck);
+            moveWumpusBox.Controls.Add(wumpusLocationText);
             moveWumpusBox.Controls.Add(moveWumpus);
-            moveWumpusBox.Location = new Point(263, 255);
+            moveWumpusBox.Location = new Point(321, 233);
             moveWumpusBox.Name = "moveWumpusBox";
-            moveWumpusBox.Size = new Size(136, 108);
+            moveWumpusBox.Size = new Size(129, 108);
             moveWumpusBox.TabIndex = 4;
             moveWumpusBox.TabStop = false;
             moveWumpusBox.Text = "Move the Wumpus";
+            // 
+            // wumpusLocationText
+            // 
+            wumpusLocationText.Location = new Point(6, 22);
+            wumpusLocationText.Name = "wumpusLocationText";
+            wumpusLocationText.Size = new Size(117, 23);
+            wumpusLocationText.TabIndex = 1;
             // 
             // hazardNearbyBox
             // 
@@ -123,6 +120,15 @@
             caveTypeBox.TabIndex = 5;
             caveTypeBox.TabStop = false;
             caveTypeBox.Text = "Cave Type";
+            // 
+            // hazardTypeList
+            // 
+            hazardTypeList.FormattingEnabled = true;
+            hazardTypeList.ItemHeight = 15;
+            hazardTypeList.Location = new Point(6, 22);
+            hazardTypeList.Name = "hazardTypeList";
+            hazardTypeList.Size = new Size(124, 94);
+            hazardTypeList.TabIndex = 1;
             // 
             // checkRoomType
             // 
@@ -209,20 +215,19 @@
             eventsList.Size = new Size(120, 139);
             eventsList.TabIndex = 12;
             // 
-            // hazardTypeList
+            // playerText
             // 
-            hazardTypeList.FormattingEnabled = true;
-            hazardTypeList.ItemHeight = 15;
-            hazardTypeList.Location = new Point(6, 22);
-            hazardTypeList.Name = "hazardTypeList";
-            hazardTypeList.Size = new Size(124, 94);
-            hazardTypeList.TabIndex = 1;
+            playerText.Location = new Point(188, 233);
+            playerText.Name = "playerText";
+            playerText.Size = new Size(127, 23);
+            playerText.TabIndex = 13;
             // 
             // caveLocationsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(462, 375);
+            Controls.Add(playerText);
             Controls.Add(eventsList);
             Controls.Add(spawnEvents);
             Controls.Add(playerLocationLabel);
@@ -246,7 +251,6 @@
         #endregion
 
         private Button moveWumpus;
-        private CheckBox wumpusMovedCheck;
         private GroupBox moveWumpusBox;
         private GroupBox hazardNearbyBox;
         private Button checkHazards;
@@ -263,5 +267,7 @@
         private ListBox eventsList;
         private ListBox hazardsNearbyList;
         private ListBox hazardTypeList;
+        private TextBox wumpusLocationText;
+        private TextBox playerText;
     }
 }
