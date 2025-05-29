@@ -219,7 +219,7 @@ namespace WumpusLocations
         {
             List<string> hazards = new List<string>();
             // Check each room connection one by one
-            for (int i = 0; i < CavePaths[Player - 1].Length; i++)
+            for (int i = 0; i < CavePaths[Player].Length; i++)
             {
                 foreach (int bat in Bats)
                 {
