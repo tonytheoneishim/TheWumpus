@@ -46,7 +46,7 @@ namespace TestingGround
             InitializeComponent();
 
             locationList = location.SpawnEvents();
-
+            location.Wumpus = location.CavePaths[0][2]; //Get rid later
             pictureBoxRoom.SendToBack();
 
             buttons[0] = buttonRoomNW;
