@@ -209,7 +209,9 @@ namespace TestingGround
                     MessageBox.Show("You shot the Wumpus! You win!");
                     wumpusKilled = 50;
 
-                    Form1 start = new Form1();
+                    this.Hide();
+
+                    Homepage start = new Homepage();
                     start.ShowDialog();
 
                     this.Close();
@@ -222,7 +224,9 @@ namespace TestingGround
                     {
                         MessageBox.Show("You have no arrows left! You lose!");
 
-                        Form1 start = new Form1();
+                        this.Hide();
+
+                        Homepage start = new Homepage();
                         start.ShowDialog();
 
                         this.Close();
