@@ -333,10 +333,6 @@ namespace TestingGround
                     DoTrivia(5);
                     //pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
                     //roomHazards += "Wumpus\n";
-                    if(TriviaOutcome)
-                    {
-                        MessageBox.Show("You injured the Wumpus! It ran away!");
-                    }
                 }
                 else if (hazard == "B")
                 {
@@ -408,6 +404,28 @@ namespace TestingGround
            TriviaForm trivia = new TriviaForm();
             trivia.TotalQuestionsNeeded = q;
             trivia.ShowDialog();
+
+            if(q == 5)
+            {
+                if (TriviaOutcome)
+                {
+                    MessageBox.Show("You injured the Wumpus! It ran away!");
+                }
+                else
+                {
+                    MessageBox.Show("You failed to answer the trivia question! The Wumpus attacks you!");
+                    this.Hide();
+                    Homepage start = new Homepage();
+                    start.ShowDialog();
+                    this.Close();
+                }
+            } else if(q == 3)
+            {
+                if (TriviaOutcome)
+                {
+                    //escape
+                }
+            }
         }
     }
 }
