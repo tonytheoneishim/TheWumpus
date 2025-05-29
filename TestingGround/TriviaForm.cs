@@ -41,6 +41,7 @@ namespace GCUITest
 
         private void LoadNewQuestion()
         {
+            questionsIndex++;
             richTextBoxQuestion.Text = trivia.GetQuestion();
             string[] options = trivia.GetAnswerOptions();
 
@@ -75,28 +76,29 @@ namespace GCUITest
             if (trivia.CheckAnswer(selectedAnswer))
             {
                 MessageBox.Show("Correct!", "Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                questionsRight++;
             }
             else
             {
                 MessageBox.Show("Incorrect. Try again!", "Answer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (questionsIndex < 5 || questionsRight < 3 || TotalQuestionsNeeded == 5)
+            if (questionsIndex < 5 && questionsRight < 3 && TotalQuestionsNeeded == 5)
             {
                 LoadNewQuestion();
             }
-            else if (questionsIndex < 3 || questionsIndex < 2 || TotalQuestionsNeeded == 3)
+            else if (questionsIndex < 3 && questionsIndex < 2 && TotalQuestionsNeeded == 3)
             {
                 LoadNewQuestion();
             }
             else
             {
-                if (questionsRight == 3 || TotalQuestionsNeeded == 5)
+                if (questionsRight == 3 && TotalQuestionsNeeded == 5)
                 {
                     game.TriviaOutcome = true;
                     this.Close();
                 }
-                else if (questionsIndex == 2 || TotalQuestionsNeeded == 3)
+                else if (questionsIndex == 2 && TotalQuestionsNeeded == 3)
                 {
                     game.TriviaOutcome = true;
                     this.Close();
