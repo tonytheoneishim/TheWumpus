@@ -28,6 +28,7 @@ namespace WumpusLocations
         /// <param name="cavePaths"> A list of caves and their connections, 0-based </param>
         public Locations(List<int[]> cavePaths)
         {
+            Player = 1;
             CavePaths = cavePaths;
         }
 
@@ -75,7 +76,6 @@ namespace WumpusLocations
             Pits = pits;
             Shops = shops;
             Wumpus = wumpus;
-            Player = 1;
 
             List<int[]> locations = new List<int[]>();
             locations.Add(bats);
@@ -110,8 +110,7 @@ namespace WumpusLocations
 
             return coins;
         }
-        /// <summary>
-        /// Randomly moves the Wumpus to the nearest room, if moving at all
+        /// <summary>alroom, if moving at all
         /// </summary>
         /// <returns> Returns true if the Wumpus has moved and false otherwise </returns>
         public bool MoveWumpus()
@@ -128,14 +127,19 @@ namespace WumpusLocations
             List<int> paths = new List<int>();
             foreach (int path in CavePaths[Wumpus])
             {
-                if (path - 1  > -1)
+                if (path > -1)
                 {
                     count++;
-                    paths.Add(path - 1);
+                    paths.Add(path);
                 }
             }
 
             Wumpus = paths[rng.Next(0, count)];
+            while (Wumpus < 0)
+            {
+                Wumpus = paths[rng.Next(0, count)];
+            }
+
             return true;
         }
 
@@ -167,14 +171,14 @@ namespace WumpusLocations
         public List<string> RoomType()
         {
             List<string> types = new List<string>();
-            if (Player == Wumpus)
+            if (Player - 1 == Wumpus)
             {
                 types.Add("W");
             }
 
             foreach (int bat in Bats)
             {
-                if (Player == bat)
+                if (Player - 1 == bat)
                 {
                     types.Add("B");
                     break;
@@ -183,7 +187,7 @@ namespace WumpusLocations
 
             foreach (int pit in Pits)
             {
-                if (Player == pit)
+                if (Player - 1 == pit)
                 {
                     types.Add("P");
                     break;
@@ -192,7 +196,7 @@ namespace WumpusLocations
 
             foreach (int shop in Shops)
             {
-                if (Player == shop)
+                if (Player - 1 == shop)
                 {
                     types.Add("S");
                     break;

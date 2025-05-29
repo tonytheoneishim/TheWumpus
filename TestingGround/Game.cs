@@ -31,6 +31,7 @@ namespace TestingGround
         int arrows = 3;
         int turns = 0;
         double score = 100;
+        int wumpusKilled = 0;
         int currentRoom = 0; // current room the player is in
 
         Button[] buttons = new Button[6];
@@ -41,12 +42,13 @@ namespace TestingGround
         List<int[]> locationList = new List<int[]>();
 
         public string PlayerName { get; set; }
+        public bool TriviaOutcome = false;
         public Game()
         {
             InitializeComponent();
 
             locationList = location.SpawnEvents();
-
+            location.Wumpus = location.CavePaths[0][2]; //Get rid later
             pictureBoxRoom.SendToBack();
 
             buttons[0] = buttonRoomNW;
@@ -205,7 +207,14 @@ namespace TestingGround
                 if (location.ShootArrow(int.Parse(button.Text)))
                 {
                     MessageBox.Show("You shot the Wumpus! You win!");
-                    //this.Close();
+                    wumpusKilled = 50;
+
+                    this.Hide();
+
+                    Homepage start = new Homepage();
+                    start.ShowDialog();
+
+                    this.Close();
                 }
                 else
                 {
@@ -214,7 +223,13 @@ namespace TestingGround
                     if (arrows < 1)
                     {
                         MessageBox.Show("You have no arrows left! You lose!");
-                        //this.Close();
+
+                        this.Hide();
+
+                        Homepage start = new Homepage();
+                        start.ShowDialog();
+
+                        this.Close();
                     }
                     else
                     {
@@ -231,10 +246,9 @@ namespace TestingGround
         public void DoTurn()
         {
             turns++;
-            score = 100 - turns + coins + (arrows * 5);
             checkBoxShootArrow.Visible = false;
 
-            location.MoveWumpus();
+            //location.MoveWumpus();
 
             bool movedRoom = false;
             bool wumpusDetected = false;
@@ -316,9 +330,9 @@ namespace TestingGround
             {
                 if (hazard == "W")
                 {
-                    DoTrivia();
-                    pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
-                    roomHazards += "Wumpus\n";
+                    DoTrivia(5);
+                    //pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
+                    //roomHazards += "Wumpus\n";
                 }
                 else if (hazard == "B")
                 {
@@ -349,8 +363,9 @@ namespace TestingGround
             labelPoints.Text = score.ToString();
             labelWarnings.Text = warnings;
             checkBoxShootArrow.Checked = false;
+            score = 100 - turns + coins + (arrows * 5) + wumpusKilled;
 
-            if(movedRoom)
+            if (movedRoom)
             {
                 BatAttack batattack = new BatAttack();
                 batattack.ShowDialog();
@@ -384,10 +399,33 @@ namespace TestingGround
             }
         }
 
-        private void DoTrivia()
+        private void DoTrivia(int q)
         {
            TriviaForm trivia = new TriviaForm();
-           trivia.ShowDialog();
+            trivia.TotalQuestionsNeeded = q;
+            trivia.ShowDialog();
+
+            if(q == 5)
+            {
+                if (TriviaOutcome)
+                {
+                    MessageBox.Show("You injured the Wumpus! It ran away!");
+                }
+                else
+                {
+                    MessageBox.Show("You failed to answer the trivia question! The Wumpus attacks you!");
+                    this.Hide();
+                    Homepage start = new Homepage();
+                    start.ShowDialog();
+                    this.Close();
+                }
+            } else if(q == 3)
+            {
+                if (TriviaOutcome)
+                {
+                    //escape
+                }
+            }
         }
     }
 }

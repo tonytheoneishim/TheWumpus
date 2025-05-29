@@ -47,28 +47,27 @@ namespace WumpusLocations
             caveLayouts.Add(createRoom(-1, 23, 24, 0, -1, -1));
             Locations cave = new Locations(caveLayouts);
             locations.Add(cave);
-
-            wumpusLocationLabel.Text = "Wumpus: " + cave.Wumpus.ToString();
-            playerLocationLabel.Text = "Player: " + cave.Player.ToString();
+            playerText.Text = cave.Player.ToString();
         }
 
         private void moveWumpus_Click(object sender, EventArgs e)
         {
-            if (locations[0].MoveWumpus())
+            bool wumpusLocation = locations[0].MoveWumpus();
+            if (wumpusLocation)
             {
-                wumpusMovedCheck.Checked = true;
-                wumpusLocationLabel.Text = "Wumpus: " + locations[0].Wumpus.ToString();
-            }
-            else
-            {
-                wumpusMovedCheck.Checked = false;
+                wumpusLocationText.Text = locations[0].Wumpus.ToString();
             }
         }
 
         private void checkRoomType_Click(object sender, EventArgs e)
         {
             hazardTypeList.Items.Clear();
-            //caveTypeText.Text = locations[0].RoomType().ToString();
+            List<string> hazards = locations[0].RoomType();
+            foreach (string hazard in hazards)
+            {
+                hazardTypeList.Items.Add(hazard);
+            }
+
         }
 
         private void checkHazards_Click(object sender, EventArgs e)
