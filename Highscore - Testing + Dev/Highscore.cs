@@ -239,7 +239,7 @@ public class Highscore
 }
 
 
-    //Game.cs DEBUF FUNCTIONS
+    //Game.cs DEBUFF FUNCTIONS
 
     //    Highscore highscore = new Highscore();
     //    public void TripDebuff()
