@@ -43,11 +43,11 @@ namespace GCUITest
             }
             else if (TotalQuestionsNeeded == 3)
             {
-                richTextBoxQuestion.Text = "You fell into a pit!";
+                labelTitle.Text = "You fell into a pit!";
             }
             else
             {
-                richTextBoxQuestion.Text = "Error??";
+                labelTitle.Text = "Error??";
                 return;
             }
 
