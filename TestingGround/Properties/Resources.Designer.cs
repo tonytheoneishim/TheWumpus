@@ -93,6 +93,16 @@ namespace GCUITest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap High_Score_Form_Wumpus_Piskel {
+            get {
+                object obj = ResourceManager.GetObject("High Score Form Wumpus Piskel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image__1___1_ {
             get {
                 object obj = ResourceManager.GetObject("image (1) (1)", resourceCulture);
@@ -306,6 +316,16 @@ namespace GCUITest.Properties {
         internal static System.Drawing.Bitmap Wumpus_Room_WumpusBad {
             get {
                 object obj = ResourceManager.GetObject("Wumpus Room WumpusBad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wumpus_Shop_Form {
+            get {
+                object obj = ResourceManager.GetObject("Wumpus Shop Form", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

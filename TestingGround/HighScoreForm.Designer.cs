@@ -48,6 +48,7 @@
             // labelTitle
             // 
             labelTitle.AutoSize = true;
+            labelTitle.BackColor = Color.Transparent;
             labelTitle.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
             labelTitle.ForeColor = SystemColors.ControlLightLight;
             labelTitle.Location = new Point(47, 9);
@@ -83,6 +84,7 @@
             // labelName
             // 
             labelName.AutoSize = true;
+            labelName.BackColor = Color.Transparent;
             labelName.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelName.ForeColor = SystemColors.ControlLightLight;
             labelName.Location = new Point(25, 48);
@@ -95,6 +97,7 @@
             // labelScore
             // 
             labelScore.AutoSize = true;
+            labelScore.BackColor = Color.Transparent;
             labelScore.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelScore.ForeColor = SystemColors.ControlLightLight;
             labelScore.Location = new Point(168, 48);
@@ -106,6 +109,7 @@
             // labelRunStatistics
             // 
             labelRunStatistics.AutoSize = true;
+            labelRunStatistics.BackColor = Color.Transparent;
             labelRunStatistics.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelRunStatistics.ForeColor = SystemColors.ControlLightLight;
             labelRunStatistics.Location = new Point(87, 280);
@@ -129,6 +133,7 @@
             // labelPlayerStat
             // 
             labelPlayerStat.AutoSize = true;
+            labelPlayerStat.BackColor = Color.Transparent;
             labelPlayerStat.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPlayerStat.ForeColor = SystemColors.ControlLightLight;
             labelPlayerStat.Location = new Point(26, 300);
@@ -211,6 +216,7 @@
             // labelhighscoreoptions
             // 
             labelhighscoreoptions.AutoSize = true;
+            labelhighscoreoptions.BackColor = Color.Transparent;
             labelhighscoreoptions.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelhighscoreoptions.ForeColor = SystemColors.ControlLightLight;
             labelhighscoreoptions.Location = new Point(66, 296);
@@ -225,6 +231,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
+            BackgroundImage = GCUITest.Properties.Resources.High_Score_Form_Wumpus_Piskel;
             CancelButton = buttonClose;
             ClientSize = new Size(277, 474);
             Controls.Add(labelhighscoreoptions);
