@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelTitle = new Label();
+            labelVictory = new Label();
             pictureBox3 = new PictureBox();
             labelCoinCount = new Label();
             labelArrowCount = new Label();
@@ -36,25 +36,29 @@
             pictureBoxCoin = new PictureBox();
             labelCoinLabel = new Label();
             buttonContinue = new Button();
+            labelDefeat = new Label();
+            labelWumpKilled = new Label();
+            labelWumpLives = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).BeginInit();
             SuspendLayout();
             // 
-            // labelTitle
+            // labelVictory
             // 
-            labelTitle.AutoSize = true;
-            labelTitle.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
-            labelTitle.ForeColor = SystemColors.ControlLightLight;
-            labelTitle.Location = new Point(-3, 34);
-            labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(598, 35);
-            labelTitle.TabIndex = 1;
-            labelTitle.Text = "Victory! / You Lost!  (get code here kellen!)";
+            labelVictory.AutoSize = true;
+            labelVictory.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
+            labelVictory.ForeColor = SystemColors.ControlLightLight;
+            labelVictory.Location = new Point(237, 30);
+            labelVictory.Name = "labelVictory";
+            labelVictory.Size = new Size(125, 35);
+            labelVictory.TabIndex = 1;
+            labelVictory.Text = "Victory!";
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Wumpus_Arrow;
-            pictureBox3.Location = new Point(80, 197);
+            pictureBox3.Location = new Point(60, 264);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(55, 50);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -66,18 +70,18 @@
             labelCoinCount.AutoSize = true;
             labelCoinCount.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelCoinCount.ForeColor = SystemColors.ControlLightLight;
-            labelCoinCount.Location = new Point(230, 159);
+            labelCoinCount.Location = new Point(210, 226);
             labelCoinCount.Name = "labelCoinCount";
-            labelCoinCount.Size = new Size(301, 23);
+            labelCoinCount.Size = new Size(22, 23);
             labelCoinCount.TabIndex = 32;
-            labelCoinCount.Text = "--    dont change the window size";
+            labelCoinCount.Text = "--";
             // 
             // labelArrowCount
             // 
             labelArrowCount.AutoSize = true;
             labelArrowCount.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelArrowCount.ForeColor = SystemColors.ControlLightLight;
-            labelArrowCount.Location = new Point(230, 214);
+            labelArrowCount.Location = new Point(210, 281);
             labelArrowCount.Name = "labelArrowCount";
             labelArrowCount.Size = new Size(22, 23);
             labelArrowCount.TabIndex = 31;
@@ -88,7 +92,7 @@
             labelArrowLabel.AutoSize = true;
             labelArrowLabel.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelArrowLabel.ForeColor = SystemColors.ControlLightLight;
-            labelArrowLabel.Location = new Point(134, 214);
+            labelArrowLabel.Location = new Point(114, 281);
             labelArrowLabel.Name = "labelArrowLabel";
             labelArrowLabel.Size = new Size(79, 23);
             labelArrowLabel.TabIndex = 30;
@@ -97,7 +101,7 @@
             // pictureBoxCoin
             // 
             pictureBoxCoin.Image = Properties.Resources.Wumpus_Coin__1_;
-            pictureBoxCoin.Location = new Point(82, 137);
+            pictureBoxCoin.Location = new Point(62, 204);
             pictureBoxCoin.Name = "pictureBoxCoin";
             pictureBoxCoin.Size = new Size(48, 56);
             pictureBoxCoin.SizeMode = PictureBoxSizeMode.Zoom;
@@ -109,7 +113,7 @@
             labelCoinLabel.AutoSize = true;
             labelCoinLabel.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelCoinLabel.ForeColor = SystemColors.ControlLightLight;
-            labelCoinLabel.Location = new Point(136, 159);
+            labelCoinLabel.Location = new Point(116, 226);
             labelCoinLabel.Name = "labelCoinLabel";
             labelCoinLabel.Size = new Size(66, 23);
             labelCoinLabel.TabIndex = 28;
@@ -117,19 +121,70 @@
             // 
             // buttonContinue
             // 
-            buttonContinue.Location = new Point(373, 283);
+            buttonContinue.Location = new Point(447, 291);
             buttonContinue.Name = "buttonContinue";
             buttonContinue.Size = new Size(75, 23);
             buttonContinue.TabIndex = 34;
             buttonContinue.Text = "Continue";
             buttonContinue.UseVisualStyleBackColor = true;
             // 
+            // labelDefeat
+            // 
+            labelDefeat.AutoSize = true;
+            labelDefeat.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
+            labelDefeat.ForeColor = SystemColors.ControlLightLight;
+            labelDefeat.Location = new Point(243, 30);
+            labelDefeat.Name = "labelDefeat";
+            labelDefeat.Size = new Size(115, 35);
+            labelDefeat.TabIndex = 35;
+            labelDefeat.Text = "Defeat!";
+            // 
+            // labelWumpKilled
+            // 
+            labelWumpKilled.AutoSize = true;
+            labelWumpKilled.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelWumpKilled.ForeColor = SystemColors.ControlLightLight;
+            labelWumpKilled.Location = new Point(204, 84);
+            labelWumpKilled.Name = "labelWumpKilled";
+            labelWumpKilled.Size = new Size(191, 21);
+            labelWumpKilled.TabIndex = 36;
+            labelWumpKilled.Text = "You Killed the Wumpus!";
+            labelWumpKilled.Visible = false;
+            // 
+            // labelWumpLives
+            // 
+            labelWumpLives.AutoSize = true;
+            labelWumpLives.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelWumpLives.ForeColor = SystemColors.ControlLightLight;
+            labelWumpLives.Location = new Point(221, 84);
+            labelWumpLives.Name = "labelWumpLives";
+            labelWumpLives.Size = new Size(157, 21);
+            labelWumpLives.TabIndex = 37;
+            labelWumpLives.Text = "The Wumpus Lives!";
+            labelWumpLives.Visible = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(62, 162);
+            label1.Name = "label1";
+            label1.Size = new Size(126, 21);
+            label1.TabIndex = 38;
+            label1.Text = "Your Inventory:";
+            label1.Visible = false;
+            // 
             // EndScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.Black;
             ClientSize = new Size(584, 361);
+            Controls.Add(label1);
+            Controls.Add(labelWumpLives);
+            Controls.Add(labelWumpKilled);
+            Controls.Add(labelDefeat);
             Controls.Add(buttonContinue);
             Controls.Add(pictureBox3);
             Controls.Add(labelCoinCount);
@@ -137,9 +192,9 @@
             Controls.Add(labelArrowLabel);
             Controls.Add(pictureBoxCoin);
             Controls.Add(labelCoinLabel);
-            Controls.Add(labelTitle);
+            Controls.Add(labelVictory);
             Name = "EndScreen";
-            Text = "You won!";
+            Text = "End screen";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).EndInit();
             ResumeLayout(false);
@@ -148,7 +203,7 @@
 
         #endregion
 
-        private Label labelTitle;
+        private Label labelVictory;
         private PictureBox pictureBox3;
         private Label labelCoinCount;
         private Label labelArrowCount;
@@ -156,5 +211,9 @@
         private PictureBox pictureBoxCoin;
         private Label labelCoinLabel;
         private Button buttonContinue;
+        private Label labelDefeat;
+        private Label labelWumpKilled;
+        private Label labelWumpLives;
+        private Label label1;
     }
 }

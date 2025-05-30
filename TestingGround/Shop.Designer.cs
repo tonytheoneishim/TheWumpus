@@ -61,6 +61,7 @@
             // labelArrowLabel
             // 
             labelArrowLabel.AutoSize = true;
+            labelArrowLabel.BackColor = Color.Transparent;
             labelArrowLabel.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelArrowLabel.ForeColor = SystemColors.ControlLightLight;
             labelArrowLabel.Location = new Point(85, 400);
@@ -71,6 +72,7 @@
             // 
             // pictureBoxCoin
             // 
+            pictureBoxCoin.BackColor = Color.Transparent;
             pictureBoxCoin.Image = Properties.Resources.Wumpus_Coin__1_;
             pictureBoxCoin.Location = new Point(33, 323);
             pictureBoxCoin.Name = "pictureBoxCoin";
@@ -82,6 +84,7 @@
             // labelCoinLabel
             // 
             labelCoinLabel.AutoSize = true;
+            labelCoinLabel.BackColor = Color.Transparent;
             labelCoinLabel.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelCoinLabel.ForeColor = SystemColors.ControlLightLight;
             labelCoinLabel.Location = new Point(87, 345);
@@ -93,6 +96,7 @@
             // labelTitle
             // 
             labelTitle.AutoSize = true;
+            labelTitle.BackColor = Color.Transparent;
             labelTitle.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
             labelTitle.ForeColor = SystemColors.ControlLightLight;
             labelTitle.Location = new Point(79, 19);
@@ -104,6 +108,7 @@
             // labelArrowCost
             // 
             labelArrowCost.AutoSize = true;
+            labelArrowCost.BackColor = Color.Transparent;
             labelArrowCost.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelArrowCost.ForeColor = SystemColors.ControlLightLight;
             labelArrowCost.Location = new Point(126, 88);
@@ -115,6 +120,7 @@
             // labelSecretPrice
             // 
             labelSecretPrice.AutoSize = true;
+            labelSecretPrice.BackColor = Color.Transparent;
             labelSecretPrice.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelSecretPrice.ForeColor = SystemColors.ControlLightLight;
             labelSecretPrice.Location = new Point(126, 148);
@@ -125,6 +131,7 @@
             // 
             // pictureBoxArrowBuy
             // 
+            pictureBoxArrowBuy.BackColor = Color.Transparent;
             pictureBoxArrowBuy.Image = Properties.Resources.Wumpus_Arrow;
             pictureBoxArrowBuy.Location = new Point(46, 70);
             pictureBoxArrowBuy.Name = "pictureBoxArrowBuy";
@@ -136,6 +143,7 @@
             // 
             // pictureBoxSecretBuy
             // 
+            pictureBoxSecretBuy.BackColor = Color.Transparent;
             pictureBoxSecretBuy.Image = Properties.Resources.questiom;
             pictureBoxSecretBuy.Location = new Point(33, 134);
             pictureBoxSecretBuy.Name = "pictureBoxSecretBuy";
@@ -148,6 +156,7 @@
             // labelArrowCount
             // 
             labelArrowCount.AutoSize = true;
+            labelArrowCount.BackColor = Color.Transparent;
             labelArrowCount.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelArrowCount.ForeColor = SystemColors.ControlLightLight;
             labelArrowCount.Location = new Point(181, 400);
@@ -159,6 +168,7 @@
             // labelCoinCount
             // 
             labelCoinCount.AutoSize = true;
+            labelCoinCount.BackColor = Color.Transparent;
             labelCoinCount.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelCoinCount.ForeColor = SystemColors.ControlLightLight;
             labelCoinCount.Location = new Point(181, 345);
@@ -169,6 +179,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = Properties.Resources.Wumpus_Arrow;
             pictureBox3.Location = new Point(31, 383);
             pictureBox3.Name = "pictureBox3";
@@ -180,6 +191,7 @@
             // labelReciept
             // 
             labelReciept.AutoSize = true;
+            labelReciept.BackColor = Color.Transparent;
             labelReciept.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelReciept.ForeColor = SystemColors.ControlLightLight;
             labelReciept.Location = new Point(49, 220);
@@ -191,6 +203,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(161, 290);
@@ -204,6 +217,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
+            BackgroundImage = Properties.Resources.Wumpus_Shop_Form;
             ClientSize = new Size(432, 478);
             Controls.Add(label1);
             Controls.Add(labelReciept);
