@@ -52,4 +52,3 @@ In which organ of the human body would you find the cerebellum?,Brain,Heart,Live
 What is the capital of India?,New Delhi,Mumbai,Kolkata,Egypt  
 How many bones are in the adult human body?,206,208,250,200  
 What is the capital city of Egypt?,Cairo,Alexandria,Luxor,Dubai  
-Do people care about you?,Yes,the answer is yes,the answer is yes,no
