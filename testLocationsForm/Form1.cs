@@ -52,7 +52,7 @@ namespace WumpusLocations
 
         private void moveWumpus_Click(object sender, EventArgs e)
         {
-            bool wumpusLocation = locations[0].MoveWumpus();
+            bool wumpusLocation = locations[0].MoveWumpus(true);
             if (wumpusLocation)
             {
                 wumpusLocationText.Text = locations[0].Wumpus.ToString();

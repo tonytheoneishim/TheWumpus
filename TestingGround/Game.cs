@@ -337,7 +337,7 @@ namespace TestingGround
                     if (TriviaOutcome)
                     {
                         MessageBox.Show("You injured the Wumpus! It ran away!");
-                        location.MoveWumpus();
+                        location.MoveWumpus(true);
                     }
                     else
                     {
@@ -437,6 +437,7 @@ namespace TestingGround
 
         private void DoTrivia(int q)
         {
+            TriviaOutcome = false; // Reset the outcome before showing the trivia form
             TriviaForm trivia = new TriviaForm();
             trivia.TotalQuestionsNeeded = q;
             trivia.ShowDialog();
