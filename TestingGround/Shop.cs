@@ -55,6 +55,10 @@ namespace GCUITest
                 //Message box for the secret
                 MessageBox.Show("Kellen could be freaky.", "Shhhhhh...");
             }
+            else
+            {
+                MessageBox.Show("Not enough gold coins!", "Transaction failed!");
+            }
         }
 
         private void Shop_Load(object sender, EventArgs e)
