@@ -37,8 +37,11 @@
             listBoxStatistics = new ListBox();
             labelPlayerStat = new Label();
             buttonClose2 = new Button();
-            buttonOptions1 = new Button();
             buttonOptions2 = new Button();
+            buttonOptions1 = new Button();
+            buttonExitOptions = new Button();
+            buttonDeleteSelected = new Button();
+            buttonEraseAll = new Button();
             SuspendLayout();
             // 
             // labelTitle
@@ -46,11 +49,11 @@
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
             labelTitle.ForeColor = SystemColors.ControlLightLight;
-            labelTitle.Location = new Point(49, 9);
+            labelTitle.Location = new Point(47, 9);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(181, 35);
+            labelTitle.Size = new Size(183, 35);
             labelTitle.TabIndex = 0;
-            labelTitle.Text = "High Scores";
+            labelTitle.Text = "High-Scores";
             labelTitle.Click += labelTitle_Click;
             // 
             // listBoxNameList
@@ -145,17 +148,6 @@
             buttonClose2.UseVisualStyleBackColor = true;
             buttonClose2.Click += buttonClose2_Click;
             // 
-            // buttonOptions1
-            // 
-            buttonOptions1.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonOptions1.Location = new Point(25, 281);
-            buttonOptions1.Name = "buttonOptions1";
-            buttonOptions1.Size = new Size(75, 23);
-            buttonOptions1.TabIndex = 13;
-            buttonOptions1.Text = "Options";
-            buttonOptions1.UseVisualStyleBackColor = true;
-            buttonOptions1.Click += buttonOptions1_Click;
-            // 
             // buttonOptions2
             // 
             buttonOptions2.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -168,6 +160,53 @@
             buttonOptions2.Visible = false;
             buttonOptions2.Click += buttonOptions2_Click;
             // 
+            // buttonOptions1
+            // 
+            buttonOptions1.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonOptions1.Location = new Point(25, 281);
+            buttonOptions1.Name = "buttonOptions1";
+            buttonOptions1.Size = new Size(75, 23);
+            buttonOptions1.TabIndex = 13;
+            buttonOptions1.Text = "Options";
+            buttonOptions1.UseVisualStyleBackColor = true;
+            buttonOptions1.Click += buttonOptions1_Click_1;
+            // 
+            // buttonExitOptions
+            // 
+            buttonExitOptions.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonExitOptions.Location = new Point(26, 439);
+            buttonExitOptions.Name = "buttonExitOptions";
+            buttonExitOptions.Size = new Size(97, 23);
+            buttonExitOptions.TabIndex = 15;
+            buttonExitOptions.Text = "Exit options";
+            buttonExitOptions.UseVisualStyleBackColor = true;
+            buttonExitOptions.Visible = false;
+            buttonExitOptions.Click += buttonExitOptions_Click;
+            // 
+            // buttonDeleteSelected
+            // 
+            buttonDeleteSelected.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonDeleteSelected.Location = new Point(29, 346);
+            buttonDeleteSelected.Name = "buttonDeleteSelected";
+            buttonDeleteSelected.Size = new Size(97, 65);
+            buttonDeleteSelected.TabIndex = 16;
+            buttonDeleteSelected.Text = "Delete selected score";
+            buttonDeleteSelected.UseVisualStyleBackColor = true;
+            buttonDeleteSelected.Visible = false;
+            buttonDeleteSelected.Click += buttonDeleteSelected_Click;
+            // 
+            // buttonEraseAll
+            // 
+            buttonEraseAll.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonEraseAll.Location = new Point(152, 346);
+            buttonEraseAll.Name = "buttonEraseAll";
+            buttonEraseAll.Size = new Size(97, 65);
+            buttonEraseAll.TabIndex = 17;
+            buttonEraseAll.Text = "Erase all high-scores";
+            buttonEraseAll.UseVisualStyleBackColor = true;
+            buttonEraseAll.Visible = false;
+            buttonEraseAll.Click += buttonEraseAll_Click;
+            // 
             // HighScoreForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -175,6 +214,9 @@
             BackColor = Color.Gray;
             CancelButton = buttonClose;
             ClientSize = new Size(277, 474);
+            Controls.Add(buttonEraseAll);
+            Controls.Add(buttonDeleteSelected);
+            Controls.Add(buttonExitOptions);
             Controls.Add(buttonOptions2);
             Controls.Add(buttonOptions1);
             Controls.Add(buttonClose2);
@@ -207,7 +249,10 @@
         private ListBox listBoxStatistics;
         private Label labelPlayerStat;
         private Button buttonClose2;
-        private Button buttonOptions1;
         private Button buttonOptions2;
+        private Button buttonOptions1;
+        private Button buttonExitOptions;
+        private Button buttonDeleteSelected;
+        private Button buttonEraseAll;
     }
 }

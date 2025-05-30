@@ -62,11 +62,11 @@
             buttonHighscores.Name = "buttonHighscores";
             buttonHighscores.Size = new Size(128, 30);
             buttonHighscores.TabIndex = 1;
-            buttonHighscores.Text = "High Scores";
+            buttonHighscores.Text = "High-Scores";
             buttonHighscores.UseVisualStyleBackColor = false;
             buttonHighscores.Click += buttonHighscores_Click;
             // 
-            // Form1
+            // Homepage
             // 
             AcceptButton = buttonStart;
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -79,7 +79,7 @@
             Controls.Add(buttonStart);
             DoubleBuffered = true;
             ForeColor = Color.WhiteSmoke;
-            Name = "Form1";
+            Name = "Homepage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GCUI Test";
             ResumeLayout(false);

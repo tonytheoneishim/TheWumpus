@@ -85,30 +85,93 @@ namespace TestingGround
             //clear highscores, remove a highscore
         }
 
-        //private void buttonOptions1_Click(object sender, EventArgs e)
-        //{
-        //    HighscoreOptions highscoreoptions = new HighscoreOptions();
-        //    highscoreoptions.ShowDialog();
-        //    if (clearselected == true)
-        //    {
-        //        int i = listBoxNameList.SelectedIndex;
-        //        listBoxNameList.Items.RemoveAt(i);
-        //        highscore.PlayerList.RemoveAt(i);
-        //        listBoxStatistics.SelectedIndex = -1;
-        //    }
-        //}
-        //public bool clearselected { get; set; }
-        //private void buttonOptions2_Click(object sender, EventArgs e)
-        //{
-        //    HighscoreOptions highscoreoptions = new HighscoreOptions();
-        //    highscoreoptions.ShowDialog();
-        //    if (clearselected == true)
-        //    {
-        //        int i = listBoxNameList.SelectedIndex;
-        //        listBoxNameList.Items.RemoveAt(i);
-        //        highscore.PlayerList.RemoveAt(i);
-        //        listBoxStatistics.SelectedIndex = -1;
-        //    }
-        //}
+        private void buttonOptions1_Click_1(object sender, EventArgs e)
+        {
+            Size = new Size(277, 474);
+            listBoxNameList.SelectedIndex = -1;
+            listBoxStatistics.SelectedIndex = -1;
+            listBoxStatistics.Visible = false;
+            buttonOptions2.Visible = false;
+            buttonExitOptions.Visible = true;
+            labelRunStatistics.Text = "High-score Options";
+            buttonDeleteSelected.Visible = true;
+            buttonEraseAll.Visible = true;
+        }
+
+        private void buttonOptions2_Click(object sender, EventArgs e)
+        {
+            Size = new Size(277, 474);
+            listBoxNameList.SelectedIndex = -1;
+            listBoxStatistics.SelectedIndex = -1;
+            listBoxStatistics.Visible = false;
+            buttonOptions2.Visible = false;
+            buttonExitOptions.Visible = true;
+            labelRunStatistics.Text = "High-score Options";
+            buttonDeleteSelected.Visible = true;
+            buttonEraseAll.Visible = true;
+        }
+
+        private void buttonExitOptions_Click(object sender, EventArgs e)
+        {
+            Size = new Size(277, 316);
+            listBoxNameList.SelectedIndex = -1;
+            listBoxStatistics.SelectedIndex = -1;
+            listBoxStatistics.Visible = true;
+            buttonOptions2.Visible = true;
+            buttonExitOptions.Visible = false;
+            labelRunStatistics.Text = "Run Statistics";
+            buttonDeleteSelected.Visible = false;
+            buttonEraseAll.Visible = false;
+        }
+        private void buttonDeleteSelected_Click(object sender, EventArgs e)
+        {
+            if (listBoxNameList.SelectedIndex != -1)
+            {
+                DialogResult yesno = MessageBox.Show("Are you sure you would like to delete this high-score?", "Warning!", MessageBoxButtons.YesNo);
+                if (yesno == DialogResult.Yes)
+                {
+                    int i = listBoxNameList.SelectedIndex;
+                    listBoxNameList.Items.RemoveAt(i);
+                    highscore.PlayerList.RemoveAt(i);
+                    Highscore.SavetoFile(highscore.PlayerList);
+                    listBoxStatistics.Items.Clear();
+
+                    Size = new Size(277, 316);
+                    listBoxNameList.Items.Clear();
+                    Highscore.GetHighscores(highscore.PlayerList);
+                    highscore.SortHighs();
+                    int a = 0;
+                    foreach (Highscore player in highscore.PlayerList)
+                    {
+                        listBoxNameList.Items.Add(player.ToString());
+                        a++;
+                        if (a == 10) break;
+                    }
+                    listBoxNameList.SelectedIndex = -1;
+                    listBoxStatistics.SelectedIndex = -1;
+                    buttonOptions1.Visible = true;
+                    buttonClose.Visible = true;
+                    buttonExitOptions.Visible = false;
+                    buttonOptions2.Visible = false;
+                    buttonClose2.Visible = false;
+                    listBoxStatistics.Visible = false;
+                    buttonDeleteSelected.Visible = false;
+                    buttonEraseAll.Visible = false;
+                    labelPlayerStat.Text = "";
+                }
+                else return;
+            }
+
+        }
+        private void buttonEraseAll_Click(object sender, EventArgs e)
+        {
+            DialogResult yesno = MessageBox.Show("Are you sure you would like to erase all data?", "Warning!", MessageBoxButtons.YesNo);
+            if (yesno == DialogResult.Yes)
+            {
+                listBoxNameList.Items.Clear();
+                highscore.PlayerList.Clear();
+            }
+            else return;
+        }
     }
 }
