@@ -42,6 +42,7 @@
             buttonExitOptions = new Button();
             buttonDeleteSelected = new Button();
             buttonEraseAll = new Button();
+            labelhighscoreoptions = new Label();
             SuspendLayout();
             // 
             // labelTitle
@@ -174,7 +175,7 @@
             // buttonExitOptions
             // 
             buttonExitOptions.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonExitOptions.Location = new Point(26, 439);
+            buttonExitOptions.Location = new Point(25, 438);
             buttonExitOptions.Name = "buttonExitOptions";
             buttonExitOptions.Size = new Size(97, 23);
             buttonExitOptions.TabIndex = 15;
@@ -207,6 +208,18 @@
             buttonEraseAll.Visible = false;
             buttonEraseAll.Click += buttonEraseAll_Click;
             // 
+            // labelhighscoreoptions
+            // 
+            labelhighscoreoptions.AutoSize = true;
+            labelhighscoreoptions.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelhighscoreoptions.ForeColor = SystemColors.ControlLightLight;
+            labelhighscoreoptions.Location = new Point(66, 296);
+            labelhighscoreoptions.Name = "labelhighscoreoptions";
+            labelhighscoreoptions.Size = new Size(152, 21);
+            labelhighscoreoptions.TabIndex = 18;
+            labelhighscoreoptions.Text = "High-score Options";
+            labelhighscoreoptions.Visible = false;
+            // 
             // HighScoreForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -214,6 +227,7 @@
             BackColor = Color.Gray;
             CancelButton = buttonClose;
             ClientSize = new Size(277, 474);
+            Controls.Add(labelhighscoreoptions);
             Controls.Add(buttonEraseAll);
             Controls.Add(buttonDeleteSelected);
             Controls.Add(buttonExitOptions);
@@ -254,5 +268,6 @@
         private Button buttonExitOptions;
         private Button buttonDeleteSelected;
         private Button buttonEraseAll;
+        private Label labelhighscoreoptions;
     }
 }

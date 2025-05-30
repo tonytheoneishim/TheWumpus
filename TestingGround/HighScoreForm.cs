@@ -27,32 +27,38 @@ namespace TestingGround
         }
         private void listBoxHighScores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Size = new Size(277, 474);
-            buttonClose.Visible = true;
-            buttonClose2.Visible = false;
-            buttonOptions1.Visible = false;
-            buttonOptions2.Visible = true;
-            labelRunStatistics.Visible = true;
-            labelPlayerStat.Visible = true;
-            listBoxStatistics.Visible = true;
-
-            int i = listBoxNameList.SelectedIndex;
-            string killed = string.Empty;
-            if (highscore.PlayerList[i].KilledWumpus == true) killed = "DEAD";
-            if (highscore.PlayerList[i].KilledWumpus == false) killed = "ALIVE";
-            if (listBoxNameList.SelectedIndex != -1)
+            if (buttonExitOptions.Visible == false)
             {
-                labelPlayerStat.Text = "";
-                listBoxStatistics.Items.Clear();
+                Size = new Size(277, 474);
+                buttonClose.Visible = true;
+                buttonClose2.Visible = false;
+                buttonOptions1.Visible = false;
+                buttonOptions2.Visible = true;
+                labelRunStatistics.Visible = true;
+                labelPlayerStat.Visible = true;
+                listBoxStatistics.Visible = true;
 
-                labelPlayerStat.Text = highscore.PlayerList[i].PlayerName;
-                listBoxStatistics.Items.Add("Cave:\t" + highscore.PlayerList[i].CaveType);
-                listBoxStatistics.Items.Add("Turns: \t" + highscore.PlayerList[i].Turns.ToString());
-                listBoxStatistics.Items.Add("Arrows:\t" + highscore.PlayerList[i].ArrowsLeft.ToString());
-                listBoxStatistics.Items.Add("Coins:\t" + highscore.PlayerList[i].GoldCoinsLeft.ToString());
-                listBoxStatistics.Items.Add("Wumpus:\t" + killed);
+                int i = listBoxNameList.SelectedIndex;
+                string killed = string.Empty;
+
+                if (listBoxNameList.SelectedIndex != -1)
+                {
+                    if (highscore.PlayerList[i].KilledWumpus == true) killed = "DEAD";
+                    if (highscore.PlayerList[i].KilledWumpus == false) killed = "ALIVE";
+
+                    labelPlayerStat.Text = "";
+                    listBoxStatistics.Items.Clear();
+
+                    labelPlayerStat.Text = highscore.PlayerList[i].PlayerName;
+                    listBoxStatistics.Items.Add("Cave:\t" + highscore.PlayerList[i].CaveType);
+                    listBoxStatistics.Items.Add("Turns: \t" + highscore.PlayerList[i].Turns.ToString());
+                    listBoxStatistics.Items.Add("Arrows:\t" + highscore.PlayerList[i].ArrowsLeft.ToString());
+                    listBoxStatistics.Items.Add("Coins:\t" + highscore.PlayerList[i].GoldCoinsLeft.ToString());
+                    listBoxStatistics.Items.Add("Wumpus:\t" + killed);
+                }
+                else return;
             }
-            else MessageBox.Show("elsed");
+            else return;
         }
         private void HighScoreForm_Load(object sender, EventArgs e)
         {
@@ -88,12 +94,15 @@ namespace TestingGround
         private void buttonOptions1_Click_1(object sender, EventArgs e)
         {
             Size = new Size(277, 474);
-            listBoxNameList.SelectedIndex = -1;
             listBoxStatistics.SelectedIndex = -1;
             listBoxStatistics.Visible = false;
-            buttonOptions2.Visible = false;
+            buttonOptions1.Visible = false;
+            buttonClose2.Visible = false;
+            buttonClose.Visible = true;
             buttonExitOptions.Visible = true;
-            labelRunStatistics.Text = "High-score Options";
+            labelRunStatistics.Visible = false;
+            labelhighscoreoptions.Visible = true;
+            labelPlayerStat.Text = "";
             buttonDeleteSelected.Visible = true;
             buttonEraseAll.Visible = true;
         }
@@ -101,12 +110,15 @@ namespace TestingGround
         private void buttonOptions2_Click(object sender, EventArgs e)
         {
             Size = new Size(277, 474);
-            listBoxNameList.SelectedIndex = -1;
             listBoxStatistics.SelectedIndex = -1;
             listBoxStatistics.Visible = false;
             buttonOptions2.Visible = false;
             buttonExitOptions.Visible = true;
-            labelRunStatistics.Text = "High-score Options";
+            labelRunStatistics.Visible = false;
+            buttonClose2.Visible = false;
+            buttonClose.Visible = true;
+            labelhighscoreoptions.Visible = true;
+            labelPlayerStat.Text = "";
             buttonDeleteSelected.Visible = true;
             buttonEraseAll.Visible = true;
         }
@@ -114,12 +126,14 @@ namespace TestingGround
         private void buttonExitOptions_Click(object sender, EventArgs e)
         {
             Size = new Size(277, 316);
-            listBoxNameList.SelectedIndex = -1;
             listBoxStatistics.SelectedIndex = -1;
-            listBoxStatistics.Visible = true;
-            buttonOptions2.Visible = true;
+            listBoxStatistics.Visible = false;
+            buttonOptions1.Visible = true;
+            buttonClose2.Visible = true;
             buttonExitOptions.Visible = false;
-            labelRunStatistics.Text = "Run Statistics";
+            labelRunStatistics.Visible = true;
+            labelhighscoreoptions.Visible = false;
+            labelRunStatistics.Visible = false;
             buttonDeleteSelected.Visible = false;
             buttonEraseAll.Visible = false;
         }
@@ -147,13 +161,13 @@ namespace TestingGround
                         a++;
                         if (a == 10) break;
                     }
-                    listBoxNameList.SelectedIndex = -1;
                     listBoxStatistics.SelectedIndex = -1;
                     buttonOptions1.Visible = true;
-                    buttonClose.Visible = true;
+                    buttonClose.Visible = false;
                     buttonExitOptions.Visible = false;
                     buttonOptions2.Visible = false;
-                    buttonClose2.Visible = false;
+                    buttonClose2.Visible = true;
+                    labelhighscoreoptions.Visible = false;
                     listBoxStatistics.Visible = false;
                     buttonDeleteSelected.Visible = false;
                     buttonEraseAll.Visible = false;
