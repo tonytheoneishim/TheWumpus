@@ -337,6 +337,7 @@ namespace TestingGround
                     if (TriviaOutcome)
                     {
                         MessageBox.Show("You injured the Wumpus! It ran away!");
+                        location.MoveWumpus();
                     }
                     else
                     {
@@ -364,7 +365,8 @@ namespace TestingGround
                         int index = 1;
                         labelRoomNum.Text = index.ToString();
                         currentRoom = index;
-                        location.Player = index - 1;
+                        location.Player = index;
+                        labelCurrentRoomHazard.Text = index.ToString();
 
                         updateButtons(index);
                         DoTurn();
@@ -403,12 +405,13 @@ namespace TestingGround
                 BatAttack batattack = new BatAttack();
                 batattack.ShowDialog();
                 Random rand = new Random();
-                int newRoom = rand.Next(1, 31);
+                int newRoom = rand.Next(2, 31);
 
                 int index = newRoom;
                 labelRoomNum.Text = index.ToString();
                 currentRoom = index;
                 location.Player = index - 1;
+                labelCurrentRoomHazard.Text = index.ToString();
 
                 updateButtons(index);
                 DoTurn();
