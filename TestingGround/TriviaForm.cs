@@ -23,6 +23,7 @@ namespace GCUITest
         public int TotalQuestionsNeeded { get; set; }
         int questionsRight = 0;
         int questionsIndex = 0;
+        int questionsWrong = 0;
 
         public TriviaForm()
         {
@@ -36,6 +37,20 @@ namespace GCUITest
 
         private void Trivia_Load(object sender, EventArgs e)
         {
+            if(TotalQuestionsNeeded == 5)
+            {
+                labelTitle.Text = "Wumpus Encountered!";
+            }
+            else if (TotalQuestionsNeeded == 3)
+            {
+                richTextBoxQuestion.Text = "You fell into a pit!";
+            }
+            else
+            {
+                richTextBoxQuestion.Text = "Error??";
+                return;
+            }
+
             LoadNewQuestion();
         }
 
@@ -81,24 +96,25 @@ namespace GCUITest
             else
             {
                 MessageBox.Show("Incorrect. Try again!", "Answer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                questionsWrong++;
             }
 
-            if (questionsIndex < 5 && questionsRight < 3 && TotalQuestionsNeeded == 5)
+            if (questionsIndex < 5 && questionsRight < 3 && questionsWrong < 3 && TotalQuestionsNeeded == 5) //wumpus 
             {
                 LoadNewQuestion();
             }
-            else if (questionsIndex < 3 && questionsIndex < 2 && TotalQuestionsNeeded == 3)
+            else if (questionsIndex < 3 && questionsRight < 2 && questionsWrong < 2 && TotalQuestionsNeeded == 3) //pit
             {
                 LoadNewQuestion();
             }
             else
             {
-                if (questionsRight == 3 && TotalQuestionsNeeded == 5)
+                if (questionsRight > 2 && TotalQuestionsNeeded == 5)
                 {
                     game.TriviaOutcome = true;
                     this.Close();
                 }
-                else if (questionsIndex == 2 && TotalQuestionsNeeded == 3)
+                else if (questionsIndex > 1 && TotalQuestionsNeeded == 3)
                 {
                     game.TriviaOutcome = true;
                     this.Close();
