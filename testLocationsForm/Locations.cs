@@ -112,15 +112,19 @@ namespace WumpusLocations
         }
         /// <summary>
         /// Moves the Wumpus, if moving at all
+        /// <param name="injured"> An int that dictates whether the Wumpus must move or not </param?
         /// </summary>
         /// <returns> Returns true if the Wumpus has moved and false otherwise </returns>
-        public bool MoveWumpus()
+        public bool MoveWumpus(bool injured)
         {
-            // Randomly decide if the Wumpus is moving
             Random rng = new Random();
-            if (rng.Next(0, 2) == 0)
+            // Randomly decide if the Wumpus is moving
+            if (injured)
             {
-                return false;
+                if (rng.Next(0, 2) == 0)
+                {
+                    return false;
+                }
             }
 
             // Randomly decide which direction the Wumpus will move towards
