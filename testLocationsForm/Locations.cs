@@ -157,7 +157,7 @@ namespace WumpusLocations
         {
             if (i == Wumpus)
             {
-                foreach (int path in CavePaths[Player])
+                foreach (int path in CavePaths[Player - 1])
                 {
                     if (path == i)
                     {
