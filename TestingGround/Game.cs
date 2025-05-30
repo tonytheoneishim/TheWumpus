@@ -406,7 +406,7 @@ namespace TestingGround
             trivia.TotalQuestionsNeeded = q;
             trivia.ShowDialog();
 
-            if(q == 5)
+            if (q == 5)
             {
                 if (TriviaOutcome)
                 {
@@ -420,7 +420,8 @@ namespace TestingGround
                     start.ShowDialog();
                     this.Close();
                 }
-            } else if(q == 3)
+            }
+            else if (q == 3)
             {
                 if (TriviaOutcome)
                 {

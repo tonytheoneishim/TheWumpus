@@ -224,6 +224,7 @@ namespace WumpusLocations
             {
                 foreach (int bat in Bats)
                 {
+
                     if (CavePaths[Player - 1][i] == bat)
                     {
                         hazards.Add("B");
