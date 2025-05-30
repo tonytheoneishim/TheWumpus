@@ -42,7 +42,7 @@ namespace TestingGround
         List<int[]> locationList = new List<int[]>();
 
         public string PlayerName { get; set; }
-        public bool TriviaOutcome = false;
+        public static bool TriviaOutcome = false;
         public Game()
         {
             InitializeComponent();
@@ -82,7 +82,7 @@ namespace TestingGround
             labelCoins.Text = coins.ToString();
             labelArrows.Text = arrows.ToString();
             labelPoints.Text = score.ToString();
-            labelWarnings.Text = ""; 
+            labelWarnings.Text = "";
 
             checkBoxShootArrow.Visible = false;
             labelCaveNum.Visible = true; //for testing
@@ -202,7 +202,8 @@ namespace TestingGround
                 coins++;
                 updateButtons(index);
                 DoTurn();
-            } else
+            }
+            else
             {
                 if (location.ShootArrow(int.Parse(button.Text)))
                 {
@@ -268,7 +269,7 @@ namespace TestingGround
                         warnings += "You smell a Wumpus!\n";
                         wumpusDetected = true;
                     }
-                   
+
                 }
                 else if (hazard == "B")
                 {
@@ -300,12 +301,12 @@ namespace TestingGround
                 }
             }
 
-            if(!wumpusDetected && !batsDetected && !pitDetected && !shopDetected)
+            if (!wumpusDetected && !batsDetected && !pitDetected && !shopDetected)
             {
                 this.BackgroundImage = Resources.New_Piskel;
                 checkBoxShootArrow.Visible = false;
-            } 
-            else if(wumpusDetected)
+            }
+            else if (wumpusDetected)
             {
                 this.BackgroundImage = Resources.Piskel_Wumpus_Main;
                 checkBoxShootArrow.Visible = true;
@@ -333,6 +334,18 @@ namespace TestingGround
                     DoTrivia(5);
                     //pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
                     roomHazards += "Wumpus\n";
+                    if (TriviaOutcome)
+                    {
+                        MessageBox.Show("You injured the Wumpus! It ran away!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("You failed to answer the trivia question! \nThe Wumpus attacks you!");
+                        this.Hide();
+                        Homepage start = new Homepage();
+                        start.ShowDialog();
+                        this.Close();
+                    }
                 }
                 else if (hazard == "B")
                 {
@@ -345,6 +358,25 @@ namespace TestingGround
                     DoTrivia(3);
                     pictureBoxRoom.Image = Resources.Wumpus_Room_Hole;
                     roomHazards += "Pit\n";
+                    if (TriviaOutcome)
+                    {
+                        MessageBox.Show("You found a small opening and escaped \nout of the pit into room 1!");
+                        int index = 1;
+                        labelRoomNum.Text = index.ToString();
+                        currentRoom = index;
+                        location.Player = index - 1;
+
+                        updateButtons(index);
+                        DoTurn();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You failed to answer the trivia question! \nYou fell into the pit and starved!");
+                        this.Hide();
+                        Homepage start = new Homepage();
+                        start.ShowDialog();
+                        this.Close();
+                    }
                 }
                 else if (hazard == "S")
                 {
@@ -405,44 +437,6 @@ namespace TestingGround
             TriviaForm trivia = new TriviaForm();
             trivia.TotalQuestionsNeeded = q;
             trivia.ShowDialog();
-
-            if (q == 5)
-            {
-                if (TriviaOutcome)
-                {
-                    MessageBox.Show("You injured the Wumpus! It ran away!");
-                }
-                else
-                {
-                    MessageBox.Show("You failed to answer the trivia question! \nThe Wumpus attacks you!");
-                    this.Hide();
-                    Homepage start = new Homepage();
-                    start.ShowDialog();
-                    this.Close();
-                }
-            }
-            else if (q == 3)
-            {
-                if (TriviaOutcome)
-                {
-                    MessageBox.Show("You found a small opening and escaped \nout of the pit into room 1!");
-                    int index = 1;
-                    labelRoomNum.Text = index.ToString();
-                    currentRoom = index;
-                    location.Player = index - 1;
-
-                    updateButtons(index);
-                    DoTurn();
-                }
-                else
-                {
-                    MessageBox.Show("You failed to answer the trivia question! \nYou fell into the pit and starved!");
-                    this.Hide();
-                    Homepage start = new Homepage();
-                    start.ShowDialog();
-                    this.Close();
-                }
-            }
         }
     }
 }
