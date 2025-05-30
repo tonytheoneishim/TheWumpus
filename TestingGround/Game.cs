@@ -416,9 +416,9 @@ namespace TestingGround
                 {
                     MessageBox.Show("You failed to answer the trivia question! \nThe Wumpus attacks you!");
                     this.Hide();
-                    //    Homepage start = new Homepage();
-                    //    start.ShowDialog();
-                    //    this.Close();
+                    Homepage start = new Homepage();
+                    start.ShowDialog();
+                    this.Close();
                 }
             } else if(q == 3)
             {
