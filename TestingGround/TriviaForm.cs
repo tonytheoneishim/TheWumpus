@@ -114,7 +114,7 @@ namespace GCUITest
                     game.TriviaOutcome = true;
                     this.Close();
                 }
-                else if (questionsIndex > 1 && TotalQuestionsNeeded == 3)
+                else if (questionsRight > 1 && TotalQuestionsNeeded == 3)
                 {
                     game.TriviaOutcome = true;
                     this.Close();

@@ -333,6 +333,18 @@ namespace TestingGround
                     DoTrivia(5);
                     //pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
                     roomHazards += "Wumpus\n";
+                    if (TriviaOutcome)
+                    {
+                        MessageBox.Show("You injured the Wumpus! It ran away!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("You failed to answer the trivia question! \nThe Wumpus attacks you!");
+                        this.Hide();
+                        Homepage start = new Homepage();
+                        start.ShowDialog();
+                        this.Close();
+                    }
                 }
                 else if (hazard == "B")
                 {
@@ -345,6 +357,25 @@ namespace TestingGround
                     DoTrivia(3);
                     pictureBoxRoom.Image = Resources.Wumpus_Room_Hole;
                     roomHazards += "Pit\n";
+                    if (TriviaOutcome)
+                    {
+                        MessageBox.Show("You found a small opening and escaped \nout of the pit into room 1!");
+                        int index = 1;
+                        labelRoomNum.Text = index.ToString();
+                        currentRoom = index;
+                        location.Player = index - 1;
+
+                        updateButtons(index);
+                        DoTurn();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You failed to answer the trivia question! \nYou fell into the pit and starved!");
+                        this.Hide();
+                        Homepage start = new Homepage();
+                        start.ShowDialog();
+                        this.Close();
+                    }
                 }
                 else if (hazard == "S")
                 {
@@ -402,7 +433,7 @@ namespace TestingGround
 
         private void DoTrivia(int q)
         {
-           TriviaForm trivia = new TriviaForm();
+            TriviaForm trivia = new TriviaForm();
             trivia.TotalQuestionsNeeded = q;
             trivia.ShowDialog();
 
@@ -431,18 +462,4 @@ namespace TestingGround
                     currentRoom = index;
                     location.Player = index - 1;
 
-                    updateButtons(index);
-                    DoTurn();
-                }
-                else
-                {
-                    MessageBox.Show("You failed to answer the trivia question! \nYou fell into the pit and starved!");
-                    this.Hide();
-                    Homepage start = new Homepage();
-                    start.ShowDialog();
-                    this.Close();
-                }
-            }
-        }
-    }
 }
