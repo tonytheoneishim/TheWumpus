@@ -18,7 +18,7 @@ What is the name of the longest river in the world?,Nile,Amazon,Yangtze,Ganges
 Who painted the 'Starry Night'?,Vincent van Gogh,Claude Monet,Pablo Picasso,Georgia O’Keeffe  
 What gas do plants absorb from the atmosphere?,Carbon Dioxide,Oxygen,Nitrogen,Helium  
 What is the sum of the digits of the smallest prime that can be written as a sum of five distinct primes?,7,8,13,5  
-What is the meaning of life?,Death,42,Life,Unknown
+What is the meaning of life?,42,Death,Life,Unknown
 Who runs The Tonight Show Starring Jimmy Fallon?,Jimmy Fallon,Jimmy Kimmel,Jimmy Butler,Jimmy John  
 What colour are the outer roadlines most commonly found in South Africa?,Yellow,White,Red,Blue  
 What is the binary number 11101 equivalent to?,29,5,33,14  

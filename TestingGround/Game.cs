@@ -248,7 +248,7 @@ namespace TestingGround
             turns++;
             checkBoxShootArrow.Visible = false;
 
-            location.MoveWumpus();
+            //location.MoveWumpus();
 
             bool movedRoom = false;
             bool wumpusDetected = false;
