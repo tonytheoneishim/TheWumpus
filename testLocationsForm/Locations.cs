@@ -220,11 +220,11 @@ namespace WumpusLocations
         {
             List<string> hazards = new List<string>();
             // Check each room connection one by one
-            for (int i = 0; i < CavePaths[Player].Length; i++)
+            for (int i = 0; i < CavePaths[Player - 1].Length; i++)
             {
                 foreach (int bat in Bats)
                 {
-                    if (CavePaths[Player][i] == bat)
+                    if (CavePaths[Player - 1][i] == bat)
                     {
                         hazards.Add("B");
                         break;
@@ -233,7 +233,7 @@ namespace WumpusLocations
 
                 foreach (int pit in Pits)
                 {
-                    if (CavePaths[Player][i] == pit)
+                    if (CavePaths[Player - 1][i] == pit)
                     {
                         hazards.Add("P");
                         break;
@@ -242,18 +242,18 @@ namespace WumpusLocations
 
                 foreach (int shop in Shops)
                 {
-                    if (CavePaths[Player][i] == shop)
+                    if (CavePaths[Player - 1][i] == shop)
                     {
                         hazards.Add("S");
                         break;
                     }
                 }
-                if (CavePaths[Player][i] == Wumpus)
+                if (CavePaths[Player - 1][i] == Wumpus)
                 {
                     hazards.Add("W");
                     break;
                 }
-                if (!(CavePaths[Player][i] < 1))
+                if (!(CavePaths[Player - 1][i] < 1))
                 {
                     hazards.Add("N");
                 }
