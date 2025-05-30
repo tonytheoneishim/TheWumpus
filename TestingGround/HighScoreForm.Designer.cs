@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            labelTitle = new Label();
             listBoxNameList = new ListBox();
             buttonClose = new Button();
             labelName = new Label();
@@ -37,18 +37,25 @@
             listBoxStatistics = new ListBox();
             labelPlayerStat = new Label();
             buttonClose2 = new Button();
+            buttonOptions2 = new Button();
+            buttonOptions1 = new Button();
+            buttonExitOptions = new Button();
+            buttonDeleteSelected = new Button();
+            buttonEraseAll = new Button();
+            labelhighscoreoptions = new Label();
             SuspendLayout();
             // 
-            // label1
+            // labelTitle
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(49, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(181, 35);
-            label1.TabIndex = 0;
-            label1.Text = "High Scores";
+            labelTitle.AutoSize = true;
+            labelTitle.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
+            labelTitle.ForeColor = SystemColors.ControlLightLight;
+            labelTitle.Location = new Point(47, 9);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(183, 35);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "High-Scores";
+            labelTitle.Click += labelTitle_Click;
             // 
             // listBoxNameList
             // 
@@ -142,6 +149,77 @@
             buttonClose2.UseVisualStyleBackColor = true;
             buttonClose2.Click += buttonClose2_Click;
             // 
+            // buttonOptions2
+            // 
+            buttonOptions2.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonOptions2.Location = new Point(26, 438);
+            buttonOptions2.Name = "buttonOptions2";
+            buttonOptions2.Size = new Size(75, 23);
+            buttonOptions2.TabIndex = 14;
+            buttonOptions2.Text = "Options";
+            buttonOptions2.UseVisualStyleBackColor = true;
+            buttonOptions2.Visible = false;
+            buttonOptions2.Click += buttonOptions2_Click;
+            // 
+            // buttonOptions1
+            // 
+            buttonOptions1.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonOptions1.Location = new Point(25, 281);
+            buttonOptions1.Name = "buttonOptions1";
+            buttonOptions1.Size = new Size(75, 23);
+            buttonOptions1.TabIndex = 13;
+            buttonOptions1.Text = "Options";
+            buttonOptions1.UseVisualStyleBackColor = true;
+            buttonOptions1.Click += buttonOptions1_Click_1;
+            // 
+            // buttonExitOptions
+            // 
+            buttonExitOptions.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonExitOptions.Location = new Point(25, 438);
+            buttonExitOptions.Name = "buttonExitOptions";
+            buttonExitOptions.Size = new Size(97, 23);
+            buttonExitOptions.TabIndex = 15;
+            buttonExitOptions.Text = "Exit options";
+            buttonExitOptions.UseVisualStyleBackColor = true;
+            buttonExitOptions.Visible = false;
+            buttonExitOptions.Click += buttonExitOptions_Click;
+            // 
+            // buttonDeleteSelected
+            // 
+            buttonDeleteSelected.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonDeleteSelected.Location = new Point(29, 346);
+            buttonDeleteSelected.Name = "buttonDeleteSelected";
+            buttonDeleteSelected.Size = new Size(97, 65);
+            buttonDeleteSelected.TabIndex = 16;
+            buttonDeleteSelected.Text = "Delete selected score";
+            buttonDeleteSelected.UseVisualStyleBackColor = true;
+            buttonDeleteSelected.Visible = false;
+            buttonDeleteSelected.Click += buttonDeleteSelected_Click;
+            // 
+            // buttonEraseAll
+            // 
+            buttonEraseAll.Font = new Font("Book Antiqua", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonEraseAll.Location = new Point(152, 346);
+            buttonEraseAll.Name = "buttonEraseAll";
+            buttonEraseAll.Size = new Size(97, 65);
+            buttonEraseAll.TabIndex = 17;
+            buttonEraseAll.Text = "Erase all high-scores";
+            buttonEraseAll.UseVisualStyleBackColor = true;
+            buttonEraseAll.Visible = false;
+            buttonEraseAll.Click += buttonEraseAll_Click;
+            // 
+            // labelhighscoreoptions
+            // 
+            labelhighscoreoptions.AutoSize = true;
+            labelhighscoreoptions.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelhighscoreoptions.ForeColor = SystemColors.ControlLightLight;
+            labelhighscoreoptions.Location = new Point(66, 296);
+            labelhighscoreoptions.Name = "labelhighscoreoptions";
+            labelhighscoreoptions.Size = new Size(152, 21);
+            labelhighscoreoptions.TabIndex = 18;
+            labelhighscoreoptions.Text = "High-score Options";
+            labelhighscoreoptions.Visible = false;
+            // 
             // HighScoreForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -149,6 +227,12 @@
             BackColor = Color.Gray;
             CancelButton = buttonClose;
             ClientSize = new Size(277, 474);
+            Controls.Add(labelhighscoreoptions);
+            Controls.Add(buttonEraseAll);
+            Controls.Add(buttonDeleteSelected);
+            Controls.Add(buttonExitOptions);
+            Controls.Add(buttonOptions2);
+            Controls.Add(buttonOptions1);
             Controls.Add(buttonClose2);
             Controls.Add(labelPlayerStat);
             Controls.Add(listBoxStatistics);
@@ -157,7 +241,7 @@
             Controls.Add(labelName);
             Controls.Add(buttonClose);
             Controls.Add(listBoxNameList);
-            Controls.Add(label1);
+            Controls.Add(labelTitle);
             FormBorderStyle = FormBorderStyle.None;
             Name = "HighScoreForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -169,7 +253,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label labelTitle;
         private ListBox listBoxNameList;
         private Button buttonClose;
         private Label labelName;
@@ -179,5 +263,11 @@
         private ListBox listBoxStatistics;
         private Label labelPlayerStat;
         private Button buttonClose2;
+        private Button buttonOptions2;
+        private Button buttonOptions1;
+        private Button buttonExitOptions;
+        private Button buttonDeleteSelected;
+        private Button buttonEraseAll;
+        private Label labelhighscoreoptions;
     }
 }
