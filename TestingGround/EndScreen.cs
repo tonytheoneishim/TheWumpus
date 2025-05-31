@@ -17,21 +17,23 @@ namespace GCUITest
 {
     public partial class EndScreen : Form
     {
+        public int arrows { get; set; }
+        public int gold { get; set; }
+        public int turns { get; set; }
+        public bool wumpusDead { get; set; }
+
         Highscore highscore;
         Player player;
-        Game game;
+        Game game = new Game();
 
-        int score;
+        int score = 100;
         public EndScreen()
         {
             InitializeComponent();
         }
 
         private void buttonContinue_Click(object sender, EventArgs e)
-        {
-            highscore.AddHighscore(game.PlayerName, score, "kellen help cave (set as string currently)", 
-                player.Turns, player.Arrows, player.Gold, player.WumpusDead);
-
+        {            
             this.Hide();
             HighScoreForm highscoreform = new HighScoreForm();
             highscoreform.ShowDialog();
@@ -40,7 +42,11 @@ namespace GCUITest
 
         private void EndScreen_Load(object sender, EventArgs e)
         {
-            score =  player.CalculateScore();
+            player = new Player(arrows, gold, turns, wumpusDead);
+            highscore = new Highscore(game.PlayerName, score, game.CaveType, player.Turns, player.Arrows, player.Gold, player.WumpusDead);
+            highscore.AddHighscore(game.PlayerName, score, game.CaveType,
+                player.Turns, player.Arrows, player.Gold, player.WumpusDead);
+            score = player.CalculateScore();
 
             if (player.WumpusDead == true)
             {

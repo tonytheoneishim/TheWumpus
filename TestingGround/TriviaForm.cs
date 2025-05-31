@@ -32,7 +32,8 @@ namespace GCUITest
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Game.TriviaOutcome = false;
+            this.Hide();
         }
 
         private void Trivia_Load(object sender, EventArgs e)

@@ -43,12 +43,12 @@ namespace TestingGround
 
         public string PlayerName { get; set; }
         public static bool TriviaOutcome = false;
+        public string CaveType;
         public Game()
         {
             InitializeComponent();
 
             locationList = location.SpawnEvents();
-            location.Wumpus = location.CavePaths[0][2]; //Get rid later
             pictureBoxRoom.SendToBack();
 
             buttons[0] = buttonRoomNW;
@@ -95,9 +95,9 @@ namespace TestingGround
             this.BackgroundImage = Resources.New_Piskel;
             pictureBoxRoom.Image = Resources.Wumpus_Room__1_;
 
-            int index = rand.Next(0, 4);
-            //int index = 2;
+            int index = rand.Next(0, 5);
             cave.caveSelect(index);
+            CaveType = "Cave " + (index + 1).ToString();
             updateButtons(START_POSITION);
             labelRoomNum.Text = START_POSITION.ToString();
             labelCaveNum.Text = "Cave " + (index + 1).ToString();
@@ -343,8 +343,8 @@ namespace TestingGround
                     {
                         MessageBox.Show("You failed to answer the trivia question! \nThe Wumpus attacks you!");
                         this.Hide();
-                        Homepage start = new Homepage();
-                        start.ShowDialog();
+                        EndScreen end = new EndScreen();
+                        end.ShowDialog();
                         this.Close();
                     }
                 }
@@ -375,8 +375,8 @@ namespace TestingGround
                     {
                         MessageBox.Show("You failed to answer the trivia question! \nYou fell into the pit and starved!");
                         this.Hide();
-                        Homepage start = new Homepage();
-                        start.ShowDialog();
+                        EndScreen end = new EndScreen();
+                        end.ShowDialog();
                         this.Close();
                     }
                 }
