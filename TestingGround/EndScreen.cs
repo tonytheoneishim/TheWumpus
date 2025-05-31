@@ -12,6 +12,7 @@ using Highscore___Testing___Dev;
 using WumpusPlayer;
 using WumpusPlayer;
 using GCUITest;
+using GCUITest.Properties;
 
 namespace GCUITest
 {
@@ -50,13 +51,23 @@ namespace GCUITest
 
             if (player.WumpusDead == true)
             {
+                this.BackgroundImage = Resources.endscreenbg;
                 labelVictory.Visible = true;
                 labelWumpKilled.Visible = true;
                 labelDefeat.Visible = false;
                 labelWumpLives.Visible = false;
             }
-            else if (player.WumpusDead == false)
+            else if (player.WumpusDead == false || player.Arrows == 0)
             {
+                this.BackgroundImage = Resources.Killed_By_Wumpus;
+                labelDefeat.Visible = true;
+                labelWumpLives.Visible = true;
+                labelVictory.Visible = false;
+                labelWumpKilled.Visible = false;
+            }
+            else if (player.WumpusDead == false || player.Arrows > 0)
+            {
+                this.BackgroundImage = Resources.Died_by_Pit;
                 labelDefeat.Visible = true;
                 labelWumpLives.Visible = true;
                 labelVictory.Visible = false;

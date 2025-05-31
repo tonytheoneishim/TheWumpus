@@ -93,6 +93,16 @@ namespace GCUITest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Died_by_Pit {
+            get {
+                object obj = ResourceManager.GetObject("Died_by_Pit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap endscreenbg {
             get {
                 object obj = ResourceManager.GetObject("endscreenbg", resourceCulture);
@@ -146,6 +156,16 @@ namespace GCUITest.Properties {
         internal static System.Drawing.Bitmap image__1___4_ {
             get {
                 object obj = ResourceManager.GetObject("image (1) (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Killed_By_Wumpus {
+            get {
+                object obj = ResourceManager.GetObject("Killed_By_Wumpus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -136,8 +136,8 @@
   <data name="image (1) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image (1) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image (1) (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image (1) (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Wumpus Shop Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wumpus Shop Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image (1) (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image (1) (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,20 +157,26 @@
   <data name="New Piskel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\New Piskel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Killed_By_Wumpus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Killed_By_Wumpus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="secret" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\secret.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="image (1) (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image (1) (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Wumpus Room Shop (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wumpus Room Shop (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="endscreenbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\endscreenbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Wumpus Coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wumpus Coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Main Piskel Shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Main Piskel Shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Wumpus Shop Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wumpus Shop Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Wumpus Room (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wumpus Room (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +205,7 @@
   <data name="Wumpus Arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wumpus Arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="endscreenbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\endscreenbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Died_by_Pit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Died_by_Pit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -233,7 +233,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            BackgroundImage = Properties.Resources.endscreenbg;
+            BackgroundImage = Properties.Resources.Died_by_Pit;
             ClientSize = new Size(584, 361);
             Controls.Add(labelPlayerName);
             Controls.Add(labelpndispl);
