@@ -252,6 +252,7 @@
             Controls.Add(labelVictory);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EndScreen";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "End screen";
             Load += EndScreen_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

@@ -235,6 +235,7 @@
             Controls.Add(buttonClose);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Shop";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Shop";
             Load += Shop_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).EndInit();

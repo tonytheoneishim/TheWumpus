@@ -384,11 +384,13 @@ namespace TestingGround
                 {
                     pictureBoxRoom.Image = Resources.Wumpus_Room_Shop__1_;
                     roomHazards += "Shop\n";
+                    buttonShop.Visible = true;
                 }
                 else
                 {
                     pictureBoxRoom.Image = Resources.Wumpus_Room__1_;
                     roomHazards += "None\n";
+                    buttonShop.Visible = false;
                 }
             }
             labelCurrentRoomHazard.Text = roomHazards;
@@ -441,6 +443,14 @@ namespace TestingGround
             TriviaForm trivia = new TriviaForm();
             trivia.TotalQuestionsNeeded = q;
             trivia.ShowDialog();
+        }
+
+        private void buttonShop_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Shop shopDlg = new Shop();
+            shopDlg.ShowDialog();
+            this.Show();
         }
     }
 }
