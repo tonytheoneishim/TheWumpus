@@ -57,6 +57,7 @@ public class Highscore
     /// </summary>
     public void TestAdding()
     {
+        // 11 entries below.
         PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 5, 10, 10, true));
         PlayerList.Add(new Highscore("Derek2", 20, "Cave2", 5, 10, 10, true));
         PlayerList.Add(new Highscore("Maxim3", 69, "Cave4", 5, 10, 10, true));

@@ -81,7 +81,7 @@
             ForeColor = Color.WhiteSmoke;
             Name = "Homepage";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "GCUI Test";
+            Text = "Hunt the Wumpus! (GCUI Test)";
             ResumeLayout(false);
         }
 

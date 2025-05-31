@@ -40,6 +40,10 @@
             labelWumpKilled = new Label();
             labelWumpLives = new Label();
             label1 = new Label();
+            labelScdisp = new Label();
+            labelScore = new Label();
+            labelPlayerName = new Label();
+            labelpndispl = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).BeginInit();
             SuspendLayout();
@@ -54,6 +58,7 @@
             labelVictory.Size = new Size(125, 35);
             labelVictory.TabIndex = 1;
             labelVictory.Text = "Victory!";
+            labelVictory.Visible = false;
             // 
             // pictureBox3
             // 
@@ -127,6 +132,7 @@
             buttonContinue.TabIndex = 34;
             buttonContinue.Text = "Continue";
             buttonContinue.UseVisualStyleBackColor = true;
+            buttonContinue.Click += buttonContinue_Click;
             // 
             // labelDefeat
             // 
@@ -138,6 +144,7 @@
             labelDefeat.Size = new Size(115, 35);
             labelDefeat.TabIndex = 35;
             labelDefeat.Text = "Defeat!";
+            labelDefeat.Visible = false;
             // 
             // labelWumpKilled
             // 
@@ -170,10 +177,56 @@
             label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(62, 162);
             label1.Name = "label1";
-            label1.Size = new Size(126, 21);
+            label1.Size = new Size(82, 21);
             label1.TabIndex = 38;
-            label1.Text = "Your Inventory:";
+            label1.Text = "Inventory";
             label1.Visible = false;
+            // 
+            // labelScdisp
+            // 
+            labelScdisp.AutoSize = true;
+            labelScdisp.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelScdisp.ForeColor = SystemColors.ControlLightLight;
+            labelScdisp.Location = new Point(333, 204);
+            labelScdisp.Name = "labelScdisp";
+            labelScdisp.Size = new Size(50, 21);
+            labelScdisp.TabIndex = 39;
+            labelScdisp.Text = "Score";
+            labelScdisp.Visible = false;
+            // 
+            // labelScore
+            // 
+            labelScore.AutoSize = true;
+            labelScore.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
+            labelScore.ForeColor = SystemColors.ControlLightLight;
+            labelScore.Location = new Point(468, 202);
+            labelScore.Name = "labelScore";
+            labelScore.Size = new Size(54, 23);
+            labelScore.TabIndex = 40;
+            labelScore.Text = "score";
+            // 
+            // labelPlayerName
+            // 
+            labelPlayerName.AutoSize = true;
+            labelPlayerName.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
+            labelPlayerName.ForeColor = SystemColors.ControlLightLight;
+            labelPlayerName.Location = new Point(468, 160);
+            labelPlayerName.Name = "labelPlayerName";
+            labelPlayerName.Size = new Size(59, 23);
+            labelPlayerName.TabIndex = 42;
+            labelPlayerName.Text = "name";
+            // 
+            // labelpndispl
+            // 
+            labelpndispl.AutoSize = true;
+            labelpndispl.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelpndispl.ForeColor = SystemColors.ControlLightLight;
+            labelpndispl.Location = new Point(333, 162);
+            labelpndispl.Name = "labelpndispl";
+            labelpndispl.Size = new Size(56, 21);
+            labelpndispl.TabIndex = 41;
+            labelpndispl.Text = "Player";
+            labelpndispl.Visible = false;
             // 
             // EndScreen
             // 
@@ -181,6 +234,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(584, 361);
+            Controls.Add(labelPlayerName);
+            Controls.Add(labelpndispl);
+            Controls.Add(labelScore);
+            Controls.Add(labelScdisp);
             Controls.Add(label1);
             Controls.Add(labelWumpLives);
             Controls.Add(labelWumpKilled);
@@ -193,8 +250,10 @@
             Controls.Add(pictureBoxCoin);
             Controls.Add(labelCoinLabel);
             Controls.Add(labelVictory);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "EndScreen";
             Text = "End screen";
+            Load += EndScreen_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).EndInit();
             ResumeLayout(false);
@@ -215,5 +274,9 @@
         private Label labelWumpKilled;
         private Label labelWumpLives;
         private Label label1;
+        private Label labelScdisp;
+        private Label labelScore;
+        private Label labelPlayerName;
+        private Label labelpndispl;
     }
 }

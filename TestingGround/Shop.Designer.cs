@@ -233,6 +233,7 @@
             Controls.Add(pictureBoxCoin);
             Controls.Add(labelCoinLabel);
             Controls.Add(buttonClose);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Shop";
             Text = "Shop";
             Load += Shop_Load;

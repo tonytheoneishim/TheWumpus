@@ -76,7 +76,7 @@
             buttonClose.Name = "buttonClose";
             buttonClose.Size = new Size(75, 23);
             buttonClose.TabIndex = 2;
-            buttonClose.Text = "Close";
+            buttonClose.Text = "Home";
             buttonClose.UseVisualStyleBackColor = true;
             buttonClose.Visible = false;
             buttonClose.Click += buttonClose_Click;
@@ -150,7 +150,7 @@
             buttonClose2.Name = "buttonClose2";
             buttonClose2.Size = new Size(75, 23);
             buttonClose2.TabIndex = 12;
-            buttonClose2.Text = "Close";
+            buttonClose2.Text = "Home";
             buttonClose2.UseVisualStyleBackColor = true;
             buttonClose2.Click += buttonClose2_Click;
             // 
