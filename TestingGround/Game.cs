@@ -61,7 +61,7 @@ namespace TestingGround
             }
 
             location.Player = START_POSITION;
-            int[] connectedRooms = cave.caveLayouts[--location.Player];
+            int[] connectedRooms = cave.caveLayouts[location.Player - 1];
 
             for (int i = 0; i < 6; i++)
             {
@@ -194,7 +194,7 @@ namespace TestingGround
             if (!checkBoxShootArrow.Checked)
             {
                 labelRoomNum.Text = button.Text;
-                location.Player = index;
+                location.Player = index + 1;
 
                 player.Gold++;
                 
@@ -363,7 +363,6 @@ namespace TestingGround
                         int index = 1;
                         labelRoomNum.Text = index.ToString();
                         location.Player = index;
-                        location.Player = index;
                         labelCurrentRoomHazard.Text = index.ToString();
 
                         updateButtons(index);
@@ -410,7 +409,6 @@ namespace TestingGround
                 int index = newRoom;
                 labelRoomNum.Text = index.ToString();
                 location.Player = index;
-                location.Player = index - 1;
                 labelCurrentRoomHazard.Text = index.ToString();
 
                 updateButtons(index);

@@ -42,6 +42,8 @@ namespace WumpusLocations
             int[] pits = new int[2];
             int[] shops = new int[2];
             int wumpus;
+
+            // Create a list of indexes from 1 to 30, then randomly select 6 of them to be the events
             List<int> indexes = new List<int>(29);
             List<int> events = new List<int>();
             for (int i = 1; i <= 30; i++)
@@ -49,6 +51,7 @@ namespace WumpusLocations
                 indexes.Add(i);
             }
 
+            // Randomly select 6 indexes from the list
             Random rng = new Random();
             for (int i = 0; i < 6; i++)
             {
@@ -66,6 +69,7 @@ namespace WumpusLocations
             while (true)
             {
                 wumpus = rng.Next(1, 31);
+                // Ensure the Wumpus does not spawn on the player, bats, pits, or shops
                 if (wumpus != shops[0] && wumpus != shops[1])
                 {
                     break;
@@ -86,30 +90,6 @@ namespace WumpusLocations
             return locations;
         }
 
-        /// <summary>
-        /// Spawns a random amount of coins between 5 - 15 across the map that doesn't overlap with Pits or Shops
-        /// </summary>
-        /// <returns> A list of indexes where the coins are </returns>
-        public List<int> SpawnCoins()
-        {
-            List<int> coins = new List<int>();
-            Random rng = new Random();
-            int x = rng.Next(5, 16);
-
-            for (int i = 0; i < x; i++)
-            {
-                int y = rng.Next(1, 31);
-                if (y != Wumpus && y != Shops[0] && y != Shops[1] && y != Pits[0] && y != Pits[1] && y != Bats[0] && y != Bats[1])
-                {
-                    coins.Add(y);
-                } else
-                {
-                    i--;
-                }
-            }
-
-            return coins;
-        }
         /// <summary>
         /// Moves the Wumpus, if moving at all
         /// <param name="injured"> An int that dictates whether the Wumpus must move or not </param?
@@ -139,6 +119,7 @@ namespace WumpusLocations
                 }
             }
 
+            // If there are no paths, the Wumpus cannot moverf
             Wumpus = paths[rng.Next(0, count)];
             while (Wumpus < 1)
             {
