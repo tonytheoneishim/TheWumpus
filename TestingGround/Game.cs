@@ -194,7 +194,7 @@ namespace TestingGround
             if (!checkBoxShootArrow.Checked)
             {
                 labelRoomNum.Text = button.Text;
-                location.Player = index + 1;
+                location.Player = index;
 
                 player.Gold++;
                 
