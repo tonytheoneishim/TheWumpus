@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestingGround;
 using WumpusPlayer;
-using WumpusPLayer;
+
 
 namespace GCUITest
 {

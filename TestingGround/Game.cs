@@ -32,7 +32,6 @@ namespace TestingGround
         string directionClicked = string.Empty;
 
         double score = 100;
-        int currentRoom = 0; // current room the player is in
 
         Button[] buttons = new Button[6];
         Random rand = new Random();
@@ -61,8 +60,8 @@ namespace TestingGround
                 buttons[i].Visible = false;
             }
 
-            int currentRoom = START_POSITION;
-            int[] connectedRooms = cave.caveLayouts[--currentRoom];
+            location.Player = START_POSITION;
+            int[] connectedRooms = cave.caveLayouts[--location.Player];
 
             for (int i = 0; i < 6; i++)
             {
@@ -195,7 +194,6 @@ namespace TestingGround
             if (!checkBoxShootArrow.Checked)
             {
                 labelRoomNum.Text = button.Text;
-                currentRoom = index;
                 location.Player = index;
 
                 player.Gold++;
@@ -364,7 +362,7 @@ namespace TestingGround
                         MessageBox.Show("You found a small opening and escaped \nout of the pit into room 1!");
                         int index = 1;
                         labelRoomNum.Text = index.ToString();
-                        currentRoom = index;
+                        location.Player = index;
                         location.Player = index;
                         labelCurrentRoomHazard.Text = index.ToString();
 
@@ -409,7 +407,7 @@ namespace TestingGround
 
                 int index = newRoom;
                 labelRoomNum.Text = index.ToString();
-                currentRoom = index;
+                location.Player = index;
                 location.Player = index - 1;
                 labelCurrentRoomHazard.Text = index.ToString();
 
