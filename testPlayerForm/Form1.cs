@@ -1,4 +1,4 @@
-using WumpusPLayer;
+using WumpusPlayer;
 
 namespace WumpusPlayer
 {

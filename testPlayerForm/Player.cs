@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using WumpusLocations;
-namespace WumpusPLayer
+namespace WumpusPlayer
 {
     public class Player
     {

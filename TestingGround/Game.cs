@@ -18,20 +18,20 @@ using GCUITest.Properties;
 using System.Xml;
 using System.ComponentModel.Design;
 using System.Reflection;
+using WumpusPlayer;
+using System.Diagnostics.PerformanceData;
+using System.Windows.Forms.VisualStyles;
+using System.DirectoryServices.ActiveDirectory;
 
 namespace TestingGround
 {
     public partial class Game : Form
     {
         public static Cave cave = new Cave();
-
+        public Player player = new Player(5, 3, 0, false);
         string directionClicked = string.Empty;
 
-        int coins = 5;
-        int arrows = 3;
-        int turns = 0;
         double score = 100;
-        int wumpusKilled = 0;
         int currentRoom = 0; // current room the player is in
 
         Button[] buttons = new Button[6];
@@ -47,7 +47,6 @@ namespace TestingGround
         public Game()
         {
             InitializeComponent();
-
             locationList = location.SpawnEvents();
             pictureBoxRoom.SendToBack();
 
@@ -79,13 +78,13 @@ namespace TestingGround
         private void Game_Load(object sender, EventArgs e)
         {
             labelPlayerName.Text = PlayerName;
-            labelCoins.Text = coins.ToString();
-            labelArrows.Text = arrows.ToString();
+            labelCoins.Text = player.Gold.ToString();
+            labelArrows.Text = player.Arrows.ToString();
             labelPoints.Text = score.ToString();
             labelWarnings.Text = "";
 
             checkBoxShootArrow.Visible = false;
-            labelCaveNum.Visible = true; //for testing
+            labelCaveNum.Visible = true; //for testings
             buttonRoomN.FlatAppearance.BorderSize = 0;
             buttonRoomNE.FlatAppearance.BorderSize = 0;
             buttonRoomNW.FlatAppearance.BorderSize = 0;
@@ -199,7 +198,8 @@ namespace TestingGround
                 currentRoom = index;
                 location.Player = index;
 
-                coins++;
+                player.Gold++;
+                
                 updateButtons(index);
                 DoTurn();
             }
@@ -208,7 +208,7 @@ namespace TestingGround
                 if (location.ShootArrow(int.Parse(button.Text)))
                 {
                     MessageBox.Show("You shot the Wumpus! You win!");
-                    wumpusKilled = 50;
+                    player.WumpusDead = true;
 
                     this.Hide();
 
@@ -220,8 +220,8 @@ namespace TestingGround
                 else
                 {
                     MessageBox.Show("You missed the Wumpus!");
-                    arrows--;
-                    if (arrows < 1)
+                    player.Arrows--;
+                    if (player.Arrows < 1)
                     {
                         MessageBox.Show("You have no arrows left! You lose!");
 
@@ -246,7 +246,7 @@ namespace TestingGround
         /// </summary>
         public void DoTurn()
         {
-            turns++;
+            player.Turns++;
             checkBoxShootArrow.Visible = false;
 
             //location.MoveWumpus();
@@ -395,12 +395,12 @@ namespace TestingGround
             }
             labelCurrentRoomHazard.Text = roomHazards;
 
-            labelCoins.Text = coins.ToString();
-            labelArrows.Text = arrows.ToString();
+            labelCoins.Text = player.Gold.ToString();
+            labelArrows.Text = player.Arrows.ToString();
             labelPoints.Text = score.ToString();
             labelWarnings.Text = warnings;
             checkBoxShootArrow.Checked = false;
-            score = 100 - turns + coins + (arrows * 5) + wumpusKilled;
+            score = player.CalculateScore();
 
             if (movedRoom)
             {
