@@ -233,6 +233,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            BackgroundImage = Properties.Resources.endscreenbg;
             ClientSize = new Size(584, 361);
             Controls.Add(labelPlayerName);
             Controls.Add(labelpndispl);
@@ -252,6 +253,7 @@
             Controls.Add(labelVictory);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EndScreen";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "End screen";
             Load += EndScreen_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
