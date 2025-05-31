@@ -22,8 +22,10 @@ namespace GCUITest
         }
 
         Player player;
-
-
+        public int GetArrows { get; set; }
+        public int GetGold { get; set; }
+        public int GetTurns { get; set; }
+        public bool GetLife { get; set; }
 
         private void pictureBoxArrowBuy_Click(object sender, EventArgs e)
         {
@@ -63,6 +65,8 @@ namespace GCUITest
 
         private void Shop_Load(object sender, EventArgs e)
         {
+            player = new Player(GetArrows, GetGold, GetTurns, GetLife);
+
             labelCoinCount.Text = player.Gold.ToString();
             labelArrowCount.Text = player.Arrows.ToString();
             labelReciept.Text = "";

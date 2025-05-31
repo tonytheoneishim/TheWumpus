@@ -36,6 +36,8 @@
             buttonRoomS = new Button();
             pictureBoxRoom = new PictureBox();
             groupBox1 = new GroupBox();
+            buttonShop = new Button();
+            labelSneeze = new Label();
             labelCurrentRoomHazard = new Label();
             labelWarnings = new Label();
             checkBoxShootArrow = new CheckBox();
@@ -191,6 +193,8 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(buttonShop);
+            groupBox1.Controls.Add(labelSneeze);
             groupBox1.Controls.Add(labelCurrentRoomHazard);
             groupBox1.Controls.Add(labelWarnings);
             groupBox1.Controls.Add(checkBoxShootArrow);
@@ -210,6 +214,31 @@
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Hunt the Wumpus!";
+            // 
+            // buttonShop
+            // 
+            buttonShop.BackColor = Color.DimGray;
+            buttonShop.Font = new Font("Book Antiqua", 9F, FontStyle.Bold);
+            buttonShop.ForeColor = Color.Transparent;
+            buttonShop.Location = new Point(385, 111);
+            buttonShop.Name = "buttonShop";
+            buttonShop.Size = new Size(103, 26);
+            buttonShop.TabIndex = 15;
+            buttonShop.Text = "Enter Shop";
+            buttonShop.UseVisualStyleBackColor = false;
+            buttonShop.Visible = false;
+            buttonShop.Click += buttonShop_Click;
+            // 
+            // labelSneeze
+            // 
+            labelSneeze.AutoSize = true;
+            labelSneeze.Location = new Point(199, 51);
+            labelSneeze.MaximumSize = new Size(200, 200);
+            labelSneeze.MinimumSize = new Size(10, 20);
+            labelSneeze.Name = "labelSneeze";
+            labelSneeze.Size = new Size(14, 20);
+            labelSneeze.TabIndex = 17;
+            labelSneeze.Text = "-";
             // 
             // labelCurrentRoomHazard
             // 
@@ -423,5 +452,7 @@
         private CheckBox checkBoxShootArrow;
         private Label labelWarnings;
         private Label labelCurrentRoomHazard;
+        private Label labelSneeze;
+        private Button buttonShop;
     }
 }
