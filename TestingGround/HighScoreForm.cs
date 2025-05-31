@@ -63,7 +63,7 @@ namespace TestingGround
         private void HighScoreForm_Load(object sender, EventArgs e)
         {
             Size = new Size(277, 316);
-            highscore.TestAdding();
+            //highscore.TestAdding();
             Highscore.GetHighscores(highscore.PlayerList);
             highscore.SortHighs();
             int a = 0;

@@ -52,26 +52,26 @@ public class Highscore
     /// </summary>
     public List<Highscore> PlayerList = new List<Highscore>();
 
-    /// <summary>
-    /// test dummies for highscore listbox sorting
-    /// </summary>
-    public void TestAdding()
-    {
-        // 11 entries below.
-        PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 5, 10, 10, true));
-        PlayerList.Add(new Highscore("Derek2", 20, "Cave2", 5, 10, 10, true));
-        PlayerList.Add(new Highscore("Maxim3", 69, "Cave4", 5, 10, 10, true));
-        PlayerList.Add(new Highscore("5", 120, "Cave5", 5, 10, 10, false));
-        PlayerList.Add(new Highscore("7", 155, "Cave3", 5, 10, 10, false));
-        PlayerList.Add(new Highscore("samestats", 30, "Cave1", 5, 10, 10, false));
-        PlayerList.Add(new Highscore("samestats", 30, "Cave1", 5,  10, 10, false));
-        PlayerList.Add(new Highscore("8", 2, "Cave2", 5, 10, 10, false));
-        PlayerList.Add(new Highscore("9", 111, "Cave3", 5, 10, 10, false));
-        PlayerList.Add(new Highscore("ten", 150, "Cave1", 5, 10, 10, true));
-        PlayerList.Add(new Highscore("ELEVEN", 3, "Cave6", 5, 10, 10, false));
-        PlayerList.Add(new Highscore("George", 696715, "Cave5", 2, 1010, 20000, true));
-        SavetoFile(PlayerList);
-    }
+    ///// <summary>
+    ///// test dummies for highscore listbox sorting
+    ///// </summary>
+    //public void TestAdding()
+    //{
+    //    // 11 entries below.
+    //    PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 5, 10, 10, true));
+    //    PlayerList.Add(new Highscore("Derek2", 20, "Cave2", 5, 10, 10, true));
+    //    PlayerList.Add(new Highscore("Maxim3", 69, "Cave4", 5, 10, 10, true));
+    //    PlayerList.Add(new Highscore("5", 120, "Cave5", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("7", 155, "Cave3", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("samestats", 30, "Cave1", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("samestats", 30, "Cave1", 5,  10, 10, false));
+    //    PlayerList.Add(new Highscore("8", 2, "Cave2", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("9", 111, "Cave3", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("ten", 150, "Cave1", 5, 10, 10, true));
+    //    PlayerList.Add(new Highscore("ELEVEN", 3, "Cave6", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("George", 696715, "Cave5", 2, 1010, 20000, true));
+    //    SavetoFile(PlayerList);
+    //}
     /// <summary>
     /// Creates the highscore array in list PlayerList
     /// </summary>
