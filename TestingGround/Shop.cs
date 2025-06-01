@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,20 +22,35 @@ namespace GCUITest
             InitializeComponent();
         }
 
-        Player player;
-        public int GetArrows { get; set; }
-        public int GetGold { get; set; }
-        public int GetTurns { get; set; }
-        public bool GetLife { get; set; }
+        public int Arrows { get; set; }
+        public int Gold { get; set; }
+        public int Turns { get; set; }
+        public bool WumpusDead { get; set; }
+        public int Wumpus { get; set; }
+
+        private void Shop_Load(object sender, EventArgs e)
+        {
+            labelCoinCount.Text = Gold.ToString();
+            labelArrowCount.Text = Arrows.ToString();
+            labelReciept.Text = "";
+        }
+
+        public Tuple<int, int> UpdateValues(int previousGold)
+        {
+            if (previousGold - Gold == 3)
+            {
+                return new Tuple<int, int>(Gold, Arrows + 1);
+            }
+
+            return new Tuple<int, int>(Gold, Arrows);
+        }
 
         private void pictureBoxArrowBuy_Click(object sender, EventArgs e)
         {
-            if (int.Parse(labelCoinCount.Text) >= 3)
+            if (Gold >= 3)
             {
-                player.Gold -= 3;
-                player.Arrows++;
-                labelCoinCount.Text = player.Gold.ToString();
-                labelArrowCount.Text = player.Arrows.ToString();
+                labelCoinCount.Text = (Gold - 3).ToString();
+                labelArrowCount.Text = (Arrows + 1).ToString();
                 MessageBox.Show("You purchased an arrow!");
             }
             else
@@ -44,27 +60,15 @@ namespace GCUITest
         }
         private void pictureBoxSecretBuy_Click(object sender, EventArgs e)
         {
-            if (int.Parse(labelCoinCount.Text) >= 5)
+            if (Gold >= 5)
             {
-                player.Gold -= 5;
-                labelCoinCount.Text = player.Gold.ToString();
-
-                //Message box for the secret
-                MessageBox.Show("Kellen could be freaky.", "Shhhhhh...");
+                labelCoinCount.Text = (Gold - 5).ToString();
+                MessageBox.Show("The Wumpus is currently located in Room " + Wumpus.ToString());
             }
             else
             {
                 MessageBox.Show("Not enough gold coins!", "Transaction failed!");
             }
-        }
-
-        private void Shop_Load(object sender, EventArgs e)
-        {
-            player = new Player(GetArrows, GetGold, GetTurns, GetLife);
-
-            labelCoinCount.Text = GetGold.ToString();
-            labelArrowCount.Text = GetArrows.ToString();
-            labelReciept.Text = "";
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

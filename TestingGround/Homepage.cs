@@ -7,19 +7,20 @@ namespace TestingGround
 {
     public partial class Homepage : Form
     {
-        Highscore highscore = new Highscore();
+
+        HighScoreForm highScoreForm;
+        PlayernameScreen playerNameScreen = new PlayernameScreen();
         public Homepage()
         {
             InitializeComponent();
+            highScoreForm = new HighScoreForm();
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
             this.Hide();
 
-            PlayernameScreen playernameScreen = new PlayernameScreen();
-            playernameScreen.ShowDialog();
-
+            playerNameScreen.ShowDialog();
             this.Close();
         }
 
@@ -27,9 +28,7 @@ namespace TestingGround
         {
             this.Hide();
 
-            HighScoreForm highScoreForm = new HighScoreForm();
             highScoreForm.ShowDialog();
-
             this.Close();
         }
     }

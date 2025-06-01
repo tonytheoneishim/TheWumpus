@@ -13,8 +13,9 @@ namespace GCUITest
 {
     public partial class PlayernameScreen : Form
     {
-        string playername = string.Empty;
+        string playername;
         Game game = new Game();
+
         public PlayernameScreen()
         {
             InitializeComponent();
@@ -32,8 +33,8 @@ namespace GCUITest
                 playername = textBoxName.Text;
                 game.PlayerName = playername;
                 this.Hide();
-                game.ShowDialog();
 
+                game.ShowDialog();
                 this.Close();
             }
         }

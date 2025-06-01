@@ -6,8 +6,8 @@ namespace TriviaLibrary
 {
     public class TriviaGame
     {
-        private int score;
-        private Random rnd;
+        public int score = 0;
+        private Random rnd = new Random();
         private string[,] Questions;
         private List<string[]> QuestionsList = new List<string[]>();
         private int currentQuestionIndex;
@@ -15,15 +15,13 @@ namespace TriviaLibrary
 
         public TriviaGame()
         {
-            score = 0;
-            rnd = new Random();
             readFromFile();
         }
 
         public string GetQuestion()
         {
             currentQuestionIndex = rnd.Next(0, Questions.GetLength(0));
-            correctAnswerIndex = 1; 
+            correctAnswerIndex = 1;
             return Questions[currentQuestionIndex, 0];
         }
 
@@ -49,11 +47,6 @@ namespace TriviaLibrary
                 return true;
             }
             return false;
-        }
-
-        public int GetScore()
-        {
-            return score;
         }
 
         private void ShuffleArray(string[] array)

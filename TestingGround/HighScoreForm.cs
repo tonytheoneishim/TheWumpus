@@ -16,25 +16,46 @@ namespace TestingGround
     public partial class HighScoreForm : Form
     {
         public string PlayerName { get; set; }
+        public int Score { get; set; }
         public string CaveType { get; set; }
-        public int ArrowsLeft { get; set; }
-        public int GoldCoinsLeft { get; set; }
+        public int Arrows { get; set; }
+        public int Gold { get; set; }
         public int Turns { get; set; }
-        public bool KilledWumpus { get; set; }
-        public int score { get; set; }
-
+        public bool WumpusDead { get; set; }
+        
         Highscore highscore;
+        Homepage homepage = new Homepage();
         public HighScoreForm()
         {
             InitializeComponent();
-            highscore = new Highscore(PlayerName, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
-            //clearselected = false;
+            highscore = new Highscore(PlayerName, Score, CaveType, Arrows, Gold, Turns, WumpusDead);
+            
         }
+
+        private void HighScoreForm_Load(object sender, EventArgs e)
+        {
+            Size = new Size(277, 316);
+
+            Highscore.GetHighscores(highscore.PlayerList);
+            highscore.SortHighs();
+            int a = 0;
+            foreach (Highscore player in highscore.PlayerList)
+            {
+                listBoxNameList.Items.Add(player.ToString());
+                a++;
+                if (a == 10)
+                {
+                    break;
+                }
+            }
+            labelPlayerStat.Text = "";
+        }
+
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage homedlg = new Homepage();
-            homedlg.ShowDialog();
+
+            homepage.ShowDialog();
             this.Close();
         }
         private void listBoxHighScores_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,49 +76,32 @@ namespace TestingGround
 
                 if (listBoxNameList.SelectedIndex != -1)
                 {
-                    if (highscore.PlayerList[i].KilledWumpus == true) killed = "DEAD";
-                    if (highscore.PlayerList[i].KilledWumpus == false) killed = "ALIVE";
-
+                    if (highscore.PlayerList[i].WumpusDead)
+                    {
+                        killed = "DEAD";
+                    }
+                    else
+                    {
+                        killed = "ALIVE";
+                    }
                     labelPlayerStat.Text = "";
                     listBoxStatistics.Items.Clear();
 
                     labelPlayerStat.Text = highscore.PlayerList[i].PlayerName;
                     listBoxStatistics.Items.Add("Cave:\t" + highscore.PlayerList[i].CaveType);
+                    listBoxStatistics.Items.Add("Arrows:\t" + highscore.PlayerList[i].Arrows.ToString());
+                    listBoxStatistics.Items.Add("Coins:\t" + highscore.PlayerList[i].Gold.ToString());
                     listBoxStatistics.Items.Add("Turns: \t" + highscore.PlayerList[i].Turns.ToString());
-                    listBoxStatistics.Items.Add("Arrows:\t" + highscore.PlayerList[i].ArrowsLeft.ToString());
-                    listBoxStatistics.Items.Add("Coins:\t" + highscore.PlayerList[i].GoldCoinsLeft.ToString());
                     listBoxStatistics.Items.Add("Wumpus:\t" + killed);
                 }
-                else return;
             }
-            else return;
-        }
-        private void HighScoreForm_Load(object sender, EventArgs e)
-        {
-            Size = new Size(277, 316);
-            //highscore.TestAdding();
-            Highscore.GetHighscores(highscore.PlayerList);
-            highscore.SortHighs();
-            int a = 0;
-            foreach (Highscore player in highscore.PlayerList)
-            {
-                listBoxNameList.Items.Add(player.ToString());
-                a++;
-                if (a == 10) break;
-            }
-            labelPlayerStat.Text = "";
-        }
-
-        private void labelName_Click(object sender, EventArgs e)
-        {
-            //i misclicked sorry
         }
 
         private void buttonClose2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage homedlg = new Homepage();
-            homedlg.ShowDialog();
+
+            homepage.ShowDialog();
             this.Close();
         }
 
@@ -174,7 +178,10 @@ namespace TestingGround
                     {
                         listBoxNameList.Items.Add(player.ToString());
                         a++;
-                        if (a == 10) break;
+                        if (a == 10)
+                        {
+                            break;
+                        }
                     }
                     listBoxStatistics.SelectedIndex = -1;
                     buttonOptions1.Visible = true;
@@ -188,7 +195,6 @@ namespace TestingGround
                     buttonEraseAll.Visible = false;
                     labelPlayerStat.Text = "";
                 }
-                else return;
             }
 
         }
@@ -200,7 +206,6 @@ namespace TestingGround
                 listBoxNameList.Items.Clear();
                 highscore.PlayerList.Clear();
             }
-            else return;
         }
     }
 }

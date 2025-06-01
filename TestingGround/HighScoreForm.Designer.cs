@@ -92,7 +92,6 @@
             labelName.Size = new Size(56, 21);
             labelName.TabIndex = 5;
             labelName.Text = "Player";
-            labelName.Click += labelName_Click;
             // 
             // labelScore
             // 

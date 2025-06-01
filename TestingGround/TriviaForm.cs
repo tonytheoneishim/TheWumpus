@@ -32,13 +32,13 @@ namespace GCUITest
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Game.TriviaOutcome = false;
+            game.TriviaOutcome = false;
             this.Hide();
         }
 
         private void Trivia_Load(object sender, EventArgs e)
         {
-            if(TotalQuestionsNeeded == 5)
+            if (TotalQuestionsNeeded == 5)
             {
                 labelTitle.Text = "Wumpus Encountered!";
             }
@@ -48,10 +48,9 @@ namespace GCUITest
             }
             else
             {
-                labelTitle.Text = "Error??";
+                labelTitle.Text = "How in heck did you even get here?";
                 return;
             }
-
             LoadNewQuestion();
         }
 
@@ -112,17 +111,17 @@ namespace GCUITest
             {
                 if (questionsRight > 2 && TotalQuestionsNeeded == 5)
                 {
-                    Game.TriviaOutcome = true;
+                    game.TriviaOutcome = true;
                     this.Close();
                 }
                 else if (questionsRight > 1 && TotalQuestionsNeeded == 3)
                 {
-                    Game.TriviaOutcome = true;
+                    game.TriviaOutcome = true;
                     this.Close();
                 }
                 else
                 {
-                    Game.TriviaOutcome = false;
+                    game.TriviaOutcome = false;
                     this.Close();
                 }
             }
