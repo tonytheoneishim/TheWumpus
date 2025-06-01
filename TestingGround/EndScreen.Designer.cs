@@ -192,7 +192,6 @@
             labelScdisp.Size = new Size(50, 21);
             labelScdisp.TabIndex = 39;
             labelScdisp.Text = "Score";
-            labelScdisp.Visible = false;
             // 
             // labelScore
             // 
@@ -226,7 +225,6 @@
             labelpndispl.Size = new Size(56, 21);
             labelpndispl.TabIndex = 41;
             labelpndispl.Text = "Player";
-            labelpndispl.Visible = false;
             // 
             // EndScreen
             // 

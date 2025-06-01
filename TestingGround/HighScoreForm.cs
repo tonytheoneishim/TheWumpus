@@ -23,11 +23,11 @@ namespace TestingGround
         public bool KilledWumpus { get; set; }
         public int score { get; set; }
 
-        Highscore highscore;
+        Highscore highscore = new Highscore();
         public HighScoreForm()
         {
             InitializeComponent();
-            highscore = new Highscore(PlayerName, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
+            //highscore = new Highscore(PlayerName, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
             //clearselected = false;
         }
         private void buttonClose_Click(object sender, EventArgs e)
@@ -76,6 +76,7 @@ namespace TestingGround
         {
             Size = new Size(277, 316);
             //highscore.TestAdding();
+            highscore.AddHighscore(Name, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
             Highscore.GetHighscores(highscore.PlayerList);
             highscore.SortHighs();
             int a = 0;
