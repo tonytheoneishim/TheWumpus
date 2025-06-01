@@ -29,8 +29,8 @@ namespace TestingGround
     {
         public static Cave cave = new Cave();
         public Player player = new Player(5, 3, 0, false);
-        string directionClicked = string.Empty;
-
+        public Locations location = new Locations(cave.caveLayouts);
+        public List<int[]> locationList = new List<int[]>();
         double score = 100;
 
         Button[] buttons = new Button[6];
