@@ -180,7 +180,6 @@
             label1.Size = new Size(82, 21);
             label1.TabIndex = 38;
             label1.Text = "Inventory";
-            label1.Visible = false;
             // 
             // labelScdisp
             // 
