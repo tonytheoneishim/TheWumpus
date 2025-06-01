@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using TestingGround;
 using Highscore___Testing___Dev;
 using WumpusPlayer;
-using WumpusPlayer;
 using GCUITest;
 using GCUITest.Properties;
 
@@ -52,8 +51,15 @@ namespace GCUITest
 
         private void EndScreen_Load(object sender, EventArgs e)
         {
-            highscore = new Highscore(PlayerName, Score, CaveType, Arrows, Gold, Turns, WumpusDead);
-            highscore.AddHighscore();
+            player = new Player(arrows, gold, turns, wumpusDead);
+            
+            labelPlayerName.Text = Name;
+            labelCoinCount.Text = gold.ToString();
+            labelArrowCount.Text = arrows.ToString();
+            labelScore.Text = FinalScore.ToString();
+
+            //highscore = new Highscore(Name, score, CaveType, turns, arrows, gold, wumpusDead);
+            //highscore.AddHighscore(Name, score, CaveType, turns, arrows, gold, wumpusDead);
 
             if (WumpusDead)
             {
@@ -84,10 +90,6 @@ namespace GCUITest
                 MessageBox.Show("Are people getting more dumb cuz like society needs to wake up", "error");
             }
 
-            labelPlayerName.Text = PlayerName;
-            labelCoinCount.Text = Gold.ToString();
-            labelArrowCount.Text = Arrows.ToString();
-            labelScore.Text = Score.ToString();
         }
     }
 }

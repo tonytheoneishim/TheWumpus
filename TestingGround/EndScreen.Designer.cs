@@ -180,7 +180,6 @@
             label1.Size = new Size(82, 21);
             label1.TabIndex = 38;
             label1.Text = "Inventory";
-            label1.Visible = false;
             // 
             // labelScdisp
             // 
@@ -192,7 +191,6 @@
             labelScdisp.Size = new Size(50, 21);
             labelScdisp.TabIndex = 39;
             labelScdisp.Text = "Score";
-            labelScdisp.Visible = false;
             // 
             // labelScore
             // 
@@ -226,7 +224,6 @@
             labelpndispl.Size = new Size(56, 21);
             labelpndispl.TabIndex = 41;
             labelpndispl.Text = "Player";
-            labelpndispl.Visible = false;
             // 
             // EndScreen
             // 

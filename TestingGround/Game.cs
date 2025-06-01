@@ -27,13 +27,13 @@ namespace TestingGround
 {
     public partial class Game : Form
     {
-        static Cave cave = new Cave();
-        Player player = new Player(5, 3, 0, false);
-        Locations location = new Locations(cave.caveLayouts);
-        public List<int[]> locationList = new List<int[]>();
-        Button[] buttons = new Button[6];
+        public static Cave cave = new Cave();
+        public Player player = new Player(5, 3, 0, false);
+        string directionClicked = string.Empty;
 
-        int score = 100;
+        double score = 100;
+
+        Button[] buttons = new Button[6];
         Random rand = new Random();
 
         public string PlayerName { get; set; }
@@ -195,19 +195,14 @@ namespace TestingGround
             {
                 if (location.ShootArrow(int.Parse(button.Text)))
                 {
+                    player.Arrows--;
                     MessageBox.Show("You shot the Wumpus! You win!");
                     player.WumpusDead = true;
                     this.Hide();
 
                     EndScreen gameend = new EndScreen();
-                    gameend.PlayerName = PlayerName;
-                    gameend.Score = player.CalculateScore();
-                    gameend.CaveType = CaveType;
-                    gameend.Arrows = player.Arrows;
-                    gameend.Gold = player.Gold;
-                    gameend.Turns = player.Turns;
-                    gameend.WumpusDead = player.WumpusDead;
                     gameend.ShowDialog();
+
                     this.Close();
                 }
                 else
@@ -333,16 +328,14 @@ namespace TestingGround
                     {
                         MessageBox.Show("You failed to answer the trivia question! \nThe Wumpus attacks you!");
                         this.Hide();
-
-                        EndScreen gameend = new EndScreen();
-                        gameend.PlayerName = PlayerName;
-                        gameend.Score = player.CalculateScore();
-                        gameend.CaveType = CaveType;
-                        gameend.Arrows = player.Arrows;
-                        gameend.Gold = player.Gold;
-                        gameend.Turns = player.Turns;
-                        gameend.WumpusDead = player.WumpusDead;
-                        gameend.ShowDialog();
+                        EndScreen end = new EndScreen();
+                        end.arrows = player.Arrows;
+                        end.gold = player.Gold;
+                        end.turns = player.Turns;
+                        end.wumpusDead = player.WumpusDead;
+                        end.PlayerName = PlayerName;
+                        end.CaveType = CaveType;
+                        end.ShowDialog();
                         this.Close();
                     }
                 }
@@ -384,16 +377,8 @@ namespace TestingGround
                     {
                         MessageBox.Show("You failed to answer the trivia question! \nYou fell into the pit and starved!");
                         this.Hide();
-
-                        EndScreen gameend = new EndScreen();
-                        gameend.PlayerName = PlayerName;
-                        gameend.Score = player.CalculateScore();
-                        gameend.CaveType = CaveType;
-                        gameend.Arrows = player.Arrows;
-                        gameend.Gold = player.Gold;
-                        gameend.Turns = player.Turns;
-                        gameend.WumpusDead = player.WumpusDead;
-                        gameend.ShowDialog();
+                        EndScreen end = new EndScreen();
+                        end.ShowDialog();
                         this.Close();
                     }
                 }
