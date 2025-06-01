@@ -18,6 +18,8 @@ namespace GCUITest
 {
     public partial class EndScreen : Form
     {
+        public string PlayerName { get; set; }
+        public string CaveType { get; set;  }
         public int arrows { get; set; }
         public int gold { get; set; }
         public int turns { get; set; }
@@ -25,7 +27,6 @@ namespace GCUITest
 
         Highscore highscore;
         Player player;
-        Game game = new Game();
 
         int score = 100;
         public EndScreen()
@@ -37,6 +38,14 @@ namespace GCUITest
         {            
             this.Hide();
             HighScoreForm highscoreform = new HighScoreForm();
+            highscoreform.PlayerName = PlayerName;
+            highscoreform.CaveType = CaveType;
+            highscoreform.ArrowsLeft = arrows;
+            highscoreform.GoldCoinsLeft = gold;
+            highscoreform.Turns = turns;
+            highscoreform.KilledWumpus = wumpusDead;
+            highscoreform.score = score;
+
             highscoreform.ShowDialog();
             this.Close();
         }
@@ -44,8 +53,8 @@ namespace GCUITest
         private void EndScreen_Load(object sender, EventArgs e)
         {
             player = new Player(arrows, gold, turns, wumpusDead);
-            highscore = new Highscore(game.PlayerName, score, game.CaveType, player.Turns, player.Arrows, player.Gold, player.WumpusDead);
-            highscore.AddHighscore(game.PlayerName, score, game.CaveType,
+            highscore = new Highscore(PlayerName, score, CaveType, player.Turns, player.Arrows, player.Gold, player.WumpusDead);
+            highscore.AddHighscore(PlayerName, score, CaveType,
                 player.Turns, player.Arrows, player.Gold, player.WumpusDead);
             score = player.CalculateScore();
 
@@ -75,7 +84,7 @@ namespace GCUITest
             }
             else MessageBox.Show("are people getting more dumb cuz like society needs to wake up","error");
 
-            labelPlayerName.Text = game.PlayerName;
+            labelPlayerName.Text = PlayerName;
             labelCoinCount.Text = player.Gold.ToString();
             labelArrowCount.Text = player.Arrows.ToString();
             labelScore.Text = score.ToString();

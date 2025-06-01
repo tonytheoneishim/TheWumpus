@@ -15,10 +15,19 @@ namespace TestingGround
 {
     public partial class HighScoreForm : Form
     {
-        Highscore highscore = new Highscore();
+        public string PlayerName { get; set; }
+        public string CaveType { get; set; }
+        public int ArrowsLeft { get; set; }
+        public int GoldCoinsLeft { get; set; }
+        public int Turns { get; set; }
+        public bool KilledWumpus { get; set; }
+        public int score { get; set; }
+
+        Highscore highscore;
         public HighScoreForm()
         {
             InitializeComponent();
+            highscore = new Highscore(PlayerName, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
             //clearselected = false;
         }
         private void buttonClose_Click(object sender, EventArgs e)
