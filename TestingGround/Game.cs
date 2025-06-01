@@ -35,16 +35,20 @@ namespace TestingGround
 
         Button[] buttons = new Button[6];
         Random rand = new Random();
+        int START_POSITION = 1;
+
+        Locations location = new Locations(cave.caveLayouts);
+        List<int[]> locationList = new List<int[]>();
 
         public string PlayerName { get; set; }
-        public bool TriviaOutcome = false;
+        public static bool TriviaOutcome = false;
         public string CaveType;
         public Game()
         {
             InitializeComponent();
-
             locationList = location.SpawnEvents();
             pictureBoxRoom.SendToBack();
+
             buttons[0] = buttonRoomNW;
             buttons[1] = buttonRoomN;
             buttons[2] = buttonRoomNE;
@@ -55,17 +59,14 @@ namespace TestingGround
             {
                 buttons[i].Visible = false;
             }
-            int[] connectedRooms = cave.caveLayouts[0];
 
-            location.Player = 1;
+            location.Player = START_POSITION;
+            int[] connectedRooms = cave.caveLayouts[location.Player - 1];
 
             for (int i = 0; i < 6; i++)
             {
                 buttons[i].Text = connectedRooms[i].ToString();
-                if (connectedRooms[i] > -1)
-                {
-                    buttons[i].Visible = true;
-                }
+                if (connectedRooms[i] > -1) buttons[i].Visible = true;
             }
         }
         /// <summary>
@@ -95,8 +96,8 @@ namespace TestingGround
             int index = rand.Next(0, 5);
             cave.caveSelect(index);
             CaveType = "Cave " + (index + 1).ToString();
-            updateButtons(1);
-            labelRoomNum.Text = 1.ToString();
+            updateButtons(START_POSITION);
+            labelRoomNum.Text = START_POSITION.ToString();
             labelCaveNum.Text = "Cave " + (index + 1).ToString();
 
 
@@ -144,9 +145,18 @@ namespace TestingGround
                         shopDetected = true;
                     }
                 }
+                else
+                {
+                    // do nothing
+                }
             }
 
-            if (wumpusDetected)
+            if (!wumpusDetected && !batsDetected && !pitDetected && !shopDetected)
+            {
+                this.BackgroundImage = Resources.New_Piskel;
+                checkBoxShootArrow.Visible = false;
+            }
+            else if (wumpusDetected)
             {
                 this.BackgroundImage = Resources.Piskel_Wumpus_Main;
                 checkBoxShootArrow.Visible = true;
@@ -162,10 +172,6 @@ namespace TestingGround
             else if (pitDetected)
             {
                 this.BackgroundImage = Resources.Main_Piskel_Draft;
-            } else
-            {
-                this.BackgroundImage = Resources.New_Piskel;
-                checkBoxShootArrow.Visible = false;
             }
 
             labelWarnings.Text = warnings;
@@ -180,7 +186,11 @@ namespace TestingGround
         private void buttonRoomN_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            int index = int.Parse(button.Text);
+            int index = -1;
+            //MessageBox.Show(button.Text);
+
+            index = int.Parse(button.Text);
+
             if (!checkBoxShootArrow.Checked)
             {
                 labelRoomNum.Text = button.Text;
@@ -198,6 +208,7 @@ namespace TestingGround
                     player.Arrows--;
                     MessageBox.Show("You shot the Wumpus! You win!");
                     player.WumpusDead = true;
+
                     this.Hide();
 
                     EndScreen gameend = new EndScreen();
@@ -212,17 +223,12 @@ namespace TestingGround
                     if (player.Arrows < 1)
                     {
                         MessageBox.Show("You have no arrows left! You lose!");
+
                         this.Hide();
 
-                        EndScreen gameend = new EndScreen();
-                        gameend.PlayerName = PlayerName;
-                        gameend.Score = player.CalculateScore();
-                        gameend.CaveType = CaveType;
-                        gameend.Arrows = player.Arrows;
-                        gameend.Gold = player.Gold;
-                        gameend.Turns = player.Turns;
-                        gameend.WumpusDead = player.WumpusDead;
-                        gameend.ShowDialog();
+                        Homepage start = new Homepage();
+                        start.ShowDialog();
+
                         this.Close();
                     }
                     else
@@ -241,6 +247,8 @@ namespace TestingGround
         {
             player.Turns++;
             checkBoxShootArrow.Visible = false;
+
+            //location.MoveWumpus();
 
             bool movedRoom = false;
             bool wumpusDetected = false;
@@ -286,9 +294,18 @@ namespace TestingGround
                         shopDetected = true;
                     }
                 }
+                else
+                {
+                    // do nothing
+                }
             }
 
-            if (wumpusDetected)
+            if (!wumpusDetected && !batsDetected && !pitDetected && !shopDetected)
+            {
+                this.BackgroundImage = Resources.New_Piskel;
+                checkBoxShootArrow.Visible = false;
+            }
+            else if (wumpusDetected)
             {
                 this.BackgroundImage = Resources.Piskel_Wumpus_Main;
                 checkBoxShootArrow.Visible = true;
@@ -304,10 +321,6 @@ namespace TestingGround
             else if (pitDetected)
             {
                 this.BackgroundImage = Resources.Main_Piskel_Draft;
-            } else
-            {
-                this.BackgroundImage = Resources.New_Piskel;
-                checkBoxShootArrow.Visible = false;
             }
 
             // check if the player is in a room with a hazard
@@ -318,6 +331,7 @@ namespace TestingGround
                 if (hazard == "W")
                 {
                     DoTrivia(5);
+                    //pictureBoxRoom.Image = Resources.Wumpus_Room_WumpusBad;
                     roomHazards += "Wumpus\n";
                     if (TriviaOutcome)
                     {
@@ -343,19 +357,7 @@ namespace TestingGround
                 {
                     pictureBoxRoom.Image = Resources.Wumpus_Room_Bats;
                     roomHazards += "Bats\n";
-                    
-                    BatAttack batattack = new BatAttack();
-                    batattack.ShowDialog();
-                    Random rand = new Random();
-                    int newRoom = rand.Next(2, 31);
-
-                    int index = newRoom;
-                    labelRoomNum.Text = index.ToString();
-                    location.Player = index;
-
-                    updateButtons(index);
-                    DoTurn();
-                    player.Turns--; // Because the bat moved the player, not a turn
+                    movedRoom = true;
                 }
                 else if (hazard == "P")
                 {
@@ -368,7 +370,7 @@ namespace TestingGround
                         int index = 1;
                         labelRoomNum.Text = index.ToString();
                         location.Player = index;
-                        labelCurrentRoomHazard.Text = "None";
+                        labelCurrentRoomHazard.Text = index.ToString();
 
                         updateButtons(index);
                         DoTurn();
@@ -399,17 +401,31 @@ namespace TestingGround
 
             labelCoins.Text = player.Gold.ToString();
             labelArrows.Text = player.Arrows.ToString();
-
-            score = player.CalculateScore();
             labelPoints.Text = score.ToString();
-
             labelWarnings.Text = warnings;
             checkBoxShootArrow.Checked = false;
+            score = player.CalculateScore();
+
+            if (movedRoom)
+            {
+                BatAttack batattack = new BatAttack();
+                batattack.ShowDialog();
+                Random rand = new Random();
+                int newRoom = rand.Next(2, 31);
+
+                int index = newRoom;
+                labelRoomNum.Text = index.ToString();
+                location.Player = index;
+                labelCurrentRoomHazard.Text = index.ToString();
+
+                updateButtons(index);
+                DoTurn();
+            }
         }
 
         private void updateButtons(int index)
         {
-            int[] connectedRooms = cave.caveLayouts[index - 1];
+            int[] connectedRooms = cave.caveLayouts[--index];
             // reflect the state of connected rooms (for each index in the array, update corresponding button)
 
             for (int i = 0; i < 6; i++)
@@ -420,17 +436,13 @@ namespace TestingGround
             for (int i = 0; i < 6; i++)
             {
                 buttons[i].Text = connectedRooms[i].ToString();
-                if (connectedRooms[i] > -1)
-                {
-                    buttons[i].Visible = true;
-                }
+                if (connectedRooms[i] > -1) buttons[i].Visible = true;
             }
         }
 
         private void DoTrivia(int q)
         {
             TriviaOutcome = false; // Reset the outcome before showing the trivia form
-
             TriviaForm trivia = new TriviaForm();
             trivia.TotalQuestionsNeeded = q;
             trivia.ShowDialog();
@@ -439,19 +451,13 @@ namespace TestingGround
         private void buttonShop_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            Shop shop = new Shop();
-            shop.Gold = player.Gold;
-            shop.Arrows = player.Arrows;
-            shop.Turns = player.Turns;
-            shop.WumpusDead = player.WumpusDead;
-            shop.Wumpus = location.Wumpus;
-            shop.ShowDialog();
+            Shop shopDlg = new Shop();
+            shopDlg.GetGold = player.Gold;
+            shopDlg.GetArrows = player.Arrows;
+            shopDlg.GetTurns = player.Turns;
+            shopDlg.GetLife = player.WumpusDead;
+            shopDlg.ShowDialog();
             this.Show();
-
-            Tuple<int, int> values = shop.UpdateValues(player.Gold);
-            player.Gold = values.Item1;
-            player.Arrows = values.Item2;
         }
     }
 }

@@ -11,7 +11,12 @@ namespace Highscore___Testing___Dev;
 public class Highscore
 {
     const string DATAFILE = "highscores.csv";
-
+    public Highscore()
+    {
+        PlayerName = string.Empty;
+        CaveType = string.Empty;
+        HasCOVID = false;
+    }
     /// <summary>
     /// creates parameters for highscore function
     /// </summary>
@@ -25,36 +30,67 @@ public class Highscore
     public Highscore(string pn, int sc, string ct, int tn, int ar, int gc, bool kw)
     {
         PlayerName = pn;
-        Score = sc;
+        PlayerFinalScore = sc;
         CaveType = ct;
-        Arrows = ar;
-        Gold = gc;
         Turns = tn;
-        WumpusDead = kw;
+        ArrowsLeft = ar;
+        GoldCoinsLeft = gc;
+        KilledWumpus = kw;
     }
-
+    /// <summary>
+    /// creates playerdata for highscore processing
+    /// </summary>
     public string PlayerName { get; set; }
-    public int Score { get; set; }
+    public int PlayerFinalScore { get; set; }
     public string CaveType { get; set; }
     public int Turns { get; set; }
-    public int Arrows { get; set; }
-    public int Gold { get; set; }
-    public bool WumpusDead { get; set; }
-
+    public int ArrowsLeft { get; set; }
+    public int GoldCoinsLeft {  get; set; } 
+    public bool KilledWumpus { get; set; }
+    /// <summary>
+    /// list where player highscore data is stored to a .csv file
+    /// </summary>
     public List<Highscore> PlayerList = new List<Highscore>();
 
+    ///// <summary>
+    ///// test dummies for highscore listbox sorting
+    ///// </summary>
+    //public void TestAdding()
+    //{
+    //    // 11 entries below.
+    //    PlayerList.Add(new Highscore("Kellen1", 10, "Cave1", 5, 10, 10, true));
+    //    PlayerList.Add(new Highscore("Derek2", 20, "Cave2", 5, 10, 10, true));
+    //    PlayerList.Add(new Highscore("Maxim3", 69, "Cave4", 5, 10, 10, true));
+    //    PlayerList.Add(new Highscore("5", 120, "Cave5", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("7", 155, "Cave3", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("samestats", 30, "Cave1", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("samestats", 30, "Cave1", 5,  10, 10, false));
+    //    PlayerList.Add(new Highscore("8", 2, "Cave2", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("9", 111, "Cave3", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("ten", 150, "Cave1", 5, 10, 10, true));
+    //    PlayerList.Add(new Highscore("ELEVEN", 3, "Cave6", 5, 10, 10, false));
+    //    PlayerList.Add(new Highscore("George", 696715, "Cave5", 2, 1010, 20000, true));
+    //    SavetoFile(PlayerList);
+    //}
     /// <summary>
     /// Creates the highscore array in list PlayerList
     /// </summary>
-    public void AddHighscore()
+    /// <param name="pn"></player name>
+    /// <param name="sc"></player's final score>
+    /// <param name="ct"></cave played>
+    /// <param name="tn"></times player turned>
+    /// <param name="ar"></arrows left>
+    /// <param name="gc"></coins left>
+    /// <param name="kw"></wumpus killed boolean>
+    public void AddHighscore(string pn, int sc, string ct, int tn, int ar, int gc, bool kw)
     {
-        PlayerList.Add(new Highscore(PlayerName, Score, CaveType, Turns, Arrows, Gold, WumpusDead));
+        PlayerList.Add(new Highscore(pn, sc, ct, tn, ar, gc, kw));
         SortHighs();
         if (PlayerList.Count > 10)
         {
             PlayerList.RemoveAt(10);
         }
-
+        
         SavetoFile(PlayerList);
     }
     /// <summary>
@@ -64,15 +100,15 @@ public class Highscore
     {
         for (int i = 0; i < 11; i++)
         {
-            for (int j = 0; j < PlayerList.Count - 1; j++)
+            for (int increasing = 0; increasing < PlayerList.Count - 1; increasing++)
             {
-                Highscore currentScore = PlayerList[j];
-                Highscore newScore = PlayerList[j + 1];
+                Highscore based = PlayerList[increasing];
+                Highscore compared = PlayerList[increasing + 1];
 
-                if (currentScore.Score < newScore.Score)
+                if (based.PlayerFinalScore < compared.PlayerFinalScore)
                 {
-                    PlayerList[j] = newScore;
-                    PlayerList[j + 1] = currentScore;
+                    PlayerList[increasing] = compared;
+                    PlayerList[increasing + 1] = based;
                 }
             }
         }
@@ -90,8 +126,7 @@ public class Highscore
             scores = OpenFromFile("highscores.csv");
             return scores;
         }
-
-        return new List<Highscore>();
+        else return scores;
     }
     /// <summary>
     /// puts name and highscore into listbox-ready string
@@ -99,9 +134,8 @@ public class Highscore
     /// <returns></string>
     public override string ToString()
     {
-        return PlayerName + "\t\t" + Score;
+        return PlayerName + "\t\t" + PlayerFinalScore;
     }
-
     /// <summary>
     /// saves highscore to .csv file
     /// </summary>
@@ -111,14 +145,13 @@ public class Highscore
         StreamWriter sw = new StreamWriter(DATAFILE);
         foreach (Highscore player in players)
         {
-            string output = player.PlayerName + "," + player.Score.ToString() + "," + player.CaveType + "," +
-            player.Turns + "," + player.Arrows + "," + player.Gold + "," + player.WumpusDead;
+            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString() + "," + player.CaveType
+                + "," + player.Turns + "," + player.ArrowsLeft + "," + player.GoldCoinsLeft + "," + player.KilledWumpus;
             sw.WriteLine(output);
         }
         sw.Flush();
         sw.Close();
     }
-
     /// <summary>
     /// gets highscore data from .csv file
     /// </summary>
@@ -129,7 +162,7 @@ public class Highscore
         List<Highscore> list = new List<Highscore>();
         StreamReader sr = new StreamReader(filename);
         string line = sr.ReadLine();
-
+        
         while (line != null)
         {
             string[] record = line.Split(',');
@@ -142,7 +175,6 @@ public class Highscore
         sr.Close();
         return list;
     }
-}
 
 
 
@@ -154,58 +186,58 @@ public class Highscore
     /*
     BAT COVID
     */
-//    public bool HasCOVID { get; set; }
+    public bool HasCOVID { get; set; }
 
-//    public bool ChanceCOVID()
-//    {
-//        bool ret = false;
-//        int infectnum;
-//        int trigger = 2;
-//        Random randint = new Random();
-//        infectnum = randint.Next(1, 5);
-//        if (infectnum == trigger)
-//        {
-//            ret = true;
-//            HasCOVID = true;
-//        }
-//        else ret = false; HasCOVID = false;
-//        return ret;
-//    }
-//    public bool SneezeTimer()
-//    {
-//        bool sneeze = false;
-//        int expellnum;
-//        Random randint = new Random();
-//        expellnum = randint.Next(5, 100);
-//        for (int i = 0; i < 101; i++)
-//        {
-//            if (i == expellnum)
-//            {
-//                sneeze = true;
-//                break;
-//            }
-//            Thread.Sleep(100);
-//        }
-//        return sneeze;
-//    }
-//    public bool COVIDDebuff()
-//    {
-//        bool ret = false;
-//        if (HasCOVID == true)
-//        {
-//            int tripnum;
-//            int trigger = 9;
-//            Random randint = new Random();
-//            tripnum = randint.Next(1, 10);
-//            if (tripnum == trigger)
-//            {
-//                ret = true;
-//            }
-//        }
-//        else ret = false; HasCOVID = false;
-//        return ret;
-//    }
-//}
+    public bool ChanceCOVID()
+    {
+        bool ret = false;
+        int infectnum;
+        int trigger = 2;
+        Random randint = new Random();
+        infectnum = randint.Next(1, 5);
+        if (infectnum == trigger)
+        {
+            ret = true;
+            HasCOVID = true;
+        }
+        else ret = false; HasCOVID = false;
+        return ret;
+    }
+    public bool SneezeTimer()
+    {
+        bool sneeze = false;
+        int expellnum;
+        Random randint = new Random();
+        expellnum = randint.Next(5, 100);
+        for (int i = 0; i < 101; i++)
+        {
+            if (i == expellnum)
+            {
+                sneeze = true;
+                break;
+            }
+            Thread.Sleep(100);
+        }
+        return sneeze;
+    }
+    public bool COVIDDebuff()
+    {
+        bool ret = false;
+        if (HasCOVID == true)
+        {
+            int tripnum;
+            int trigger = 9;
+            Random randint = new Random();
+            tripnum = randint.Next(1, 10);
+            if (tripnum == trigger)
+            {
+                ret = true;
+            }
+        }
+        else ret = false; HasCOVID = false;
+        return ret;
+    }
+}
 
 
     //Game.cs DEBUFF FUNCTIONS

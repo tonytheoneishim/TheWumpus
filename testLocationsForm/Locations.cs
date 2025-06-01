@@ -99,7 +99,7 @@ namespace WumpusLocations
         {
             Random rng = new Random();
             // Randomly decide if the Wumpus is moving
-            if (!injured)
+            if (injured)
             {
                 if (rng.Next(0, 2) == 0)
                 {
