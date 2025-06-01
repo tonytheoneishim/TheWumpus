@@ -29,8 +29,8 @@ namespace TestingGround
     {
         public static Cave cave = new Cave();
         public Player player = new Player(5, 3, 0, false);
-        string directionClicked = string.Empty;
-
+        public Locations location = new Locations(cave.caveLayouts);
+        public List<int[]> locationList = new List<int[]>();
         double score = 100;
 
         Button[] buttons = new Button[6];
@@ -343,10 +343,10 @@ namespace TestingGround
                         MessageBox.Show("You failed to answer the trivia question! \nThe Wumpus attacks you!");
                         this.Hide();
                         EndScreen end = new EndScreen();
-                        end.arrows = player.Arrows;
-                        end.gold = player.Gold;
-                        end.turns = player.Turns;
-                        end.wumpusDead = player.WumpusDead;
+                        end.Arrows = player.Arrows;
+                        end.Gold = player.Gold;
+                        end.Turns = player.Turns;
+                        end.WumpusDead = player.WumpusDead;
                         end.PlayerName = PlayerName;
                         end.CaveType = CaveType;
                         end.ShowDialog();
