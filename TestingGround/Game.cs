@@ -400,6 +400,7 @@ namespace TestingGround
 
                         end.ShowDialog();
                         this.Close();
+
                     }
                 }
                 else if (hazard == "S")
