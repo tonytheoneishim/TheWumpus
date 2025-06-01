@@ -90,7 +90,7 @@ public class Highscore
         {
             PlayerList.RemoveAt(10);
         }
-        
+
         SavetoFile(PlayerList);
     }
     /// <summary>

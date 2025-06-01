@@ -76,8 +76,9 @@ namespace TestingGround
         {
             Size = new Size(277, 316);
             //highscore.TestAdding();
-            highscore.AddHighscore(Name, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
             Highscore.GetHighscores(highscore.PlayerList);
+            highscore.AddHighscore(Name, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
+            //Highscore.GetHighscores(highscore.PlayerList);
             highscore.SortHighs();
             int a = 0;
             foreach (Highscore player in highscore.PlayerList)
