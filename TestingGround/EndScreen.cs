@@ -17,18 +17,17 @@ namespace GCUITest
 {
     public partial class EndScreen : Form
     {
-        public string Name { get; set; }
+        public string PlayerName { get; set; }
         public string CaveType { get; set;  }
         public int arrows { get; set; }
         public int gold { get; set; }
         public int turns { get; set; }
         public bool wumpusDead { get; set; }
-        public int FinalScore { get; set; }
 
-        //Highscore highscore = new Highscore();
+        Highscore highscore;
         Player player;
-        Game game;
 
+        int score = 100;
         public EndScreen()
         {
             InitializeComponent();
@@ -38,13 +37,14 @@ namespace GCUITest
         {            
             this.Hide();
             HighScoreForm highscoreform = new HighScoreForm();
-            highscoreform.Name = Name;
-            highscoreform.score = FinalScore;
+            highscoreform.PlayerName = PlayerName;
             highscoreform.CaveType = CaveType;
-            highscoreform.Turns = turns;
-            highscoreform.GoldCoinsLeft = gold;
             highscoreform.ArrowsLeft = arrows;
+            highscoreform.GoldCoinsLeft = gold;
+            highscoreform.Turns = turns;
             highscoreform.KilledWumpus = wumpusDead;
+            highscoreform.score = score;
+
             highscoreform.ShowDialog();
             this.Close();
         }
@@ -52,14 +52,10 @@ namespace GCUITest
         private void EndScreen_Load(object sender, EventArgs e)
         {
             player = new Player(arrows, gold, turns, wumpusDead);
-            
-            labelPlayerName.Text = Name;
-            labelCoinCount.Text = gold.ToString();
-            labelArrowCount.Text = arrows.ToString();
-            labelScore.Text = FinalScore.ToString();
-
-            //highscore = new Highscore(Name, score, CaveType, turns, arrows, gold, wumpusDead);
-            //highscore.AddHighscore(Name, score, CaveType, turns, arrows, gold, wumpusDead);
+            highscore = new Highscore(PlayerName, score, CaveType, player.Turns, player.Arrows, player.Gold, player.WumpusDead);
+            highscore.AddHighscore(PlayerName, score, CaveType,
+                player.Turns, player.Arrows, player.Gold, player.WumpusDead);
+            score = player.CalculateScore();
 
             if (player.WumpusDead == true)
             {
@@ -69,7 +65,7 @@ namespace GCUITest
                 labelDefeat.Visible = false;
                 labelWumpLives.Visible = false;
             }
-            else if (player.WumpusDead == false && player.Arrows == 0)
+            else if (player.WumpusDead == false || player.Arrows == 0)
             {
                 this.BackgroundImage = Resources.Killed_By_Wumpus;
                 labelDefeat.Visible = true;
@@ -77,7 +73,7 @@ namespace GCUITest
                 labelVictory.Visible = false;
                 labelWumpKilled.Visible = false;
             }
-            else if (player.WumpusDead == false && player.Arrows > 0)
+            else if (player.WumpusDead == false || player.Arrows > 0)
             {
                 this.BackgroundImage = Resources.Died_by_Pit;
                 labelDefeat.Visible = true;
@@ -87,6 +83,10 @@ namespace GCUITest
             }
             else MessageBox.Show("are people getting more dumb cuz like society needs to wake up","error");
 
+            labelPlayerName.Text = PlayerName;
+            labelCoinCount.Text = player.Gold.ToString();
+            labelArrowCount.Text = player.Arrows.ToString();
+            labelScore.Text = score.ToString();
         }
     }
 }

@@ -23,11 +23,11 @@ namespace TestingGround
         public bool KilledWumpus { get; set; }
         public int score { get; set; }
 
-        Highscore highscore = new Highscore();
+        Highscore highscore;
         public HighScoreForm()
         {
             InitializeComponent();
-            //highscore = new Highscore(PlayerName, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
+            highscore = new Highscore(PlayerName, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
             //clearselected = false;
         }
         private void buttonClose_Click(object sender, EventArgs e)
