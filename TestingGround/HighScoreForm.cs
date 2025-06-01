@@ -23,6 +23,9 @@ namespace TestingGround
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Homepage homedlg = new Homepage();
+            homedlg.ShowDialog();
             this.Close();
         }
         private void listBoxHighScores_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +86,9 @@ namespace TestingGround
 
         private void buttonClose2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Homepage homedlg = new Homepage();
+            homedlg.ShowDialog();
             this.Close();
         }
 

@@ -30,7 +30,7 @@ namespace TestingGround
             HighScoreForm highScoreForm = new HighScoreForm();
             highScoreForm.ShowDialog();
 
-            this.Show();
+            this.Close();
         }
     }
 }

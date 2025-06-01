@@ -232,13 +232,12 @@
             // labelSneeze
             // 
             labelSneeze.AutoSize = true;
-            labelSneeze.Location = new Point(199, 51);
+            labelSneeze.Location = new Point(271, 111);
             labelSneeze.MaximumSize = new Size(200, 200);
             labelSneeze.MinimumSize = new Size(10, 20);
             labelSneeze.Name = "labelSneeze";
-            labelSneeze.Size = new Size(14, 20);
+            labelSneeze.Size = new Size(10, 20);
             labelSneeze.TabIndex = 17;
-            labelSneeze.Text = "-";
             // 
             // labelCurrentRoomHazard
             // 

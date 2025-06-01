@@ -210,8 +210,8 @@ namespace TestingGround
 
                     this.Hide();
 
-                    Homepage start = new Homepage();
-                    start.ShowDialog();
+                    EndScreen gameend = new EndScreen();
+                    gameend.ShowDialog();
 
                     this.Close();
                 }
