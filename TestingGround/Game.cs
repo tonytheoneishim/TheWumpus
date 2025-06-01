@@ -445,6 +445,10 @@ namespace TestingGround
         {
             this.Hide();
             Shop shopDlg = new Shop();
+            shopDlg.GetGold = player.Gold;
+            shopDlg.GetArrows = player.Arrows;
+            shopDlg.GetTurns = player.Turns;
+            shopDlg.GetLife = player.WumpusDead;
             shopDlg.ShowDialog();
             this.Show();
         }

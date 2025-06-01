@@ -29,15 +29,13 @@ namespace GCUITest
 
         private void pictureBoxArrowBuy_Click(object sender, EventArgs e)
         {
-            if (player.Gold >= 3)
+            if (int.Parse(labelCoinCount.Text) >= 3)
             {
                 player.Gold -= 3;
                 player.Arrows++;
                 labelCoinCount.Text = player.Gold.ToString();
                 labelArrowCount.Text = player.Arrows.ToString();
-                labelReciept.Text = "+ 1 arrow!";
-                Thread.Sleep(500);
-                labelReciept.Text = "";
+                MessageBox.Show("You purchased an arrow!");
             }
             else
             {
@@ -46,13 +44,10 @@ namespace GCUITest
         }
         private void pictureBoxSecretBuy_Click(object sender, EventArgs e)
         {
-            if (player.Gold <= 5)
+            if (int.Parse(labelCoinCount.Text) >= 5)
             {
                 player.Gold -= 5;
                 labelCoinCount.Text = player.Gold.ToString();
-                labelReciept.Text = "+ 1 secret!";
-                Thread.Sleep(500);
-                labelReciept.Text = "";
 
                 //Message box for the secret
                 MessageBox.Show("Kellen could be freaky.", "Shhhhhh...");
@@ -67,8 +62,8 @@ namespace GCUITest
         {
             player = new Player(GetArrows, GetGold, GetTurns, GetLife);
 
-            labelCoinCount.Text = player.Gold.ToString();
-            labelArrowCount.Text = player.Arrows.ToString();
+            labelCoinCount.Text = GetGold.ToString();
+            labelArrowCount.Text = GetArrows.ToString();
             labelReciept.Text = "";
         }
 
