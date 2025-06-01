@@ -329,10 +329,10 @@ namespace TestingGround
                         MessageBox.Show("You failed to answer the trivia question! \nThe Wumpus attacks you!");
                         this.Hide();
                         EndScreen end = new EndScreen();
-                        end.arrows = player.Arrows;
-                        end.gold = player.Gold;
-                        end.turns = player.Turns;
-                        end.wumpusDead = player.WumpusDead;
+                        end.Arrows = player.Arrows;
+                        end.Gold = player.Gold;
+                        end.Turns = player.Turns;
+                        end.WumpusDead = player.WumpusDead;
                         end.PlayerName = PlayerName;
                         end.CaveType = CaveType;
                         end.ShowDialog();

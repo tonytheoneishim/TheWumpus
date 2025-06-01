@@ -51,15 +51,10 @@ namespace GCUITest
 
         private void EndScreen_Load(object sender, EventArgs e)
         {
-            player = new Player(arrows, gold, turns, wumpusDead);
-            
             labelPlayerName.Text = Name;
-            labelCoinCount.Text = gold.ToString();
-            labelArrowCount.Text = arrows.ToString();
-            labelScore.Text = FinalScore.ToString();
-
-            //highscore = new Highscore(Name, score, CaveType, turns, arrows, gold, wumpusDead);
-            //highscore.AddHighscore(Name, score, CaveType, turns, arrows, gold, wumpusDead);
+            labelCoinCount.Text = Gold.ToString();
+            labelArrowCount.Text = Arrows.ToString();
+            labelScore.Text = Score.ToString();
 
             if (WumpusDead)
             {
