@@ -50,12 +50,15 @@
             // 
             // buttonClose
             // 
+            buttonClose.BackColor = Color.Black;
+            buttonClose.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonClose.ForeColor = Color.White;
             buttonClose.Location = new Point(308, 415);
             buttonClose.Name = "buttonClose";
-            buttonClose.Size = new Size(75, 23);
+            buttonClose.Size = new Size(77, 26);
             buttonClose.TabIndex = 0;
             buttonClose.Text = "Exit";
-            buttonClose.UseVisualStyleBackColor = true;
+            buttonClose.UseVisualStyleBackColor = false;
             buttonClose.Click += buttonClose_Click;
             // 
             // labelArrowLabel

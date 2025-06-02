@@ -26,6 +26,7 @@ namespace GCUITest
         public int GetGold { get; set; }
         public int GetTurns { get; set; }
         public bool GetLife { get; set; }
+        public int WumpusLocation { get; set; }
 
         private void pictureBoxArrowBuy_Click(object sender, EventArgs e)
         {
@@ -50,7 +51,7 @@ namespace GCUITest
                 labelCoinCount.Text = player.Gold.ToString();
 
                 //Message box for the secret
-                MessageBox.Show("Kellen could be freaky.", "Shhhhhh...");
+                MessageBox.Show("The Wumpus is in room " + WumpusLocation.ToString(), "Shhhhhh...");
             }
             else
             {

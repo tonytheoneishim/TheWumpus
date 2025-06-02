@@ -18,7 +18,6 @@ using GCUITest.Properties;
 using System.Xml;
 using System.ComponentModel.Design;
 using System.Reflection;
-using WumpusPlayer;
 using System.Diagnostics.PerformanceData;
 using System.Windows.Forms.VisualStyles;
 using System.DirectoryServices.ActiveDirectory;
@@ -29,7 +28,7 @@ namespace TestingGround
     public partial class Game : Form
     {
         public static Cave cave = new Cave();
-        public Player player = new Player(5, 3, 0, false);
+        public Player player = new Player(2, 3, 0, false);
         string directionClicked = string.Empty;
 
         int score;
@@ -477,6 +476,7 @@ namespace TestingGround
             shopDlg.GetArrows = player.Arrows;
             shopDlg.GetTurns = player.Turns;
             shopDlg.GetLife = player.WumpusDead;
+            shopDlg.WumpusLocation = location.Wumpus;
             shopDlg.ShowDialog();
             this.Show();
         }

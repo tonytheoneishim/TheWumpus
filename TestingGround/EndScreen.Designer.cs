@@ -51,6 +51,7 @@
             // labelVictory
             // 
             labelVictory.AutoSize = true;
+            labelVictory.BackColor = Color.Transparent;
             labelVictory.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
             labelVictory.ForeColor = SystemColors.ControlLightLight;
             labelVictory.Location = new Point(237, 30);
@@ -62,6 +63,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = Properties.Resources.Wumpus_Arrow;
             pictureBox3.Location = new Point(60, 264);
             pictureBox3.Name = "pictureBox3";
@@ -73,6 +75,7 @@
             // labelCoinCount
             // 
             labelCoinCount.AutoSize = true;
+            labelCoinCount.BackColor = Color.Transparent;
             labelCoinCount.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelCoinCount.ForeColor = SystemColors.ControlLightLight;
             labelCoinCount.Location = new Point(210, 226);
@@ -84,6 +87,7 @@
             // labelArrowCount
             // 
             labelArrowCount.AutoSize = true;
+            labelArrowCount.BackColor = Color.Transparent;
             labelArrowCount.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelArrowCount.ForeColor = SystemColors.ControlLightLight;
             labelArrowCount.Location = new Point(210, 281);
@@ -95,6 +99,7 @@
             // labelArrowLabel
             // 
             labelArrowLabel.AutoSize = true;
+            labelArrowLabel.BackColor = Color.Transparent;
             labelArrowLabel.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelArrowLabel.ForeColor = SystemColors.ControlLightLight;
             labelArrowLabel.Location = new Point(114, 281);
@@ -105,6 +110,7 @@
             // 
             // pictureBoxCoin
             // 
+            pictureBoxCoin.BackColor = Color.Transparent;
             pictureBoxCoin.Image = Properties.Resources.Wumpus_Coin__1_;
             pictureBoxCoin.Location = new Point(62, 204);
             pictureBoxCoin.Name = "pictureBoxCoin";
@@ -116,6 +122,7 @@
             // labelCoinLabel
             // 
             labelCoinLabel.AutoSize = true;
+            labelCoinLabel.BackColor = Color.Transparent;
             labelCoinLabel.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelCoinLabel.ForeColor = SystemColors.ControlLightLight;
             labelCoinLabel.Location = new Point(116, 226);
@@ -126,17 +133,21 @@
             // 
             // buttonContinue
             // 
+            buttonContinue.BackColor = Color.Black;
+            buttonContinue.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonContinue.ForeColor = SystemColors.ControlLightLight;
             buttonContinue.Location = new Point(447, 291);
             buttonContinue.Name = "buttonContinue";
-            buttonContinue.Size = new Size(75, 23);
+            buttonContinue.Size = new Size(80, 35);
             buttonContinue.TabIndex = 34;
             buttonContinue.Text = "Continue";
-            buttonContinue.UseVisualStyleBackColor = true;
+            buttonContinue.UseVisualStyleBackColor = false;
             buttonContinue.Click += buttonContinue_Click;
             // 
             // labelDefeat
             // 
             labelDefeat.AutoSize = true;
+            labelDefeat.BackColor = Color.Transparent;
             labelDefeat.Font = new Font("Book Antiqua", 22F, FontStyle.Bold);
             labelDefeat.ForeColor = SystemColors.ControlLightLight;
             labelDefeat.Location = new Point(243, 30);
@@ -149,6 +160,7 @@
             // labelWumpKilled
             // 
             labelWumpKilled.AutoSize = true;
+            labelWumpKilled.BackColor = Color.Transparent;
             labelWumpKilled.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelWumpKilled.ForeColor = SystemColors.ControlLightLight;
             labelWumpKilled.Location = new Point(204, 84);
@@ -161,6 +173,7 @@
             // labelWumpLives
             // 
             labelWumpLives.AutoSize = true;
+            labelWumpLives.BackColor = Color.Transparent;
             labelWumpLives.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelWumpLives.ForeColor = SystemColors.ControlLightLight;
             labelWumpLives.Location = new Point(221, 84);
@@ -173,6 +186,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(62, 162);
@@ -184,6 +198,7 @@
             // labelScdisp
             // 
             labelScdisp.AutoSize = true;
+            labelScdisp.BackColor = Color.Transparent;
             labelScdisp.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelScdisp.ForeColor = SystemColors.ControlLightLight;
             labelScdisp.Location = new Point(333, 204);
@@ -195,6 +210,7 @@
             // labelScore
             // 
             labelScore.AutoSize = true;
+            labelScore.BackColor = Color.Transparent;
             labelScore.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelScore.ForeColor = SystemColors.ControlLightLight;
             labelScore.Location = new Point(468, 202);
@@ -206,6 +222,7 @@
             // labelPlayerName
             // 
             labelPlayerName.AutoSize = true;
+            labelPlayerName.BackColor = Color.Transparent;
             labelPlayerName.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold);
             labelPlayerName.ForeColor = SystemColors.ControlLightLight;
             labelPlayerName.Location = new Point(468, 160);
@@ -217,6 +234,7 @@
             // labelpndispl
             // 
             labelpndispl.AutoSize = true;
+            labelpndispl.BackColor = Color.Transparent;
             labelpndispl.Font = new Font("Book Antiqua", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelpndispl.ForeColor = SystemColors.ControlLightLight;
             labelpndispl.Location = new Point(333, 162);
