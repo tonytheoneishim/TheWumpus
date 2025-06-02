@@ -25,6 +25,7 @@ using System.DirectoryServices.ActiveDirectory;
 
 namespace TestingGround
 {
+
     public partial class Game : Form
     {
         public static Cave cave = new Cave();
