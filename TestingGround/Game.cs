@@ -79,7 +79,7 @@ namespace TestingGround
             labelPlayerName.Text = PlayerName;
             labelCoins.Text = player.Gold.ToString();
             labelArrows.Text = player.Arrows.ToString();
-            labelPoints.Text = score.ToString();
+            labelPoints.Text = player.CalculateScore().ToString();
             labelWarnings.Text = "";
 
             checkBoxShootArrow.Visible = false;
@@ -151,28 +151,7 @@ namespace TestingGround
                 }
             }
 
-            if (!wumpusDetected && !batsDetected && !pitDetected && !shopDetected)
-            {
-                this.BackgroundImage = Resources.New_Piskel;
-                checkBoxShootArrow.Visible = false;
-            }
-            else if (wumpusDetected)
-            {
-                this.BackgroundImage = Resources.Piskel_Wumpus_Main;
-                checkBoxShootArrow.Visible = true;
-            }
-            else if (batsDetected)
-            {
-                this.BackgroundImage = Resources.Piskel_Bats_Main;
-            }
-            else if (shopDetected)
-            {
-                this.BackgroundImage = Resources.Main_Piskel_Shop;
-            }
-            else if (pitDetected)
-            {
-                this.BackgroundImage = Resources.Main_Piskel_Draft;
-            }
+           updateRoom(wumpusDetected, batsDetected, pitDetected, shopDetected);
 
             labelWarnings.Text = warnings;
             labelCurrentRoomHazard.Text = "None"; // Initialize the label for current room hazards
@@ -255,6 +234,7 @@ namespace TestingGround
         {
             player.Turns++;
             checkBoxShootArrow.Visible = false;
+            //location.Player = int.Parse(labelRoomNum.Text); // Update the player's current room based on the label text
 
             //location.MoveWumpus();
 
@@ -308,28 +288,7 @@ namespace TestingGround
                 }
             }
 
-            if (!wumpusDetected && !batsDetected && !pitDetected && !shopDetected)
-            {
-                this.BackgroundImage = Resources.New_Piskel;
-                checkBoxShootArrow.Visible = false;
-            }
-            else if (wumpusDetected)
-            {
-                this.BackgroundImage = Resources.Piskel_Wumpus_Main;
-                checkBoxShootArrow.Visible = true;
-            }
-            else if (batsDetected)
-            {
-                this.BackgroundImage = Resources.Piskel_Bats_Main;
-            }
-            else if (shopDetected)
-            {
-                this.BackgroundImage = Resources.Main_Piskel_Shop;
-            }
-            else if (pitDetected)
-            {
-                this.BackgroundImage = Resources.Main_Piskel_Draft;
-            }
+            updateRoom(wumpusDetected, batsDetected, pitDetected, shopDetected);
 
             // check if the player is in a room with a hazard
             List<string> hazardsInRoom = location.RoomType();
@@ -380,10 +339,11 @@ namespace TestingGround
                         int index = 1;
                         labelRoomNum.Text = index.ToString();
                         location.Player = index;
-                        labelCurrentRoomHazard.Text = index.ToString();
+                        labelCurrentRoomHazard.Text = "None"; // Reset the current room hazard label
 
                         updateButtons(index);
                         DoTurn();
+                        return;
                     }
                     else
                     {
@@ -417,8 +377,8 @@ namespace TestingGround
                     buttonShop.Visible = false;
                 }
             }
-            labelCurrentRoomHazard.Text = roomHazards;
 
+            labelCurrentRoomHazard.Text = roomHazards;
             labelCoins.Text = player.Gold.ToString();
             labelArrows.Text = player.Arrows.ToString();
             labelPoints.Text = score.ToString();
@@ -436,10 +396,10 @@ namespace TestingGround
                 int index = newRoom;
                 labelRoomNum.Text = index.ToString();
                 location.Player = index;
-                labelCurrentRoomHazard.Text = index.ToString();
 
                 updateButtons(index);
                 DoTurn();
+                return;
             }
         }
 
@@ -478,7 +438,36 @@ namespace TestingGround
             shopDlg.GetLife = player.WumpusDead;
             shopDlg.WumpusLocation = location.Wumpus;
             shopDlg.ShowDialog();
+
+            labelCoins.Text = player.Gold.ToString();
+            labelArrows.Text = player.Arrows.ToString();
             this.Show();
+        }
+
+        private void updateRoom(bool wumpus, bool bats, bool pits, bool shop)
+        {
+            if (!wumpus && !bats && !pits && !shop)
+            {
+                this.BackgroundImage = Resources.New_Piskel;
+                checkBoxShootArrow.Visible = false;
+            }
+            else if (wumpus)
+            {
+                this.BackgroundImage = Resources.Piskel_Wumpus_Main;
+                checkBoxShootArrow.Visible = true;
+            }
+            else if (bats)
+            {
+                this.BackgroundImage = Resources.Piskel_Bats_Main;
+            }
+            else if (shop)
+            {
+                this.BackgroundImage = Resources.Main_Piskel_Shop;
+            }
+            else if (pits)
+            {
+                this.BackgroundImage = Resources.Main_Piskel_Draft;
+            }
         }
     }
 }
