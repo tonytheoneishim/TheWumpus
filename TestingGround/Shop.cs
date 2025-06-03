@@ -70,6 +70,8 @@ namespace GCUITest
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            player.Gold = int.Parse(labelCoinCount.Text);
+            player.Arrows = int.Parse(labelArrowCount.Text);
             this.Close();
         }
     }
