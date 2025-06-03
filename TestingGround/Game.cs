@@ -381,10 +381,10 @@ namespace TestingGround
             labelCurrentRoomHazard.Text = roomHazards;
             labelCoins.Text = player.Gold.ToString();
             labelArrows.Text = player.Arrows.ToString();
-            labelPoints.Text = score.ToString();
             labelWarnings.Text = warnings;
             checkBoxShootArrow.Checked = false;
             score = player.CalculateScore();
+            labelPoints.Text = score.ToString();
 
             if (movedRoom)
             {
