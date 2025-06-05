@@ -91,9 +91,6 @@ namespace TestingGround
             else { }
             
             //hs.geths
-
-            //should this be here?
-            highscore.SortHighs();
             
             int a = 0;
             foreach (Highscore player in highscore.GetHighscores(highscore.PlayerList))
@@ -101,6 +98,8 @@ namespace TestingGround
                 listBoxNameList.Items.Add(player.ToString());
                 a++;
                 if (a == 10) break;
+
+                highscore.SortHighs();
             }
             labelPlayerStat.Text = "";
         }

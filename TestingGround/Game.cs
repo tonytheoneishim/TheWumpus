@@ -385,7 +385,8 @@ namespace TestingGround
             labelArrows.Text = player.Arrows.ToString();
             labelWarnings.Text = warnings;
             checkBoxShootArrow.Checked = false;
-            labelPoints.Text = player.CalculateScore().ToString();
+            score = player.CalculateScore();
+            labelPoints.Text = score.ToString();
 
             if (movedRoom)
             {
