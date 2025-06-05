@@ -439,9 +439,19 @@ namespace TestingGround
             shopDlg.WumpusLocation = location.Wumpus;
             shopDlg.ShowDialog();
 
-            labelCoins.Text = player.Gold.ToString();
-            labelArrows.Text = player.Arrows.ToString();
+
+
+            //shopDlg.TestArrow();
+            int tempgold, temparrow;
+            tempgold = shopDlg.GetGold;
+            temparrow = shopDlg.GetArrows;
+            labelCoins.Text = tempgold.ToString();
+            labelArrows.Text = temparrow.ToString();
+
             this.Show();
+
+            player.Gold = tempgold;
+            player.Arrows = temparrow;
         }
 
         private void updateRoom(bool wumpus, bool bats, bool pits, bool shop)

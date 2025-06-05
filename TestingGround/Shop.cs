@@ -28,14 +28,15 @@ namespace GCUITest
         public bool GetLife { get; set; }
         public int WumpusLocation { get; set; }
 
-        private void pictureBoxArrowBuy_Click(object sender, EventArgs e)
+        public void pictureBoxArrowBuy_Click(object sender, EventArgs e)
         {
             if (int.Parse(labelCoinCount.Text) >= 3)
             {
-                player.Gold -= 3;
-                player.Arrows++;
-                labelCoinCount.Text = player.Gold.ToString();
-                labelArrowCount.Text = player.Arrows.ToString();
+                GetGold -= 3;
+                GetArrows++;
+
+                labelCoinCount.Text = GetGold.ToString();
+                labelArrowCount.Text = GetArrows.ToString();
                 MessageBox.Show("You purchased an arrow!");
             }
             else
@@ -43,12 +44,12 @@ namespace GCUITest
                 MessageBox.Show("Not enough gold coins!", "Transaction failed!");
             }
         }
-        private void pictureBoxSecretBuy_Click(object sender, EventArgs e)
+        public void pictureBoxSecretBuy_Click(object sender, EventArgs e)
         {
             if (int.Parse(labelCoinCount.Text) >= 5)
             {
-                player.Gold -= 5;
-                labelCoinCount.Text = player.Gold.ToString();
+                GetGold -= 5;
+                labelCoinCount.Text = GetGold.ToString();
 
                 //Message box for the secret
                 MessageBox.Show("The Wumpus is in room " + WumpusLocation.ToString(), "Shhhhhh...");
@@ -59,7 +60,7 @@ namespace GCUITest
             }
         }
 
-        private void Shop_Load(object sender, EventArgs e)
+        public void Shop_Load(object sender, EventArgs e)
         {
             player = new Player(GetArrows, GetGold, GetTurns, GetLife);
 
@@ -68,11 +69,10 @@ namespace GCUITest
             labelReciept.Text = "";
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        public void buttonClose_Click(object sender, EventArgs e)
         {
-            player.Gold = int.Parse(labelCoinCount.Text);
-            player.Arrows = int.Parse(labelArrowCount.Text);
             this.Close();
         }
+
     }
 }
