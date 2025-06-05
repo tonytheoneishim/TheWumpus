@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Transactions;
+using System.Xml.Serialization;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace Highscore___Testing___Dev;
@@ -47,6 +48,7 @@ public class Highscore
     public int ArrowsLeft { get; set; }
     public int GoldCoinsLeft {  get; set; } 
     public bool KilledWumpus { get; set; }
+
     /// <summary>
     /// list where player highscore data is stored to a .csv file
     /// </summary>
@@ -85,12 +87,13 @@ public class Highscore
     public void AddHighscore(string pn, int sc, string ct, int tn, int ar, int gc, bool kw)
     {
         PlayerList.Add(new Highscore(pn, sc, ct, tn, ar, gc, kw));
+
         SortHighs();
         if (PlayerList.Count > 10)
         {
             PlayerList.RemoveAt(10);
         }
-        
+
         SavetoFile(PlayerList);
     }
     /// <summary>
@@ -113,20 +116,25 @@ public class Highscore
             }
         }
     }
-    /// <summary>
-    /// Retrieves scores from .csv file to list PlayerList for GC to fetch
-    /// </summary>
-    /// <param name="scores"></highscores in list PlayerList>
-    /// <returns></highscores from list PlayerList>
-    public static List<Highscore> GetHighscores(List<Highscore> scores)
+
+    public List<Highscore> GetHighscores(List<Highscore> scores)
     {
         FileInfo fileInfo = new FileInfo(DATAFILE);
         if (fileInfo.Exists)
         {
+            PlayerList.Clear();
             scores = OpenFromFile("highscores.csv");
-            return scores;
+            foreach (Highscore score in scores)
+            {
+                PlayerList.Add(score);
+            }
+            return PlayerList;
         }
-        else return scores;
+        else
+        {
+            return PlayerList;
+        }
+
     }
     /// <summary>
     /// puts name and highscore into listbox-ready string
@@ -141,6 +149,18 @@ public class Highscore
     /// </summary>
     /// <param name="players"></player data in list PlayerList>
     public static void SavetoFile(List<Highscore> players)
+    {
+        StreamWriter sw = new StreamWriter(DATAFILE);
+        foreach (Highscore player in players)
+        {
+            string output = player.PlayerName + "," + player.PlayerFinalScore.ToString() + "," + player.CaveType
+                + "," + player.Turns + "," + player.ArrowsLeft + "," + player.GoldCoinsLeft + "," + player.KilledWumpus;
+            sw.WriteLine(output);
+        }
+        sw.Flush();
+        sw.Close();
+    }
+    public void SavetoFileTEST(List<Highscore> players)
     {
         StreamWriter sw = new StreamWriter(DATAFILE);
         foreach (Highscore player in players)

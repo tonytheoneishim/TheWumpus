@@ -7,7 +7,10 @@ namespace TestingGround
 {
     public partial class Homepage : Form
     {
+        public bool GLOBALHIGHSCOREINTPLEASEWORKLMAO = false;
         Highscore highscore = new Highscore();
+        HighScoreForm hsf = new HighScoreForm();
+        
         public Homepage()
         {
             InitializeComponent();
@@ -27,10 +30,18 @@ namespace TestingGround
         {
             this.Hide();
 
+            hsf.AddingBoolean = false;
+            GLOBALHIGHSCOREINTPLEASEWORKLMAO = false;
             HighScoreForm highScoreForm = new HighScoreForm();
             highScoreForm.ShowDialog();
 
             this.Close();
+        }
+
+        private void Homepage_Load(object sender, EventArgs e)
+        {
+            hsf.AddingBoolean = false;
+            GLOBALHIGHSCOREINTPLEASEWORKLMAO = false;
         }
     }
 }

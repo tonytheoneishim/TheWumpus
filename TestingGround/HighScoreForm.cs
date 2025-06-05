@@ -34,6 +34,7 @@ namespace TestingGround
         {
             this.Hide();
             Homepage homedlg = new Homepage();
+            homedlg.GLOBALHIGHSCOREINTPLEASEWORKLMAO = false;
             homedlg.ShowDialog();
             this.Close();
         }
@@ -72,15 +73,30 @@ namespace TestingGround
             }
             else return;
         }
+        public bool AddingBoolean { get; set; }
+        public List<HighScoreForm> hslist;
         private void HighScoreForm_Load(object sender, EventArgs e)
         {
+            Homepage homepage = new Homepage();
             Size = new Size(277, 316);
             //highscore.TestAdding();
-            highscore.AddHighscore(Name, score, CaveType, Turns, ArrowsLeft, GoldCoinsLeft, KilledWumpus);
-            Highscore.GetHighscores(highscore.PlayerList);
+
+
+            if (homepage.GLOBALHIGHSCOREINTPLEASEWORKLMAO == true
+                || AddingBoolean == true) 
+            {
+                highscore.AddHighscore(Name, score, CaveType, Turns, ArrowsLeft, 
+                    GoldCoinsLeft, KilledWumpus);
+            }
+            else { }
+            
+            //hs.geths
+
+            //should this be here?
             highscore.SortHighs();
+            
             int a = 0;
-            foreach (Highscore player in highscore.PlayerList)
+            foreach (Highscore player in highscore.GetHighscores(highscore.PlayerList))
             {
                 listBoxNameList.Items.Add(player.ToString());
                 a++;
@@ -98,6 +114,7 @@ namespace TestingGround
         {
             this.Hide();
             Homepage homedlg = new Homepage();
+            homedlg.GLOBALHIGHSCOREINTPLEASEWORKLMAO = false;
             homedlg.ShowDialog();
             this.Close();
         }
@@ -168,7 +185,7 @@ namespace TestingGround
 
                     Size = new Size(277, 316);
                     listBoxNameList.Items.Clear();
-                    Highscore.GetHighscores(highscore.PlayerList);
+                    highscore.GetHighscores(highscore.PlayerList);
                     highscore.SortHighs();
                     int a = 0;
                     foreach (Highscore player in highscore.PlayerList)

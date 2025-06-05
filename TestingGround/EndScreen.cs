@@ -18,7 +18,7 @@ namespace GCUITest
     public partial class EndScreen : Form
     {
         public string Name { get; set; }
-        public string CaveType { get; set;  }
+        public string caveType { get; set;  }
         public int arrows { get; set; }
         public int gold { get; set; }
         public int turns { get; set; }
@@ -36,15 +36,37 @@ namespace GCUITest
 
         private void buttonContinue_Click(object sender, EventArgs e)
         {            
+            Homepage homepage = new Homepage();
+            homepage.GLOBALHIGHSCOREINTPLEASEWORKLMAO = true;
             this.Hide();
+            
             HighScoreForm highscoreform = new HighScoreForm();
+            highscoreform.AddingBoolean = true;
+
             highscoreform.Name = Name;
             highscoreform.score = FinalScore;
-            highscoreform.CaveType = CaveType;
+            highscoreform.CaveType = caveType;
             highscoreform.Turns = turns;
             highscoreform.GoldCoinsLeft = gold;
             highscoreform.ArrowsLeft = arrows;
             highscoreform.KilledWumpus = wumpusDead;
+
+            Highscore highscore = new Highscore();
+
+            highscore.PlayerName = Name;
+            highscore.PlayerFinalScore = FinalScore;
+            highscore.CaveType = caveType;
+            highscore.Turns = turns;
+            highscore.ArrowsLeft = arrows;
+            highscore.GoldCoinsLeft = gold;
+            highscore.KilledWumpus = wumpusDead;
+
+            highscore.AddHighscore(Name, FinalScore, caveType, turns, arrows, gold, wumpusDead);
+
+            //idea, add an int,
+            //if the int is 0, dont run the addhighscore, if it is 1, run the addhighscore. reset the number
+            //idk, but set the number to wherever highscoreform is opened.
+
             highscoreform.ShowDialog();
             this.Close();
         }

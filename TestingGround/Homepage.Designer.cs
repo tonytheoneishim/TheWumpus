@@ -82,6 +82,7 @@
             Name = "Homepage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hunt the Wumpus!";
+            Load += Homepage_Load;
             ResumeLayout(false);
         }
 

@@ -31,7 +31,7 @@ namespace TestingGround
         public Player player = new Player(2, 3, 0, false);
         string directionClicked = string.Empty;
 
-        int score;
+        int score = 100;
 
         Button[] buttons = new Button[6];
         Random rand = new Random();
@@ -76,10 +76,12 @@ namespace TestingGround
         /// <param name="e"></param>
         private void Game_Load(object sender, EventArgs e)
         {
+            score = 100;
             labelPlayerName.Text = PlayerName;
             labelCoins.Text = player.Gold.ToString();
             labelArrows.Text = player.Arrows.ToString();
             labelPoints.Text = player.CalculateScore().ToString();
+            //labelPoints.Text = "100";
             labelWarnings.Text = "";
 
             checkBoxShootArrow.Visible = false;
@@ -196,7 +198,7 @@ namespace TestingGround
                     end.gold = player.Gold;
                     end.turns = player.Turns;
                     end.wumpusDead = player.WumpusDead;
-                    end.CaveType = CaveType;
+                    end.caveType = CaveType;
                     end.Name = PlayerName;
                     end.FinalScore = score;
                     end.ShowDialog();
@@ -315,7 +317,7 @@ namespace TestingGround
                         end.gold = player.Gold;
                         end.turns = player.Turns;
                         end.wumpusDead = player.WumpusDead;
-                        end.CaveType = CaveType;
+                        end.caveType = CaveType;
                         end.Name = PlayerName;
                         end.FinalScore = score;
                         end.ShowDialog();
@@ -354,7 +356,7 @@ namespace TestingGround
                         end.gold = player.Gold;
                         end.turns = player.Turns;
                         end.wumpusDead = player.WumpusDead;
-                        end.CaveType = CaveType;
+                        end.caveType = CaveType;
                         end.Name = PlayerName;
                         end.FinalScore = score;
 
@@ -383,8 +385,7 @@ namespace TestingGround
             labelArrows.Text = player.Arrows.ToString();
             labelWarnings.Text = warnings;
             checkBoxShootArrow.Checked = false;
-            score = player.CalculateScore();
-            labelPoints.Text = score.ToString();
+            labelPoints.Text = player.CalculateScore().ToString();
 
             if (movedRoom)
             {
